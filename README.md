@@ -28,7 +28,7 @@ MARM is designed to help you:
 
 ## The Problem It Solves
 
-Are you tired of your AI forgetting what you discussed just a few messages ago? Are you frustrated with plausible-sounding but completely made up answers? These are common failures in modern AI models. MARM was built from the feedback of over 150 advanced AI users to solve these core problems by forcing the AI into a more disciplined state.
+Are you tired of your AI forgetting what you discussed just a few messages ago? Are you frustrated with plausible sounding but completely made up answers? These are common failures in modern AI models. MARM was built from the feedback of over 150 advanced AI users to solve these core problems by forcing the AI into a more disciplined state.
 
 ---
 
