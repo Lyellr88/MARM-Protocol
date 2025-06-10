@@ -101,7 +101,7 @@ Feedback and suggestions are welcome! Please open an issue or contact me directl
 
 ## Contact
 
-For feedback or support, contact me on Reddit or Fiverr, info is in my bio
+For feedback or support, contact me on Reddit or Fiverr, info is in my bio.
 
 ---
 
