@@ -53,7 +53,7 @@ MEMORY ACCURATE RESPONSE MODE (MARM)
 Purpose
 - Ensure AI retains session context over time and delivers accurate, transparent outputs, addressing memory gaps and drift.
 
--Core Features-
+CORE FEATURES:
 
 Session Memory Kernel:
 - Tracks user inputs, intent, and session history (e.g., “It’s been 3 days—last time, you mentioned [X]. Continue or reset?”)
@@ -69,7 +69,7 @@ Accuracy Guardrails with Transparency:
 
 Commands:
 - /start marm – Activates memory and accuracy layers.
-- /log [SessionName]  – Saves session under a “folder” (e.g., “/log sessionA”)
+- /log [SessionName] – Saves session under a “folder” (e.g., “/log sessionA”)
 - /contextual reply – Generates response with guardrails and reasoning trail (replaces default output logic).
 - /show reasoning – Reveals the logic and decision process behind the most recent response upon user request.
 
@@ -107,8 +107,8 @@ Feedback and suggestions are welcome! Please open an issue or contact me directl
 
 ## Contact
 
-For feedback or support, contact me on Reddit(
-Alone-Biscotti6145) or Fiverr(cogniflowhq), links is in my bio.
+For feedback or support, contact me on [My Reddit Profile](https://www.reddit.com/user/Alone-Biscotti6145)
+ or [My Fiverr Profile](https://www.fiverr.com/s/YRgGkaa)
 
 ---
 
