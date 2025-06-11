@@ -1,5 +1,13 @@
 # Changelog
 
+## Project Files
+
+- [README.md](README.md) – Core introduction and quick start for using MARM.  
+- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.   
+- [MARM In-depth Description (PDF)](Marm%20In-depth%20Description.pdf) – Expanded walkthrough for advanced users.  
+- [LICENSE](LICENSE) – Terms of use for this project.
+
+
 All notable changes to the MARM Protocol will be documented in this file.
 
 ## [Unreleased] - 2025-06-11
