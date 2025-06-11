@@ -1,4 +1,20 @@
-# MARM Protocol
+# Memory Accurate Response Mode (MARM)
+
+## Project Files
+Key documents in this repository for quick access:
+
+- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.
+- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.
+- [MARM In-depth Description (PDF)](Marm%20In-depth%20Description.pdf) – Expanded walkthrough for advanced users.
+- [LICENSE](LICENSE) – Terms of use for this project.
+
+---
+
+**A Universal Protocol for Improved AI Memory and Response Accuracy**
+
+---
+
+A Universal Protocol for Improved AI Memory and Response Accuracy
 
 **A Universal Protocol for Improved AI Memory and Response Accuracy**
 
@@ -10,9 +26,9 @@
 
 For those who want to get started immediately:
 
-1. **Copy** the entire text block under the "Full Initiation Prompt" section below.
-2. **Paste** it as your very first message to a new AI chat.
-3. **Follow** the instructions the AI gives you in its confirmation response.
+- **Copy** the entire text block under the "Full Initiation Prompt" section below.
+- **Paste** it as your very first message to a new AI chat.
+- **Follow** the instructions the AI gives you in its confirmation response.
 
 ---
 
