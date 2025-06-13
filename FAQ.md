@@ -7,6 +7,7 @@
 - [MARM In-depth Description (PDF)](Marm%20In-depth%20Description.pdf) – Expanded walkthrough for advanced users.  
 - [LICENSE](LICENSE) – Terms of use for this project.
 
+---
 
 **Q: How do I start a new session with MARM?**  
 A: Use the `/start marm` command to activate memory and accuracy layers for your session.
