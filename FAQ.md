@@ -31,3 +31,24 @@ A: MARM’s core features are platform-agnostic, but advanced features like auto
 
 **Q: What should I do if the session gets too long or starts to lose context?**  
 A: Summarize your session and use `/log [SessionName]` to save your place. For best results, recap or reseed context in long or complex conversations.
+
+---
+
+## Patch Update Questions (v1.2 – Session Relay Tools)
+
+Q: What does the v1.2 patch actually add?  
+A: The patch introduces optional tools for managing long-form sessions, including the /compile command, automatic reseed prompts, schema enforcement for logs, and basic error correction for malformed entries.
+
+**Q: Do I need to use the patch to run MARM?**  
+A: No. The patch is fully modular. MARM functions as intended without it. The patch simply enhances continuity and recall across session resets or token limits.
+
+**Q: What does /compile actually do?**  
+A: It summarizes your /log entries into a one-line-per-entry digest. You can optionally filter by field (e.g., --fields=Intent,Outcome). It’s ideal for reseeding sessions or exporting history.
+
+**Q: What is the reseed prompt?88  
+A: After running /compile, MARM generates a paste-ready context block. You can drop this into a new chat or LLM thread to restore state quickly.
+
+**Q: What happens if I mess up a /log entry?**  
+A: MARM checks for format issues automatically. If it detects missing or malformed fields, it will prompt you to revise or suggest auto-filled values (like today’s date).
+
+
