@@ -6,6 +6,7 @@
 - [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
 - [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
 - [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
+- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
 - [LICENSE](LICENSE) – Terms of use for this project.
 
 All notable changes to the MARM Protocol will be documented in this file.
