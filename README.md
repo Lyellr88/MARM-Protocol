@@ -1,11 +1,12 @@
 # Memory Accurate Response Mode v1.2 (MARM)
 
 ## Project Files
-Key documents in this repository for quick access:
 
-- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.
-- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.
-- [MARM In-depth Description (PDF)](Marm%20In-depth%20Description.pdf) – Expanded walkthrough for advanced users.
+- [README.md](README.md) – Core introduction and quick start for using MARM.  
+- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
+- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
+- [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
+- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
 - [LICENSE](LICENSE) – Terms of use for this project.
 
 ---
