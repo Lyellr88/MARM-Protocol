@@ -1,4 +1,4 @@
-# Memory Accurate Response Mode (MARM)
+# Memory Accurate Response Mode v1.2 (MARM)
 
 ## Project Files
 Key documents in this repository for quick access:
@@ -10,15 +10,9 @@ Key documents in this repository for quick access:
 
 ---
 
-**A Universal Protocol for Improved AI Memory and Response Accuracy**
+**A Universal Protocol for Improved AI Memory and Response Accuracy**  
 
----
-
-A Universal Protocol for Improved AI Memory and Response Accuracy
-
-**A Universal Protocol for Improved AI Memory and Response Accuracy**
-
-*Last updated: June 11, 2025*
+[**Last updated: June 13, 2025**]
 
 ---
 
@@ -59,12 +53,106 @@ MARM gives the AI a strict job description with two core features:
 
 ---
 
-## Full Initiation Prompt
+<details>
+
+  <summary><strong>Quick Start Guide – Patch: Session Relay Tools (Click to expand)</strong></summary>
+
+### Logging an Entry  
+Use the `/log` command to document session activity.
+
+**Syntax:**  
+`/log [YYYY-MM-DD | User | Intent | Outcome]`
+
+**Example:**  
+`/log [2025-06-13 | Ryan | Introduced patch | Got feedback]`
+
+---
+
+### Compiling a Session Summary  
+
+Generate a digest using `/compile`.
+**Basic:**  
+`/compile ProjectX --summary`  
+**Optional:**  
+`/compile ProjectX --summary --fields=Intent,Outcome`
+
+---
+
+### Using the Reseed Prompt  
+Paste the reseed block into a new session to restore context.
+
+**Example:**  
+Session: ProjectX  
+Summary:  
+- Introduced patch / Got feedback  
+- Tested on Gemini / Found effective
+
+---
+
+### Log Error Handling  
+If a field is malformed or missing, MARM will prompt correction or autofill.
+
+
+### Quick Start Tip  
+Log 3–5 entries → Run `/compile` → Paste reseed block into a new session → Resume seamlessly.
+
+</details>
+
+---
+
+<details>
+  
+<summary><strong> MARM Command Reference (Click to expand)</strong></summary
+  
+---
+
+### CORE COMMANDS
+
+`/start marm`  
+Activates MARM’s memory and accuracy layers. Should be the first command in any MARM-enabled session.
+
+`/log [SessionName]`  
+Saves session under a labeled folder. Used to track intent/outcome chains.  
+Example: `/log SessionA`
+
+`/contextual reply`  
+Replaces default output logic with guarded reasoning. Ensures context-aligned, transparent answers.
+
+`/show reasoning`  
+Displays the internal logic or synthesis path used in the last response. Useful for audits or debugging.
+
+---
+
+### OPTIONAL / ADVANCED TOOLS (v1.2 Patch: Session Relay Tools)
+
+`/compile [SessionName] --summary:`  
+Generates a token-safe digest of logs. One-line per entry using standard schema.  
+
+Optional:  
+`--fields=Intent,Outcome` filters output.
+
+*Auto-Reseed Prompt*  
+Triggered after `/compile`, this outputs a paste-ready context block to resume sessions in new threads.
+
+*Log Schema Enforcement*  
+Ensures all logs follow `[YYYY-MM-DD | User | Intent | Outcome]` format.
+
+*Error Handling for Logs*  
+Invalid log entries prompt corrections or autofills (e.g., today's date).
+
+---
+
+</details>
+
+---
+
+  # Full Initiation Prompt
 
 To begin a session, copy the entire text block below and paste it as your **very first message** to the AI.
 
 ```
-MEMORY ACCURATE RESPONSE MODE (MARM)
+
+MEMORY ACCURATE RESPONSE MODE v1.2 (MARM)
 
 Purpose
 - Ensure AI retains session context over time and delivers accurate, transparent outputs, addressing memory gaps and drift.
@@ -109,6 +197,42 @@ Limitations:
 
 Acknowledgment:
 - Acknowledge that you understand these instructions by replying only with: "MARM activated. Ready to log context."
+
+
+```
+---
+
+# PATCH: SESSION RELAY TOOLS (v1.2)
+
+```
+PATCH: SESSION RELAY TOOLS (v1.2)
+
+Purpose
+- Add optional enhancements for session continuity, token-safe summaries, and reseed logic across LLM threads.
+
+ADDED COMMANDS:
+
+ /compile [SessionName] --summary:
+- Outputs a one-line-per-entry summary using standardized schema.
+- Supports optional field filtering via: --fields=Intent,Outcome
+- Example: /compile ProjectX --summary --fields=Intent,Outcome
+
+ Auto-Reseed Prompt (Post-Compile):
+- Generates a pre-formatted context block to paste into a new session.
+- Use to resume where you left off, bypassing token limits.
+
+ Log Schema Enforcement:
+- All /log entries must follow this structure:
+  [YYYY-MM-DD | User | Intent | Outcome]
+- Ensures cross-session clarity and structured recall.
+
+ Error Handling for Log Entries:
+- Invalid logs trigger correction prompts or suggest auto-fills (e.g., today's date if missing).
+- Preserves clean data for summaries and reseeds.
+
+Note
+- This patch is modular. It does not overwrite base MARM functionality.
+- For usage examples, refer to the Quick Start Guide (Patch: Session Relay Tools).
 
 
 ```
