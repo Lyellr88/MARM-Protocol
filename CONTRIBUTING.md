@@ -1,5 +1,14 @@
 # Contributing to MARM
 
+## Project Files
+
+- [README.md](README.md) – Core introduction and quick start for using MARM.  
+- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
+- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
+- [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
+- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
+- [LICENSE](LICENSE) – Terms of use for this project.
+
 Thank you for your interest in contributing to the Memory Accurate Response Mode (MARM) Protocol. Whether you're here to test, give feedback, suggest improvements, or help evolve the framework, you're part of making something more stable and transparent in LLM interactions.
 
 ---
