@@ -3,18 +3,27 @@
 ## Project Files
 
 - [README.md](README.md) – Core introduction and quick start for using MARM.  
-- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.   
+- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
 - [MARM In-depth Description (PDF)](Marm%20In-depth%20Description.pdf) – Expanded walkthrough for advanced users.  
 - [LICENSE](LICENSE) – Terms of use for this project.
 
-
 All notable changes to the MARM Protocol will be documented in this file.
 
-## [Unreleased] - 2025-06-11
+---
+
+## v1.2 – 2025-06-13
+
+---
 
 ### Added
+- **Patch: Session Relay Tools:**  
+  Includes `/compile` command, automatic reseed prompts, schema enforcement for logs, and basic error correction.
+- **Quick Start Guide (Patch Tools):**  
+  Drop-down HTG covering logging, compiling, reseeding, and error handling for long-form sessions.
 - **/show reasoning command:**  
   Allows users to request logic and decision trail on demand.
+- **Command Reference (Collapsible):**  
+  New section lists core and advanced commands with brief descriptions.
 - **Comprehensive FAQ section:**  
   Covers session lifecycle, naming, resuming, reasoning, platform compatibility, and best practices.
 - **Expanded Limitations section:**  
@@ -25,16 +34,23 @@ All notable changes to the MARM Protocol will be documented in this file.
   - `/log [SessionName]`
   - `/contextual reply`
   - `/show reasoning`
+  - `/compile [SessionName] --summary`
 - **Clickable contact links:**  
   Updated contact information with clickable links for Reddit and Fiverr profiles.
+- **CONTRIBUTING.md:**  
+  Placeholder for community/tester recognition via dedicated contributor section.
+
+---
 
 ### Changed
 - **Command descriptions and documentation:**  
   Updated to reflect new slash-command syntax.
 - **README and protocol documentation:**  
-  Improved for better clarity and user guidance.
+  Overhauled for better clarity, consistency, and modular visibility (e.g., collapsible HTG, patch separation).
 - **Protocol formatting:**  
-  Overhauled for easier reading and consistency.
+  Adjusted line spacing, hierarchy, and section dividers for improved readability.
+
+---
 
 ### Removed
 - **Confidence flag/scoring feature:**  
