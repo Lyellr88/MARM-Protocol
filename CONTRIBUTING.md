@@ -34,13 +34,20 @@ If you have Python, JSON, or LLM toolchain experience and want to help convert M
 
 The following users directly shaped the protocol through feedback, ideas, or early support:
 
-### Reddit: [u/ophydian210](https://www.reddit.com/user/ophydian210)  
-Provided early-stage critique and refinement feedback on memory simulation, session labeling, and user experience logic. Influenced the removal of the confidence scoring system, the creation of the `/show reasoning` command, and improvements to session lifecycle documentation.
-
-### Reddit: [u/CalamityThorazine](https://www.reddit.com/user/CalamityThorazine) & [u/Crazy_Crayfish_](https://www.reddit.com/user/Crazy_Crayfish_)  
+### Reddit: [u/CalamityThorazine](https://www.reddit.com/user/CalamityThorazine) & [u/Crazy_Crayfish_](https://www.reddit.com/user/Crazy_Crayfish_) - June 9, 2025
 Encouraged the move from temporary hosting (e.g., Google Drive) to GitHub, improving accessibility and trust. Their early interest helped validate public release and shaped the decision to publish the protocol in a permanent, versioned repository.
 
-### Reddit: [u/MykoJai168](https://www.reddit.com/user/MykoJai168)  
+### Reddit: [u/ophydian210](https://www.reddit.com/user/ophydian210) - June 10, 2025 
+Provided early-stage critique and refinement feedback on memory simulation, session labeling, and user experience logic. Influenced the removal of the confidence scoring system, the creation of the `/show reasoning` command, and improvements to session lifecycle documentation.
+
+### Reddit: [u/deminimis_opsec](https://www.reddit.com/user/deminimis_opsec)– June 10, 2025 
+Provided critical technical feedback on MARM’s limitations within non-API chat environments. Helped clarify the distinction between frontend prompt-layer protocols and backend memory architectures. Their input reinforced the importance of transparency around session scope, non-persistent memory, and the lack of backend execution in typical LLM interfaces.
+
+### Reddit: [u/angry_cactus](https://www.reddit.com/user/angry_cactus) – June 11, 2025
+Tested MARM across models and validated its performance in Gemini Pro. Provided feedback on LLM pseudo-memory behaviors, reply weighting, and the trade-offs between short-form prompts and structured memory. Their observations reinforced the session-based design choice and influenced future patch direction focused on continuity fail safes and compression-aware prompting.
+
+
+### Reddit: [u/MykoJai168](https://www.reddit.com/user/MykoJai168) - June 12, 2025
 Sparked the architectural concept behind MARM’s “Session Relay Tools” patch by proposing a layered, context-managed memory model. Offered collaboration, stress-testing interest, and early insight into multi-agent recall, which helped validate MARM’s patch direction. Credited for contributing to the prompt-layer vision and user-side continuity design.
 
 ---
