@@ -12,9 +12,19 @@
 
 ---
 
+## Platform Compatibility Note
+
+MARM works across all major LLM platforms, including ChatGPT, Claude, Gemini, and Grok.
+
+It does not depend on native memory features. Instead, it uses manual logging, structured prompts, and reseeding to maintain context. This ensures consistency regardless of platform behavior or update cycles.
+
+As memory capabilities evolve, MARM remains stable by desig, users always retain control.
+
+---
+
 Short introduction:  
 MARM is a protocol for advanced AI session memory, workflow management, and accuracy guardrails.  
-This handbook includes all core commands, beginner guidance, and error handling tools
+This handbook includes all core commands, beginner guidance, and error handling tools.
 
 ## Core Activation
 
