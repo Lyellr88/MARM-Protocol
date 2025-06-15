@@ -7,7 +7,8 @@
 - [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
 - [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
 - [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
-- [LICENSE](LICENSE) – Terms of use for this project.
+- [LICENSE](LICENSE) – Terms of use for this project.  
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.  
 
 All notable changes to the MARM Protocol will be documented in this file.
 
@@ -26,6 +27,8 @@ All notable changes to the MARM Protocol will be documented in this file.
   Allows users to request logic and decision trail on demand.
 - **Command Reference (Collapsible):**  
   New section lists core and advanced commands with brief descriptions.
+- **HANDBOOK.md:**  
+  Unified command guide and how-to reference with beginner tips, advanced usage, and system behaviors. Replaces the need for separate command list and how-to files.
 - **Comprehensive FAQ section:**  
   Covers session lifecycle, naming, resuming, reasoning, platform compatibility, and best practices.
 - **Expanded Limitations section:**  
@@ -34,7 +37,7 @@ All notable changes to the MARM Protocol will be documented in this file.
   All commands now use slash-style syntax for clarity and ease of use:
   - `/start marm`
   - `/log [SessionName]`
-  - `/contextual reply`
+  - `/guarded reply`
   - `/show reasoning`
   - `/compile [SessionName] --summary`
 - **Clickable contact links:**  
@@ -47,8 +50,8 @@ All notable changes to the MARM Protocol will be documented in this file.
 ### Changed
 - **Command descriptions and documentation:**  
   Updated to reflect new slash-command syntax.
-- **README and protocol documentation:**  
-  Overhauled for better clarity, consistency, and modular visibility (e.g., collapsible HTG, patch separation).
+- **README.md:**  
+  Removed in-file command list and How-To Guide. Redirects users to the dedicated `HANDBOOK.md` for unified reference.
 - **Protocol formatting:**  
   Adjusted line spacing, hierarchy, and section dividers for improved readability.
 
@@ -57,6 +60,8 @@ All notable changes to the MARM Protocol will be documented in this file.
 ### Removed
 - **Confidence flag/scoring feature:**  
   Removed from the protocol and documentation to reduce clutter and improve focus.
+- **Embedded command list and HTG from README.md:**  
+  Consolidated into `HANDBOOK.md` for better usability and maintenance.
 
 ---
 
