@@ -44,6 +44,10 @@ All notable changes to the MARM Protocol will be documented in this file.
   Updated contact information with clickable links for Reddit and Fiverr profiles.
 - **CONTRIBUTING.md:**  
   Placeholder for community/tester recognition via dedicated contributor section.
+- **User Feedback section:**  
+  Collapsible section added to `README.md` showing real-world use cases and screenshots of MARM in practice.
+- **Featured on Google badge:**  
+  Added to `README.md` header to highlight external visibility and recognition.
 
 ---
 
