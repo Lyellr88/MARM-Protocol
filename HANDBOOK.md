@@ -114,7 +114,8 @@ MARM detects incomplete or malformed log entries and will either prompt correcti
 
 ## Versioning Note
 
-> **Compatibility:**  
+ **Compatibility:**
+
 > MARM is developed iteratively. v1.2 and beyond reflect the current protocol structure.  
 > If you're using an earlier version, it's recommended you update—backward compatibility isn't guaranteed.
 
