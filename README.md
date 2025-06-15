@@ -1,4 +1,5 @@
-# Memory Accurate Response Mode v1.2 (MARM)
+# Memory Accurate Response Mode v1.2 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)
+
 
 ## Project Files
 
@@ -171,3 +172,27 @@ For feedback or support, contact me on [My Reddit Profile](https://www.reddit.co
 This project was developed independently by me. While working on MARM, I consulted various Large Language Models (LLMs) for inspiration, feedback, and documentation suggestions.
 
 ---
+
+## User Feedback
+
+<details>
+ <summary><strong>User Highlights & External Mentions (Click to expand)</strong></summary>
+
+MARM is actively being tested and adopted across platforms.
+
+- Mentioned and positively received in Reddit threads on LLM reliability and prompt structure  
+- Direct messages from early users highlight reduced drift and improved memory handling  
+- Recognized in Google's AI-related search results as a structured memory protocol  
+
+### Google Search Overview  
+![Google Search Result](media/google-search-results.jpg)
+
+### Reddit Feedback – Example 1  
+![Reddit Feedback 1](media/reddit-feedback-1.jpg)
+
+### Reddit Feedback – Example 2  
+![Reddit Feedback 2](media/reddit-feedback-2.jpg)
+
+*Additional feedback and screenshots will be added as adoption grows.*
+
+</details>
