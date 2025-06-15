@@ -8,7 +8,8 @@
 - [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
 - [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
 - [LICENSE](LICENSE) – Terms of use for this project.
-
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
+  
 ---
 
 **Q: How do I start a new session with MARM?**  
