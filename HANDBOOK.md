@@ -112,16 +112,11 @@ MARM detects incomplete or malformed log entries and will either prompt correcti
 
 ---
 
-## Error Handling Examples
-
-*Coming soon: real-world examples of invalid vs. corrected log entries.*
-
----
-
 ## Versioning Note
 
 > **Compatibility:**  
-> MARM v1.2+ only. For legacy versions, see [link to docs].
+> MARM is developed iteratively. v1.2 and beyond reflect the current protocol structure.  
+> If you're using an earlier version, it's recommended you update—backward compatibility isn't guaranteed.
 
 ---
 
