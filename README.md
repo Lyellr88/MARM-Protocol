@@ -8,6 +8,7 @@
 - [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
 - [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
 - [LICENSE](LICENSE) – Terms of use for this project.
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.  
 
 ---
 
@@ -37,6 +38,11 @@ MARM is designed to help you:
 
 ---
 
+## Looking for Commands or Examples?
+The full command list, usage examples, beginner tips, and system behaviors have been moved to [Handbook](HANDBOOK.md) for easier access and maintenance.
+
+---
+
 ## The Problem It Solves
 
 Are you tired of your AI forgetting what you discussed just a few messages ago? Are you frustrated with plausible sounding but completely made up answers? These are common failures in modern AI models. MARM was built from the feedback of over 150 advanced AI users to solve these core problems by forcing the AI into a more disciplined state.
@@ -51,99 +57,6 @@ MARM gives the AI a strict job description with two core features:
   Actively tracks user inputs, intent, and history. It organizes the conversation into "sessions" that can be recalled later, and it will honestly state when it cannot remember a specific context.
 - **Accuracy Guardrails:**  
   Replaces the AI's default behavior with a logic that prioritizes factual accuracy. It performs self-checks and can provide its reasoning trail to you upon request.
-
----
-
-<details>
-
-  <summary><strong>Quick Start Guide – Patch: Session Relay Tools (Click to expand)</strong></summary>
-
-### Logging an Entry  
-Use the `/log` command to document session activity.
-
-**Syntax:**  
-`/log [YYYY-MM-DD | User | Intent | Outcome]`
-
-**Example:**  
-`/log [2025-06-13 | Ryan | Introduced patch | Got feedback]`
-
----
-
-### Compiling a Session Summary  
-
-Generate a digest using `/compile`.
-**Basic:**  
-`/compile ProjectX --summary`  
-**Optional:**  
-`/compile ProjectX --summary --fields=Intent,Outcome`
-
----
-
-### Using the Reseed Prompt  
-Paste the reseed block into a new session to restore context.
-
-**Example:**  
-Session: ProjectX  
-Summary:  
-- Introduced patch / Got feedback  
-- Tested on Gemini / Found effective
-
----
-
-### Log Error Handling  
-If a field is malformed or missing, MARM will prompt correction or autofill.
-
-
-### Quick Start Tip  
-Log 3–5 entries → Run `/compile` → Paste reseed block into a new session → Resume seamlessly.
-
-</details>
-
----
-
-<details>
-  
-<summary><strong> MARM Command Reference (Click to expand)</strong></summary
-  
----
-
-### CORE COMMANDS
-
-`/start marm`  
-Activates MARM’s memory and accuracy layers. Should be the first command in any MARM-enabled session.
-
-`/log [SessionName]`  
-Saves session under a labeled folder. Used to track intent/outcome chains.  
-Example: `/log SessionA`
-
-`/contextual reply`  
-Replaces default output logic with guarded reasoning. Ensures context-aligned, transparent answers.
-
-`/show reasoning`  
-Displays the internal logic or synthesis path used in the last response. Useful for audits or debugging.
-
----
-
-### OPTIONAL / ADVANCED TOOLS (v1.2 Patch: Session Relay Tools)
-
-`/compile [SessionName] --summary:`  
-Generates a token-safe digest of logs. One-line per entry using standard schema.  
-
-Optional:  
-`--fields=Intent,Outcome` filters output.
-
-*Auto-Reseed Prompt*  
-Triggered after `/compile`, this outputs a paste-ready context block to resume sessions in new threads.
-
-*Log Schema Enforcement*  
-Ensures all logs follow `[YYYY-MM-DD | User | Intent | Outcome]` format.
-
-*Error Handling for Logs*  
-Invalid log entries prompt corrections or autofills (e.g., today's date).
-
----
-
-</details>
 
 ---
 
