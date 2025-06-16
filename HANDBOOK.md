@@ -62,7 +62,7 @@ Adds a structured log entry for detailed session tracking.
 > You can skip this if you're just starting out. Use it later when you want to track outcomes from each session.
 
 > **Tip:**  
-> The `/log` command is smart—use it to either start a new session folder (`/log SessionA`) or add a detailed entry (`/log [date | user | intent | outcome]`).  
+> The `/log` command is smart, use it to either start a new session folder (`/log SessionA`) or add a detailed entry (`/log [date | user | intent | outcome]`).  
 > MARM will auto-detect and organize your input.
 
 ---
