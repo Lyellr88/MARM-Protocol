@@ -184,14 +184,14 @@ MARM is actively being tested and adopted across platforms.
 - Direct messages from early users highlight reduced drift and improved memory handling  
 - Recognized in Google's AI-related search results as a structured memory protocol  
 
-### Google Search Overview  
-![Google Search Result](media/google-search-results.jpg)
+**Google AI Overview**     
+[Google Search Result](media/Google%20Search%20Results.jpg)      
 
-### Reddit Feedback – Example 1  
-![Reddit Feedback 1](media/reddit-feedback-1.jpg)
+**Reddit Feedback – Follow-up Thread**   
+[Reddit Feedback 1 (View Image)](media/Reddit%20Community%20Feedback%201.jpg)      
 
-### Reddit Feedback – Example 2  
-![Reddit Feedback 2](media/reddit-feedback-2.jpg)
+**Reddit Feedback – Upvoted Response**    
+[Reddit Feedback 2 (View Image)](media/Reddit%20Community%20Feedback%202.jpg)      
 
 *Additional feedback and screenshots will be added as adoption grows.*
 
