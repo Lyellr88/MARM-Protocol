@@ -48,6 +48,7 @@ All notable changes to the MARM Protocol will be documented in this file.
   Collapsible section added to `README.md` showing real-world use cases and screenshots of MARM in practice.
 - **Featured on Google badge:**  
   Added to `README.md` header to highlight external visibility and recognition.
+- **Created multi-tier Discussions and updates section in Contributing & Joining the Conversation**
 
 ---
 
@@ -70,3 +71,4 @@ All notable changes to the MARM Protocol will be documented in this file.
 ---
 
 *For a full history of changes, see the [commit log]*
+
