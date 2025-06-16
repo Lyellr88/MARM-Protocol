@@ -55,7 +55,7 @@ Are you tired of your AI forgetting what you discussed just a few messages ago? 
 MARM gives the AI a strict job description with two core features:
 
 - **Session Memory Kernel:**  
-  Actively tracks user inputs, intent, and history. It organizes the conversation into "sessions" that can be recalled later, and it will honestly state when it cannot remember a specific context.
+  Actively tracks user inputs, intent, and history. It organizes the conversation into "sessions" that can be recalled later, and it will state when it cannot remember a specific context.
 - **Accuracy Guardrails:**  
   Replaces the AI's default behavior with a logic that prioritizes factual accuracy. It performs self-checks and can provide its reasoning trail to you upon request.
 
