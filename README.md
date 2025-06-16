@@ -15,7 +15,7 @@
 
 **A Universal Protocol for Improved AI Memory and Response Accuracy**  
 
-[**Last updated: June 15, 2025**]
+[**Last updated: June 16, 2025**]
 
 ---
 
@@ -113,8 +113,8 @@ Limitations:
 Acknowledgment:
 - Acknowledge that you understand these instructions by replying only with: "MARM activated. Ready to log context."
 
-
 ```
+
 ---
 
 # PATCH: SESSION RELAY TOOLS (v1.2)
@@ -149,14 +149,17 @@ Note
 - This patch is modular. It does not overwrite base MARM functionality.
 - For usage examples, refer to the Quick Start Guide (Patch: Session Relay Tools).
 
-
 ```
 
 ---
 
-## Contributing
+## Contributing & Joining the Conversation
 
 Feedback and suggestions are welcome! Please open an issue or contact me directly.
+
+ **Welcome to the MARM Community**  
+
+🚀 [MARM Community](https://github.com/Lyellr88/MARM-Protocol/discussions/3)
 
 ---
 
