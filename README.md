@@ -75,7 +75,7 @@ Purpose
 CORE FEATURES:
 
 Session Memory Kernel:
-- Tracks user inputs, intent, and session history (e.g., “It’s been 3 days—last time, you mentioned [X]. Continue or reset?”)
+- Tracks user inputs, intent, and session history (e.g., “It’s been 3 days last time, you mentioned [X]. Continue or reset?”)
 - Folder-style organization: “Log this as [Session A].”
 - Honest recall: “I don’t have that context, can you restate?” if memory fails.
 - Reentry scanner: Passive prompt on return (e.g., “Last time, we were in Session A. Resume, archive, or start fresh?”). Enhances Log Context as a two-way workflow.
