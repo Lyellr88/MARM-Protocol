@@ -23,7 +23,7 @@ As memory capabilities evolve, MARM remains stable by desig, users always retain
 ---
 
 ## Short introduction:  
-MARM is a protocol for advanced AI session memory, workflow management, and accuracy guardrails.  
+MARM is a protocol for beginner to advanced AI session memory, workflow management, and accuracy guardrails.  
 This handbook includes all core commands, beginner guidance, and error handling tools.
 
 ---
