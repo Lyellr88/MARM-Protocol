@@ -61,7 +61,7 @@ MARM gives the AI a strict job description with two core features:
 
 ---
 
-  # Full Initiation Prompt
+## Full Initiation Prompt
 
 To begin a session, copy the entire text block below and paste it as your **very first message** to the AI.
 
@@ -117,7 +117,7 @@ Acknowledgment:
 
 ---
 
-# PATCH: SESSION RELAY TOOLS (v1.2)
+## PATCH: SESSION RELAY TOOLS (v1.2)
 
 ```
 PATCH: SESSION RELAY TOOLS (v1.2)
@@ -155,11 +155,11 @@ Note
 
 ## Contributing & Joining the Conversation
 
-Feedback and suggestions are welcome! Please open an issue or contact me directly.
+Whether you’re testing, building, or exploring. Your input matters.
 
- **Welcome to the MARM Community**  
+Share feedback, suggest features, or help others by jumping into a thread.
 
-🚀 [MARM Community](https://github.com/Lyellr88/MARM-Protocol/discussions/3)
+🚀 [Join the MARM Community](https://github.com/Lyellr88/MARM-Protocol/discussions/3) 🚀
 
 ---
 
