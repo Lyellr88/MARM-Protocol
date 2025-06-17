@@ -12,6 +12,9 @@
   
 ---
 
+**Q: Does MARM claim to fix hallucinations or eliminate memory loss?**
+A: No. MARM is not a backend patch or model level override. It’s a user side protocol built from structured prompting, manual session logging, and reseed logic. While many users report fewer hallucinations and more stable responses, MARM does not claim to "fix" or "eliminate" these issues. Only to help mitigate their impact through guided structure and intentional user interaction.
+
 **Q: How do I start a new session with MARM?**  
 A: Use the `/start marm` command to activate memory and accuracy layers for your session.
 
