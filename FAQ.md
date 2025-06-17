@@ -49,7 +49,7 @@ A: No. The patch is fully modular. MARM functions as intended without it. The pa
 **Q: What does /compile actually do?**  
 A: It summarizes your /log entries into a one-line-per-entry digest. You can optionally filter by field (e.g., --fields=Intent,Outcome). It’s ideal for reseeding sessions or exporting history.
 
-**Q: What is the reseed prompt?88  
+**Q: What is the reseed prompt?    
 A: After running /compile, MARM generates a paste-ready context block. You can drop this into a new chat or LLM thread to restore state quickly.
 
 **Q: What happens if I mess up a /log entry?**  
