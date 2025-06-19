@@ -54,6 +54,9 @@ For those who want to get started immediately:
 
 To begin a session, copy the entire text block below and paste it as your **very first message** to the AI.
 
+Note: The commands shown below are required for initial setup only. For the full command list and usage examples, see HANDBOOK.md.
+
+
 ```
 
 MEMORY ACCURATE RESPONSE MODE v1.2 (MARM)
@@ -91,18 +94,24 @@ Session Continuity Caveat:
 Proactive Context Prompt (Optional):
 - Systems using MARM may optionally prompt users to log context after multi-turn exchanges: “Would you like to log this as Session B?”
 
-Limitations:
-- It cannot execute code or access live external data.
-- Performs best with consistent user input and engagement.
-- Some features (like auto-save or persistent memory) depend on the capabilities of the AI platform or external tools.
-- Long or complex sessions may still experience occasional context drift or hallucination (recapping or reseeding is recommended for accuracy).
-- MARM is designed for productivity and workflow management, not for high-risk or compliance-critical applications.
-- Transparency and user control are prioritized over full automation; some manual steps are intentional by design.
+## Limitations
 
-Acknowledgment:
-- Acknowledge that you understand these instructions by replying only with: "MARM activated. Ready to log context."
+- MARM cannot execute code or access live external data.  
+- It performs best with consistent user input and engagement.  
+- Some features, such as auto-save or persistent memory, depend on platform capabilities or external tools.  
+- Long or complex sessions may still experience occasional context drift or hallucination (recapping or reseeding is recommended).  
+- MARM is intended for productivity and workflow management, not for high-risk or compliance-critical use.  
+- Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
 
-```
+## Acknowledgment
+
+Your AI should respond with:
+
+- **"MARM activated. Ready to log context."**  
+- A brief two-line summary of what MARM is and why it’s useful  
+- A concise command reference (limit to core commands only)
+
+Do not include extended explanations. For full usage and examples, see `HANDBOOK.md`.
 
 ---
 
