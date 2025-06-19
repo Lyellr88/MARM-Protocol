@@ -11,11 +11,10 @@
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 
-All notable changes to the MARM Protocol will be documented in this file.
-
 ---
 
 ## v1.2 – 2025-06-19
+All notable changes to the MARM Protocol will be documented in this file.
 
 ---
 
