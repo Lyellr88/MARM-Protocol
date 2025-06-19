@@ -8,7 +8,25 @@
 - [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
 - [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
 - [LICENSE](LICENSE) – Terms of use for this project.  
-- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.  
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
+
+---
+
+## Why Manual Steps Matter
+ <details>
+  
+MARM is built around user intent and transparency. It avoids hidden automation to ensure that every action is visible, reviewable, and user-directed.
+
+Here’s what the manual steps do—and why they matter:
+
+- **`/log [SessionName]`** – Assigns structure to your session. Helps you segment topics, track decisions, and prepare for cross-session reuse.
+- **`/compile [SessionName] --summary`** – Creates a compact, shareable summary. Used to reseed new chats or review session history without full scrollback.
+- **`/show reasoning`** – Reveals how the AI formed its last answer. Promotes logical transparency and lets you challenge flawed reasoning.
+- **`/contextual reply`** – Replaces default output logic with accuracy checks and reasoning trails. Ideal when precision matters.
+- **`/start marm`** – Activates all of the above. This sets MARM’s behavior rules in motion from message one.
+
+These steps give you control over how memory is shaped, used, and recovered. MARM performs best when used deliberately.
+ </details>
 
 ---
 
@@ -321,13 +339,107 @@ These templates can be stored outside MARM and called in via `/log` or `/compile
 
 Part III is about control at scale. By using MARM’s structural tools deliberately, you can build complex, multi-session workflows that remain accurate, traceable, and portable. Without needing native memory or external systems.
 
+## Optional System Prompts (Advanced Integration)
+
+MARM is compatible with systems that prompt users to log context after multi-turn exchanges (e.g., "Would you like to log this session?"). This behavior is not included in MARM itself but can be layered by developers or platform providers to enhance usability.
+
 </details>
 
 ---
 
+## Examples (Complete Usage)
 <details>
-  
-<summary><strong>Quick Reference Table (Click to Expand)</strong></summary>
+
+Below are end-to-end examples showing how to use MARM across different phases of an AI session.
+
+---
+
+### Start and Log a New Session
+
+```plaintext
+/start marm
+/log ResumeBuild
+```
+Begin any new topic or workflow with a clear session name.
+
+---
+
+### Add a Structured Log Entry
+
+```plaintext
+/log [2025-06-19 | Ryan | Drafted new summary | Awaiting review]
+```
+Track milestones, pivots, or decision points. Especially useful for long threads.
+
+---
+
+### Summarize Logs for Review or Export
+
+```plaintext
+/compile ResumeBuild --summary
+```
+
+Add filters if needed:
+
+```plaintext
+/compile ResumeBuild --summary --fields=Intent,Outcome
+```
+Use this to recap or prep for reseeding into a new thread.
+
+---
+
+### Reseed Context After a Break
+
+```plaintext
+(start new session)
+/start marm
+/log ResumeBuild
+(paste reseed block from last /compile)
+```
+This restores continuity between chats or platforms.
+
+---
+
+### Enable Accuracy Logic for Critical Replies
+
+```plaintext
+/contextual reply
+```
+Use this when accuracy, alignment, or traceability is critical.
+
+---
+
+### Show the Reasoning Behind a Response
+
+```plaintext
+/show reasoning
+```
+Displays the logic chain used in the last answer. Ideal for debugging or validation.
+
+---
+
+### Segment Topics Mid-Conversation
+
+```plaintext
+/log [2025-06-19 | Ryan | Switched from coin app to prompt testing]
+```
+Used to mark transitions or pivot points without ending the session.
+
+---
+
+### Guard Against Session Drift in Long Threads
+
+```plaintext
+/compile SessionName --summary
+```
+Repeat this every 8–10 turns or after major changes to reinforce context and support reseeding.
+
+</details>
+
+---
+
+## Quick Reference Table 
+<details>
 
 | Feature                            | Command Example                             |   
 |------------------------------------|---------------------------------------------|  
