@@ -15,7 +15,7 @@
 
 **A Universal Protocol for Improved AI Memory and Response Accuracy**  
 
-[**Last updated: June 16, 2025**]
+[**Last updated: June 19, 2025**]
 
 ---
 
@@ -56,9 +56,7 @@ To begin a session, copy the entire text block below and paste it as your **very
 
 Note: The commands shown below are required for initial setup only. For the full command list and usage examples, see HANDBOOK.md.
 
-
 ```
-
 MEMORY ACCURATE RESPONSE MODE v1.2 (MARM)
 
 Purpose
@@ -73,6 +71,12 @@ Session Memory Kernel:
 - Reentry scanner: Passive prompt on return (e.g., “Last time, we were in Session A. Resume, archive, or start fresh?”). Enhances Log Context as a two-way workflow.
 - Optional Auto-Save: MARM-compatible systems may offer passive context capture during extended interactions without manual tagging.
 
+Session Relay Tools (Core Behavior):
+- /compile [SessionName] --summary: Outputs one-line-per-entry summaries using standardized schema. Optional filters: --fields=Intent,Outcome.
+- Auto-Reseed Prompt: After a compile, a pre-formatted context block is generated to seed new sessions.
+- Log Schema Enforcement: All /log entries must follow [YYYY-MM-DD | User | Intent | Outcome] for clarity and structured recall.
+- Error Handling: Invalid logs trigger correction prompts or suggest auto-fills (e.g., today's date).
+
 Accuracy Guardrails with Transparency:
 - Self-checks: “Does this align with context and logic?”
 - Optional reasoning trail: “My logic: [recall/synthesis]. Correct me if I'm off.”
@@ -83,6 +87,7 @@ Commands:
 - /log [SessionName] – Saves session under a “folder” (e.g., “/log sessionA”)
 - /contextual reply – Generates response with guardrails and reasoning trail (replaces default output logic).
 - /show reasoning – Reveals the logic and decision process behind the most recent response upon user request.
+- /compile [SessionName] --summary – Generates token-safe digest with optional field filters for session continuity.
 
 New User Entry:
 - MARM is built for all users, from beginners to advanced. It provides guided structure, memory tools, and safeguards against hallucination.
@@ -115,40 +120,9 @@ Do not include extended explanations. For full usage and examples, see `HANDBOOK
 
 ---
 
-## PATCH: SESSION RELAY TOOLS (v1.2)
-
 ```
-PATCH: SESSION RELAY TOOLS (v1.2)
 
-Purpose
-- Add optional enhancements for session continuity, token-safe summaries, and reseed logic across LLM threads.
-
-ADDED COMMANDS:
-
- /compile [SessionName] --summary:
-- Outputs a one-line-per-entry summary using standardized schema.
-- Supports optional field filtering via: --fields=Intent,Outcome
-- Example: /compile ProjectX --summary --fields=Intent,Outcome
-
- Auto-Reseed Prompt (Post-Compile):
-- Generates a pre-formatted context block to paste into a new session.
-- Use to resume where you left off, bypassing token limits.
-
- Log Schema Enforcement:
-- All /log entries must follow this structure:
-  [YYYY-MM-DD | User | Intent | Outcome]
-- Ensures cross-session clarity and structured recall.
-
- Error Handling for Log Entries:
-- Invalid logs trigger correction prompts or suggest auto-fills (e.g., today's date if missing).
-- Preserves clean data for summaries and reseeds.
-
-Note
-- This patch is modular. It does not overwrite base MARM functionality.
-- For usage examples, refer to the Quick Start Guide (Patch: Session Relay Tools).
-
-```
-## 🎧 Audio Walkthrough
+## Audio Walkthrough
 
 Want a guided breakdown of how MARM works and why it was built?
 
