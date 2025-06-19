@@ -12,6 +12,18 @@
 
 ---
 
+## Short Introduction
+
+MARM is a universal protocol designed to improve memory continuity and response accuracy during AI conversations.  
+This handbook covers beginner guidance, command usage, and recovery strategies for when memory or accuracy begins to drift.
+
+---
+
+## What’s New in v1.2  
+Session relay tools (/compile, reseeding, and schema enforcement) are now core features of MARM, no more separate patch.
+
+---
+
 ## Why Manual Steps Matter
  <details>
   
@@ -31,24 +43,14 @@ These steps give you control over how memory is shaped, used, and recovered. MAR
 ---
 
 ## Platform Compatibility Note
-
+ <details>
+  
 MARM works across all major LLM platforms, including ChatGPT, Claude, Gemini, and Grok.
 
 It does **not** depend on native memory features. Instead, it uses manual logging, structured prompts, and reseeding to maintain context. This ensures consistency regardless of platform behavior or update cycles.
 
 As memory capabilities evolve, MARM remains stable by design-users always retain control.
-
----
-
-## Short Introduction
-
-MARM is a universal protocol designed to improve memory continuity and response accuracy during AI conversations.  
-This handbook covers beginner guidance, command usage, and recovery strategies for when memory or accuracy begins to drift.
-
----
-
-## What’s New in v1.2  
-Session relay tools (/compile, reseeding, and schema enforcement) are now core features of MARM, no more separate patch.
+</details>
 
 ---
 
@@ -210,6 +212,7 @@ Separate ideas or goals into labeled sessions so you don’t cross streams.
 MARM works best when **you guide the structure clearly**. Here’s what that looks like:
 
 ### Recommended Patterns
+
 
 - **Start clean**: Always begin with `/start marm`  
 - **Label sessions**: early using `/log SessionName`  
