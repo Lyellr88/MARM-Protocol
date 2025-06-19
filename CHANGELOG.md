@@ -118,3 +118,9 @@ All notable changes to the MARM Protocol will be documented in this file.
 
 - **All references to auto-save or passive memory:**  
   Removed speculative claims about automatic memory behavior to reinforce MARM’s manual foundation
+
+  ---
+
+  > Curious where MARM is heading?  
+> See the [ROADMAP.md](ROADMAP.md) to view upcoming features and goals.
+
