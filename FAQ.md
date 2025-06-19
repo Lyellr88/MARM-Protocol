@@ -86,3 +86,9 @@ A: Use `/log` to checkpoint your current session, then `/compile` to create a **
 **Q: Does MARM work with all AI platforms?**  
 A: Yes. MARM is **platform-agnostic**. with core tools like `/log` and `/compile` work consistently everywhere.
 </details>
+
+---
+
+> Curious where MARM is heading?  
+> See the [ROADMAP.md](ROADMAP.md) to view upcoming features and goals.
+
