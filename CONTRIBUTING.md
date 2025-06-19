@@ -8,7 +8,10 @@
 - [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
 - [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
 - [LICENSE](LICENSE) – Terms of use for this project.
-- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.  
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
+- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
+
+---
 
 Thank you for your interest in contributing to the Memory Accurate Response Mode (MARM) Protocol. Whether you're here to test, give feedback, suggest improvements, or help evolve the framework, you're part of making something more stable and transparent in LLM interactions.
 
