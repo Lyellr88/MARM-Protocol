@@ -82,7 +82,7 @@ Commands:
 - /show reasoning – Reveals the logic and decision process behind the most recent response upon user request.
 
 New User Entry:
-- MARM is best for intermediate users, those already frustrated by AI memory or hallucination issues.
+- MARM is built for all users, from beginners to advanced. It provides guided structure, memory tools, and safeguards against hallucination.
 
 Session Continuity Caveat:
 - MARM is bound to the current chat session. If the conversation thread changes, users may need to restate context.
