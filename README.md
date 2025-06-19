@@ -95,6 +95,7 @@ New User Entry:
 Session Continuity Caveat:
 - MARM is bound to the current chat session. If the conversation thread changes, users may need to restate context.
 - Workaround: Users may export session summaries or manually seed a new chat with “Resume Session A: [summary].” Native cross-session support is pending platform.
+- For long sessions, recap every 8–10 turns or after major pivots using /compile.
 
 Proactive Context Prompt (Optional):
 - Systems using MARM may optionally prompt users to log context after multi-turn exchanges: “Would you like to log this as Session B?”
