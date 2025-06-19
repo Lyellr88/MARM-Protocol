@@ -10,50 +10,79 @@
 - [LICENSE](LICENSE) – Terms of use for this project.
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
   
+## FAQ
+
 ---
 
-**Q: Does MARM claim to fix hallucinations or eliminate memory loss?**
-A: No. MARM is not a backend patch or model level override. It’s a user side protocol built from structured prompting, manual session logging, and reseed logic. While many users report fewer hallucinations and more stable responses, MARM does not claim to "fix" or "eliminate" these issues. Only to help mitigate their impact through guided structure and intentional user interaction.
+### 🔹 Core Concepts
+<details>
+
+**Q: Why does MARM rely on manual steps and user-controlled commands?**  
+A: MARM is designed for **transparency**, **control**, and **cross-platform stability**. Manual commands like `/log` and `/compile` ensure users decide **what gets remembered and when**. This avoids hidden automation, reduces drift, and makes MARM consistent—even when AI memory features vary or fail.
+
+**Q: Does MARM claim to fix hallucinations or eliminate memory loss?**  
+A: No. MARM is **not a backend patch** or model-level override. It’s a **user-side protocol** built from structured prompting, manual session logging, and reseed logic. While many users report fewer hallucinations and more stable responses, MARM does **not claim to "fix" or "eliminate"** these issues—only to help **mitigate** their impact through guided structure and intentional interaction.
+
+**Q: What’s new in MARM v1.2?**  
+A: MARM v1.2 promotes session relay tools—`/compile`, **reseeding**, and **structured log enforcement**—as core protocol features. These tools are now standard for managing session continuity.
+</details>
+
+---
+
+### 🔹 Starting & Managing Sessions
+<details>
 
 **Q: How do I start a new session with MARM?**  
-A: Use the `/start marm` command to activate memory and accuracy layers for your session.
+A: Use the `/start marm` command to activate **memory and accuracy layers** for your session.
 
 **Q: How do I name or rename a session?**  
-A: Save your session with `/log [SessionName]` (e.g., `/log SessionA`). If you want to rename, just use the command again with a new name.
+A: Use `/log [SessionName]` (e.g., `/log SessionA`). To rename, just repeat the command with a new name.
 
 **Q: What happens if I don’t name a session?**  
-A: If you don’t specify a name, MARM will use a default session name (e.g., “Session”).
-
-**Q: How do I resume or continue a previous session?**  
-A: Since session memory doesn’t persist across chats, you’ll need to manually export a summary and paste it into a new session using `/start marm` and `/log [SessionName]`.
-
-**Q: Can I see the reasoning behind a response?**  
-A: Yes! Use the `/show reasoning` command after any response to reveal the logic and decision process behind it.
+A: MARM will assign a **default session name** (e.g., “Session”) until you specify one.
 
 **Q: What if I forget to log context or name a session?**  
-A: MARM will continue using the default session until you specify otherwise. You can log or rename at any time with `/log [SessionName]`.
+A: MARM continues using the default session. You can log or rename at **any time** with `/log [SessionName]`.
 
-**Q: Does MARM work with all AI platforms?**  
-A: MARM’s core features are platform-agnostic, but advanced features like auto-save or persistent memory may depend on the capabilities of the underlying AI tool.
-
-**Q: What should I do if the session gets too long or starts to lose context?**  
-A: Summarize your session and use `/log [SessionName]` to save your place. For best results, recap or reseed context in long or complex conversations.
+**Q: How often or when should I log context using the `/log` command?**  
+A: Use `/log` at the start of any **new topic, project, or session**. Log again after **major decisions**, **breakthroughs**, or pivots. For long threads, logging every few steps improves clarity and makes summaries more effective.
+</details>
 
 ---
 
-## Patch Update Questions (v1.2 – Session Relay Tools)
+### 🔹 Resuming & Reusing Sessions
+<details>
 
-**Q: What does the v1.2 patch actually add?**  
-A: The patch introduces optional tools for managing long-form sessions, including the /compile command, automatic reseed prompts, schema enforcement for logs, and basic error correction for malformed entries.
+**Q: How do I resume or continue a previous session?**  
+A: Because session memory doesn’t persist across chats, use `/compile` to summarize your logs. Then paste the **reseed block** into a new session alongside `/start marm` and `/log`.
 
-**Q: Do I need to use the patch to run MARM?**  
-A: No. The patch is fully modular. MARM functions as intended without it. The patch simply enhances continuity and recall across session resets or token limits.
+**Q: What is a reseed prompt?**  
+A: After running `/compile`, MARM generates a **paste-ready context block**. Use it to restore state in a new chat or LLM session.
+</details>
 
-**Q: What does /compile actually do?**  
-A: It summarizes your /log entries into a one-line-per-entry digest. You can optionally filter by field (e.g., --fields=Intent,Outcome). It’s ideal for reseeding sessions or exporting history.
+---
 
-**Q: What is the reseed prompt?**    
-A: After running /compile, MARM generates a paste-ready context block. You can drop this into a new chat or LLM thread to restore state quickly.
+### 🔹 Commands & Functionality
+<details>
+  
+**Q: What does the `/compile` command do?**  
+A: It creates a **one-line-per-entry digest** of your session logs. You can filter output using `--fields=Intent,Outcome`. This helps **recap session history** and supports reseeding.
 
-**Q: What happens if I mess up a /log entry?**  
-A: MARM checks for format issues automatically. If it detects missing or malformed fields, it will prompt you to revise or suggest auto-filled values (like today’s date).
+**Q: What if I mess up a `/log` entry?**  
+A: MARM automatically **checks formatting**. If a field is missing (like today’s date) or malformed, it will **prompt you to fix it** or auto-suggest corrections.
+
+**Q: Can I see the reasoning behind a response?**  
+A: Yes. Use `/show reasoning` to reveal the AI’s **logic chain** behind its most recent answer.
+</details>
+  
+---
+
+### 🔹 Troubleshooting & Platform Support
+<details>
+  
+**Q: What should I do if the session gets too long or starts to lose context?**  
+A: Use `/log` to checkpoint your current session, then `/compile` to create a **summary**. This keeps your place and reduces drift when continuing later.
+
+**Q: Does MARM work with all AI platforms?**  
+A: Yes. MARM is **platform-agnostic**. Advanced features like auto-save depend on the platform, but core tools like `/log` and `/compile` work consistently everywhere.
+</details>
