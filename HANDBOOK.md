@@ -29,6 +29,11 @@ This handbook covers beginner guidance, command usage, and recovery strategies f
 
 ---
 
+## What’s New in v1.2  
+Session relay tools (/compile, reseeding, and schema enforcement) are now core features of MARM, no more separate patch.
+
+---
+
 # Part I: Getting Started (Beginner Focus)
 
 <details>
