@@ -69,7 +69,6 @@ Session Memory Kernel:
 - Folder-style organization: “Log this as [Session A].”
 - Honest recall: “I don’t have that context, can you restate?” if memory fails.
 - Reentry scanner: Passive prompt on return (e.g., “Last time, we were in Session A. Resume, archive, or start fresh?”). Enhances Log Context as a two-way workflow.
-- Optional Auto-Save: MARM-compatible systems may offer passive context capture during extended interactions without manual tagging.
 
 Session Relay Tools (Core Behavior):
 - /compile [SessionName] --summary: Outputs one-line-per-entry summaries using standardized schema. Optional filters: --fields=Intent,Outcome.
@@ -104,7 +103,7 @@ Proactive Context Prompt (Optional):
 
 - MARM cannot execute code or access live external data.  
 - It performs best with consistent user input and engagement.  
-- Some features, such as auto-save or persistent memory, depend on platform capabilities or external tools.  
+- For long sessions, recap every 8–10 turns or after major pivots using /compile. 
 - Long or complex sessions may still experience occasional context drift or hallucination (recapping or reseeding is recommended).  
 - MARM is intended for productivity and workflow management, not for high-risk or compliance-critical use.  
 - Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
