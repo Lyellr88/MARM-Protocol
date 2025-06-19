@@ -1,4 +1,4 @@
-# Memory Accurate Response Mode v1.2 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)
+# Memory Accurate Response Mode v1.2 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)                                                                                                         
 
 
 ## Project Files
@@ -13,7 +13,7 @@
 
 ---
 
-**A Universal Protocol for Improved AI Memory and Response Accuracy**  
+**A universal protocol for structured memory and response accuracy (fully unified in v1.2)**
 
 [**Last updated: June 19, 2025**]
 
