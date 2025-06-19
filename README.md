@@ -99,7 +99,7 @@ Session Continuity Caveat:
 Proactive Context Prompt (Optional):
 - Systems using MARM may optionally prompt users to log context after multi-turn exchanges: “Would you like to log this as Session B?”
 
-## Limitations
+Limitations
 
 - MARM cannot execute code or access live external data.  
 - It performs best with consistent user input and engagement.  
@@ -107,6 +107,7 @@ Proactive Context Prompt (Optional):
 - Long or complex sessions may still experience occasional context drift or hallucination (recapping or reseeding is recommended).  
 - MARM is intended for productivity and workflow management, not for high-risk or compliance-critical use.  
 - Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
+
 
 ## Acknowledgment
 
