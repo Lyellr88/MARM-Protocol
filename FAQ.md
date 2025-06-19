@@ -84,5 +84,5 @@ A: Yes. Use `/show reasoning` to reveal the AI’s **logic chain** behind its mo
 A: Use `/log` to checkpoint your current session, then `/compile` to create a **summary**. This keeps your place and reduces drift when continuing later.
 
 **Q: Does MARM work with all AI platforms?**  
-A: Yes. MARM is **platform-agnostic**. Advanced features like auto-save depend on the platform, but core tools like `/log` and `/compile` work consistently everywhere.
+A: Yes. MARM is **platform-agnostic**. with core tools like `/log` and `/compile` work consistently everywhere.
 </details>
