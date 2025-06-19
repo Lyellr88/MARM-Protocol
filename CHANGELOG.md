@@ -14,61 +14,72 @@ All notable changes to the MARM Protocol will be documented in this file.
 
 ---
 
-## v1.2 – 2025-06-13
+## v1.2 – 2025-06-19
 
 ---
 
 ### Added
-- **Patch: Session Relay Tools:**  
-  Includes `/compile` command, automatic reseed prompts, schema enforcement for logs, and basic error correction.
-- **Quick Start Guide (Patch Tools):**  
-  Drop-down HTG covering logging, compiling, reseeding, and error handling for long-form sessions.
+- **Session Continuity Tools:**  
+  Core support for multi-session workflows, including:
+  - `/compile` command to generate one-line-per-entry summaries  
+  - Automatic reseed block generation for restoring context in new threads  
+  - Log schema enforcement for structured logging: `[YYYY-MM-DD | User | Intent | Outcome]`  
+  - Error handling for malformed log entries, including date autofill
 - **/show reasoning command:**  
-  Allows users to request logic and decision trail on demand.
-- **Command Reference (Collapsible):**  
-  New section lists core and advanced commands with brief descriptions.
+  Reveals the AI’s logic or decision path for its most recent response.
 - **HANDBOOK.md:**  
-  Unified command guide and how-to reference with beginner tips, advanced usage, and system behaviors. Replaces the need for separate command list and how-to files.
-- **Comprehensive FAQ section:**  
-  Covers session lifecycle, naming, resuming, reasoning, platform compatibility, and best practices.
+  Full command reference and usage guide including beginner tips, advanced workflows, examples, and platform compatibility behavior.
+- **Collapsible Command Reference:**  
+  Added collapsible tables for command overviews.
+- **Comprehensive FAQ.md:**  
+  Topic-grouped questions covering naming, resuming, reseeding, command logic, platform compatibility, and manual usage philosophy.
 - **Expanded Limitations section:**  
-  Clarifies session boundaries, platform dependencies, intended use cases, user responsibilities, and transparency priorities.
-- **Standardized slash-style command syntax:**  
-  All commands now use slash-style syntax for clarity and ease of use:
-  - `/start marm`
-  - `/log [SessionName]`
-  - `/guarded reply`
-  - `/show reasoning`
+  Clarifies session boundaries, memory constraints, and intended use cases.
+- **Slash-style command syntax standardization:**  
+  All user-facing commands now follow consistent formatting:
+  - `/start marm`  
+  - `/log [SessionName]`  
+  - `/guarded reply`  
+  - `/show reasoning`  
   - `/compile [SessionName] --summary`
-- **Clickable contact links:**  
-  Updated contact information with clickable links for Reddit and Fiverr profiles.
-- **CONTRIBUTING.md:**  
-  Placeholder for community/tester recognition via dedicated contributor section.
+- **AI-narrated walkthrough:**  
+  Embedded 15-minute audio guide explaining MARM’s core features and logic.
 - **User Feedback section:**  
-  Collapsible section added to `README.md` showing real-world use cases and screenshots of MARM in practice.
+  Collapsible section in README.md with real-world highlights and screenshots.
 - **Featured on Google badge:**  
-  Added to `README.md` header to highlight external visibility and recognition.
-- **Created multi-tier Discussions and updates section in Contributing & Joining the Conversation**
+  Added to README.md header to highlight visibility and adoption.
+- **CONTRIBUTING.md and Recognition Framework:**  
+  Added structure for listing contributors, testers, and discussion participants.
+- **Multi-tier discussion structure:**  
+  Created layered discussion entry points via GitHub Discussions and Contributing paths.
 
 ---
 
 ### Changed
-- **Command descriptions and documentation:**  
-  Updated to reflect new slash-command syntax.
-- **README.md:**  
-  Removed in-file command list and How-To Guide. Redirects users to the dedicated `HANDBOOK.md` for unified reference.
-- **Protocol formatting:**  
-  Adjusted line spacing, hierarchy, and section dividers for improved readability.
+- **Unified session tools as default protocol behavior**  
+  Session tools such as `/compile`, reseed blocks, and log enforcement are now core—not optional.
+- **README.md structure updates:**  
+  - Moved Quick Start above Initiation Prompt for clarity  
+  - Removed “Core Features” section to avoid duplication with HANDBOOK.md  
+  - Clarified expected AI response in the Acknowledgment block
+- **HANDBOOK.md structure updates:**  
+  - Converted Part I, II, and III into collapsible sections  
+  - Added “What’s New in v1.2” summary  
+- **FAQ.md overhaul:**  
+  - Grouped questions by category (Core Concepts, Sessions, Commands, Platform Support)  
+  - Added new entries on logging frequency and manual command design  
+  - Converted into collapsible sections for clarity  
+- **Protocol one-liner updated:**  
+  Reflects v1.2 as a fully unified, standalone framework for structured memory and accuracy
 
 ---
 
 ### Removed
+- **Legacy modular/optional language:**  
+  Removed all mentions of patches, modular tools, and separate add-on sections
+- **Embedded command list and in-file How-To from README.md:**  
+  Moved to HANDBOOK.md for maintainability and clarity
+- **Internal anchor links and "Back to top" navigation:**  
+  Removed due to GitHub’s behavior with collapsible content
 - **Confidence flag/scoring feature:**  
-  Removed from the protocol and documentation to reduce clutter and improve focus.
-- **Embedded command list and HTG from README.md:**  
-  Consolidated into `HANDBOOK.md` for better usability and maintenance.
-
----
-
-*For a full history of changes, see the [commit log]*
-
+  Removed from protocol outputs to reduce clutter and simplify expected AI response
