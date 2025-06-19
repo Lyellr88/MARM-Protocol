@@ -41,13 +41,3 @@ Reduce redundant AI repetition (“echoes”) in conversation while preserving u
 **Why It Matters:**  
 Helps AI systems stay context-aware, efficient, and user-guided—especially during long, repetitive conversations or assistant workflows. REP v2 builds on real-world pain points in LLM use by offering a repeatable suppression protocol with flexible deployment.
 
----
-
-### REP-lite  
-*Lightweight version for mobile, embedded, or edge AI contexts*
-
-- Short (1–2 turn) context window  
-- Basic keyword suppression and override triggers  
-- Minimal logging with basic suppression tags  
-- No semantic matching or voice UI support  
-- Designed for low-resource systems or lightweight deployments
