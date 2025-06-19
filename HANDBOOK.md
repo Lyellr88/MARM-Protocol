@@ -1,5 +1,3 @@
-<a name="marm-handbook"></a>
-
 # MARM Handbook
 
 ## Project Files
@@ -13,14 +11,6 @@
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.  
 
 ---
-
-## Handbook Index
-
-- [Part I - Beginner Focus](main#part-i-getting-started-beginner-focus)
-- [Part II – Intermediate Usage](main#part-ii-intermediate-usage)
-- [Part III – Advanced Usage & Compatibility](main#part-iii-advanced-usage--compatibility)
-
----Advanced  & 
 
 ## Platform Compatibility Note
 
@@ -38,8 +28,6 @@ MARM is a universal protocol designed to improve memory continuity and response 
 This handbook covers beginner guidance, command usage, and recovery strategies for when memory or accuracy begins to drift.
 
 ---
-
-<a name="part-i-getting-started-beginner-focus"></a>
 
 # Part I: Getting Started (Beginner Focus)
 
@@ -162,8 +150,6 @@ That’s how MARM picks up right where you left off.
 
 ---
 
-<a name="part-ii-intermediate-usage"></a>
-
 # Part II: Intermediate Usage
 
 <details>
@@ -241,8 +227,6 @@ It’s not about complexity, it’s about reliability. MARM is predictable **bec
 </details>
 
 ---
-
-<a name="part-iii-advanced-usage--compatibility"></a>
 
 # Part III: Advanced Usage & Compatibility
 
@@ -354,7 +338,3 @@ Part III is about control at scale. By using MARM’s structural tools deliberat
 | Platform behavior differences      | *(n/a)*                                     | 
 
 </details>
-
----
-
-[Back to top](main#marm-handbook)  
