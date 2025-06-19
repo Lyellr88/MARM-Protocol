@@ -8,7 +8,10 @@
 - [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
 - [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
 - [LICENSE](LICENSE) – Terms of use for this project.
-- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.  
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
+- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
+
+---
 
 The **MARM Protocol** is the result of synthesizing insights from a wide range of discussions and feedback found across online communities, with a particular focus on Reddit threads where users shared their real-world experiences and frustrations with large language models. This community-driven approach ensures that **MARM** directly addresses the most pressing needs and challenges faced by today’s LLM users, from maintaining conversational continuity to reducing errors and hallucinations.
 
