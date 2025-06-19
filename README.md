@@ -29,8 +29,10 @@ MARM is designed to help you:
 
 ---
 
-## Looking for Commands or Examples?
-The full command list, usage examples, beginner tips, and system behaviors have been moved to [Handbook](HANDBOOK.md) for easier access and maintenance.
+## Troubleshooting MARM? Start Here
+
+ Using MARM but still getting drift, flat answers, or forgotten context?  
+ You’re likely missing key structure. See the [HANDBOOK.md](HANDBOOK.md) for command strategy, recovery examples, and long-session control.
 
 ---
 
