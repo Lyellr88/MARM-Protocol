@@ -7,8 +7,9 @@
 - [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
 - [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
 - [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
-- [LICENSE](LICENSE) – Terms of use for this project.  
-- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.  
+- [LICENSE](LICENSE) – Terms of use for this project.
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
+- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 
 All notable changes to the MARM Protocol will be documented in this file.
 
