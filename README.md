@@ -19,16 +19,6 @@
 
 ---
 
-## Quick Start
-
-For those who want to get started immediately:
-
-- **Copy** the entire text block under the "Full Initiation Prompt" section below.
-- **Paste** it as your very first message to a new AI chat.
-- **Follow** the instructions the AI gives you in its confirmation response.
-
----
-
 ## Use Cases
 
 MARM is designed to help you:
@@ -50,14 +40,13 @@ Are you tired of your AI forgetting what you discussed just a few messages ago? 
 
 ---
 
-## Core Features
+## Quick Start
 
-MARM gives the AI a strict job description with two core features:
+For those who want to get started immediately:
 
-- **Session Memory Kernel:**  
-  Actively tracks user inputs, intent, and history. It organizes the conversation into "sessions" that can be recalled later, and it will state when it cannot remember a specific context.
-- **Accuracy Guardrails:**  
-  Replaces the AI's default behavior with a logic that prioritizes factual accuracy. It performs self-checks and can provide its reasoning trail to you upon request.
+- **Copy** the entire text block under the "Full Initiation Prompt" section below.
+- **Paste** it as your very first message to a new AI chat.
+- **Follow** the instructions the AI gives you in its confirmation response.
 
 ---
 
@@ -150,6 +139,20 @@ Note
 - For usage examples, refer to the Quick Start Guide (Patch: Session Relay Tools).
 
 ```
+## 🎧 Audio Walkthrough
+
+Want a guided breakdown of how MARM works and why it was built?
+
+**Listen to the 15-minute AI-narrated** [Download MARM Walkthrough (MP3, 6.8 MB)](media/MARM_Audio_Walkthrough_v1.mp3.mp3)     
+This podcast-style breakdown was generated using NotebookLM, based on my original protocol documentation and design notes. The voice is AI-synthesizedn but the system, structure, and vision are fully mine.
+
+It covers:
+- What MARM is
+- Why it exists
+- How it assists with managing session drift
+- The core logic behind the slash-command framework
+
+> Designed for anyone curious about LLM session control, prompt architecture, or transparent protocol workflows.
 
 ---
 
@@ -172,7 +175,9 @@ For feedback or support, contact me on [My Reddit Profile](https://www.reddit.co
 
 ## Credits
 
-This project was developed independently by me. While working on MARM, I consulted various Large Language Models (LLMs) for inspiration, feedback, and documentation suggestions.
+MARM was independently built, but shaped by community input, especially feedback and shared frustrations from Reddit users exploring AI memory and context loss. Key features, including the v1.2 patch, were inspired by real user needs and suggestions. **Special thanks to the Reddit prompt engineering community.**
+
+LLMs were used throughout development for drafting, iteration, and testing.
 
 ---
 
