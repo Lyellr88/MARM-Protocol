@@ -153,7 +153,7 @@ Note
 
 ---
 
-## Contributing & Joining the Conversation
+## Join the Conversation
 
 Whether you’re testing, building, or exploring. Your input matters.
 
