@@ -129,7 +129,7 @@ Do not include extended explanations. For full usage and examples, see `HANDBOOK
 
 Want a guided breakdown of how MARM works and why it was built?
 
-**Listen to the 15-minute AI-narrated** [Download MARM Walkthrough (MP3, 8.6 MB)](media/media_MARM_Audio_Walkthrough.mp3)     
+**Listen to the 15-minute AI-narrated** [Download MARM Walkthrough (MP3, 3.3 MB)](media/media_MARM_Audio_Walkthrough.mp3)     
 This podcast-style breakdown was generated using NotebookLM, based on my original protocol documentation and design notes. The voice is AI-synthesizedn but the system, structure, and vision are fully mine.
 
 It covers:
