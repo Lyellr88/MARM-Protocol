@@ -61,7 +61,7 @@ Provided critical technical feedback on MARM’s limitations within non-API chat
 
 ---
 
-### u/angry_cactus 
+### u/Angry_cactus 
 [Reddit Thread – June 11, 2025](https://www.reddit.com/r/PromptEngineering/comments/1l7jtpn/i_analyzed_150_real_ai_complaints_then_built_a/)
 
 Tested MARM across models and validated its performance in Gemini Pro. Provided feedback on LLM pseudo-memory behaviors, reply weighting, and the trade-offs between short-form prompts and structured memory. Their observations reinforced the session-based design choice and influenced future patch direction focused on continuity fail safes and compression-aware prompting.
