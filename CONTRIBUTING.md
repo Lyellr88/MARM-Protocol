@@ -34,34 +34,34 @@ If you have Python, JSON, or LLM toolchain experience and want to help convert M
 
 ---
 
-## Current Contributors
+## Current Contributors (Reddit Users)
 
 The following users directly shaped the protocol through feedback, ideas, or early support:
 
 ---
 
-### u/CalamityThorazine & CrazyCrayfish  
+### u/CalamityThorazine & u/CrazyCrayfish  
 [Reddit Thread – June 9, 2025](https://www.reddit.com/r/PromptEngineering/comments/1l7jtpn/i_analyzed_150_real_ai_complaints_then_built_a/)
 
 Encouraged the move from temporary hosting (e.g., Google Drive) to GitHub, improving accessibility and trust. Their early interest helped validate public release and shaped the decision to publish the protocol in a permanent, versioned repository.
 
 ---
 
-### Example Contributor  
+### Reddit Contributor  
 [Reddit Thread – June 10, 2025](https://www.reddit.com/r/PromptEngineering/comments/1l7jtpn/i_analyzed_150_real_ai_complaints_then_built_a/)
 
 Provided early-stage critique and refinement feedback on memory simulation, session labeling, and user experience logic. Influenced the removal of the confidence scoring system, the creation of the `/show reasoning` command, and improvements to session lifecycle documentation.
 
 ---
 
-### Example Contributor  
+### u/Deminimis_opsec
 [Reddit Thread – June 10, 2025](https://www.reddit.com/r/PromptEngineering/comments/1l7jtpn/i_analyzed_150_real_ai_complaints_then_built_a/)
 
 Provided critical technical feedback on MARM’s limitations within non-API chat environments. Helped clarify the distinction between frontend prompt-layer protocols and backend memory architectures. Their input reinforced the importance of transparency around session scope, non-persistent memory, and the lack of backend execution in typical LLM interfaces.
 
 ---
 
-### Example Contributor  
+### u/angry_cactus 
 [Reddit Thread – June 11, 2025](https://www.reddit.com/r/PromptEngineering/comments/1l7jtpn/i_analyzed_150_real_ai_complaints_then_built_a/)
 
 Tested MARM across models and validated its performance in Gemini Pro. Provided feedback on LLM pseudo-memory behaviors, reply weighting, and the trade-offs between short-form prompts and structured memory. Their observations reinforced the session-based design choice and influenced future patch direction focused on continuity fail safes and compression-aware prompting.
