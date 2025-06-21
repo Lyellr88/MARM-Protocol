@@ -22,7 +22,7 @@ If you found this through Reddit or just stumbled in, I’m currently looking fo
 - **Someone with social media instincts** who can help get this in front of the right audiences  
   (no growth hacks, just signal and smart visibility)
 
-If you're either of those people or know someone who is. Please feel free to open an issue, leave a comment, or DM me directly. Would love to connect.
+If you're either of those people or know someone who is. Please feel free to open an issue, leave a comment, or DM me directly.
 
  [My Reddit Profile](https://www.reddit.com/user/Alone-Biscotti6145)
 
