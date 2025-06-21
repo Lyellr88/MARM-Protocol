@@ -33,6 +33,7 @@
 
 ---
 ## Related Projects (In Development)
+The following is a separate, standalone protocol also in development by the MARM author. It is designed to work alongside or independently of MARM to solve a different, but related, challenge in LLM communication.****
 
 ### Repetition Echo Protocol (REP) v2  
 *Practical loop-guard for multi-LLM and AI chat systems*
