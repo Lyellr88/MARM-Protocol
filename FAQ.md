@@ -18,14 +18,14 @@
 ### 🔹 Core Concepts
 <details>
 
+**Q: What’s new in MARM v1.2?**  
+A: MARM v1.2 promotes session relay tools `/compile`, **reseeding**, and **structured log enforcement* as core protocol features. These tools are now standard for managing session continuity.
+
 **Q: Why does MARM rely on manual steps and user-controlled commands?**  
-A: MARM is designed for **transparency**, **control**, and **cross-platform stability**. Manual commands like `/log` and `/compile` ensure users decide **what gets remembered and when**. This avoids hidden automation, reduces drift, and makes MARM consistent—even when AI memory features vary or fail.
+A: MARM is designed for **transparency**, **control**, and **cross-platform stability**. Manual commands like `/log` and `/compile` ensure users decide **what gets remembered and when**. This avoids hidden automation, reduces drift, and makes MARM consistent even when AI memory features vary or fail.
 
 **Q: Does MARM claim to fix hallucinations or eliminate memory loss?**  
-A: No. MARM is **not a backend patch** or model-level override. It’s a **user-side protocol** built from structured prompting, manual session logging, and reseed logic. While many users report fewer hallucinations and more stable responses, MARM does **not claim to "fix" or "eliminate"** these issues—only to help **mitigate** their impact through guided structure and intentional interaction.
-
-**Q: What’s new in MARM v1.2?**  
-A: MARM v1.2 promotes session relay tools—`/compile`, **reseeding**, and **structured log enforcement**—as core protocol features. These tools are now standard for managing session continuity.
+A: No. MARM is **not a backend patch** or model-level override. It’s a **user-side protocol** built from structured prompting, manual session logging, and reseed logic. While many users report fewer hallucinations and more stable responses, MARM does **not claim to "fix" or "eliminate"** these issues only to help **mitigate** their impact through guided structure and intentional interaction.
 </details>
 
 ---
@@ -34,7 +34,7 @@ A: MARM v1.2 promotes session relay tools—`/compile`, **reseeding**, and **str
 <details>
 
 **Q: How do I start a new session with MARM?**  
-A: Use the `/start marm` command to activate **memory and accuracy layers** for your session.
+A: Use the `/start marm` command to activate **memory and accuracy layers** for your session.  For more details, see the [Handbook.](HANDBOOK.md) 
 
 **Q: How do I name or rename a session?**  
 A: Use `/log [SessionName]` (e.g., `/log SessionA`). To rename, just repeat the command with a new name.
