@@ -26,7 +26,6 @@ Session relay tools (/compile, reseeding, and schema enforcement) are now core f
 ---
 
 ## Why Manual Steps Matter
- <details>
   
 MARM is built around user intent and transparency. It avoids hidden automation to ensure that every action is visible, reviewable, and user-directed.
 
@@ -39,7 +38,6 @@ Here’s what the manual steps do—and why they matter:
 - **`/start marm`** – Activates all of the above. This sets MARM’s behavior rules in motion from message one.
 
 These steps give you control over how memory is shaped, used, and recovered. MARM performs best when used deliberately.
- </details>
 
 ---
 
