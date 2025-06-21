@@ -18,6 +18,8 @@ Thank you for your interest in contributing to the Memory Accurate Response Mode
 ---
 
 ## How to Contribute
+<details>
+<summary>Click here to see how to Test, Suggest and Improve</summary>
 
 ### Test the Protocol
 Run MARM through your own workflows using `/log`, `/compile`, and reseed blocks.  
@@ -31,6 +33,7 @@ You can submit typo fixes, restructure guides, or help clarify edge-case behavio
 
 ### Developer Support (Optional)
 If you have Python, JSON, or LLM toolchain experience and want to help convert MARM into a working tool or plugin, reach out. I'm looking to move from protocol to product in future phases.
+</details>
 
 ---
 
@@ -38,8 +41,9 @@ If you have Python, JSON, or LLM toolchain experience and want to help convert M
 
 The following users directly shaped the protocol through feedback, ideas, or early support:
 
----
-
+<details>
+<summary>Click here to see Contributions</summary>
+ 
 ### u/CalamityThorazine & u/CrazyCrayfish  
 [Reddit Thread – June 9, 2025](https://www.reddit.com/r/PromptEngineering/comments/1l7jtpn/i_analyzed_150_real_ai_complaints_then_built_a/)
 
@@ -73,6 +77,7 @@ Private DM – June 12, 2025
 (Referenced in [README.md](README.md))
 
 Sparked the architectural concept behind MARM’s “Session Relay Tools” patch by proposing a layered, context-managed memory model. Offered collaboration, stress-testing interest, and early insight into multi-agent recall, which helped validate MARM’s patch direction. Credited for contributing to the prompt-layer vision and user-side continuity design.
+</details>
 
 ---
 
