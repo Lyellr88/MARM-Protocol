@@ -352,8 +352,11 @@ These templates can be stored outside MARM and called in via `/log` or `/compile
 ---
 
 ## Optional System Prompts (Advanced Integration)
+<details>
+<summary>Click to expand</summary>
 
 MARM is compatible with systems that prompt users to log context after multi-turn exchanges (e.g., "Would you like to log this session?"). This behavior is not included in MARM itself but can be layered by developers or platform providers to enhance usability.
+</details>
 
 ---
 
