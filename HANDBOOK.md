@@ -46,7 +46,6 @@ Session relay tools (/compile, reseeding, and schema enforcement) are now core f
 * **Reference**
     * [Examples (Complete Usage)](#examples-complete-usage)
     * [Quick Reference Table](#quick-reference-table)
-
 ---
 
 ## Why Manual Steps Matter
@@ -363,6 +362,7 @@ MARM is compatible with systems that prompt users to log context after multi-tur
 ---
 
 ## Examples (Complete Usage)
+
 <details>
 <summary>Click to expand</summary>
 
@@ -372,6 +372,94 @@ Below are end-to-end examples showing how to use MARM across different phases of
 
 ### Start and Log a New Session
 
-```plaintext
-/start marm
+/start marm  
 /log ResumeBuild
+
+Begin any new topic or workflow with a clear session name.
+
+---
+
+### Add a Structured Log Entry
+
+/log [2025-06-19 | Ryan | Drafted new summary | Awaiting review]
+
+Track milestones, pivots, or decision points. Especially useful for long threads.
+
+---
+
+### Summarize Logs for Review or Export
+
+/compile ResumeBuild --summary
+
+Add filters if needed:
+
+/compile ResumeBuild --summary --fields=Intent,Outcome
+
+Use this to recap or prep for reseeding into a new thread.
+
+---
+
+### Reseed Context After a Break
+
+(start new session)  
+/start marm  
+/log ResumeBuild  
+(paste reseed block from last /compile)
+
+This restores continuity between chats or platforms.
+
+---
+
+### Enable Accuracy Logic for Critical Replies
+
+/contextual reply
+
+Use this when accuracy, alignment, or traceability is critical.
+
+---
+
+### Show the Reasoning Behind a Response
+
+/show reasoning
+
+Displays the logic chain used in the last answer. Ideal for debugging or validation.
+
+---
+
+### Segment Topics Mid-Conversation
+
+/log [2025-06-19 | Ryan | Switched from coin app to prompt testing]
+
+Used to mark transitions or pivot points without ending the session.
+
+---
+
+### Guard Against Session Drift in Long Threads
+
+/compile SessionName --summary
+
+Repeat this every 8–10 turns or after major changes to reinforce context and support reseeding.
+
+</details>
+
+---
+
+## Quick Reference Table
+
+<details>
+<summary>Click to expand</summary>
+
+| Feature                            | Command Example                                |
+|------------------------------------|-------------------------------------------------|
+| Start MARM                         | /start marm                                    |
+| Log a session (basic)              | /log SessionA                                  |
+| Log a session (detailed)           | /log [YYYY-MM-DD \| User \| Intent \| Outcome]  |
+| Compile summary                    | /compile ProjectX --summary                    |
+| Compile with field filters         | --fields=Intent,Outcome                        |
+| Guarded reply                      | /guarded reply                                 |
+| Show reasoning                     | /show reasoning                                |
+| Reseed context                     | *(auto after compile)*                         |
+| Session export & reuse             | *(reseeding from compile output)*              |
+| Platform behavior differences      | *(n/a)*                                        |
+
+</details>
