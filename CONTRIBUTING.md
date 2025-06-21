@@ -76,4 +76,7 @@ Sparked the architectural concept behind MARM’s “Session Relay Tools” patc
 
 ---
 
-If you’d like to be credited for your feedback or testing, reach out via GitHub, Reddit, or [Fiverr contact link in README](README.md).
+## Contact Me
+
+For feedback or support, contact me on [My Reddit Profile](https://www.reddit.com/user/Alone-Biscotti6145)
+ or [My Fiverr Profile](https://www.fiverr.com/s/YRgGkaa)
