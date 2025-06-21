@@ -40,9 +40,6 @@ If you have Python, JSON, or LLM toolchain experience and want to help convert M
 ## Current Contributors (Reddit Users)
 
 The following users directly shaped the protocol through feedback, ideas, or early support:
-
-<details>
-<summary>Click here to see Contributions</summary>
  
 ### u/CalamityThorazine & u/CrazyCrayfish  
 [Reddit Thread – June 9, 2025](https://www.reddit.com/r/PromptEngineering/comments/1l7jtpn/i_analyzed_150_real_ai_complaints_then_built_a/)
@@ -77,7 +74,6 @@ Private DM – June 12, 2025
 (Referenced in [README.md](README.md))
 
 Sparked the architectural concept behind MARM’s “Session Relay Tools” patch by proposing a layered, context-managed memory model. Offered collaboration, stress-testing interest, and early insight into multi-agent recall, which helped validate MARM’s patch direction. Credited for contributing to the prompt-layer vision and user-side continuity design.
-</details>
 
 ---
 
