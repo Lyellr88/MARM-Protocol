@@ -77,7 +77,14 @@ Sparked the architectural concept behind MARM’s “Session Relay Tools” patc
 
 ---
 
-## Contact Me
+## Contact Me 
 
-For feedback or support, contact me on [My Reddit Profile](https://www.reddit.com/user/Alone-Biscotti6145)
- or [My Fiverr Profile](https://www.fiverr.com/s/YRgGkaa)
+For feedback, support, or other inquiries, you can reach me here:  
+[My Reddit Profile](https://www.reddit.com/user/Alone-Biscotti6145)  
+[My Fiverr Profile](https://www.fiverr.com/s/YRgGkaa)  
+
+---
+
+## Credits  
+
+MARM was independently built, but shaped by community input, especially feedback and shared frustrations from Reddit users exploring AI memory and context loss. Key features, including the v1.2 patch, were inspired by real user needs and suggestions. Special thanks to the Reddit prompt engineering community. Large Language Models (LLMs) were used throughout development for drafting, learning, and testing.
