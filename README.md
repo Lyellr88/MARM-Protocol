@@ -106,7 +106,6 @@ Do not include extended explanations. For full usage and examples, see `HANDBOOK
 
 ## Feedback & Community Mentions
 
-<details>
  <summary><strong>User Highlights & External Mentions (Click to expand)</strong></summary>
 
 MARM is actively being tested and adopted across platforms.
@@ -125,8 +124,6 @@ MARM is actively being tested and adopted across platforms.
 [Reddit Feedback 2 (View Image)](media/Reddit%20Community%20Feedback%202.jpg)      
 
 *Additional feedback and screenshots will be added as adoption grows.*
-
-</details>
 
 ---
 
