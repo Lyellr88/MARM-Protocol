@@ -351,10 +351,6 @@ These templates can be stored outside MARM and called in via `/log` or `/compile
 
 ---
 
-## Summary
-
-Part III is about control at scale. By using MARM’s structural tools deliberately, you can build complex, multi-session workflows that remain accurate, traceable, and portable. Without needing native memory or external systems.
-
 ## Optional System Prompts (Advanced Integration)
 
 MARM is compatible with systems that prompt users to log context after multi-turn exchanges (e.g., "Would you like to log this session?"). This behavior is not included in MARM itself but can be layered by developers or platform providers to enhance usability.
