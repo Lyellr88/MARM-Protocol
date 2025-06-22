@@ -34,9 +34,6 @@ To begin a MARM session, follow these steps:
 
 You only need this once per session. For full command references, see `HANDBOOK.md`.
 
-<details>
-<summary>Click to show the full initiation prompt</summary>
-
 ```
 MEMORY ACCURATE RESPONSE MODE v1.2 (MARM)
 
@@ -100,7 +97,6 @@ Your AI should respond with:
 Do not include extended explanations. For full usage and examples, see `HANDBOOK.md`.
 
 ```
-</details>
 
 ---
 
