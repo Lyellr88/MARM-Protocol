@@ -12,7 +12,7 @@
 
 Are you tired of your AI forgetting what you just said? Or giving confident answers that turn out to be completely made up?
 
-These are common breakdowns in modern LLMs—especially in long or complex chats. MARM was designed to fix exactly that.
+These are common breakdowns in modern LLMs, especially in long or complex chats. MARM was designed to fix exactly that.
 
 Built from feedback across Reddit AI communities (from beginners to advanced), MARM helps you:
 
@@ -20,19 +20,23 @@ Built from feedback across Reddit AI communities (from beginners to advanced), M
 - **Reduce hallucinations and false outputs** from the AI  
 - **Stay organized across complex, multi-session threads** with a single system
 
-MARM pushes the AI into a more structured, disciplined state—without needing fine-tuning, plugins, or external tools.
+MARM pushes the AI into a more structured, disciplined state. Without needing fine-tuning, plugins, or external tools.
 
 ---
 
 ## Quick Start: Full Initiation Prompt
 
-To begin a MARM session, follow these steps:
+To begin a session, follow these steps:
 
 1. Copy the full prompt shown below
 2. Paste it as your **very first message** in a new AI chat
 3. Follow the AI’s confirmation to complete setup
 
 You only need this once per session. For full command references, see `HANDBOOK.md`.
+
+---
+
+## MARM Protocol (Copy & Paste)
 
 ```
 MEMORY ACCURATE RESPONSE MODE v1.2 (MARM)
@@ -85,8 +89,7 @@ Limitations
 - MARM is intended for productivity and workflow management, not for high-risk or compliance-critical use.  
 - Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
 
-
-## Acknowledgment
+Acknowledgment
 
 Your AI should respond with:
 
@@ -97,6 +100,8 @@ Your AI should respond with:
 Do not include extended explanations. For full usage and examples, see `HANDBOOK.md`.
 
 ```
+
+</details>
 
 ---
 
@@ -136,20 +141,6 @@ MARM is actively being tested and adopted across platforms.
 
 ---
 
-### 📣 Looking for Collaborators
-
-If you found this through Reddit or just stumbled in, I’m currently looking for:
-
-- **A sharp LLM stress tester** who enjoys breaking things and spotting weak points  
-- **Someone with social media instincts** who can help get this in front of the right audiences  
-  (no growth hacks, just signal and smart visibility)
-
-If you're either of those people or know someone who is. Please feel free to open an issue, leave a comment, or DM me directly.
-
- [My Reddit Profile](https://www.reddit.com/user/Alone-Biscotti6145)
-
----
-
 ## Join the Conversation
 
 Whether you’re testing, building, or exploring. Your input matters.
@@ -157,5 +148,3 @@ Whether you’re testing, building, or exploring. Your input matters.
 Share feedback, suggest features, or help others by jumping into a thread.
 
 🚀 [Join the MARM Community](https://github.com/Lyellr88/MARM-Protocol/discussions/3) 🚀
-
-
