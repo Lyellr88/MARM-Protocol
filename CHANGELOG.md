@@ -114,7 +114,7 @@ All notable updates between **June 9–23, 2025** are documented below. Entries 
 ---
 
 <details>
-<summary>June 23: MARM v1.3 Protocol Expansion</summary>
+<summary>June 23: Protocol Expansion (v1.3 Launch)</summary>
 
 ### Added
 - `/notebook` command to save custom info in a personal library  
