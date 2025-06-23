@@ -1,1 +1,47 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MARM Protocol Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>MARM Protocol Chatbot</h1>
+    <button id="helpBtn">Help & Protocol Guide</button>
+  </header>
+  <main>
+    <section id="chatbox">
+      <div id="chat-log"></div>
+      <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Type a message or command..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+  <div id="help-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-help" class="close">&times;</span>
+      <h2>MARM Protocol Help</h2>
+      <p>
+        <strong>Quick Commands:</strong><br>
+        /start marm &middot; /log [name] &middot; /notebook &middot; /compile [name] --summary &middot; /show reasoning
+      </p>
+      <p>
+        <a href="data/HANDBOOK.md" target="_blank">Full Handbook (HANDBOOK.md)</a><br>
+        <a href="data/FAQ.md" target="_blank">FAQ</a><br>
+        <a href="data/SYSTEM_DIAGNOSTIC.md" target="_blank">Core Protocol (SYSTEM_DIAGNOSTIC.md)</a><br>
+        <a href="data/DESCRIPTION.md" target="_blank">Project Description</a><br>
+        <a href="media/media_MARM_Audio_Walkthrough.mp3" target="_blank">🎧 Listen to the 5-minute MARM Walkthrough</a>
+      </p>
+      <hr>
+      <p>
+        For command syntax, logging, and session recovery, see the HANDBOOK.<br>
+        For protocol theory and advanced usage, see SYSTEM_DIAGNOSTIC.md.
+      </p>
+    </div>
+  </div>
+  <script src="src/ui.js"></script>
+  <script src="src/chatbot.js"></script>
+</body>
+</html>
