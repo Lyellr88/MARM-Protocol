@@ -36,12 +36,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // For chatbot.js to use
   window.appendBotMessage = (msg) => appendMessage('MARM', msg);
 
-  // Load dark mode preference
+  // Dark mode load and toggle
   if (localStorage.getItem('darkMode') === '1') {
     document.body.classList.add('dark-mode');
   }
 
-  // Toggle dark mode on click
   darkModeBtn.onclick = function () {
     document.body.classList.toggle('dark-mode');
     if (document.body.classList.contains('dark-mode')) {
