@@ -1,4 +1,4 @@
-// UI logic for modal and chat events
+// UI logic for modal, chat events, and dark mode toggle
 document.addEventListener('DOMContentLoaded', function () {
   const helpBtn = document.getElementById('helpBtn');
   const helpModal = document.getElementById('help-modal');
@@ -6,11 +6,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const chatForm = document.getElementById('chat-form');
   const userInput = document.getElementById('user-input');
   const chatLog = document.getElementById('chat-log');
+  const darkModeBtn = document.getElementById('darkModeToggle');
 
+  // Help modal toggle
   helpBtn.onclick = () => helpModal.classList.remove('hidden');
   closeHelp.onclick = () => helpModal.classList.add('hidden');
-  window.onclick = (e) => { if (e.target === helpModal) helpModal.classList.add('hidden'); };
+  window.onclick = (e) => {
+    if (e.target === helpModal) helpModal.classList.add('hidden');
+  };
 
+  // Chat submission
   chatForm.onsubmit = function (e) {
     e.preventDefault();
     const msg = userInput.value.trim();
@@ -20,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.handleUserMessage(msg);
   };
 
-  // Append a chat message
+  // Append chat message to log
   function appendMessage(sender, text) {
     const div = document.createElement('div');
     div.innerHTML = `<strong>${sender}:</strong> ${text}`;
@@ -30,34 +35,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // For chatbot.js to use
   window.appendBotMessage = (msg) => appendMessage('MARM', msg);
-});
 
-// Dark mode toggle logic
-document.getElementById('darkModeToggle').onclick = function() {
-  document.body.classList.toggle('dark-mode');
-  // Optionally, save preference to localStorage
-  if(document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('darkMode', '1');
-  } else {
-    localStorage.removeItem('darkMode');
+  // Load dark mode preference
+  if (localStorage.getItem('darkMode') === '1') {
+    document.body.classList.add('dark-mode');
   }
-};
-// On load, check preference
-if(localStorage.getItem('darkMode') === '1') {
-  document.body.classList.add('dark-mode');
-}
 
-const darkModeBtn = document.getElementById('darkModeToggle');
-if (darkModeBtn) {
-  darkModeBtn.onclick = function() {
+  // Toggle dark mode on click
+  darkModeBtn.onclick = function () {
     document.body.classList.toggle('dark-mode');
-    if(document.body.classList.contains('dark-mode')) {
+    if (document.body.classList.contains('dark-mode')) {
       localStorage.setItem('darkMode', '1');
     } else {
       localStorage.removeItem('darkMode');
     }
   };
-  if(localStorage.getItem('darkMode') === '1') {
-    document.body.classList.add('dark-mode');
-  }
-}
+});
