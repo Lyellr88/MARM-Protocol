@@ -36,12 +36,13 @@ header h1 {
   background: #fa815c;
 }
 main {
-  max-width: 792px; 
+  max-width: 792px;
   margin: 2.5em auto;
+  margin-left: 240px; /* ≈220px sidebar + 20px gap */
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(30,30,50,0.10);
-  padding: 2em 2em 1.2em 2em; 
+  padding: 2em 2em 1.2em 2em;
 }
 #chat-log {
   border: 1px solid #222e3a; 
