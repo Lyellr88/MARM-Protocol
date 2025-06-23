@@ -36,26 +36,23 @@ header h1 {
   background: #fa815c;
 }
 main {
-  max-width: 600px;
+  max-width: 792px; /* original 600px + ~192px (2 inches) */
   margin: 2.5em auto;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(30,30,50,0.10);
-  padding: 2em 2em 1.2em 2em;
-  /* No margin-left, main stays centered */
-}
-#chatbox {
-  width: 100%;
+  padding: 2em 2em 1.2em 2em; /* top, right, bottom, left — preserved */
 }
 #chat-log {
+  border: 1px solid #222e3a; /* subtle neutral gray */
+  border-radius: 8px;        /* optional: round the corners */
+  padding: 1em;
+  background: #f4f7fb;
   min-height: 320px;
   max-height: 380px;
   margin-bottom: 1.5em;
   overflow-y: auto;
-  padding: 1em;
-  background: #f4f7fb;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(40,40,60,0.04);
+  box-shadow: 0 1px 4px rgba(40, 40, 60, 0.04); /* optional drop shadow */
 }
 #chat-log div {
   margin: 0.7em 0;
@@ -143,7 +140,7 @@ main {
   left: 0em;
   top: 50%;
   transform: translateY(-50%);
-  background: #edf2f7;
+  background: #222e3a;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(30,40,60,0.07);
   padding: 1.2em 1.7em 1.2em 1.5em;
