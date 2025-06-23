@@ -15,13 +15,50 @@
 
 ## Short Introduction
 
-MARM is a universal protocol designed to improve memory continuity and response accuracy during AI conversations.  
-This handbook covers beginner guidance, command usage, and recovery strategies for when memory or accuracy begins to drift.
+MARM is a universal protocol designed to improve memory continuity and response accuracy during AI conversations. This handbook covers beginner guidance, command usage, and recovery strategies for when memory or accuracy begins to drift.
 
 ---
 
 ## What’s New in v1.2  
 Session relay tools (/compile, reseeding, and schema enforcement) are now core features of MARM, no more separate patch.
+
+---
+
+## What’s New in v1.3
+You can now store your own trusted info using /notebook command, perfect for saving rules, ideas, or project details the AI will prioritize. I will update the handbook fully soon.
+
+<details>
+<summary>(CLICK HERE) MARM v1.3 Update: Using /notebook (Manual Knowledge Library) </summary>
+
+/notebook allows you to store facts, frameworks, or custom data the AI should treat as trusted reference. Use it to build a session-safe knowledge base.
+
+**How to save:**  
+Treat it like a personal sticky note for the AI.  
+**Format:**  
+ /notebook [label]: [info]  
+**Example**  
+/notebook response_style: Always flag tone drift and keep responses under 900 characters.
+
+**To reference it later:**  
+Just mention the label.  
+**Example:**  
+“Use response_style from notebook.”  
+You can also ask: “What’s stored under response_style?”  
+
+**To update info:**  
+Resave with the same label, it will replace the old version.  
+**Example:**  
+/notebook product_pitch: Highlight transparency, modularity, and speed.  
+
+**Best for:**  
+- Ongoing character/story building  
+- Definitions and style guides  
+- Workflow rules or reminders  
+- Personal reference data  
+
+**AI will prioritize /notebook entries over assumptions or pre-trained knowledge.**  
+
+</details>
 
 ---
 
