@@ -1,7 +1,7 @@
 # Memory Accurate Response Mode v1.3 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)                                                                                                         
 
 
-**A universal protocol for structured memory and response accuracy**
+**A universal protocol for structured memory, response accuracy and personalized library**
 
 [**Last updated: June 23, 2025**]
 
