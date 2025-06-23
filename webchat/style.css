@@ -38,7 +38,7 @@ header h1 {
 main {
   max-width: 792px;
   margin: 2.5em auto;
-  margin-left: 240px; /* ≈220px sidebar + 20px gap */
+  margin-left: 240px; 
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(30,30,50,0.10);
@@ -53,7 +53,7 @@ main {
   max-height: 380px;
   margin-bottom: 1.5em;
   overflow-y: auto;
-  box-shadow: 0 1px 4px rgba(60, 40, 60, 0.04); 
+  box-shadow: 0 1px 4px rgba(40, 40, 60, 0.04); 
   margin-left: 120px;
 }
 #chat-log div {
@@ -207,7 +207,6 @@ body.dark-mode .modal-content {
   background: #22263a;
   color: #e3e3ef;
 }
-
 /* --- DARK MODE TOGGLE BUTTON (lower right corner) --- */
 #darkModeToggle {
   position: fixed;
