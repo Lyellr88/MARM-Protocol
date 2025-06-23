@@ -31,3 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
   // For chatbot.js to use
   window.appendBotMessage = (msg) => appendMessage('MARM', msg);
 });
+
+// Dark mode toggle logic
+document.getElementById('darkModeToggle').onclick = function() {
+  document.body.classList.toggle('dark-mode');
+  // Optionally, save preference to localStorage
+  if(document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('darkMode', '1');
+  } else {
+    localStorage.removeItem('darkMode');
+  }
+};
+// On load, check preference
+if(localStorage.getItem('darkMode') === '1') {
+  document.body.classList.add('dark-mode');
+}
