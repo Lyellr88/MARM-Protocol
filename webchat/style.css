@@ -135,3 +135,94 @@ main {
 .modal-content a:hover {
   color: #ee6c4d;
 }
+/* Sidebar styles */
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100%;
+  background: #edf2f7;
+  padding: 2em 1em 1em 1.5em;
+  border-right: 1px solid #c7d0db;
+  box-shadow: 2px 0 6px rgba(30,40,60,0.05);
+  z-index: 10;
+}
+#sidebar h2 {
+  font-size: 1.1em;
+  margin-top: 0;
+  color: #222e3a;
+}
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+}
+#sidebar li {
+  margin-bottom: 1em;
+  font-size: 0.98em;
+}
+
+main {
+  margin-left: 260px; /* Make room for sidebar */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: #181b24;
+  color: #ececec;
+}
+body.dark-mode header {
+  background: #202735;
+  color: #fff;
+}
+body.dark-mode main {
+  background: #23263a;
+  color: #ececec;
+}
+body.dark-mode #sidebar {
+  background: #212537;
+  color: #d5d5e6;
+  border-right: 1px solid #454868;
+}
+body.dark-mode #sidebar h2,
+body.dark-mode #sidebar li {
+  color: #e5e6fa;
+}
+body.dark-mode #chat-log {
+  background: #24273b;
+}
+body.dark-mode #user-input {
+  background: #23263a;
+  color: #fff;
+  border: 1px solid #44486e;
+}
+body.dark-mode #chat-form button,
+body.dark-mode #helpBtn {
+  background: #3d5a80;
+  color: #fff;
+}
+body.dark-mode .modal-content {
+  background: #22263a;
+  color: #e3e3ef;
+}
+/* Dark mode toggle button */
+#darkModeToggle {
+  position: fixed;
+  top: 1.2em;
+  right: 2em;
+  background: #3d5a80;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 1.3em;
+  cursor: pointer;
+  z-index: 101;
+  box-shadow: 0 2px 6px rgba(40,40,60,0.10);
+}
+body.dark-mode #darkModeToggle {
+  background: #ee6c4d;
+  color: #fff;
+}
