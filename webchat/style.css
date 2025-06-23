@@ -261,3 +261,12 @@ body.dark-mode #darkModeToggle {
     padding: 1em 0.2em 1em 0.2em;
   }
 }
+main {
+  max-width: 600px;
+  margin: 2.5em auto 2.5em auto;
+  margin-right: 110px; /* 1.15 inches from right edge */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(30,30,50,0.10);
+  padding: 2em 2em 1.2em 2em;
+}
