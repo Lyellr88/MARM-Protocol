@@ -42,6 +42,7 @@ main {
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(30,30,50,0.10);
   padding: 2em 2em 1.2em 2em;
+  /* No margin-left, main stays centered */
 }
 #chatbox {
   width: 100%;
@@ -135,17 +136,21 @@ main {
 .modal-content a:hover {
   color: #ee6c4d;
 }
-/* Sidebar styles */
+
+/* --- SIDEBAR (command list) --- */
 #sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 240px;
-  height: 100%;
+  position: absolute;
+  left: 2em;
+  top: 50%;
+  transform: translateY(-50%);
   background: #edf2f7;
-  padding: 2em 1em 1em 1.5em;
-  border-right: 1px solid #c7d0db;
-  box-shadow: 2px 0 6px rgba(30,40,60,0.05);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,40,60,0.07);
+  padding: 1.2em 1.7em 1.2em 1.5em;
+  display: inline-block;
+  min-width: 220px;
+  max-width: 320px;
+  width: auto;
   z-index: 10;
 }
 #sidebar h2 {
@@ -161,13 +166,10 @@ main {
 #sidebar li {
   margin-bottom: 1em;
   font-size: 0.98em;
+  word-break: break-word;
 }
 
-main {
-  margin-left: 260px; /* Make room for sidebar */
-}
-
-/* Dark mode styles */
+/* --- DARK MODE --- */
 body.dark-mode {
   background: #181b24;
   color: #ececec;
@@ -183,7 +185,7 @@ body.dark-mode main {
 body.dark-mode #sidebar {
   background: #212537;
   color: #d5d5e6;
-  border-right: 1px solid #454868;
+  border-right: none;
 }
 body.dark-mode #sidebar h2,
 body.dark-mode #sidebar li {
@@ -206,10 +208,11 @@ body.dark-mode .modal-content {
   background: #22263a;
   color: #e3e3ef;
 }
-/* Dark mode toggle button */
+
+/* --- DARK MODE TOGGLE BUTTON (lower right corner) --- */
 #darkModeToggle {
   position: fixed;
-  top: 1.2em;
+  bottom: 2em;
   right: 2em;
   background: #3d5a80;
   color: #fff;
@@ -225,4 +228,36 @@ body.dark-mode .modal-content {
 body.dark-mode #darkModeToggle {
   background: #ee6c4d;
   color: #fff;
+}
+
+/* --- Responsive improvements (optional) --- */
+@media (max-width: 900px) {
+  #sidebar {
+    left: 1em;
+    min-width: 170px;
+    max-width: 90vw;
+    padding: 1em 1em 1em 1em;
+  }
+  main {
+    max-width: 96vw;
+    padding: 1em 0.5em 1em 0.5em;
+  }
+}
+@media (max-width: 600px) {
+  #sidebar {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 1em auto;
+    display: block;
+    width: 90vw;
+    min-width: unset;
+    max-width: unset;
+  }
+  main {
+    margin: 0.5em auto;
+    max-width: 98vw;
+    padding: 1em 0.2em 1em 0.2em;
+  }
 }
