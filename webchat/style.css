@@ -1,0 +1,84 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #293241;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+main {
+  max-width: 600px;
+  margin: 2em auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(40,40,60,0.08);
+  padding: 1.5em;
+}
+#chat-log {
+  min-height: 300px;
+  margin-bottom: 1em;
+  overflow-y: auto;
+  font-size: 1.05em;
+}
+#chat-form {
+  display: flex;
+}
+#user-input {
+  flex: 1;
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+#chat-form button {
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  background: #3d5a80;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+#helpBtn {
+  background: #ee6c4d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.18);
+}
+.modal .modal-content {
+  background: #fff;
+  margin: 6% auto;
+  padding: 2em;
+  border-radius: 8px;
+  max-width: 480px;
+  box-shadow: 0 4px 16px rgba(40,40,60,0.08);
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+  font-size: 2em;
+  color: #888;
+  cursor: pointer;
+}
+.modal:not(.hidden) {
+  display: block;
+}
