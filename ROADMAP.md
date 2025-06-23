@@ -41,18 +41,4 @@ The following is a separate, standalone protocol also in development by the MARM
 **Purpose:**  
 Reduce redundant AI repetition (“echoes”) in conversation while preserving user intent, clarity, and override control. REP is designed to minimize noise, not access—offering guided summaries and optional repeat triggers rather than hard suppression.
 
-**Core Features:**  
-- Dynamic 3–5 turn context window to detect overlap  
-- Semantic + keyword matching for flexible suppression  
-- Micro-summaries with user-driven branching (recap, expand, move on)  
-- Override phrase detection with paraphrase or verbatim support  
-- Multi-LLM shared suppression memory (for agent chains)  
-- Optional voice UI enhancements and natural phrasing  
-- Transparent suppression logging with traceable event IDs
-
-**Example Behavior:**  
-> “We just talked about [topic]. Want a quick recap, a deeper dive, or move to something new?”
-
-**Why It Matters:**  
-Helps AI systems stay context-aware, efficient, and user-guided—especially during long, repetitive conversations or assistant workflows. REP v2 builds on real-world pain points in LLM use by offering a repeatable suppression protocol with flexible deployment.
-
+---
