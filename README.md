@@ -116,7 +116,10 @@ Limitations
 - MARM is intended for productivity and workflow management, not for high-risk or compliance-critical use.  
 - Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
 - Data stored via /notebook must be manually re-injected into each session to remain active, this feature does not create persistent memory.
+-/notebook is subject to standard token limits. Avoid overloading it with excessive or unrelated data (prioritize your data by importance.)
+
 </details>
+
 
 ---
 
