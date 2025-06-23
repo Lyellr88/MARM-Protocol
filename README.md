@@ -1,24 +1,21 @@
-# Memory Accurate Response Mode v1.2 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)                                                                                                         
+# Memory Accurate Response Mode v1.3 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)                                                                                                         
 
 
-**A universal protocol for structured memory and response accuracy (fully unified in v1.2)**
+**A universal protocol for structured memory and response accuracy**
 
-[**Last updated: June 21, 2025**]
-
+[**Last updated: June 23, 2025**]
 
 ---
 
-## What MARM Solves (and Why It Exists)
+## What MARM Solves and Why It Exists
 
-Are you tired of your AI forgetting what you just said? Or giving confident answers that turn out to be completely made up?
-
-These are common breakdowns in modern LLMs, especially in long or complex chats. MARM was designed to fix exactly that.
-
-Built from feedback across Reddit AI communities (from beginners to advanced), MARM helps you:
+Are you tired of your AI forgetting what you just said? Or giving confident answers that turn out to be completely made up?  
+These are common breakdowns in modern LLMs, especially in long or complex chats. MARM was designed to fix exactly that. Built from feedback across Reddit AI communities (from beginners to advanced), MARM helps you:
 
 - **Maintain memory and continuity** across long conversations  
 - **Reduce hallucinations and false outputs** from the AI  
 - **Stay organized across complex, multi-session threads** with a single system
+- **Guide responses using your own notes and verified info**
 
 MARM pushes the AI into a more structured, disciplined state. Without needing fine-tuning, plugins, or external tools.
 
@@ -39,7 +36,7 @@ You only need this once per session. For full command references, see `HANDBOOK.
 ## MARM Protocol (Copy & Paste)
 
 ```
-MEMORY ACCURATE RESPONSE MODE v1.2 (MARM)
+MEMORY ACCURATE RESPONSE MODE v1.3 (MARM)
 
 Purpose
 - Ensure AI retains session context over time and delivers accurate, transparent outputs, addressing memory gaps and drift.
@@ -63,15 +60,45 @@ Accuracy Guardrails with Transparency:
 - Optional reasoning trail: “My logic: [recall/synthesis]. Correct me if I'm off.”
 - Note: This replaces default generation triggers with accuracy-layered response logic.
 
+Manual Knowledge Library:
+- Enables users to build a personalized library of trusted information using /notebook.
+- This stored content can be referenced in sessions, giving the AI a user-curated base instead of relying on external sources or assumptions.
+- Reinforces control and transparency, so what the AI “knows” is entirely defined by the user.
+- Ideal for structured workflows, definitions, frameworks, or reusable project data.
+
 Commands:
 - /start marm – Activates memory and accuracy layers.
 - /log [SessionName] – Saves session under a “folder” (e.g., “/log sessionA”)
 - /contextual reply – Generates response with guardrails and reasoning trail (replaces default output logic).
 - /show reasoning – Reveals the logic and decision process behind the most recent response upon user request.
 - /compile [SessionName] --summary – Generates token-safe digest with optional field filters for session continuity.
+- /notebook Saves custom info to a personal library. Guides the LLM to use only trusted user-provided data, not external sources.
+
+Acknowledgment:
+When activated, the AI should begin with: "MARM activated. Ready to log context."
+Then follow with:
+- "MARM activated. Ready to log context." 
+- A brief two-line summary of what MARM is and why it’s useful  
+- Quick Start Command List:
+/start marm – Turn on memory + accuracy
+/log [name] – Save session notes
+/contextual reply – Safer, logic-based answers
+/show reasoning – See how it responded
+/compile [name] --summary – Get a session recap
+/notebook – Store custom info for focused replies
+
+Do not include extended explanations. For full usage and examples, see `HANDBOOK.md`.
+
+```
+
+</details>
+
+---
+<details>
+<summary>🚨 Read This Before You Start: Key Info + Limitations 🚨</summary>
 
 New User Entry:
-- MARM is built for all users, from beginners to advanced. It provides guided structure, memory tools, and safeguards against hallucination.
+- MARM is built for all users, from beginners to advanced. It provides guided structure, memory tools, and safeguards against hallucination. (See handguide)
 
 Session Continuity Caveat:
 - MARM is bound to the current chat session. If the conversation thread changes, users may need to restate context.
@@ -88,30 +115,20 @@ Limitations
 - Long or complex sessions may still experience occasional context drift or hallucination (recapping or reseeding is recommended).  
 - MARM is intended for productivity and workflow management, not for high-risk or compliance-critical use.  
 - Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
-
-Acknowledgment
-
-Your AI should respond with:
-
-- **"MARM activated. Ready to log context."**  
-- A brief two-line summary of what MARM is and why it’s useful  
-- A concise command reference (limit to core commands only)
-
-Do not include extended explanations. For full usage and examples, see `HANDBOOK.md`.
-
-```
-
+- Data stored via /notebook must be manually re-injected into each session to remain active, this feature does not create persistent memory.
 </details>
 
 ---
 
+<details>
+ 
 ## Feedback & Community Mentions
 
  <summary><strong>User Highlights & External Mentions (Click to expand)</strong></summary>
 
 MARM is actively being tested and adopted across platforms.
 
-- Mentioned and positively received in Reddit threads on LLM reliability and prompt structure  
+- Mentioned in Reddit threads focused on LLM reliability and prompt architecture.
 - Direct messages from early users highlight reduced drift and improved memory handling  
 - Recognized in Google's AI-related search results as a structured memory protocol  
 
@@ -125,6 +142,7 @@ MARM is actively being tested and adopted across platforms.
 [Reddit Feedback 2 (View Image)](media/Reddit%20Community%20Feedback%202.jpg)      
 
 *Additional feedback and screenshots will be added as adoption grows.*
+</details>
 
 ---
 
@@ -147,4 +165,4 @@ Whether you’re testing, building, or exploring. Your input matters.
 
 Share feedback, suggest features, or help others by jumping into a thread.
 
-🚀 [Join the MARM Community](https://github.com/Lyellr88/MARM-Protocol/discussions/3) 🚀
+[Join the MARM Community](https://github.com/Lyellr88/MARM-Protocol/discussions/3)
