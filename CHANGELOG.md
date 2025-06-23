@@ -13,8 +13,8 @@
 
 ---
 
-## MARM Protocol – v1.2 Change Log  
-All notable updates between **June 9–21, 2025** are documented below. Entries are grouped by date using collapsible dropdowns for clarity.
+## MARM Protocol – v1.3 Change Log  
+All notable updates between **June 9–23, 2025** are documented below. Entries are grouped by date using collapsible dropdowns for clarity.
 
 ---
 
@@ -108,5 +108,32 @@ All notable updates between **June 9–21, 2025** are documented below. Entries 
 - Moved Contact, Credits, and auxiliary content to `CONTRIBUTING.md`  
 - Simplified Quick Start block  
 - Added audio walkthrough link with summary of included topics  
+
+</details>
+
+---
+
+<details>
+<summary>June 23: MARM v1.3 Protocol Expansion</summary>
+
+### Added
+- `/notebook` command to save custom info in a personal library  
+  → Guides the AI to use only trusted user-provided data, not external sources  
+- Passive reentry prompts to resume, archive, or reset context on return  
+- Error handling for invalid `/log` entries, including date autofill suggestions  
+- Filter support for `/compile --fields=` to create focused summaries  
+- “What’s New in v1.3” section added to `HANDBOOK.md`, with usage guide  
+- Inline user guide for `/notebook` under collapsible alert block  
+- New dropdown: “Key Info and Limitations” (moved from protocol body)  
+
+### Changed
+- “What MARM Solves” and “Why It Exists” sections updated to reflect v1.3 behavior  
+- Activation response now includes summary and Quick Start command list  
+- Examples revised for clarity and real-world use  
+- AI now defaults to prioritizing `/notebook` entries over trained assumptions  
+
+### Removed
+- Key info and limitations from static protocol body (now placed in dropdown)  
+- Redundant phrasing in command definitions and legacy guardrail notes  
 
 </details>
