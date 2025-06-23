@@ -140,7 +140,7 @@ main {
 /* --- SIDEBAR (command list) --- */
 #sidebar {
   position: absolute;
-  left: 2em;
+  left: 0em;
   top: 50%;
   transform: translateY(-50%);
   background: #edf2f7;
