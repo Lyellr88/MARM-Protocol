@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  ...
+  <meta charset="UTF-8" />
+  <title>MARM chatbot</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  ...
-  <script src="src/ui.js"></script>
-  <script src="src/chatbot.js"></script>
-</body>
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <h2>Quick Start Commands</h2>
+    <ul>
+      <li><strong>/start marm</strong> – Turn on memory + accuracy</li>
+      <li><strong>/log [name]</strong> – Save session notes</li>
+      <li><strong>/contextual reply</strong> – Safer, logic-based answers</li>
+      <li><strong>/show reasoning</strong> – See how it responded</li>
+      <li><strong>/compile [name] --summary</strong> – Get a session recap</li>
+      <li><strong>/notebook</strong> – Store custom info for focused replies</li>
+    </ul>
+  </aside>
+
+  <!-- Dark mode toggle button -->
+  <button id="darkModeToggle" title="Toggle dark mode">🌙</button>
+
   <header>
     <h1>MARM chatbot</h1>
     <button id="helpBtn">Help & Protocol Guide</button>
   </header>
+
   <main>
     <section id="chatbox">
       <div id="chat-log"></div>
@@ -22,6 +36,7 @@
       </form>
     </section>
   </main>
+
   <div id="help-modal" class="modal hidden">
     <div class="modal-content">
       <span id="close-help" class="close">&times;</span>
@@ -43,6 +58,7 @@
       </p>
     </div>
   </div>
+  
   <script src="src/ui.js"></script>
   <script src="src/chatbot.js"></script>
 </body>
