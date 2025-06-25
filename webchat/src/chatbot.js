@@ -19,7 +19,6 @@ import {
 
 import { performGoogleSearch, queryNeedsExternalKnowledge } from './search.js';
 import { generateContent } from './geminiHelper.js';
-import { handleUIResponse } from './ui.js';
 
 let isMarmActive = false;
 let currentSessionId = null;
