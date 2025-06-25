@@ -14,7 +14,9 @@ import {
   getSessionContext,
   updateSessionHistory,
   getMostRecentBotResponseLogic,
-  trimForContext,
+  trimForContext
+} from './marmLogic.js';
+
 import { performGoogleSearch, queryNeedsExternalKnowledge } from './search.js';
 import { generateContent } from './geminiHelper.js';
 import { handleUIResponse } from './ui.js';
