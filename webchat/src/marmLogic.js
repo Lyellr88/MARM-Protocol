@@ -17,6 +17,7 @@
         lastReasoning: ''
      }
    }
+   
 *******************************************************************/
 
 const DOC_BASE_PATH = '/webchat/data/';
@@ -27,23 +28,48 @@ let sessions    = {};                    // in‑memory store (keyed by id)
 const LS_KEY    = 'marm-sessions-v1';
 
 // ---------------------------------------------------------------------------
-//  Markdown Loader
+//  Markdown Loader  +  Sentence-Pool Builder  (finalized)
 // ---------------------------------------------------------------------------
+
+let docsCache   = null;            // null → not loaded yet
+export const docSnippets = {};     // { readme:[…], faq:[…], … }  exported for composeMarmWelcome
+
+const DOC_NAMES      = ['readme', 'description', 'faq', 'handbook']; // adjust if you add files
+const DOC_BASE_PATH  = '/webchat/data/';  // path where the .md files are served
+
 export async function loadDocs() {
-  if (docsCache) return docsCache;               // already loaded
-  docsCache = {};
+  // if cache already filled, return it
+  if (docsCache && Object.keys(docsCache).length) return docsCache;
+
+  const newDocsCache    = {};
+  const newDocSnippets  = {};
+
   await Promise.all(
     DOC_NAMES.map(async name => {
       try {
         const res = await fetch(`${DOC_BASE_PATH}${name}.md`);
-        if (!res.ok) throw new Error(`${name}.md not found`);
-        docsCache[name] = await res.text();
+        if (!res.ok) throw new Error(`${name}.md not found (status ${res.status})`);
+
+        const text = await res.text();
+        newDocsCache[name] = text;
+
+        // ---- build sentence pool (skip very short lines & markdown headings) ----
+        newDocSnippets[name] = text
+          .split(/[.!?]/)
+          .map(s => s.trim())
+          .filter(s => s.length > 20 && !s.startsWith('#'));
       } catch (err) {
-        console.error('[MARM] markdown load error:', err.message);
-        docsCache[name] = '';
+        console.error(`[MARM] Error loading ${name}.md →`, err.message);
+        newDocsCache[name]   = '';
+        newDocSnippets[name] = [];
       }
     })
   );
+
+  // atomically publish the new caches
+  docsCache = newDocsCache;
+  Object.assign(docSnippets, newDocSnippets);
+
   return docsCache;
 }
 
