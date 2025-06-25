@@ -38,7 +38,7 @@ header h1 {
 main {
   max-width: 792px;
   margin: 2.5em auto;
-  margin-left: 240px; 
+  margin-left: 300px; 
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(30,30,50,0.10);
@@ -54,7 +54,7 @@ main {
   margin-bottom: 1.5em;
   overflow-y: auto;
   box-shadow: 0 1px 4px rgba(40, 40, 60, 0.04); 
-  margin-left: 120px;
+  margin-left: 0px;
 }
 #chat-log div {
   margin: 0.7em 0;
@@ -167,6 +167,27 @@ main {
   font-size: 0.98em;
   word-break: break-word;
 }
+
+/* --- TOKEN COUNTER BUTTON (½-inch above dark-mode toggle) --- */
+#token-counter-btn {
+  position: fixed;
+  /* dark-mode button sits at bottom: 2em, height: 2.5em ⇒
+     add 0.5-inch (~12.7 mm ≈ 48 px) gap above it          */
+  bottom: calc(2em + 2.5em + 0.5in);   /* ≈ 2em + 40px + 48px */
+  right : 2em;
+  width : 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: none;
+  background: #ffb547;     /* coin color */
+  color: #000;
+  font-size: 1.2em;        /* 🪙 icon size */
+  cursor: pointer;
+  z-index: 101;
+  box-shadow: 0 2px 6px rgba(40,40,60,0.10);
+}
+#token-counter-btn:hover {
+  background: #ffd376;
 
 /* --- DARK MODE --- */
 body.dark-mode {
