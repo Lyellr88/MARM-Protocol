@@ -5,69 +5,57 @@
   <title>MARM Systems</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- ─────────── SIDEBAR ─────────── -->
+  <!-- Sidebar -->
   <aside id="sidebar">
     <h2>Quick Start Commands</h2>
     <ul>
-      <li><strong>/log [entry]</strong> – save note</li>
-      <li><strong>/contextual reply</strong> – logic-based answer</li>
-      <li><strong>/show reasoning</strong> – last AI logic</li>
-      <li><strong>/compile --summary</strong> – session recap</li>
-      <li><strong>/notebook …</strong> – store / get facts</li>
+      <li><strong>/start marm</strong> –  Auto-enabled</li>
+      <li><strong>/log [name]</strong> – Save session notes</li>
+      <li><strong>/contextual reply</strong> – Safer, logic-based answers</li>
+      <li><strong>/show reasoning</strong> – See how it responded</li>
+      <li><strong>/compile [name] --summary</strong> – Get a session recap</li>
+      <li><strong>/notebook</strong> – Store custom info for focused replies</li>
     </ul>
   </aside>
 
-  <!-- ─────────── HEADER ─────────── -->
   <header>
     <h1>MARM chatbot</h1>
-    <button id="helpBtn">Help&nbsp;&amp;&nbsp;MARM Guide</button>
+    <button id="helpBtn">Help &amp; MARM Guide</button>
   </header>
 
-  <!-- ─────────── MAIN CHAT AREA ─────────── -->
   <main>
     <section id="chatbox">
       <div id="chat-log"></div>
-
       <form id="chat-form">
-        <input
-          type="text"
-          id="user-input"
-          placeholder="Type a message or command…"
-          autocomplete="off"
-        />
+        <input type="text" id="user-input" placeholder="Type a message or command..." autocomplete="off" />
         <button type="submit">Send</button>
       </form>
     </section>
   </main>
 
-  <!-- ─────────── HELP MODAL ─────────── -->
   <div id="help-modal" class="modal hidden">
     <div class="modal-content">
       <span id="close-help" class="close">&times;</span>
       <h2>MARM Protocol Help</h2>
-      <p><strong>Key Commands:</strong><br>
-         /log · /notebook · /compile&nbsp;--summary · /show&nbsp;reasoning
+      <p>
+        <strong>Quick Commands:</strong><br>
+        /log • /notebook • /compile --summary • /show reasoning
       </p>
       <p>
-        <a href="data/HANDBOOK.md" target="_blank">Handbook</a><br>
+        <a href="data/HANDBOOK.md" target="_blank">Full Handbook (HANDBOOK.md)</a><br>
         <a href="data/FAQ.md" target="_blank">FAQ</a><br>
-        <a href="data/DESCRIPTION.md" target="_blank">Project&nbsp;Description</a><br>
-        <a href="media/media_MARM_Audio_Walkthrough.mp3" target="_blank">🎧&nbsp;5-min walkthrough</a>
+        <a href="data/DESCRIPTION.md" target="_blank">Project Description</a><br>
+        <a href="media/media_MARM_Audio_Walkthrough.mp3" target="_blank">🎧 5-min audio walkthrough</a>
       </p>
     </div>
   </div>
 
-  <!-- ─────────── TOOLBAR BUTTONS ─────────── -->
-  <!-- Token Counter (½-inch above dark-mode toggle) -->
-  <button id="token-counter-btn" title="Token counter">TC</button><br>
+  <!-- Toolbar buttons -->
+ <button id="token-counter-btn" title="Token counter">TC</button><br>
+<button id="darkModeToggle" title="Toggle dark mode">🌙</button>
 
-  <!-- Dark-mode toggle (bottom-right) -->
-  <button id="darkModeToggle" title="Toggle dark mode">🌙</button>
-
-  <!-- ─────────── SCRIPTS ─────────── -->
-  <script type="module" src="src/ui.js"></script>
-  <script type="module" src="src/chatbot.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="src/chatbot.js"></script>
 </body>
 </html>
