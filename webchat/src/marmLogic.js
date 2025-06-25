@@ -42,7 +42,7 @@ export async function loadDocs() {
   await Promise.all(
     DOC_NAMES.map(async name => {
       try {
-        const res = await fetch(`${DOC_BASE_PATH}${name}.md`);
+        const DOC_BASE_PATH = './data/';
         if (!res.ok) throw new Error(`${name}.md not found (status ${res.status})`);
 
         const text = await res.text();
