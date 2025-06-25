@@ -177,3 +177,4 @@ document.addEventListener('DOMContentLoaded', () => {
     appendMessage('bot', 'Welcome! MARM activated. Ready to log context and a brief two-line summary of what MARM is and why it’s useful');
   }
 });
+window.handleUserMessage = handleUserInput;
