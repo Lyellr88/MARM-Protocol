@@ -1,4 +1,7 @@
-// geminiHelper.js — stub version
+import dotenv from 'dotenv';
+dotenv.config();
+
+const apiKey = process.env.GEMINI_API_KEY;
 
 export async function generateContent() {
   return {
