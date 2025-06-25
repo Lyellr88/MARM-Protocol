@@ -75,8 +75,8 @@ Commands:
 - /notebook Saves custom info to a personal library. Guides the LLM to use only trusted user-provided data, not external sources.
 
 Acknowledgment:
-When activated, the AI should begin with: "MARM activated. Ready to log context."
-Then follow with:
+
+When activated, the AI should begin with: 
 - "MARM activated. Ready to log context." 
 - A brief two-line summary of what MARM is and why it’s useful  
 - Quick Start Command List:
