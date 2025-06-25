@@ -207,6 +207,7 @@ body.dark-mode .modal-content {
   background: #22263a;
   color: #e3e3ef;
 }
+
 /* --- DARK MODE TOGGLE BUTTON (lower right corner) --- */
 #darkModeToggle {
   position: fixed;
@@ -228,19 +229,19 @@ body.dark-mode #darkModeToggle {
   color: #fff;
 }
 
-/* --- TOKEN COUNTER BUTTON (½-inch above dark-mode toggle) --- */
+/* --- TOKEN COUNTER BUTTON --- */
 #token-counter-btn {
   position: fixed;
-  bottom: calc(2em + 2.5em + 0.5in);   /* keeps 0.5-in gap above dark-mode button */
-  right : 2em;
-  width : 2.5em;
+  bottom: calc(2em + 2.5em + 0.5in);  
+  right: 2em;
+  font-size: 1.3em; 
+  width: 2.5em;
   height: 2.5em;
-  line-height: 2.5em;                  /* vertically center the “TC” text */
-  text-align: center;                  /* horizontally center */
-  font-size: 0.9em;                    /* fits nicely inside circle */
+  line-height: 2.5em;                 
+  text-align: center;                              
   font-weight: 600;
   letter-spacing: 0.03em;
-  background: #ffb547;                 /* coin-tone color */
+  background: #ffb547;             
   color: #000;
   border: none;
   border-radius: 50%;
