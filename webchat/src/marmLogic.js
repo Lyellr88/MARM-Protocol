@@ -23,7 +23,6 @@
 const DOC_BASE_PATH = '/webchat/data/';
 const DOC_NAMES     = ['handbook','faq','readme','roadmap','description'];
 
-let docsCache   = null;                  // loaded markdown files
 let sessions    = {};                    // in‑memory store (keyed by id)
 const LS_KEY    = 'marm-sessions-v1';
 
