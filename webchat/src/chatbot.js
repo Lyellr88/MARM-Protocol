@@ -108,15 +108,15 @@ async function handleUserInput(userInput) {
   }
 
   if (!suppressLLMCall) {
-    const messagesForLLM = [
-      {
-        role: 'system',
-        content:
-          'You are MARM, an Al for accurate, transparent, context-aware answers.\n' +
-          'If context is missing say: "I don\'t have that context, can you restate?"\n' +
-          'Return as: RESPONSE:: [answer]||LOGIC:: [reasoning]'
-      }
-    ];
+  const geminiResponse = await generateContent(messagesForLLM);
+  const botAnswer = await geminiResponse.text();
+  botResponse = botAnswer.trim();
+
+  appendMessage('bot', botResponse);
+  if (isMarmActive && currentSessionId) {
+    updateSessionHistory(currentSessionId, userInput, botResponse);
+  }
+}
 
     if (isMarmActive && currentSessionId) {
       trimForContext(currentSessionId);
@@ -140,9 +140,12 @@ messagesForLLM.push({ role: 'system', content: `Current Session History:\n${hist
 
     messagesForLLM.push({ role: 'user', content: userInput });
 
-    botResponse = "API call temporarily blocked. TC button should work now!";
+     const geminiResponse = await generateContent(messagesForLLM);  
+     const botAnswer = await geminiResponse.text();  
+       botResponse = botAnswer.trim();  
 
-    appendMessage('bot', botResponse);
+
+    
     if (isMarmActive && currentSessionId) updateSessionHistory(currentSessionId, userInput, botResponse);
   }
   handleUIResponse(botResponse);
