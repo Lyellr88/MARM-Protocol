@@ -15,8 +15,6 @@ import {
   updateSessionHistory,
   getMostRecentBotResponseLogic,
   trimForContext,
-  composeMarmWelcome
-} from './marmLogic.js';
 import { performGoogleSearch, queryNeedsExternalKnowledge } from './search.js';
 import { generateContent } from './geminiHelper.js';
 import { handleUIResponse } from './ui.js';
@@ -168,10 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
     isMarmActive = true;
     appendMessage('bot', 'Previous session detected. Continue chatting or type /reset to start fresh.');
   } else {
-    currentSessionId = Date.now().toString(36);
+      currentSessionId = Date.now().toString(36);
     localStorage.setItem('marm-last-session', currentSessionId);
     isMarmActive = true;
     appendMessage('bot', activateMarmSession());
-    appendMessage('bot', composeMarmWelcome());
+   appendMessage('bot', Welcome! MARM activated. Ready to log context and a brief two-line summary of what MARM is and why it’s useful');
   }
 });
