@@ -149,7 +149,6 @@ messagesForLLM.push({ role: 'system', content: `Current Session History:\n${hist
     if (isMarmActive && currentSessionId) updateSessionHistory(currentSessionId, userInput, botResponse);
   }
   handleUIResponse(botResponse);
-}
 
 function appendMessage(sender, text) {
   /* existing code */
