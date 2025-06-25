@@ -20,24 +20,20 @@
    
 *******************************************************************/
 
-const DOC_BASE_PATH = '/webchat/data/';
-const DOC_NAMES     = ['handbook','faq','readme','roadmap','description'];
-
-let sessions    = {};                    // in‑memory store (keyed by id)
+let sessions    = {};                   
 const LS_KEY    = 'marm-sessions-v1';
 
 // ---------------------------------------------------------------------------
-//  Markdown Loader  +  Sentence-Pool Builder  (finalized)
+//  Markdown Loader  +  Sentence-Pool Builder  
 // ---------------------------------------------------------------------------
 
-let docsCache   = null;            // null → not loaded yet
-export const docSnippets = {};     // { readme:[…], faq:[…], … }  exported for composeMarmWelcome
+let docsCache   = null;             
+export const docSnippets = {};     
 
-const DOC_NAMES      = ['readme', 'description', 'faq', 'handbook']; // adjust if you add files
-const DOC_BASE_PATH  = '/webchat/data/';  // path where the .md files are served
+const DOC_NAMES      = ['readme', 'description', 'faq', 'handbook']; 
+const DOC_BASE_PATH  = '/webchat/data/'; 
 
 export async function loadDocs() {
-  // if cache already filled, return it
   if (docsCache && Object.keys(docsCache).length) return docsCache;
 
   const newDocsCache    = {};
@@ -52,7 +48,6 @@ export async function loadDocs() {
         const text = await res.text();
         newDocsCache[name] = text;
 
-        // ---- build sentence pool (skip very short lines & markdown headings) ----
         newDocSnippets[name] = text
           .split(/[.!?]/)
           .map(s => s.trim())
@@ -65,7 +60,6 @@ export async function loadDocs() {
     })
   );
 
-  // atomically publish the new caches
   docsCache = newDocsCache;
   Object.assign(docSnippets, newDocSnippets);
 
@@ -101,7 +95,6 @@ export function updateSessionHistory(id, userText, botText) {
 }
 
 export function logSession(id, logLine) {
-  // expects pre‑formatted line  "YYYY-MM-DD | User | Intent | Outcome"
   const s = ensureSession(id);
   s.logs.push(logLine);
   persistSessions();
@@ -111,7 +104,6 @@ export function logSession(id, logLine) {
 export function getSessionContext(id) {
   const s = sessions[id];
   if (!s) return '';
-  // concat last 10 turns for quick context
   const tail = s.history.slice(-20).map(m=>`${m.role}: ${m.content}`).join('\n');
   return tail;
 }
@@ -139,10 +131,8 @@ export function searchDocs(query) {
   return '';
 }
 
-// Simple heuristic to decide auto‑search
 export function shouldAutoSearch(userInput) {
   const q = userInput.toLowerCase();
-  // trigger if question words + '?'  OR begins with "define" / "what is" etc.
   const keyword = /(what|who|how|when|why)\b.*\?/i.test(userInput) ||
                   /^\s*(define|describe|explain|give me)\b/i.test(q);
   return keyword;
@@ -151,7 +141,7 @@ export function shouldAutoSearch(userInput) {
 // ---------------------------------------------------------------------------
 //  Compile summary via Gemini (placeholder prompt)
 // ---------------------------------------------------------------------------
-import { fetchGeminiResponse } from './geminiHelper.js'; // tiny helper in same folder
+import { fetchGeminiResponse } from './geminiHelper.js'; 
 
 export async function compileSessionSummary(id, tailPairs=6) {
   const s = sessions[id];
