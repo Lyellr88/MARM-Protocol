@@ -31,7 +31,7 @@ let docsCache   = null;
 export const docSnippets = {};     
 
 const DOC_NAMES      = ['readme', 'description', 'faq', 'handbook']; 
-const DOC_BASE_PATH  = '/webchat/data/'; 
+const DOC_BASE_PATH = './data/';
 
 export async function loadDocs() {
   if (docsCache && Object.keys(docsCache).length) return docsCache;
