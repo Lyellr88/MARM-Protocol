@@ -172,6 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('marm-last-session', currentSessionId);
     isMarmActive = true;
     appendMessage('bot', activateMarmSession());
-   appendMessage('bot', Welcome! MARM activated. Ready to log context and a brief two-line summary of what MARM is and why it’s useful');
+    appendMessage('bot', 'Welcome! MARM activated. Ready to log context and a brief two-line summary of what MARM is and why it’s useful');
   }
 });
