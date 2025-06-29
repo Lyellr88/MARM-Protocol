@@ -1,0 +1,289 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f8fa;
+  color: #23272f;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #222e3a;
+  color: #fff;
+  padding: 1.2em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(40,40,60,0.08);
+}
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.45em;
+  letter-spacing: 0.03em;
+}
+#helpBtn {
+  background: #ee6c4d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6em 1.4em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 4px rgba(40,40,60,0.07);
+}
+#helpBtn:hover {
+  background: #fa815c;
+}
+main {
+  max-width: 792px;
+  margin: 2.5em auto;
+  margin-left: 360px; 
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(30,30,50,0.10);
+  padding: 2em 2em 1.2em 2em;
+}
+#chat-log {
+  border: 1px solid #222e3a; 
+  border-radius: 8px;        
+  padding: 1em;
+  background: #f4f7fb;
+  min-height: 320px;
+  max-height: 380px;
+  margin-bottom: 1.5em;
+  overflow-y: auto;
+  box-shadow: 0 1px 4px rgba(40, 40, 60, 0.04); 
+  margin-left: 0px;
+}
+#chat-log div {
+  margin: 0.7em 0;
+  line-height: 1.5;
+}
+#chat-log strong {
+  color: #3d5a80;
+}
+#chat-form {
+  display: flex;
+  gap: 0.5em;
+}
+#user-input {
+  flex: 1;
+  font-size: 1.06em;
+  padding: 0.65em 1em;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #c0c9d7;
+  outline: none;
+  background: #f8fafc;
+  transition: border 0.2s;
+}
+#user-input:focus {
+  border: 1.5px solid #3d5a80;
+}
+#chat-form button {
+  font-size: 1em;
+  padding: 0.7em 1.5em;
+  border: none;
+  background: #3d5a80;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+}
+#chat-form button:hover {
+  background: #27436b;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.23);
+}
+.modal .modal-content {
+  background: #fff;
+  margin: 6% auto;
+  padding: 2em 2em 1.5em 2em;
+  border-radius: 13px;
+  max-width: 470px;
+  box-shadow: 0 4px 24px rgba(40,40,60,0.14);
+  position: relative;
+  font-size: 1.07em;
+  color: #2e2e3a;
+}
+.close {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+  font-size: 2em;
+  color: #888;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+}
+.modal:not(.hidden) {
+  display: block;
+}
+.modal-content a {
+  color: #3d5a80;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.modal-content a:hover {
+  color: #ee6c4d;
+}
+
+/* --- SIDEBAR (command list) --- */
+#sidebar {
+  position: absolute;
+  left: 0em;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #cbd5df;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,40,60,0.07);
+  padding: 1.2em 1.7em 1.2em 1.5em;
+  display: inline-block;
+  min-width: 220px;
+  max-width: 300px;
+  width: auto;
+  z-index: 10;
+}
+#sidebar h2 {
+  font-size: 1.1em;
+  margin-top: 0;
+  color: #222e3a;
+}
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+}
+#sidebar li {
+  margin-bottom: 1em;
+  font-size: 0.98em;
+  word-break: break-word;
+}
+
+/* --- DARK MODE --- */
+body.dark-mode {
+  background: #181b24;
+  color: #ececec;
+}
+body.dark-mode header {
+  background: #202735;
+  color: #fff;
+}
+body.dark-mode main {
+  background: #23263a;
+  color: #ececec;
+}
+body.dark-mode #sidebar {
+  background: #212537;
+  color: #d5d5e6;
+  border-right: none;
+}
+body.dark-mode #sidebar h2,
+body.dark-mode #sidebar li {
+  color: #e5e6fa;
+}
+body.dark-mode #chat-log {
+  background: #24273b;
+}
+body.dark-mode #user-input {
+  background: #23263a;
+  color: #fff;
+  border: 1px solid #44486e;
+}
+body.dark-mode #chat-form button,
+body.dark-mode #helpBtn {
+  background: #3d5a80;
+  color: #fff;
+}
+body.dark-mode .modal-content {
+  background: #22263a;
+  color: #e3e3ef;
+}
+
+/* --- DARK MODE TOGGLE BUTTON (lower right corner) --- */
+#darkModeToggle {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  background: #3d5a80;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 1.3em;
+  cursor: pointer;
+  z-index: 101;
+  box-shadow: 0 2px 6px rgba(40,40,60,0.10);
+}
+body.dark-mode #darkModeToggle {
+  background: #ee6c4d;
+  color: #fff;
+}
+
+/* --- TOKEN COUNTER BUTTON --- */
+#token-counter-btn {
+  position: fixed;
+  bottom: calc(2em + 2.5em + 0.5in);  
+  right: 2em;
+  font-size: 1.3em; 
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;                 
+  text-align: center;                              
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background: #ffb547;             
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 101;
+  box-shadow: 0 2px 6px rgba(40,40,60,0.10);
+}
+#token-counter-btn:hover {
+  background: #ffd376;
+}
+body.dark-mode #token-counter-btn {
+  background: #d89b2d;
+  color: #fff;
+}
+
+/* --- Responsive improvements --- */
+@media (max-width: 900px) {
+  #sidebar {
+    left: 1em;
+    min-width: 170px;
+    max-width: 90vw;
+    padding: 1em 1em 1em 1em;
+  }
+  main {
+    max-width: 96vw;
+    padding: 1em 0.5em 1em 0.5em;
+  }
+}
+@media (max-width: 600px) {
+  #sidebar {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 1em auto;
+    display: block;
+    width: 90vw;
+    min-width: unset;
+    max-width: unset;
+  }
+  main {
+    margin: 0.5em auto;
+    max-width: 98vw;
+    padding: 1em 0.2em 1em 0.2em;
+  }
