@@ -30,7 +30,8 @@ const LS_KEY    = 'marm-sessions-v1';
 let docsCache   = null;             
 export const docSnippets = {};     
 
-const DOC_NAMES      = ['readme', 'description', 'faq', 'handbook']; 
+// FIX #1: Changed 'readme' to 'marmreadme' to match actual filename
+const DOC_NAMES      = ['marmreadme', 'description', 'faq', 'handbook']; 
 const DOC_BASE_PATH = './data/';
 
 export async function loadDocs() {
@@ -42,7 +43,7 @@ export async function loadDocs() {
   await Promise.all(
     DOC_NAMES.map(async name => {
       try {
-        const DOC_BASE_PATH = './data/';
+        const res = await fetch(`${DOC_BASE_PATH}${name}.md`);
         if (!res.ok) throw new Error(`${name}.md not found (status ${res.status})`);
 
         const text = await res.text();
@@ -86,11 +87,20 @@ export async function activateMarmSession(id='default_session') {
   return 'MARM session activated. Docs loaded.';
 }
 
-export function updateSessionHistory(id, userText, botText) {
+export function updateSessionHistory(id, userText, botText, reasoning = '') {
   const s = ensureSession(id);
   s.history.push({ role:'user', content:userText, ts: Date.now() });
   s.history.push({ role:'bot',  content:botText,  ts: Date.now() });
-  s.lastReasoning = '';
+  // Only clear reasoning if no new reasoning is provided
+  if (reasoning) {
+    s.lastReasoning = reasoning;
+  }
+  persistSessions();
+}
+
+export function setSessionReasoning(id, reasoning) {
+  const s = ensureSession(id);
+  s.lastReasoning = reasoning;
   persistSessions();
 }
 
@@ -139,9 +149,9 @@ export function shouldAutoSearch(userInput) {
 }
 
 // ---------------------------------------------------------------------------
-//  Compile summary via Gemini (placeholder prompt)
+//  Compile summary via Gemini (using consistent helper)
 // ---------------------------------------------------------------------------
-import { fetchGeminiResponse } from './geminiHelper.js'; 
+import { generateContent } from './geminiHelper.js'; 
 
 export async function compileSessionSummary(id, tailPairs=6) {
   const s = sessions[id];
@@ -155,7 +165,8 @@ export async function compileSessionSummary(id, tailPairs=6) {
   ];
 
   try {
-    const summary = await fetchGeminiResponse(prompt);
+    const response = await generateContent(prompt);
+    const summary = await response.text();
     return summary;
   } catch (err) {
     console.error('[MARM] summary error', err);
@@ -166,36 +177,41 @@ export async function compileSessionSummary(id, tailPairs=6) {
 // ---------------------------------------------------------------------------
 //  Notebook CRUD (simple key/value)
 // ---------------------------------------------------------------------------
-// ---------------------------------------------------------------------------
-// NOTEBOOK  - simple key/value store per session
-// ---------------------------------------------------------------------------
-// Syntax accepted by chatbot.js command handler (already in wrapper):
-//   /notebook add key:value         → store a value
-//   /notebook get key               → retrieve a value
-//   /notebook list                  → show all keys
-//
-// The wrapper passes {action, key, value} so we only handle logic here.
 export function manageUserNotebook(id, action, key='', value='') {
   const s = ensureSession(id);
   switch (action) {
     case 'add': {
       if (!key || !value) return 'Usage: /notebook add key:value';
       s.notebook[key] = value;
-      persist();
+      persistSessions();
       return `Stored \"${key}\" → \"${value}\"`;
     }
     case 'get': {
       if (!key) return 'Usage: /notebook get key';
       return s.notebook[key] ? `\"${key}\": ${s.notebook[key]}` : `No entry for \"${key}\"`;
     }
-    case 'list': {
+    case 'all': {
       const keys = Object.keys(s.notebook);
       return keys.length ? 'Notebook keys: ' + keys.join(', ') : 'Notebook is empty.';
     }
     default:
-      return 'Notebook actions: add, get, list';
+      return 'Notebook actions: add, get, all';
   }
 }
+
+// ---------------------------------------------------------------------------
+//  Session Management - NEW functions for /reset support
+// ---------------------------------------------------------------------------
+export function resetSession(id) {
+  delete sessions[id];
+  persistSessions();
+  return 'Session reset. Starting fresh.';
+}
+
+export function getAllSessions() {
+  return Object.keys(sessions);
+}
+
 // ---------------------------------------------------------------------------
 //  LocalStorage persistence (browser only)
 // ---------------------------------------------------------------------------
