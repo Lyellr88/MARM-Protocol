@@ -266,6 +266,7 @@ body.dark-mode #token-counter-btn {
     padding: 1em 1em 1em 1em;
   }
   main {
+    margin-left: auto;
     max-width: 96vw;
     padding: 1em 0.5em 1em 0.5em;
   }
