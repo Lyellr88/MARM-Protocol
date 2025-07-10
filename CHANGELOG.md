@@ -14,12 +14,11 @@
 ---
 
 ## MARM Protocol – v1.3 Change Log  
-All notable updates between **June 9–23, 2025** are documented below. Entries are grouped by date using collapsible dropdowns for clarity.
 
 ---
 
 <details>
-<summary> June 9–13: Initial Protocol Unification (v1.2 Launch)</summary>
+<summary> June 9th–13th: Initial Protocol Unification (v1.2 Launch)</summary>
 
 ### Added
 - `/compile` command to generate one-line-per-entry summaries  
@@ -44,13 +43,12 @@ All notable updates between **June 9–23, 2025** are documented below. Entries 
 - Legacy modular language and optional tool references  
 - Confidence flag/scoring feature from all protocol outputs  
 - All mentions of auto-save or speculative memory behavior  
-
 </details>
 
 ---
 
 <details>
-<summary> June 14–17: Documentation Expansion and Restructuring</summary>
+<summary> June 14th–17th: Documentation Expansion and Restructuring</summary>
 
 ### Added
 - `HANDBOOK.md`: full command reference and usage guide  
@@ -73,13 +71,12 @@ All notable updates between **June 9–23, 2025** are documented below. Entries 
 ### Removed
 - Embedded command list from README  
 - “Back to top” anchors (due to GitHub collapsible quirks)  
-
 </details>
 
 ---
 
 <details>
-<summary> June 18–20: Externalization and Visibility Focus</summary>
+<summary> June 18th–20th: Externalization and Visibility Focus</summary>
 
 ### Added
 - AI-narrated walkthrough: 15-minute audio guide embedded in README  
@@ -93,13 +90,12 @@ All notable updates between **June 9–23, 2025** are documented below. Entries 
   - “What → Why → How → Proof” sequence  
   - Replaced “Use Cases” with community-backed examples  
   - Light marketing layer added (clear, not exaggerated)  
-
 </details>
 
 ---
 
 <details>
-<summary> June 21: README Cleanup & Structure Pass</summary>
+<summary> June 21st: README Cleanup & Structure Pass</summary>
 
 ### Changed
 - Cleaned up main README for new-user clarity  
@@ -108,13 +104,12 @@ All notable updates between **June 9–23, 2025** are documented below. Entries 
 - Moved Contact, Credits, and auxiliary content to `CONTRIBUTING.md`  
 - Simplified Quick Start block  
 - Added audio walkthrough link with summary of included topics  
-
 </details>
 
 ---
 
 <details>
-<summary>June 23: Protocol Expansion (v1.3 Launch)</summary>
+<summary>June 23rd: Protocol Expansion (v1.3 Launch)</summary>
 
 ### Added
 - `/notebook` command to save custom info in a personal library  
@@ -135,5 +130,19 @@ All notable updates between **June 9–23, 2025** are documented below. Entries 
 ### Removed
 - Key info and limitations from static protocol body (now placed in dropdown)  
 - Redundant phrasing in command definitions and legacy guardrail notes  
+</details>
 
+---
+
+<details>
+<summary>June 25th-July 10th – Chatbot Integration, Client Work, and Scheduled Pause</summary>
+
+### Context
+- Focus shifted to finalizing a public chatbot that runs MARM logic directly from the repo. This feature will allow users to interact with MARM in real time and explore its functionality hands-on.
+- Took a scheduled 5-day break for the July 4th holiday.
+- Completed a consulting engagement re-engineering a deliverability protocol for a client, which temporarily paused MARM-specific development.
+
+### Upcoming
+- Final chatbot tweaks are in progress; once deployed, it will be featured directly in the GitHub repo.
+- MARM refinements will resume, including minor protocol adjustments and test-driven formatting updates.
 </details>
