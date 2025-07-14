@@ -290,9 +290,9 @@ Merge later:
 
 </details>
 
-## Quick Reference Table
-<details>
-<summary>Expand Quick Reference Table</summary>
+## Quick Reference Table 
+
+### Expand Quick Reference Table
 
 | Feature                  | Command Example                                | Best Practice |
 |--------------------------|------------------------------------------------|---------------|
@@ -308,8 +308,6 @@ Merge later:
 | Notebook Add             | `/notebook key:style Professional`             | Keep concise |
 | Notebook Retrieve        | `/notebook get:style`                          | Verify after reseed |
 | Notebook Show All        | `/notebook show:`                              | Check token usage |
-
-</details>
 
 ## Troubleshooting Guide
 <details>
