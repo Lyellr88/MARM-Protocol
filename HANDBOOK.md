@@ -1,4 +1,4 @@
-# MARM Handbook
+# MARM Handbook v1.4
 
 ## Project Files
 
@@ -11,15 +11,9 @@
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 
----
-
 ## Short Introduction
 
 MARM is a universal protocol designed to improve memory continuity and response accuracy during AI conversations. This handbook covers beginner guidance, command usage, and recovery strategies for when memory or accuracy begins to drift.
-
----
-
-# MARM Handbook v1.4
 
 ## What's New
 <details>
@@ -31,14 +25,12 @@ MARM is a universal protocol designed to improve memory continuity and response 
 ### v1.3
 - Manual Knowledge Library (`/notebook`) introduced.
 
-### v1.4 (Current)
+### v1.4 
 - Removed ambiguous automation.
 - Added "Your Objective" and "Safe Guard Check."
 - Expanded `/log` and `/notebook` commands for better control.
 
 </details>
-
-—
 
 ## Part I: Core Principles
 
@@ -54,8 +46,6 @@ Manual logging, knowledge entry, and accuracy checks prevent silent drift. User 
 - **Accuracy:** `/contextual reply`, `/show reasoning`.
 
 This approach ensures the AI works with **user-led intent**, reducing drift across sessions and platforms.
-
----
 
 ## Part II: Quick Start Walkthrough
 
@@ -87,8 +77,6 @@ After compile, copy reseed block:
 [paste reseed block]
 /notebook key:project_tone Professional, technical documentation style
 
----
-
 ## Part III: Command Reference
 
 ### Session Management
@@ -118,8 +106,6 @@ After compile, copy reseed block:
 - Must be manually reseeded each new session
 - Token limits apply - keep entries concise
 - Ideal for: project guidelines, tone rules, technical specs, workflow definitions
-
----
 
 ## Part IV: Beyond the Basics
 
@@ -160,7 +146,7 @@ Handle multi-threaded conversations:
 ### Session Drift Management
 
 <details>
-
+  
 #### When to Refresh/Reseed
 - Every **8-10 conversation turns**
 - After **any major topic pivot**
@@ -185,7 +171,7 @@ Every 10 turns:
 ### Manual Knowledge Library Deep Dive
 
 <details>
-
+  
 #### Token Management Strategy
 Bad (token heavy):
 /notebook key:project_details This is a comprehensive project involving multiple stakeholders including...
@@ -193,7 +179,6 @@ Good (token efficient):
 /notebook key:project_type B2B SaaS platform
 /notebook key:stakeholders PM:John, Dev:Sarah, Design:Mike
 /notebook key:deadline 2025-08-30
-
 
 #### Multi-Key Strategies
 Organize related info:
@@ -215,7 +200,7 @@ Essential reseed template:
 ### Platform Compatibility Strategies
 
 <details>
-
+  
 #### ChatGPT (Memory-Enabled)
 - Native memory often **drifts** or **conflates sessions**
 - MARM overrides with explicit structure
@@ -245,6 +230,7 @@ API: Can inject MARM protocol into system message
 ### Power-User Templates & Customization
 
 <details>
+  
 #### Project Management Template
 /start marm
 /log session:Sprint24
@@ -282,7 +268,7 @@ Result: Persistent external memory
 ### Advanced Session Patterns
 
 <details>
-
+  
 #### Session Chaining
 Link related sessions:
 /log session:Research-Phase1
@@ -303,8 +289,6 @@ Merge later:
 [manually merge relevant entries]
 
 </details>
-
----
 
 ## Quick Reference Table
 <details>
