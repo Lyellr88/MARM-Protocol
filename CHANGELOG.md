@@ -146,3 +146,25 @@
 - Final chatbot tweaks are in progress; once deployed, it will be featured directly in the GitHub repo.
 - MARM refinements will resume, including minor protocol adjustments and test-driven formatting updates.
 </details>
+
+---
+
+<details>
+<summary>July 14th: Protocol Refinement and Handbook Restructure (v1.4 Launch)</summary>
+
+### Added
+- `/refresh marm` command to recenter AI mid-session, recommended every 8-10 turns
+- Subcommands for `/notebook`: `key:[name]`, `get:[name]`, and `show:` for enhanced data management
+- "Your Objective" and "Safe Guard Check" sections for strict MARM identity and self-verification before responding
+- "What's New in v1.4 (Upgrading from v1.3)" section in README for quick reference
+- Star and fork badges at the top of README
+
+### Changed
+- `/log` command split into `/log session:[name]` and `/log entry [Date | User | Intent | Outcome]` for increased precision
+- Clarified manual-only processes; removed ambiguous automation from all protocol sections
+- Restructured HANDBOOK.md into a concise, professional 4-part format to improve readability and depth
+
+### Removed
+- Previous automated workflow references that implied non-manual AI actions
+- Redundant explanations and repetitive content from HANDBOOK.md to streamline user experience
+</details>
