@@ -54,21 +54,21 @@ This approach ensures the AI works with **user-led intent**, reducing drift acro
 /log session:ProjectAlpha
 
 ### Step 2: Log Milestones Throughout Work
-/log entry [2025-07-14 | Ryan | Set project scope | Phase 1 started]
-/log entry [2025-07-14 | Ryan | Completed wireframes | Ready for review]
+/log entry [2025-07-14 | Set project scope | Phase 1 started]
+/log entry [2025-07-14 | Completed wireframes | Ready for review]
 
 ### Step 3: Handle Topic Shifts
 When switching focus mid-session:
-/log entry [2025-07-14 | Ryan | Pivoted to API design | Frontend work paused]
+/log entry [2025-07-14 | Pivoted to API design | Frontend work paused]
 /refresh marm
 
 ### Step 4: Compile Progress
 /compile ProjectAlpha --summary
 
 Output example:
-[2025-07-14 | Ryan | Set project scope | Phase 1 started]
-[2025-07-14 | Ryan | Completed wireframes | Ready for review]
-[2025-07-14 | Ryan | Pivoted to API design | Frontend work paused]
+[2025-07-14 | Set project scope | Phase 1 started]
+[2025-07-14 | Completed wireframes | Ready for review]
+[2025-07-14 | Pivoted to API design | Frontend work paused]
 
 ### Step 5: Reseed Context (New Session)
 After compile, copy reseed block:
@@ -85,7 +85,7 @@ After compile, copy reseed block:
 
 ### Logging
 - **`/log session:[name]`**: Labels session ("folders"). Think of it as project naming.
-- **`/log entry [Date | User | Intent | Outcome]`**: Logs structured milestones. Schema is enforced.
+- **`/log entry [Date-Summary-Result]`**: Logs structured milestones. Schema is enforced.
 
 ### Accuracy & Reasoning
 - **`/contextual reply`**: Forces accuracy-driven responses with self-checks.
@@ -115,7 +115,7 @@ After compile, copy reseed block:
 Track complex projects across days/weeks:
 Day 1:
 /log session:AppRedesign
-/log entry [2025-07-14 | Ryan | Defined MVP features | 5 core features identified]
+/log entry [2025-07-14 | Defined MVP features | 5 core features identified]
 /notebook key:mvp_features Login, Dashboard, Settings, API, Reports
 /compile AppRedesign --summary
 Day 2 (new chat):
@@ -123,7 +123,7 @@ Day 2 (new chat):
 /log session:AppRedesign
 [paste Day 1 reseed block]
 /notebook key:mvp_features Login, Dashboard, Settings, API, Reports
-/log entry [2025-07-15 | Ryan | Started login flow | OAuth2 selected]
+/log entry [2025-07-15 | Started login flow | OAuth2 selected]
 
 #### Reduced Hallucination Mode
 For critical accuracy (legal docs, technical specs):
@@ -136,10 +136,10 @@ Review reasoning trail before accepting output.
 #### Complex Topic Management
 Handle multi-threaded conversations:
 /log session:ClientProject
-/log entry [2025-07-14 | Ryan | Discussed frontend requirements | React chosen]
+/log entry [2025-07-14 | Discussed frontend requirements | React chosen]
 /notebook key:tech_stack React, Node.js, PostgreSQL
 [20 messages later, topic shifts]
-/log entry [2025-07-14 | Ryan | Switched to budget planning | Need cost estimates]
+/log entry [2025-07-14 | Switched to budget planning | Need cost estimates]
 /refresh marm
 /compile ClientProject --summary --fields=Intent
 
@@ -236,17 +236,17 @@ API: Can inject MARM protocol into system message
 /log session:Sprint24
 /notebook key:sprint_goal Implement user authentication
 /notebook key:team Frontend:2, Backend:3, QA:1
-/log entry [Date | PM | Sprint planning complete | 21 story points]
+/log entry [Date | Sprint planning complete | 21 story points]
 
 #### Daily Standup Logger
 /log session:DailyStandups
-/log entry [2025-07-14 | Ryan | Yesterday: API design | Today: Implementation]
+/log entry [2025-07-14 | Yesterday: API design | Today: Implementation]
 /compile DailyStandups --summary --fields=User,Outcome
 
 #### Code Review Workflow
 /log session:PR-4521-Review
 /notebook key:pr_link https://github.com/org/repo/pull/4521
-/log entry [2025-07-14 | Ryan | Initial review | 3 blockers found]
+/log entry [2025-07-14 | Initial review | 3 blockers found]
 /notebook key:blockers SQL injection risk, Missing tests, No error handling
 
 #### Multi-LLM Integration Pattern
@@ -276,7 +276,7 @@ Link related sessions:
 /compile Research-Phase1 --summary
 New session:
 /log session:Research-Phase2
-/log entry [2025-07-15 | Ryan | Continued from Phase1 | See previous compile]
+/log entry [2025-07-15 | Continued from Phase1 | See previous compile]
 
 #### Parallel Sessions
 Track multiple threads:
@@ -299,9 +299,9 @@ Merge later:
 | Start MARM               | `/start marm`                                  | Always first command |
 | Refresh MARM             | `/refresh marm`                                | Every 8-10 turns |
 | Log Session              | `/log session:ProjectX`                        | Use descriptive names |
-| Log Entry                | `/log entry [Date | User | Intent | Outcome]` | Log key decisions only |
+| Log Entry                | `/log entry [Date-Summary-Result]`             | Log key decisions only |
 | Compile Summary          | `/compile ProjectX --summary`                  | Before session end |
-| Compile Filtered         | `/compile ProjectX --summary --fields=Intent,Outcome` | For focused reviews |
+| Compile Filtered         | `/compile ProjectX --summary --fields=Summary,Result` | For focused reviews |
 | Accuracy Reply Mode      | `/contextual reply`                            | For critical outputs |
 | Show Reasoning           | `/show reasoning`                              | Verify logic paths |
 | Reseed (Manual)          | Paste compile block into new session           | Include notebook keys |
