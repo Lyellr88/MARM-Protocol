@@ -50,31 +50,31 @@ This approach ensures the AI works with **user-led intent**, reducing drift acro
 ## Part II: Quick Start Walkthrough
 
 ### Step 1: Start & Label Session
-/start marm
+/start marm   
 /log session:ProjectAlpha
 
 ### Step 2: Log Milestones Throughout Work
-/log entry [2025-07-14 | Set project scope | Phase 1 started]
+/log entry [2025-07-14 | Set project scope | Phase 1 started]   
 /log entry [2025-07-14 | Completed wireframes | Ready for review]
 
-### Step 3: Handle Topic Shifts
-When switching focus mid-session:
-/log entry [2025-07-14 | Pivoted to API design | Frontend work paused]
+### Step 3: Handle Topic Shifts   
+When switching focus mid-session:   
+/log entry [2025-07-14 | Pivoted to API design | Frontend work paused]   
 /refresh marm
 
 ### Step 4: Compile Progress
 /compile ProjectAlpha --summary
 
-Output example:
-[2025-07-14 | Set project scope | Phase 1 started]
-[2025-07-14 | Completed wireframes | Ready for review]
-[2025-07-14 | Pivoted to API design | Frontend work paused]
+Output example:   
+[2025-07-14 | Set project scope | Phase 1 started]   
+[2025-07-14 | Completed wireframes | Ready for review]   
+[2025-07-14 | Pivoted to API design | Frontend work paused]   
 
-### Step 5: Reseed Context (New Session)
-After compile, copy reseed block:
-/start marm
-/log session:ProjectAlpha
-[paste reseed block]
+### Step 5: Reseed Context (New Session)   
+After compile, copy reseed block:   
+/start marm   
+/log session:ProjectAlpha   
+[paste reseed block]   
 /notebook key:project_tone Professional, technical documentation style
 
 ## Part III: Command Reference
@@ -112,59 +112,59 @@ After compile, copy reseed block:
 ### Real-World Use Cases
 
 #### Multi-Session Projects
-Track complex projects across days/weeks:
-Day 1:
-/log session:AppRedesign
-/log entry [2025-07-14 | Defined MVP features | 5 core features identified]
-/notebook key:mvp_features Login, Dashboard, Settings, API, Reports
-/compile AppRedesign --summary
-Day 2 (new chat):
+Track complex projects across days/weeks:   
+Day 1:   
+/log session:AppRedesign   
+/log entry [2025-07-14 | Defined MVP features | 5 core features identified]   
+/notebook key:mvp_features Login, Dashboard, Settings, API, Reports   
+/compile AppRedesign --summary   
+Day 2 (new chat):    
 /start marm
-/log session:AppRedesign
-[paste Day 1 reseed block]
-/notebook key:mvp_features Login, Dashboard, Settings, API, Reports
-/log entry [2025-07-15 | Started login flow | OAuth2 selected]
+/log session:AppRedesign   
+[paste Day 1 reseed block]   
+/notebook key:mvp_features Login, Dashboard, Settings, API, Reports   
+/log entry [2025-07-15 | Started login flow | OAuth2 selected]   
 
 #### Reduced Hallucination Mode
-For critical accuracy (legal docs, technical specs):
-/contextual reply
-"Draft a privacy policy section on data retention"
-/show reasoning
+For critical accuracy (legal docs, technical specs):   
+/contextual reply   
+"Draft a privacy policy section on data retention"   
+/show reasoning   
 
-Review reasoning trail before accepting output.
+Review reasoning trail before accepting output.   
 
-#### Complex Topic Management
-Handle multi-threaded conversations:
-/log session:ClientProject
-/log entry [2025-07-14 | Discussed frontend requirements | React chosen]
-/notebook key:tech_stack React, Node.js, PostgreSQL
-[20 messages later, topic shifts]
-/log entry [2025-07-14 | Switched to budget planning | Need cost estimates]
-/refresh marm
-/compile ClientProject --summary --fields=Intent
+#### Complex Topic Management   
+Handle multi-threaded conversations:   
+/log session:ClientProject   
+/log entry [2025-07-14 | Discussed frontend requirements | React chosen]    
+/notebook key:tech_stack React, Node.js, PostgreSQL   
+[20 messages later, topic shifts]   
+/log entry [2025-07-14 | Switched to budget planning | Need cost estimates]   
+/refresh marm   
+/compile ClientProject --summary --fields=Intent   
 
 ### Session Drift Management
 
 <details>
   
-#### When to Refresh/Reseed
-- Every **8-10 conversation turns**
-- After **any major topic pivot**
-- When AI responses feel **generic or unfocused**
-- Before **critical decisions or outputs**
+#### When to Refresh/Reseed   
+- Every **8-10 conversation turns**   
+- After **any major topic pivot**   
+- When AI responses feel **generic or unfocused**   
+- Before **critical decisions or outputs**   
 
-#### Drift Recovery Process
-Detect drift (generic responses, lost context)
-/refresh marm
-/compile [Session] --summary
-Review last 3-5 entries
-/contextual reply for next response
+#### Drift Recovery Process   
+Detect drift (generic responses, lost context)   
+/refresh marm   
+/compile [Session] --summary   
+Review last 3-5 entries   
+/contextual reply for next response   
 
-#### Preventive Maintenance
-Every 10 turns:
-/compile SessionName --summary
-/refresh marm
-/notebook show:  [verify key data intact]
+#### Preventive Maintenance   
+Every 10 turns:   
+/compile SessionName --summary   
+/refresh marm   
+/notebook show:  [verify key data intact]   
 
 </details>
 
@@ -172,28 +172,28 @@ Every 10 turns:
 
 <details>
   
-#### Token Management Strategy
-Bad (token heavy):
-/notebook key:project_details This is a comprehensive project involving multiple stakeholders including...
-Good (token efficient):
-/notebook key:project_type B2B SaaS platform
-/notebook key:stakeholders PM:John, Dev:Sarah, Design:Mike
-/notebook key:deadline 2025-08-30
+#### Token Management Strategy   
+Bad (token heavy):   
+/notebook key:project_details This is a comprehensive project involving multiple stakeholders including...   
+Good (token efficient):   
+/notebook key:project_type B2B SaaS platform   
+/notebook key:stakeholders PM:John, Dev:Sarah, Design:Mike   
+/notebook key:deadline 2025-08-30   
 
-#### Multi-Key Strategies
-Organize related info:
-/notebook key:api_base https://api.example.com/v2
-/notebook key:api_auth Bearer token in header
-/notebook key:api_ratelimit 100 req/min
+#### Multi-Key Strategies   
+Organize related info:   
+/notebook key:api_base https://api.example.com/v2   
+/notebook key:api_auth Bearer token in header   
+/notebook key:api_ratelimit 100 req/min   
 
-#### Session-Bound Behavior
-Notebook entries **vanish** on new chat. Always reseed critical keys:
-Essential reseed template:
-/start marm
-/log session:[Name]
-[paste compile block]
-/notebook key:tone [saved tone preference]
-/notebook key:context [saved project context]
+#### Session-Bound Behavior   
+Notebook entries **vanish** on new chat. Always reseed critical keys:   
+Essential reseed template:   
+/start marm   
+/log session:[Name]   
+[paste compile block]   
+/notebook key:tone [saved tone preference]   
+/notebook key:context [saved project context]   
 
 </details>
 
@@ -201,29 +201,29 @@ Essential reseed template:
 
 <details>
   
-#### ChatGPT (Memory-Enabled)
-- Native memory often **drifts** or **conflates sessions**
-- MARM overrides with explicit structure
-- Use `/compile` even with memory on
-- `/refresh marm` counters GPT's assumption tendencies
+#### ChatGPT (Memory-Enabled)   
+- Native memory often **drifts** or **conflates sessions**   
+- MARM overrides with explicit structure   
+- Use `/compile` even with memory on   
+- `/refresh marm` counters GPT's assumption tendencies   
 
-#### Claude (Stateless)
-- **Zero memory** between sessions
-- Requires disciplined reseed workflow
-- Benefits most from `/notebook` entries
-- Use verbose session names for clarity
+#### Claude (Stateless)   
+- **Zero memory** between sessions   
+- Requires disciplined reseed workflow   
+- Benefits most from `/notebook` entries   
+- Use verbose session names for clarity   
 
-#### API/Groq/Local Models
-- Treat as fully stateless
-- Implement reseed blocks in system prompts
-- Can automate compile/reseed via middleware
-- Token limits vary - adjust notebook usage
+#### API/Groq/Local Models   
+- Treat as fully stateless   
+- Implement reseed blocks in system prompts   
+- Can automate compile/reseed via middleware   
+- Token limits vary - adjust notebook usage   
 
-#### Platform-Specific Tips
-ChatGPT: /refresh marm every 5-7 turns (fights assumption drift)
-Claude: Full reseed required, use detailed session labels
-Groq: Keep notebook entries minimal (smaller context)
-API: Can inject MARM protocol into system message
+#### Platform-Specific Tips   
+ChatGPT: /refresh marm every 5-7 turns (fights assumption drift)   
+Claude: Full reseed required, use detailed session labels   
+Groq: Keep notebook entries minimal (smaller context)   
+API: Can inject MARM protocol into system message   
 
 </details>
 
@@ -231,37 +231,37 @@ API: Can inject MARM protocol into system message
 
 <details>
   
-#### Project Management Template
-/start marm
-/log session:Sprint24
-/notebook key:sprint_goal Implement user authentication
-/notebook key:team Frontend:2, Backend:3, QA:1
-/log entry [Date | Sprint planning complete | 21 story points]
+#### Project Management Template   
+/start marm   
+/log session:Sprint24   
+/notebook key:sprint_goal Implement user authentication   
+/notebook key:team Frontend:2, Backend:3, QA:1   
+/log entry [Date | Sprint planning complete | 21 story points]   
 
-#### Daily Standup Logger
-/log session:DailyStandups
-/log entry [2025-07-14 | Yesterday: API design | Today: Implementation]
-/compile DailyStandups --summary --fields=User,Outcome
+#### Daily Standup Logger   
+/log session:DailyStandups   
+/log entry [2025-07-14 | Yesterday: API design | Today: Implementation]   
+/compile DailyStandups --summary --fields=User,Outcome   
 
-#### Code Review Workflow
-/log session:PR-4521-Review
-/notebook key:pr_link https://github.com/org/repo/pull/4521
-/log entry [2025-07-14 | Initial review | 3 blockers found]
-/notebook key:blockers SQL injection risk, Missing tests, No error handling
+#### Code Review Workflow   
+/log session:PR-4521-Review   
+/notebook key:pr_link https://github.com/org/repo/pull/4521   
+/log entry [2025-07-14 | Initial review | 3 blockers found]   
+/notebook key:blockers SQL injection risk, Missing tests, No error handling   
 
-#### Multi-LLM Integration Pattern
-Use MARM logs as context bridges:
-GPT-4 Session:
-/compile ProjectX --summary > export.txt
-Claude Session:
-/start marm
-[paste export.txt]
-Continue seamlessly...
+#### Multi-LLM Integration Pattern   
+Use MARM logs as context bridges:   
+GPT-4 Session:   
+/compile ProjectX --summary > export.txt   
+Claude Session:   
+/start marm   
+[paste export.txt]   
+Continue seamlessly...   
 
-#### Automation Hooks (n8n/Zapier)
-Trigger: /compile command
-Action: Auto-save to Notion/Google Docs
-Result: Persistent external memory
+#### Automation Hooks (n8n/Zapier)   
+Trigger: /compile command   
+Action: Auto-save to Notion/Google Docs   
+Result: Persistent external memory   
 
 </details>
 
@@ -269,24 +269,24 @@ Result: Persistent external memory
 
 <details>
   
-#### Session Chaining
-Link related sessions:
-/log session:Research-Phase1
-[work]
-/compile Research-Phase1 --summary
-New session:
-/log session:Research-Phase2
-/log entry [2025-07-15 | Continued from Phase1 | See previous compile]
+#### Session Chaining   
+Link related sessions:   
+/log session:Research-Phase1   
+[work]   
+/compile Research-Phase1 --summary   
+New session:   
+/log session:Research-Phase2   
+/log entry [2025-07-15 | Continued from Phase1 | See previous compile]   
 
-#### Parallel Sessions
-Track multiple threads:
-Tab 1: /log session:ClientA-Frontend
-Tab 2: /log session:ClientA-Backend
-Tab 3: /log session:ClientA-Integration
-Merge later:
-/compile ClientA-Frontend --summary
-/compile ClientA-Backend --summary
-[manually merge relevant entries]
+#### Parallel Sessions   
+Track multiple threads:   
+Tab 1: /log session:ClientA-Frontend   
+Tab 2: /log session:ClientA-Backend   
+Tab 3: /log session:ClientA-Integration   
+Merge later:   
+/compile ClientA-Frontend --summary   
+/compile ClientA-Backend --summary   
+[manually merge relevant entries]   
 
 </details>
 
@@ -313,20 +313,20 @@ Merge later:
 <details>
 <summary>Common Issues & Solutions</summary>
 
-### "AI seems to have forgotten context"
-- Run `/refresh marm`
-- Check last compile with `/compile [session] --summary`
-- Verify notebook keys with `/notebook show:`
+### "AI seems to have forgotten context"   
+- Run `/refresh marm`   
+- Check last compile with `/compile [session] --summary`   
+- Verify notebook keys with `/notebook show:`   
 
-### "Responses are too generic"
-- Use `/contextual reply` for next response
-- Add specific context to notebook
-- Log recent decision with `/log entry`
+### "Responses are too generic"   
+- Use `/contextual reply` for next response   
+- Add specific context to notebook   
+- Log recent decision with `/log entry`   
 
-### "Session too long, hitting limits"
-- `/compile [session] --summary`
-- Start fresh with `/log session:[Name]-Part2`
-- Reseed only essential notebook keys
+### "Session too long, hitting limits"   
+- `/compile [session] --summary`   
+- Start fresh with `/log session:[Name]-Part2`   
+- Reseed only essential notebook keys   
 
 ### "Platform memory conflicting with MARM"
 - Explicitly use `/refresh marm`
