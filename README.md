@@ -75,7 +75,7 @@ Session Memory Kernel:
 Session Relay Tools (Core Behavior):
 - /compile [SessionName] --summary: Outputs one-line-per-entry summaries using standardized schema. Optional filters: --fields=Intent,Outcome.
 - Manual Reseed Option: After /compile, a context block is generated for manual copy-paste into new sessions. Supports continuity across resets.
-- Log Schema Enforcement: All /log entries must follow [Date | User | Intent | Outcome] for clarity and structured recall.
+- Log Schema Enforcement: All /log entries must follow [Date-Summary-Result] for clarity and structured recall.
 - Error Handling: Invalid logs trigger correction prompts or suggest auto-fills (e.g., today's date).
 
 Accuracy Guardrails with Transparency:
@@ -96,7 +96,7 @@ Commands:
 - /start marm — Activates MARM (memory and accuracy layers).
  - /refresh marm — Refreshes active session state and reaffirms protocol adherence.
 - /log session [name] → Folder-style session logs.
- - /log entry [Date | User | Intent | Outcome] → Structured memory entries.
+ - /log entry [Date-Summary-Result] → Structured memory entries.
 - /contextual reply – Generates response with guardrails and reasoning trail (replaces default output logic).
 - /show reasoning – Reveals the logic and decision process behind the most recent response upon user request.
 - /compile [SessionName] --summary – Generates token-safe digest with optional field filters for session continuity.
