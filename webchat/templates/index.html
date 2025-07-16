@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MARM Systems</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARM Systems - Memory Accurate Response Mode</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <aside id="sidebar">
-    <h2>Quick Start Commands</h2>
-    <ul>
-      <li><strong>/start marm</strong> – Auto-enabled</li>
-      <li><strong>/log [name]</strong> – Save session notes</li>
-      <li><strong>/contextual reply</strong> – Safer, logic-based answers</li>
-      <li><strong>/show reasoning</strong> – See how it responded</li>
-      <li><strong>/compile [name] --summary</strong> – Get a session recap</li>
-      <li><strong>/notebook</strong> – Store custom info for focused replies</li>
-    </ul>
-  </aside>
 
   <header>
-    <h1>MARM chatbot</h1>
-    <button id="helpBtn">Help &amp; MARM Guide</button>
+    <h1>MARM Chatbot</h1>
+    <button id="helpBtn">Help & MARM Guide</button>
   </header>
 
   <main>
     <section id="chatbox">
       <div id="chat-log"></div>
       <form id="chat-form">
-        <input type="text" id="user-input" placeholder="Type a message or command..." autocomplete="off" />
+        <input 
+          type="text" 
+          id="user-input" 
+          placeholder="Type a message or command..." 
+          autocomplete="off"
+          autofocus
+        />
         <button type="submit">Send</button>
       </form>
     </section>
@@ -38,22 +35,36 @@
       <span id="close-help" class="close">&times;</span>
       <h2>MARM Protocol Help</h2>
       <p>
-        <strong>Quick Commands:</strong><br>
-        /log • /notebook • /compile --summary • /show reasoning
+        <strong>Memory Accurate Response Mode (MARM)</strong><br>
+        A protocol for maintaining conversation context and providing transparent, accurate AI responses.
       </p>
+        <strong>Quick Commands (v1.4):</strong>
+      </p>
+      <ul>
+        <li><code>/start marm</code> - Activates MARM for the session.</li>
+        <li><code>/refresh marm</code> - Reaffirms protocol adherence mid-session.</li>
+        <li><code>/log</code> - Use <code>session:</code> to name a session or <code>entry</code> to log a milestone.</li>
+        <li><code>/compile</code> - Generates a summary of your session logs.</li>
+        <li><code>/notebook</code> - Manages your personal knowledge library.</li>
+        <li><code>/contextual reply</code> - Forces an accuracy-first response.</li>
+        <li><code>/show reasoning</code> - Reveals the logic behind the last response.</li>
+      </ul>
       <p>
-        <a href="data/HANDBOOK.md" target="_blank">Full Handbook (HANDBOOK.md)</a><br>
-        <a href="data/FAQ.md" target="_blank">FAQ</a><br>
-        <a href="data/DESCRIPTION.md" target="_blank">Project Description</a><br>
-        <a href="media/media_MARM_Audio_Walkthrough.mp3" target="_blank">🎧 5-min audio walkthrough</a>
+        <strong>Documentation:</strong><br>
+        <a href="data/handbook.md" target="_blank">📘 Full Handbook</a><br>
+        <a href="data/faq.md" target="_blank">❓ FAQ</a><br>
+        <a href="data/description.md" target="_blank">📄 Project Description</a>
       </p>
     </div>
   </div>
 
-  <button id="token-counter-btn" title="Token counter">TC</button><br>
-  <button id="darkModeToggle" title="Toggle dark mode">🌙</button>
+  <button id="token-counter-btn" title="Token Counter">TC</button>
+  <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
 
-  <script src="src/ui.js" type="module"></script>
-  <script src="src/chatbot.js" type="module"></script>
+  <script type="module">
+    // Test if modules are loading
+    console.log('Loading modules...');
+    import('./src/chatbot.js').then(() => console.log('Chatbot loaded')).catch(e => console.error('Chatbot error:', e));
+  </script>
 </body>
 </html>
