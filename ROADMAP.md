@@ -1,4 +1,5 @@
-# MARM Roadmap
+# MARM Roadmap 
+*Updated - July 16th, 2025*
 
 ## Project Files
 
@@ -14,31 +15,21 @@
 
 ---
 
-## Core Focus (Now – v1.2.x)
-- Refine documentation based on user feedback
-- Add more real-world usage examples and templates
-- Improve navigation for first-time users (e.g., FAQ polish, Handbook anchors)
-- Monitor adoption patterns for API-tier users vs casual interfaces
+## Core Focus (Current)
+- The MARM Protocol has been updated to **v1.4** and is now considered feature-complete and polished for the time being.
+- The primary focus has shifted from protocol design to hands-on development and learning.
+- The official MARM-powered **chatbot is in the final stages of development** and will be launching soon as a live, interactive demo.
 
-## Planned (v1.3 – Long-Term Additions)
-- Add `cheatsheet.md` for minimal startup users
-- Explore cross-thread reseed format for long-term continuity
-- Test modular overlays (MARM + journaling or agents)
-- Evaluate markdown export or log file generation options
+## New Vision & Planned Enhancements
+- Integrate MARM with workflow tools like **n8n** to automate some of the manual commands for power-users.
+- Implement a **RAG (Retrieval-Augmented Generation)** system to provide the chatbot with deeper, more intelligent long-term memory based on user logs and notebooks.
+- Explore the dual-path future for MARM: continue to offer the standalone chatbot while also developing MARM into an **add-on tool or API** for other developers to integrate into their own applications.
 
 ## Community + Feedback
-- Open call for integration feedback from dev teams
-- Add "Used With MARM" showcase for variations/adaptations
-- Contributor recognition improvements
+- Open call for integration feedback from dev teams.
+- Add "Used With MARM" showcase for variations/adaptations.
+- Contributor recognition improvements.
 
 ---
-## Related Projects (In Development)
-The following is a separate, standalone protocol also in development by the MARM author. It is designed to work alongside or independently of MARM to solve a different, but related, challenge in LLM communication.****
-
-### Repetition Echo Protocol (REP) v2  
-*Practical loop-guard for multi-LLM and AI chat systems*
-
-**Purpose:**  
-Reduce redundant AI repetition (“echoes”) in conversation while preserving user intent, clarity, and override control. REP is designed to minimize noise, not access—offering guided summaries and optional repeat triggers rather than hard suppression.
-
----
+## What's Next
+New projects are coming soon. This is just the start.
