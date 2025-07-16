@@ -168,3 +168,37 @@
 - Previous automated workflow references that implied non-manual AI actions
 - Redundant explanations and repetitive content from HANDBOOK.md to streamline user experience
 </details>
+
+---
+
+<details>
+<summary>July 11th-16th: Full System Refactor - From Prototype to Beta</summary>
+
+### Added
+- **New UI Features:**
+    - A dynamic, collapsible command menu to organize all MARM commands and improve usability.
+    - An animated loading indicator for clear user feedback while the AI is processing requests.
+    - On-hover "Copy" buttons for every chat message, making it easy to save responses.
+    - Full dark mode support for all new UI components.
+- **Enhanced Logic and Context:**
+    - Full support for all MARM v1.4 commands, including the new `/start` and `/refresh` commands.
+    - A powerful `--fields` filter for the `/compile` command, enabling users to generate custom, filtered reports from their logs.
+    - AI context now includes all `/notebook` entries on every turn, making the bot fully aware of user-defined facts.
+    - Keyword-aware document searching to provide more accurate answers for MARM-related queries.
+
+### Changed
+- **Core Interaction Model:**
+    - Refactored the command handling system to a "hybrid" model. Most commands now trigger an AI-generated, natural language acknowledgment instead of a static text reply.
+    - Updated the message display function to use `marked.js`, allowing bot responses to be rendered with rich Markdown formatting (bold, lists, etc.).
+- **Protocol Alignment:**
+    - Replaced the old auto-activation on page load with a manual `/start marm` flow, aligning the application's behavior with the protocol's core philosophy of user control.
+    - Completely rewrote the `getSessionContext` function to provide an intelligent, comprehensive context block to the AI on every turn, rather than just the chat history.
+- **Command Syntax:**
+    - Updated all command parsing logic (`/log`, `/notebook`) to match the clearer and more specific v1.4 syntax.
+
+### Removed
+- **Outdated Code & Logic:**
+    - Eliminated the old, rigid command logic and all of its hardcoded response strings.
+    - Removed the automatic MARM activation flow.
+    - Made the legacy `config.js` file completely obsolete, as its contents were integrated or replaced.
+</details>
