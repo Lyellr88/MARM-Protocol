@@ -1,4 +1,4 @@
-# MARM Handbook
+# MARM Handbook v1.4
 
 ## Project Files
 
@@ -11,491 +11,326 @@
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 
----
-
 ## Short Introduction
 
 MARM is a universal protocol designed to improve memory continuity and response accuracy during AI conversations. This handbook covers beginner guidance, command usage, and recovery strategies for when memory or accuracy begins to drift.
 
----
-
-## What’s New in v1.2  
-Session relay tools (/compile, reseeding, and schema enforcement) are now core features of MARM, no more separate patch.
-
----
-
-## What’s New in v1.3
-You can now store your own trusted info using /notebook command, perfect for saving rules, ideas, or project details the AI will prioritize. I will update the handbook fully soon.
-
+## What's New
 <details>
-<summary>(CLICK HERE) MARM v1.3 Update: Using /notebook (Manual Knowledge Library) </summary>
+<summary>View MARM version updates</summary>
 
-/notebook allows you to store facts, frameworks, or custom data the AI should treat as trusted reference. Use it to build a session-safe knowledge base.
+### v1.2
+- Session Relay Tools (`/compile`, reseeding, schema enforcement) integrated.
 
-**How to save:**  
-Treat it like a personal sticky note for the AI.  
-**Format:**  
- /notebook [label]: [info]  
-**Example**  
-/notebook response_style: Always flag tone drift and keep responses under 900 characters.
+### v1.3
+- Manual Knowledge Library (`/notebook`) introduced.
 
-**To reference it later:**  
-Just mention the label.  
-**Example:**  
-“Use response_style from notebook.”  
-You can also ask: “What’s stored under response_style?”  
-
-**To update info:**  
-Resave with the same label, it will replace the old version.  
-**Example:**  
-/notebook product_pitch: Highlight transparency, modularity, and speed.  
-
-**Best for:**  
-- Ongoing character/story building  
-- Definitions and style guides  
-- Workflow rules or reminders  
-- Personal reference data  
-
-**AI will prioritize /notebook entries over assumptions or pre-trained knowledge.**  
+### v1.4 
+- Removed ambiguous automation.
+- Added "Your Objective" and "Safe Guard Check."
+- Expanded `/log` and `/notebook` commands for better control.
 
 </details>
 
----
-
-## Handbook Contents
-
-* **Part I: Getting Started (Beginner Focus)**
-    * [Session Memory Kernel – Setup](#session-memory-kernel--setup)
-    * [Logging a Session](#logging-a-session)
-    * [Compiling Progress](#compiling-progress)
-    * [Accuracy Guardrails](#accuracy-guardrails)
-    * [Reseeding Context (After a Break)](#reseeding-context-after-a-break)
-* **Part II: Intermediate Usage**
-    * [What MARM Is Good For (Real-World Use Cases)](#what-marm-is-good-for-real-world-use-cases)
-    * [What “Consistent User Input” Really Means](#what-consistent-user-input-really-means)
-    * [Why MARM Uses Manual Steps (And Why That’s Good)](#why-marm-uses-manual-steps-and-why-thats-good)
-* **Part III: Advanced Usage & Compatibility**
-    * [Session Relay Tools and Cross-Session Handoff](#session-relay-tools-and-cross-session-handoff)
-    * [Platform Behavior and Compatibility Differences](#platform-behavior-and-compatibility-differences)
-    * [Extending MARM for Workflow Management](#extending-marm-for-workflow-management)
-    * [Power-User Templates](#power-user-templates)
-    * [Optional System Prompts (Advanced Integration)](#optional-system-prompts-advanced-integration)
-* **Reference**
-    * [Examples (Complete Usage)](#examples-complete-usage)
-    * [Quick Reference Table](#quick-reference-table)
----
-
-## Why Manual Steps Matter
-  
-MARM is built around user intent and transparency. It avoids hidden automation to ensure that every action is visible, reviewable, and user-directed.
-
-Here’s what the manual steps do—and why they matter:
-
-- **`/log [SessionName]`** – Assigns structure to your session. Helps you segment topics, track decisions, and prepare for cross-session reuse.
-- **`/compile [SessionName] --summary`** – Creates a compact, shareable summary. Used to reseed new chats or review session history without full scrollback.
-- **`/show reasoning`** – Reveals how the AI formed its last answer. Promotes logical transparency and lets you challenge flawed reasoning.
-- **`/contextual reply`** – Replaces default output logic with accuracy checks and reasoning trails. Ideal when precision matters.
-- **`/start marm`** – Activates all of the above. This sets MARM’s behavior rules in motion from message one.
-
-These steps give you control over how memory is shaped, used, and recovered. MARM performs best when used deliberately.
-
----
-
-## Platform Compatibility Note
- <details>
- <summary>Click to expand</summary>
-  
-MARM works across all major LLM platforms, including ChatGPT, Claude, Gemini, and Grok.
-
-It does **not** depend on native memory features. Instead, it uses manual logging, structured prompts, and reseeding to maintain context. This ensures consistency regardless of platform behavior or update cycles.
-
-As memory capabilities evolve, MARM remains stable by design-users always retain control.
-</details>
-
----
-
-# Part I: Getting Started (Beginner Focus)
-
-## Session Memory Kernel – Setup
-
-MARM uses a manual session kernel to simulate memory across chats. It doesn't rely on built-in memory systems. Instead, you give it just enough structure to stay aligned. You activate it with:
-
-### **Command:** `/start marm`  
-Activates MARM’s session memory kernel and accuracy guardrails.  
-*Use this as the first message in any new session.*
-
-> **Quick Start Example:**  
-> ```
-> /start marm  
-> ```
-> That’s it. This primes the AI to retain context, reduce drift, and answer with more internal logic.
-
-> **FAQ Insight:**  
-> *“Do I need to install anything first?”*  
-> No. MARM is just a set of structured prompts. Everything works inside the chat window, no setup or extensions required.
-
----
-
-## Logging a Session
-
-You can help MARM track and resume your work by creating a session log.
-
-### **Command:** `/log [SessionName]`  
-Creates a session label (think of it like naming a folder).
-
-> **Example:**  
-> ```
-> /log BrainstormX  
-> ```
-
-> **Beginner Tip:**  
-> If you're starting a conversation on a topic like job hunting or planning a project, give it a simple name with `/log`.
-
----
-
-### **Command:** `/log [YYYY-MM-DD | User | Intent | Outcome]`  
-Adds a detailed line item to your session. This is optional but powerful.
-
-> **Example:**  
-> ```
-> /log [2025-06-19 | Ryan | Drafted pitch | Got early feedback]  
-> ```
-
-> **When to Use:**  
-> After a major step, a breakthrough, or a decision worth tracking across sessions.
-
-> **FAQ Insight:**  
-> *“What happens if I mess up the format?”*  
-> MARM checks for errors. If your log is off, it’ll suggest a fix or auto-correct missing parts (like today’s date).
-
----
-
-## Compiling Progress
-
-If you’ve logged more than one thing, MARM can summarize it back to you.
-
-### **Command:** `/compile [SessionName] --summary`
-
-> **Example:**  
-> ```
-> /compile BrainstormX --summary  
-> ```
-
-You’ll get a one-line recap per log entry. You can also narrow the output:
-
-> ```
-> /compile BrainstormX --summary --fields=Intent,Outcome  
-> ```
-
-This keeps your memory tight when jumping between sessions.
-
-> **FAQ Insight:**  
-> *“Can I use these summaries in new chats?”*  
-> Yes-MARM will also auto-generate a ‘reseed block’ after compiling. Paste it into a new session to reconnect context.
-
----
-
-## Accuracy Guardrails
-
-When you need higher factual precision or want to see how the AI formed its answer:
-
-### **Command:** `/guarded reply`  
-Replaces default response mode with accuracy logic.
-
-> **Use this when:**  
-> - The AI seems unsure  
-> - You're in a critical phase  
-> - You need a traceable, transparent answer
-
-### **Command:** `/show reasoning`  
-Reveals how the AI built its last answer.
-
-> **Quick Start Example:**  
-> ```
-> /show reasoning  
-> ```
-> This is useful when something feels off or when documenting decision chains.
-
----
-
-## Reseeding Context (After a Break)
-
-When you return later or open a new chat, you can bring back your last session:
-
-> **Quick Start Workflow:**  
-> 1. Use `/compile [SessionName] --summary`  
-> 2. Copy the generated reseed block  
-> 3. Paste it as your *first message* in the new thread
-
-That’s how MARM picks up right where you left off.
-
----
-
-# Part II: Intermediate Usage
-
-## What MARM Is Good For (Real-World Use Cases)
-
-MARM isn't just a memory patch, it's a protocol for managing structured interaction with AI across time. Here are key ways it's used by intermediate users:
-
-### Multi-Session Workflows
-Track projects, tasks, or concepts across multiple conversations.
-
-> **Example:**  
-> Use `/log PortfolioBuild` to track everything related to your resume, job hunt, and AI-generated cover letters. Even if you space it out across days or weeks.
-
----
-
-### Reduced Hallucination Mode
-When factual accuracy is critical, MARM’s structure suppresses guesswork and forces clearer logic.
-
-> **Example:**  
-> Writing a business summary with `/guarded reply` and checking the logic with `/show reasoning` ensures the AI isn’t improvising.
-
----
-
-### Topic Segmentation
-Separate ideas or goals into labeled sessions so you don’t cross streams.
-
-> **Example:**  
-> Log `/log [2025-06-20 | Ryan | Shifted from Coin App to Prompt Testing]` to mark pivots in a long planning thread.
-
----
-
-## What “Consistent User Input” Really Means
-
-MARM works best when **you guide the structure clearly**. Here’s what that looks like:
-
-### Recommended Patterns
-
-
-- **Start clean**: Always begin with `/start marm`  
-- **Label sessions**: early using `/log SessionName`  
-- **Recap or reset**: after major topic shifts or long breaks  
-- **Use full commands**: avoid vague shorthand or implied requests  
-- **Avoid fragmented messages**: combine context into one block when possible
-
----
-
-### Patterns That Hurt MARM
-
-- Jumping topics with no signal (“So anyway-about that movie…”)  
-- Assuming the AI recalls something without reseeding  
-- Switching tone mid-thread (formal → casual → command)  
-- Forgetting to use `/log` for outcome tracking
-
----
-
-## Why MARM Uses Manual Steps (And Why That’s Good)
-
-Some users ask: *“Why doesn’t MARM just do this stuff for me?”* The short answer: **guiderails, transparency, and portability.**
-
-### Manual Steps = Shared Responsibility
-
-MARM uses commands like `/log` and `/compile` to let you **actively shape what matters**. That means:
-
-- **You decide what gets remembered**  
-- **You control when summaries happen**  
-- **You review the logic, not just the output**
-
-It’s not about complexity, it’s about reliability. MARM is predictable **because** it avoids invisible automation.
-
----
-
-> **Key Principle:**  
-> MARM favors *deliberate context discipline* over assumed automation. That’s what makes it work across platforms, even when memory features vary or fail.
-
----
-
-# Part III: Advanced Usage & Compatibility
-
-## Session Relay Tools and Cross-Session Handoff
-
-MARM includes advanced tools to bridge sessions, especially when working across different threads, tabs, or days.
-
-### Command: `/compile [SessionName] --summary`
-
-Outputs a clean, line-by-line summary of previous logs. Ideal for compressing session history before a reset or export.
-
-Optional flag:  
-`--fields=Intent,Outcome` filters output to key details only.
-
-> Example:  
-> ```
-> /compile PromptFlow --summary --fields=Intent,Outcome  
-> ```
-
-This produces a token-safe recap of what happened and why.
-
----
-
-### Auto-Reseed Prompt (System Output)
-
-After compiling, MARM automatically generates a formatted context block. This can be copied and pasted into a new thread to resume progress.
-
-There is no need for a separate command. This block is optimized to reduce token usage and realign AI responses with prior context.
-
----
-
-### Schema Enforcement
-
-All structured `/log` entries must follow this format:  
-`[YYYY-MM-DD | User | Intent | Outcome]`
-
-Invalid logs trigger correction prompts or auto-fill logic to preserve clean session data. This ensures compatibility with summary and reseed tools.
-
----
-
-## Platform Behavior and Compatibility Differences
-
-MARM is designed to run consistently across major LLMs, but the results may still vary depending on system capabilities and memory handling.
-
-### Memory-enabled platforms (e.g., ChatGPT with memory on)
-
-- May recall prior behavior implicitly
-- Still benefit from explicit `/log` and `/compile` commands to reinforce structure
-
-### Stateless platforms (e.g., Claude, some API calls)
-
-- Fully dependent on user-applied structure
-- Reseed blocks are especially critical for continuity
-
-MARM remains effective regardless, because it requires no system-specific hooks. Its effectiveness comes from consistent user patterns.
-
----
-
-## Extending MARM for Workflow Management
-
-Advanced users may layer MARM into more complex systems:
-
-- Journal-style daily logging for research projects  
-- Multi-thread tracking using session names as project IDs  
-- Paired use with AI agents where MARM governs the prompt structure
-
-The protocol does not interfere with system prompts, plugins, or browser extensions. It wraps around them as a scaffolding layer to preserve logic and memory.
-
----
-
-## Power-User Templates
-
-Advanced workflows often reuse log formats, naming conventions, or reseed prompts. While MARM does not currently include templating logic, users can create personal templates for:
-
-- Weekly planning  
-- Decision logs  
-- Testing sessions  
-- Prompt architecture experiments
-
-These templates can be stored outside MARM and called in via `/log` or `/compile`.
-
----
-
-## Optional System Prompts (Advanced Integration)
-<details>
-<summary>Click to expand</summary>
-
-MARM is compatible with systems that prompt users to log context after multi-turn exchanges (e.g., "Would you like to log this session?"). This behavior is not included in MARM itself but can be layered by developers or platform providers to enhance usability.
-</details>
-
----
-
-## Examples (Complete Usage)
+## Part I: Core Principles
+
+### What is MARM?
+MEMORY ACCURATE RESPONSE MODE (MARM) ensures accurate AI interactions by maintaining context through structured, user-directed controls. It prevents memory drift, improving AI transparency and reliability.
+
+### Why Manual Steps Matter
+Manual logging, knowledge entry, and accuracy checks prevent silent drift. User visibility ensures context and accuracy remain aligned.
+
+**User Controls:**
+- **Memory:** `/log session:`, `/log entry`.
+- **Knowledge:** `/notebook` commands.
+- **Accuracy:** `/contextual reply`, `/show reasoning`.
+
+This approach ensures the AI works with **user-led intent**, reducing drift across sessions and platforms.
+
+## Part II: Quick Start Walkthrough
+
+### Step 1: Start & Label Session
+/start marm   
+/log session:ProjectAlpha
+
+### Step 2: Log Milestones Throughout Work
+/log entry [2025-07-14 | Set project scope | Phase 1 started]   
+/log entry [2025-07-14 | Completed wireframes | Ready for review]
+
+### Step 3: Handle Topic Shifts   
+When switching focus mid-session:   
+/log entry [2025-07-14 | Pivoted to API design | Frontend work paused]   
+/refresh marm
+
+### Step 4: Compile Progress
+/compile ProjectAlpha --summary
+
+Output example:   
+[2025-07-14 | Set project scope | Phase 1 started]   
+[2025-07-14 | Completed wireframes | Ready for review]   
+[2025-07-14 | Pivoted to API design | Frontend work paused]   
+
+### Step 5: Reseed Context (New Session)   
+After compile, copy reseed block:   
+/start marm   
+/log session:ProjectAlpha   
+[paste reseed block]   
+/notebook key:project_tone Professional, technical documentation style
+
+## Part III: Command Reference
+
+### Session Management
+- **`/start marm`**: Activates memory & accuracy layers. Must be first command.
+- **`/refresh marm`**: Recenters AI mid-session if drift occurs. Use after 8-10 turns or topic pivots.
+
+### Logging
+- **`/log session:[name]`**: Labels session ("folders"). Think of it as project naming.
+- **`/log entry [Date-Summary-Result]`**: Logs structured milestones. Schema is enforced.
+
+### Accuracy & Reasoning
+- **`/contextual reply`**: Forces accuracy-driven responses with self-checks.
+- **`/show reasoning`**: Displays AI's reasoning trail for validation.
+
+### Compiling & Reseeding
+- **`/compile [SessionName] --summary`**: Provides condensed log summary.
+- **Filter options:** `--fields=Intent,Outcome` for targeted summaries.
+- **Schema Enforcement**: Invalid logs trigger correction prompts.
+
+### Manual Knowledge Library (`/notebook`)
+- **`key:[name] [data]`**: Add trusted user-defined info.
+- **`get:[name]`**: Retrieve stored data.
+- **`show:`** Lists all stored keys.
+
+**Critical Notebook Behaviors:**
+- Entries are **session-bound** - they don't persist across chats
+- Must be manually reseeded each new session
+- Token limits apply - keep entries concise
+- Ideal for: project guidelines, tone rules, technical specs, workflow definitions
+
+## Part IV: Beyond the Basics
+
+### Real-World Use Cases
+
+#### Multi-Session Projects
+Track complex projects across days/weeks:   
+Day 1:   
+/log session:AppRedesign   
+/log entry [2025-07-14 | Defined MVP features | 5 core features identified]   
+/notebook key:mvp_features Login, Dashboard, Settings, API, Reports   
+/compile AppRedesign --summary   
+Day 2 (new chat):    
+/start marm
+/log session:AppRedesign   
+[paste Day 1 reseed block]   
+/notebook key:mvp_features Login, Dashboard, Settings, API, Reports   
+/log entry [2025-07-15 | Started login flow | OAuth2 selected]   
+
+#### Reduced Hallucination Mode
+For critical accuracy (legal docs, technical specs):   
+/contextual reply   
+"Draft a privacy policy section on data retention"   
+/show reasoning   
+
+Review reasoning trail before accepting output.   
+
+#### Complex Topic Management   
+Handle multi-threaded conversations:   
+/log session:ClientProject   
+/log entry [2025-07-14 | Discussed frontend requirements | React chosen]    
+/notebook key:tech_stack React, Node.js, PostgreSQL   
+[20 messages later, topic shifts]   
+/log entry [2025-07-14 | Switched to budget planning | Need cost estimates]   
+/refresh marm   
+/compile ClientProject --summary --fields=Intent   
+
+### Session Drift Management
 
 <details>
-<summary>Click to expand</summary>
+  
+#### When to Refresh/Reseed   
+- Every **8-10 conversation turns**   
+- After **any major topic pivot**   
+- When AI responses feel **generic or unfocused**   
+- Before **critical decisions or outputs**   
 
-Below are end-to-end examples showing how to use MARM across different phases of an AI session.
+#### Drift Recovery Process   
+Detect drift (generic responses, lost context)   
+/refresh marm   
+/compile [Session] --summary   
+Review last 3-5 entries   
+/contextual reply for next response   
 
----
-
-### Start and Log a New Session
-
-/start marm  
-/log ResumeBuild
-
-Begin any new topic or workflow with a clear session name.
-
----
-
-### Add a Structured Log Entry
-
-/log [2025-06-19 | Ryan | Drafted new summary | Awaiting review]
-
-Track milestones, pivots, or decision points. Especially useful for long threads.
-
----
-
-### Summarize Logs for Review or Export
-
-/compile ResumeBuild --summary
-
-Add filters if needed:
-
-/compile ResumeBuild --summary --fields=Intent,Outcome
-
-Use this to recap or prep for reseeding into a new thread.
-
----
-
-### Reseed Context After a Break
-
-(start new session)  
-/start marm  
-/log ResumeBuild  
-(paste reseed block from last /compile)
-
-This restores continuity between chats or platforms.
-
----
-
-### Enable Accuracy Logic for Critical Replies
-
-/contextual reply
-
-Use this when accuracy, alignment, or traceability is critical.
-
----
-
-### Show the Reasoning Behind a Response
-
-/show reasoning
-
-Displays the logic chain used in the last answer. Ideal for debugging or validation.
-
----
-
-### Segment Topics Mid-Conversation
-
-/log [2025-06-19 | Ryan | Switched from coin app to prompt testing]
-
-Used to mark transitions or pivot points without ending the session.
-
----
-
-### Guard Against Session Drift in Long Threads
-
-/compile SessionName --summary
-
-Repeat this every 8–10 turns or after major changes to reinforce context and support reseeding.
+#### Preventive Maintenance   
+Every 10 turns:   
+/compile SessionName --summary   
+/refresh marm   
+/notebook show:  [verify key data intact]   
 
 </details>
 
----
-
-## Quick Reference Table
+### Manual Knowledge Library Deep Dive
 
 <details>
-<summary>Click to expand</summary>
+  
+#### Token Management Strategy   
+Bad (token heavy):   
+/notebook key:project_details This is a comprehensive project involving multiple stakeholders including...   
+Good (token efficient):   
+/notebook key:project_type B2B SaaS platform   
+/notebook key:stakeholders PM:John, Dev:Sarah, Design:Mike   
+/notebook key:deadline 2025-08-30   
 
-| Feature                            | Command Example                                |
-|------------------------------------|-------------------------------------------------|
-| Start MARM                         | /start marm                                    |
-| Log a session (basic)              | /log SessionA                                  |
-| Log a session (detailed)           | /log [YYYY-MM-DD \| User \| Intent \| Outcome]  |
-| Compile summary                    | /compile ProjectX --summary                    |
-| Compile with field filters         | --fields=Intent,Outcome                        |
-| Guarded reply                      | /guarded reply                                 |
-| Show reasoning                     | /show reasoning                                |
-| Reseed context                     | *(auto after compile)*                         |
-| Session export & reuse             | *(reseeding from compile output)*              |
-| Platform behavior differences      | *(n/a)*                                        |
+#### Multi-Key Strategies   
+Organize related info:   
+/notebook key:api_base https://api.example.com/v2   
+/notebook key:api_auth Bearer token in header   
+/notebook key:api_ratelimit 100 req/min   
+
+#### Session-Bound Behavior   
+Notebook entries **vanish** on new chat. Always reseed critical keys:   
+Essential reseed template:   
+/start marm   
+/log session:[Name]   
+[paste compile block]   
+/notebook key:tone [saved tone preference]   
+/notebook key:context [saved project context]   
+
+</details>
+
+### Platform Compatibility Strategies
+
+<details>
+  
+#### ChatGPT (Memory-Enabled)   
+- Native memory often **drifts** or **conflates sessions**   
+- MARM overrides with explicit structure   
+- Use `/compile` even with memory on   
+- `/refresh marm` counters GPT's assumption tendencies   
+
+#### Claude (Stateless)   
+- **Zero memory** between sessions   
+- Requires disciplined reseed workflow   
+- Benefits most from `/notebook` entries   
+- Use verbose session names for clarity   
+
+#### API/Groq/Local Models   
+- Treat as fully stateless   
+- Implement reseed blocks in system prompts   
+- Can automate compile/reseed via middleware   
+- Token limits vary - adjust notebook usage   
+
+#### Platform-Specific Tips   
+ChatGPT: /refresh marm every 5-7 turns (fights assumption drift)   
+Claude: Full reseed required, use detailed session labels   
+Groq: Keep notebook entries minimal (smaller context)   
+API: Can inject MARM protocol into system message   
+
+</details>
+
+### Power-User Templates & Customization
+
+<details>
+  
+#### Project Management Template   
+/start marm   
+/log session:Sprint24   
+/notebook key:sprint_goal Implement user authentication   
+/notebook key:team Frontend:2, Backend:3, QA:1   
+/log entry [Date | Sprint planning complete | 21 story points]   
+
+#### Daily Standup Logger   
+/log session:DailyStandups   
+/log entry [2025-07-14 | Yesterday: API design | Today: Implementation]   
+/compile DailyStandups --summary --fields=User,Outcome   
+
+#### Code Review Workflow   
+/log session:PR-4521-Review   
+/notebook key:pr_link https://github.com/org/repo/pull/4521   
+/log entry [2025-07-14 | Initial review | 3 blockers found]   
+/notebook key:blockers SQL injection risk, Missing tests, No error handling   
+
+#### Multi-LLM Integration Pattern   
+Use MARM logs as context bridges:   
+GPT-4 Session:   
+/compile ProjectX --summary > export.txt   
+Claude Session:   
+/start marm   
+[paste export.txt]   
+Continue seamlessly...   
+
+#### Automation Hooks (n8n/Zapier)   
+Trigger: /compile command   
+Action: Auto-save to Notion/Google Docs   
+Result: Persistent external memory   
+
+</details>
+
+### Advanced Session Patterns
+
+<details>
+  
+#### Session Chaining   
+Link related sessions:   
+/log session:Research-Phase1   
+[work]   
+/compile Research-Phase1 --summary   
+New session:   
+/log session:Research-Phase2   
+/log entry [2025-07-15 | Continued from Phase1 | See previous compile]   
+
+#### Parallel Sessions   
+Track multiple threads:   
+Tab 1: /log session:ClientA-Frontend   
+Tab 2: /log session:ClientA-Backend   
+Tab 3: /log session:ClientA-Integration   
+Merge later:   
+/compile ClientA-Frontend --summary   
+/compile ClientA-Backend --summary   
+[manually merge relevant entries]   
+
+</details>
+
+## Quick Reference Table 
+
+### Expand Quick Reference Table
+
+| Feature                  | Command Example                                | Best Practice |
+|--------------------------|------------------------------------------------|---------------|
+| Start MARM               | `/start marm`                                  | Always first command |
+| Refresh MARM             | `/refresh marm`                                | Every 8-10 turns |
+| Log Session              | `/log session:ProjectX`                        | Use descriptive names |
+| Log Entry                | `/log entry [Date-Summary-Result]`             | Log key decisions only |
+| Compile Summary          | `/compile ProjectX --summary`                  | Before session end |
+| Compile Filtered         | `/compile ProjectX --summary --fields=Summary,Result` | For focused reviews |
+| Accuracy Reply Mode      | `/contextual reply`                            | For critical outputs |
+| Show Reasoning           | `/show reasoning`                              | Verify logic paths |
+| Reseed (Manual)          | Paste compile block into new session           | Include notebook keys |
+| Notebook Add             | `/notebook key:style Professional`             | Keep concise |
+| Notebook Retrieve        | `/notebook get:style`                          | Verify after reseed |
+| Notebook Show All        | `/notebook show:`                              | Check token usage |
+
+## Troubleshooting Guide
+<details>
+<summary>Common Issues & Solutions</summary>
+
+### "AI seems to have forgotten context"   
+- Run `/refresh marm`   
+- Check last compile with `/compile [session] --summary`   
+- Verify notebook keys with `/notebook show:`   
+
+### "Responses are too generic"   
+- Use `/contextual reply` for next response   
+- Add specific context to notebook   
+- Log recent decision with `/log entry`   
+
+### "Session too long, hitting limits"   
+- `/compile [session] --summary`   
+- Start fresh with `/log session:[Name]-Part2`   
+- Reseed only essential notebook keys   
+
+### "Platform memory conflicting with MARM"
+- Explicitly use `/refresh marm`
+- Ignore platform suggestions
+- Trust MARM structure over native memory
 
 </details>
