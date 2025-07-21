@@ -1,16 +1,5 @@
 # MARM Handbook v1.4
 
-## Project Files
-
-- [README.md](README.md) – Core introduction and quick start for using MARM.  
-- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
-- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
-- [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
-- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
-- [LICENSE](LICENSE) – Terms of use for this project.
-- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
-- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
-
 ## Short Introduction
 
 MARM is a universal protocol designed to improve memory continuity and response accuracy during AI conversations. This handbook covers beginner guidance, command usage, and recovery strategies for when memory or accuracy begins to drift.
@@ -20,15 +9,15 @@ MARM is a universal protocol designed to improve memory continuity and response 
 <summary>View MARM version updates</summary>
 
 ### v1.2
-- Session Relay Tools (`/compile`, reseeding, schema enforcement) integrated.
+- Session Relay Tools (/compile, reseeding, schema enforcement) integrated.
 
 ### v1.3
-- Manual Knowledge Library (`/notebook`) introduced.
+- Manual Knowledge Library (/notebook) introduced.
 
 ### v1.4 
 - Removed ambiguous automation.
 - Added "Your Objective" and "Safe Guard Check."
-- Expanded `/log` and `/notebook` commands for better control.
+- Expanded /log and /notebook commands for better control.
 
 </details>
 
@@ -41,9 +30,9 @@ MEMORY ACCURATE RESPONSE MODE (MARM) ensures accurate AI interactions by maintai
 Manual logging, knowledge entry, and accuracy checks prevent silent drift. User visibility ensures context and accuracy remain aligned.
 
 **User Controls:**
-- **Memory:** `/log session:`, `/log entry`.
-- **Knowledge:** `/notebook` commands.
-- **Accuracy:** `/contextual reply`, `/show reasoning`.
+- **Memory:** /log session:, /log entry.
+- **Knowledge:** /notebook commands.
+- **Accuracy:** /contextual reply, /show reasoning.
 
 This approach ensures the AI works with **user-led intent**, reducing drift across sessions and platforms.
 
@@ -80,26 +69,26 @@ After compile, copy reseed block:
 ## Part III: Command Reference
 
 ### Session Management
-- **`/start marm`**: Activates memory & accuracy layers. Must be first command.
-- **`/refresh marm`**: Recenters AI mid-session if drift occurs. Use after 8-10 turns or topic pivots.
+- **/start marm**: Activates memory & accuracy layers. Must be first command.
+- **/refresh marm**: Recenters AI mid-session if drift occurs. Use after 8-10 turns or topic pivots.
 
 ### Logging
-- **`/log session:[name]`**: Labels session ("folders"). Think of it as project naming.
-- **`/log entry [Date-Summary-Result]`**: Logs structured milestones. Schema is enforced.
+- **/log session:[name]**: Labels session ("folders"). Think of it as project naming.
+- **/log entry [Date-Summary-Result]**: Logs structured milestones. Schema is enforced.
 
 ### Accuracy & Reasoning
-- **`/contextual reply`**: Forces accuracy-driven responses with self-checks.
-- **`/show reasoning`**: Displays AI's reasoning trail for validation.
+- **/contextual reply**: Forces accuracy-driven responses with self-checks.
+- **/show reasoning**: Displays AI's reasoning trail for validation.
 
 ### Compiling & Reseeding
-- **`/compile [SessionName] --summary`**: Provides condensed log summary.
-- **Filter options:** `--fields=Intent,Outcome` for targeted summaries.
+- **/compile [SessionName] --summary**: Provides condensed log summary.
+- **Filter options:** --fields=Intent,Outcome for targeted summaries.
 - **Schema Enforcement**: Invalid logs trigger correction prompts.
 
-### Manual Knowledge Library (`/notebook`)
-- **`key:[name] [data]`**: Add trusted user-defined info.
-- **`get:[name]`**: Retrieve stored data.
-- **`show:`** Lists all stored keys.
+### Manual Knowledge Library (/notebook)
+- **key:[name] [data]**: Add trusted user-defined info.
+- **get:[name]**: Retrieve stored data.
+- **show:** Lists all stored keys.
 
 **Critical Notebook Behaviors:**
 - Entries are **session-bound** - they don't persist across chats
@@ -204,13 +193,13 @@ Essential reseed template:
 #### ChatGPT (Memory-Enabled)   
 - Native memory often **drifts** or **conflates sessions**   
 - MARM overrides with explicit structure   
-- Use `/compile` even with memory on   
-- `/refresh marm` counters GPT's assumption tendencies   
+- Use /compile even with memory on   
+- /refresh marm counters GPT's assumption tendencies   
 
 #### Claude (Stateless)   
 - **Zero memory** between sessions   
 - Requires disciplined reseed workflow   
-- Benefits most from `/notebook` entries   
+- Benefits most from /notebook entries   
 - Use verbose session names for clarity   
 
 #### API/Groq/Local Models   
@@ -296,40 +285,40 @@ Merge later:
 
 | Feature                  | Command Example                                | Best Practice |
 |--------------------------|------------------------------------------------|---------------|
-| Start MARM               | `/start marm`                                  | Always first command |
-| Refresh MARM             | `/refresh marm`                                | Every 8-10 turns |
-| Log Session              | `/log session:ProjectX`                        | Use descriptive names |
-| Log Entry                | `/log entry [Date-Summary-Result]`             | Log key decisions only |
-| Compile Summary          | `/compile ProjectX --summary`                  | Before session end |
-| Compile Filtered         | `/compile ProjectX --summary --fields=Summary,Result` | For focused reviews |
-| Accuracy Reply Mode      | `/contextual reply`                            | For critical outputs |
-| Show Reasoning           | `/show reasoning`                              | Verify logic paths |
+| Start MARM               | /start marm                                  | Always first command |
+| Refresh MARM             | /refresh marm                                | Every 8-10 turns |
+| Log Session              | /log session:ProjectX                        | Use descriptive names |
+| Log Entry                | /log entry [Date-Summary-Result]             | Log key decisions only |
+| Compile Summary          | /compile ProjectX --summary                  | Before session end |
+| Compile Filtered         | /compile ProjectX --summary --fields=Summary,Result | For focused reviews |
+| Accuracy Reply Mode      | /contextual reply                            | For critical outputs |
+| Show Reasoning           | /show reasoning                              | Verify logic paths |
 | Reseed (Manual)          | Paste compile block into new session           | Include notebook keys |
-| Notebook Add             | `/notebook key:style Professional`             | Keep concise |
-| Notebook Retrieve        | `/notebook get:style`                          | Verify after reseed |
-| Notebook Show All        | `/notebook show:`                              | Check token usage |
+| Notebook Add             | /notebook key:style Professional             | Keep concise |
+| Notebook Retrieve        | /notebook get:style                          | Verify after reseed |
+| Notebook Show All        | /notebook show:                              | Check token usage |
 
 ## Troubleshooting Guide
 <details>
 <summary>Common Issues & Solutions</summary>
 
 ### "AI seems to have forgotten context"   
-- Run `/refresh marm`   
-- Check last compile with `/compile [session] --summary`   
-- Verify notebook keys with `/notebook show:`   
+- Run /refresh marm   
+- Check last compile with /compile [session] --summary   
+- Verify notebook keys with /notebook show:   
 
 ### "Responses are too generic"   
-- Use `/contextual reply` for next response   
+- Use /contextual reply for next response   
 - Add specific context to notebook   
-- Log recent decision with `/log entry`   
+- Log recent decision with /log entry   
 
 ### "Session too long, hitting limits"   
-- `/compile [session] --summary`   
-- Start fresh with `/log session:[Name]-Part2`   
+- /compile [session] --summary   
+- Start fresh with /log session:[Name]-Part2   
 - Reseed only essential notebook keys   
 
 ### "Platform memory conflicting with MARM"
-- Explicitly use `/refresh marm`
+- Explicitly use /refresh marm
 - Ignore platform suggestions
 - Trust MARM structure over native memory
 
