@@ -1,0 +1,191 @@
+/* chat.css - Chat interface and message styles */
+
+/* Message containers */
+.message {
+  position: relative;
+  padding-top: 25px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.message-name {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.user-message .message-name {
+  color: #000000;
+}
+
+.bot-message .message-name {
+  color: #07428f;
+}
+
+.message-content {
+  line-height: 1.5;
+}
+
+/* Loading indicator */
+.loading-indicator {
+  display: inline-block;
+  margin: 0.7em 0;
+  padding-left: 20px;
+}
+
+.loading-indicator .message-name {
+  position: static;
+  display: inline-block;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  animation: loading-wave 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loading-wave {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Action buttons */
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 4px 8px;
+  cursor: pointer;
+  opacity: 0; 
+  transition: opacity var(--transition-fast);
+  font-size: 12px;
+}
+
+.message:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn.copied {
+  background: #4caf50;
+  color: white;
+}
+
+.voice-btn {
+  position: absolute;
+  top: 8px;
+  right: 48px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 4px 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+  font-size: 14px;
+}
+
+.message:hover .voice-btn {
+  opacity: 1;
+}
+
+.voice-btn:hover {
+  background: #27436b;
+  transform: scale(1.1);
+}
+
+/* Speaking state */
+.bot-message.speaking {
+  position: relative;
+  background: rgba(61, 90, 128, 0.03);
+  transition: background var(--transition-medium);
+}
+
+.bot-message.speaking .voice-btn {
+  opacity: 1;
+  background: var(--accent-color);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.bot-message.speaking .voice-btn:hover {
+  background: #d95a3d;
+}
+
+.bot-message.speaking .message-content {
+  position: relative;
+  padding-left: 25px;
+}
+
+.bot-message.speaking .message-content::before {
+  content: '🔊';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  animation: sound-wave 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Voice settings */
+#voice-settings {
+  background: rgba(61, 90, 128, 0.05);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  margin-top: 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .voice-btn {
+    opacity: 1;
+    right: 40px;
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+  
+  .copy-btn {
+    right: 8px;
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+  
+  .bot-message.speaking .message-content {
+    padding-left: 20px;
+  }
+  
+  .bot-message.speaking .message-content::before {
+    font-size: 14px;
+  }
+} 
