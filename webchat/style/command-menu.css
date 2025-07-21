@@ -1,0 +1,165 @@
+/* command-menu.css - Command system and menu styling */
+
+/* Command menu container */
+.command-menu {
+  position: fixed;
+  left: 25px;
+  bottom: 48px;  
+  background: #fff;
+  border: 2px solid #000000;
+  border-radius: var(--border-radius);
+  padding: 0;
+  min-width: 240px;
+  max-width: 700px;
+  z-index: 100;
+  transition: all var(--transition-medium) ease;
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column-reverse;  
+}
+
+.command-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: rgba(61, 90, 128, 0.1);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  cursor: pointer;
+  user-select: none;
+}
+
+.command-menu-title {
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+}
+
+.command-menu-toggle {
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform var(--transition-medium) ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.command-menu.collapsed .command-menu-toggle {
+  transform: rotate(180deg);
+}
+
+.command-menu,
+.command-menu-content {
+  overflow-x: hidden;
+}
+
+.command-menu-content {
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  transition: all var(--transition-medium) ease;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  scrollbar-width: none; /* Firefox */
+}
+.command-menu-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.command-menu.collapsed .command-menu-content {
+  max-height: 0;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+/* Command items */
+.command-item {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: #f4f7fb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition-fast) ease, padding var(--transition-fast) ease;
+}
+
+.command-item:last-child {
+  margin-bottom: 0;
+}
+
+.command-item:hover {
+  background: rgba(61, 90, 128, 0.15);
+  padding-left: 17px;
+  border-left: 3px solid #3d5a80 !important;
+}
+
+.command-name {
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+}
+
+.command-desc {
+  display: none;
+}
+
+/* Notebook submenu */
+.notebook-item {
+  position: relative;
+}
+
+.notebook-submenu {
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  margin-left: -55px;
+  background: #fff;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  padding: 5px 0;
+  min-width: auto;
+  box-shadow: 0 2px 8px rgba(30,30,50,0.15);
+  z-index: 101;
+}
+
+.submenu-item {
+  padding: 6px 15px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--primary-color);
+  transition: all var(--transition-fast) ease;
+}
+
+.submenu-item:hover {
+  background: rgba(61, 90, 128, 0.15);
+}
+
+/* Arrow indicator for expandable item */
+.notebook-item .command-name::after {
+  content: ' ▶';
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+/* Tooltips */
+.command-item[title] {
+  position: relative;
+}
+
+.command-item[title]:hover::before {
+  content: attr(title);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  padding: 5px 10px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 102;
+  pointer-events: none;
+}
