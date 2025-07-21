@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARM Systems - Memory Accurate Response Mode</title>
+  <link rel="stylesheet" href="style/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>MARM Chatbot</h1>
+    <div>
+      <button id="saveSessionBtn" class="btn btn-secondary" style="margin-right: 10px;">💾 Save Session</button>
+      <button id="helpBtn" class="btn btn-secondary">Help & MARM Guide</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="chatbox">
+      <div id="chat-log"></div>
+      <form id="chat-form">
+        <input 
+          type="text"
+          id="user-input" 
+          placeholder="Type a message or command..." 
+          autocomplete="off"
+        />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="help-modal" class="modal hidden">
+    <div class="modal-content help-modal-content">
+      <div class="modal-header">
+        <h2><span class="help-icon">🎯</span> MARM Protocol Help</h2>
+        <span id="close-help" class="close">&times;</span>
+      </div>
+      
+      <div class="help-section">
+        <div class="help-intro">
+          <h3>Memory Accurate Response Mode (MARM)</h3>
+          <p>A protocol for maintaining conversation context and providing transparent, accurate AI responses.</p>
+        </div>
+
+        <div class="commands-grid">
+          <h3><span class="commands-icon">⚡</span> Quick Commands (v1.4)</h3>
+          <div class="command-group">
+            <div class="command-item">
+              <code>/start marm</code>
+              <span>Activates MARM for the session</span>
+            </div>
+            <div class="command-item">
+              <code>/refresh marm</code>
+              <span>Reaffirms protocol adherence mid-session</span>
+            </div>
+            <div class="command-item">
+              <code>/log</code>
+              <span>Use <code>session:</code> to name or <code>entry</code> to log milestone</span>
+            </div>
+            <div class="command-item">
+              <code>/compile</code>
+              <span>Generates a summary of your session logs</span>
+            </div>
+            <div class="command-item">
+              <code>/notebook</code>
+              <span>Manages your personal knowledge library</span>
+            </div>
+            <div class="command-item">
+              <code>/contextual reply</code>
+              <span>Forces an accuracy-first response</span>
+            </div>
+            <div class="command-item">
+              <code>/show reasoning</code>
+              <span>Reveals the logic behind the last response</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="docs-section">
+          <h3><span class="docs-icon">📚</span> Documentation</h3>
+          <div class="docs-grid">
+            <button class="doc-link" data-doc="handbook.md">
+              <span class="doc-icon">📘</span>
+              <div class="doc-info">
+                <h4>Full Handbook</h4>
+                <p>Complete guide to MARM usage and commands</p>
+              </div>
+            </button>
+            <button class="doc-link" data-doc="faq.md">
+              <span class="doc-icon">❓</span>
+              <div class="doc-info">
+                <h4>FAQ</h4>
+                <p>Frequently asked questions and answers</p>
+              </div>
+            </button>
+            <button class="doc-link" data-doc="description.md">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <h4>Project Description</h4>
+                <p>Overview of MARM protocol and vision</p>
+              </div>
+            </button>
+            <button class="doc-link" data-doc="roadmap.md">
+              <span class="doc-icon">🗺️</span>
+              <div class="doc-info">
+                <h4>Roadmap</h4>
+                <p>Planned features and enhancements</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Markdown Viewer Modal -->
+  <div id="markdown-modal" class="modal hidden">
+    <div class="modal-content markdown-modal-content">
+      <div class="modal-header">
+        <h2 id="markdown-title">Documentation</h2>
+        <span id="close-markdown" class="close">&times;</span>
+      </div>
+      <div id="markdown-content" class="markdown-content">
+        <div class="loading-spinner">Loading...</div>
+      </div>
+    </div>
+  </div>
+
+  <button id="token-counter-btn" title="Token Counter">TC</button>
+  <button id="newChatBtn" title="New Chat">+</button>
+  <button id="chatsBtn" title="Browse Saved Chats">💬</button>
+  <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+
+  <script type="module">
+    // Test if modules are loading
+    console.log('Loading modules...');
+    import('./src/chatbot/chatbot.js')
+      .then(() => {
+        console.log('Chatbot loaded successfully');
+      })
+      .catch(e => {
+        console.error('Failed to load chatbot:', e);
+        // Check if the error is about the file path
+        if (e.message.includes('Failed to fetch')) {
+          console.error('Check that chatbot.js exists in the src/chatbot/ folder');
+        }
+      });
+  </script>
+</body>
+</html>
