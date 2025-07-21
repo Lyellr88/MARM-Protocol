@@ -13,13 +13,13 @@
 
 **Major Enhancements:**
 - **Your Objective & Safe Guard Check** - AI now operates with strict MARM identity and self-verification before responses
-- **Enhanced `/notebook` commands** - Now uses subcommands: `key:[name]`, `get:[name]`, `show:`
+- **Enhanced /notebook commands** - Now uses subcommands: key:[name], get:[name], show:
 - **Manual process clarifications** - Removed all automation ambiguity; every action is user-initiated
-- **New `/refresh marm` command** - Recenters AI mid-session to prevent drift (use every 8-10 turns)
+- **New /refresh marm command** - Recenters AI mid-session to prevent drift (use every 8-10 turns)
 
 **Breaking Changes:**
-- Replace `/log [SessionName]` with `/log session:[name]` and `/log entry [Date | User | Intent | Outcome]`
-- Notebook syntax updated from `/notebook` to `/notebook key:[name] [data]`
+- Replace /log [SessionName] with /log session:[name] and /log entry [Date | User | Intent | Outcome]
+- Notebook syntax updated from /notebook to /notebook key:[name] [data]
 - All reseeding is now explicitly manual (no auto-prompts)
 
 </details>
@@ -48,7 +48,7 @@ To begin a session, follow these steps:
 2. Paste it as your **very first message** in a new AI chat
 3. Follow the AI’s confirmation to complete setup
 
-You only need this once per session. For full command references, see `HANDBOOK.md`.
+You only need this once per session. For full command references, see HANDBOOK.md.
 
 ---
 
@@ -111,7 +111,7 @@ When activated, the AI should begin with:
 - A brief two-line summary of what MARM is and why it’s useful.   
 - Advise the user to copy the command list for easier reference.
 
-Do not include extended explanations. For full usage and examples, see `HANDBOOK.md`.
+Do not include extended explanations. For full usage and examples, see HANDBOOK.md.
 
 ```
 
@@ -138,7 +138,7 @@ Limitations
 - For long sessions, recap every 8–10 turns or after major pivots using /compile. 
 - Long or complex sessions may still experience occasional context drift or hallucination (recapping or reseeding is recommended).  
 - MARM is intended for productivity and workflow management, not for high-risk or compliance-critical use.  
-- Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
+- Manual steps like /log and /compile are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
 - Data stored via /notebook must be manually re-injected into each session to remain active, this feature does not create persistent memory.
 -/notebook is subject to standard token limits. Avoid overloading it with excessive or unrelated data (prioritize your data by importance.)
 
@@ -170,26 +170,3 @@ MARM is actively being tested and adopted across platforms.
 
 *Additional feedback and screenshots will be added as adoption grows.*
 </details>
-
----
-
-## Project Files
-
-- [README.md](README.md) – Core introduction and quick start for using MARM.  
-- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
-- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
-- [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
-- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
-- [LICENSE](LICENSE) – Terms of use for this project.
-- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
-- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
-
----
-
-## Join the Conversation
-
-Whether you’re testing, building, or exploring. Your input matters.
-
-Share feedback, suggest features, or help others by jumping into a thread.
-
-[Join the MARM Community](https://github.com/Lyellr88/MARM-Protocol/discussions/3)
