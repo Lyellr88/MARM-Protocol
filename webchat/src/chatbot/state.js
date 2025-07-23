@@ -77,7 +77,7 @@ export function updateState(updates) {
   const newState = { ...state, ...updates };
   validateState(newState);
   Object.assign(state, newState);
-  persistState(); // Save state whenever it changes
+  persistState();
   return state;
 }
 
@@ -94,5 +94,5 @@ export function getState() {
 export function resetState() {
   state.isMarmActive = false;
   state.currentSessionId = null;
-  persistState(); // Save the reset state
+  persistState(); 
 } 
