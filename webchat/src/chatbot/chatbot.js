@@ -55,6 +55,8 @@ function initializeChatbot() {
       if (userMessage) {
         handleUserInput(userMessage);
         input.value = '';
+        // Reset textarea height after clearing
+        input.style.height = 'auto';
       }
     });
   }
