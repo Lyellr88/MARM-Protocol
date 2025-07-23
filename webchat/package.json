@@ -4,8 +4,7 @@
   "description": "MARM (Memory Accurate Response Mode) - Advanced AI Chatbot with Session Management",
   "main": "index.html",
   "scripts": {
-    "build": "bash build.sh",
-    "start": "python3 -m http.server 8080",
+"build": "echo 'Building MARM Webchat...' && sed -i 's/__GEMINI_API_KEY__/'\"$GEMINI_API_KEY\"'/g' src/geminiHelper.js && echo 'Build complete!'"    "start": "python3 -m http.server 8080",
     "dev": "python3 -m http.server 8080"
   },
   "keywords": [
