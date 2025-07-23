@@ -95,21 +95,7 @@
 ---
 
 <details>
-<summary> June 21st: README Cleanup & Structure Pass</summary>
-
-### Changed
-- Cleaned up main README for new-user clarity  
-- Reordered sections: **What MARM is → Why it helps → How to use it**  
-- Merged “Problem” and “Use Cases” into one purpose-driven section  
-- Moved Contact, Credits, and auxiliary content to `CONTRIBUTING.md`  
-- Simplified Quick Start block  
-- Added audio walkthrough link with summary of included topics  
-</details>
-
----
-
-<details>
-<summary>June 23rd: Protocol Expansion (v1.3 Launch)</summary>
+<summary>June 21st-23rd: Protocol Expansion (v1.3 Launch)</summary>
 
 ### Added
 - `/notebook` command to save custom info in a personal library  
@@ -125,7 +111,13 @@
 - “What MARM Solves” and “Why It Exists” sections updated to reflect v1.3 behavior  
 - Activation response now includes summary and Quick Start command list  
 - Examples revised for clarity and real-world use  
-- AI now defaults to prioritizing `/notebook` entries over trained assumptions  
+- AI now defaults to prioritizing `/notebook` entries over trained assumptions
+- Cleaned up main README for new-user clarity  
+- Reordered sections: **What MARM is → Why it helps → How to use it**  
+- Merged “Problem” and “Use Cases” into one purpose-driven section  
+- Moved Contact, Credits, and auxiliary content to `CONTRIBUTING.md`  
+- Simplified Quick Start block  
+- Added audio walkthrough link with summary of included topics 
 
 ### Removed
 - Key info and limitations from static protocol body (now placed in dropdown)  
