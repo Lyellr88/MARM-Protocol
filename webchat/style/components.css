@@ -61,7 +61,11 @@
   background: #f8fafc;
   transition: border var(--transition-fast);
   resize: none; 
-  overflow-y: hidden; 
+  overflow-y: hidden;
+  min-height: 1.2em;
+  max-height: 8em;
+  line-height: 1.2;
+  font-family: inherit;
 }
 
 #user-input:focus {
