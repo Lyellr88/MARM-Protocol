@@ -1,0 +1,24 @@
+{
+  "name": "marm-webchat",
+  "version": "1.0.0",
+  "description": "MARM (Memory Accurate Response Mode) - Advanced AI Chatbot with Session Management",
+  "main": "index.html",
+  "scripts": {
+    "build": "bash build.sh",
+    "start": "python3 -m http.server 8080",
+    "dev": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "ai",
+    "chatbot",
+    "gemini",
+    "marm",
+    "session-management"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lyellr88/MARM-Systems"
+  }
+}
