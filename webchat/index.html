@@ -21,12 +21,12 @@
     <section id="chatbox">
       <div id="chat-log"></div>
       <form id="chat-form">
-        <input 
-          type="text"
+        <textarea 
           id="user-input" 
-          placeholder="Type a message or command..." 
+          placeholder="Type a message or command... (Shift+Enter for new line, Enter to send)" 
           autocomplete="off"
-        />
+          rows="1"
+        ></textarea>
         <button type="submit">Send</button>
       </form>
     </section>
