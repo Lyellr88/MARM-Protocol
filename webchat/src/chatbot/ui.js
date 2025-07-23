@@ -383,17 +383,24 @@ export function setupAutoExpandingTextarea() {
   const userInput = document.getElementById('user-input');
   if (!userInput) return;
 
+  // Auto-expand on input
   userInput.addEventListener('input', () => {
+    // Reset height to auto to recalculate
     userInput.style.height = 'auto';
-    userInput.style.height = userInput.scrollHeight + 'px';
+    // Set height to scrollHeight (content height)
+    userInput.style.height = Math.min(userInput.scrollHeight, 128) + 'px'; // Max 8em = ~128px
   });
 
+  // Handle Enter vs Shift+Enter
   userInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();
       document.getElementById('chat-form').requestSubmit();
     }
   });
+
+  // Set initial height
+  userInput.style.height = 'auto';
 }
 
 /**
