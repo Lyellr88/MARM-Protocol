@@ -3,36 +3,48 @@
 Welcome to your MARM Protocol-powered chatbot project!  
 This repo is scaffolded for rapid deployment on GitHub Pages and includes all protocol docs, command guides, and help resources.
 
----
-
 ## Quick Start
 
-1. **Clone or download this repo.**
-2. Open `index.html` in your browser, or push to GitHub and enable GitHub Pages.
-3. Use the chatbot interface—try `/start marm`, `/log`, `/notebook`, etc.
-4. Access help and user guides via the help button.
+### Coming Soon
 
 ---
 
-## Project Structure
+## Directory Index
 
 ```
-
-├── index.html                # Main web app
-├── src/
-│   ├── chatbot.js            # Chat logic: command parsing, session, tone
-│   ├── ui.js                 # UI rendering/events
-│   └── config.js             # Command/tone/session settings
+webchat/
 ├── data/
-│   ├── SYSTEM_DIAGNOSTIC.md  # Master protocol
-│   ├── HANDBOOK.md           # User guide
-│   ├── FAQ.md                # FAQ
-│   ├── DESCRIPTION.md        # Protocol overview (+ audio link)
-│   └── decision-tree.md      # (Optional: logic tree/notes)
-├── media/
-│   └── media_MARM_Audio_Walkthrough.mp3 # Audio walkthrough
-├── style.css                 # Minimalist CSS
-├── README.md                 # This file
+│   ├── marmreadme.md         # MARM Protocol v1.4 documentation
+│   ├── description.md        # Protocol overview + audio walkthrough link
+│   ├── faq.md                # Frequently asked questions
+│   ├── handbook.md           # User guide and command reference
+│   └── roadmap.md            # Development roadmap and future plans
+├── src/
+│   ├── geminiHelper.js       # Gemini API integration with error handling
+│   ├── chatbot/
+│   │  ├── chatbot.js         # Main entry point/barrel export module for chatbot functions
+│   │   ├── commands.js       # Command handling (/start, /log, /compile, etc.)
+│   │   ├── core.js           # Main orchestration and state management
+│   │   ├── state.js          # [inferred from imports]
+│   │   ├── ui.js             # UI rendering, message handling, voice controls
+│   │   └── voice.js          # Voice synthesis and speech functionality initialization
+│   └── logic/
+│       ├── constants.js
+│       ├── docs.js           # Documentation loading and search functionality
+│       ├── marmLogic.js      # [inferred from imports]
+│       ├── notebook.js       # User notebook management - add/get/show key-value entries with validation
+│       ├── session.js        # [inferred from imports]
+│       ├── summary.js        # Session compilation and summary generation
+│       └── utils.js          # Utility functions (validation, debounce, etc.)
+└── style/
+│   ├── animation.css         # Animation effects and transitions
+│   ├── base.css              # Core styling and CSS variables
+│   ├── chat.css              # Chat interface and message styling
+│   ├── command-menu.css      # Command menu and autocomplete styling│
+│   ├── components.css        # Reusable UI component styles
+│   ├── dark-mode.css         # Dark theme implementation│
+│   └── main.css              # Main stylesheet imports and overrides
+└── index.html                # Main MARM chatbot web app
 ```
 
 ---
