@@ -1,4 +1,4 @@
-# MARM Protocol Chatbot Scaffold
+# MARM Systems Chatbot
 
 Welcome to your MARM Protocol-powered chatbot project!  
 This repo is scaffolded for rapid deployment on GitHub Pages and includes all protocol docs, command guides, and help resources.
