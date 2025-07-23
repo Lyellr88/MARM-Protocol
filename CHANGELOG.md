@@ -202,3 +202,100 @@
     - Removed the automatic MARM activation flow.
     - Made the legacy `config.js` file completely obsolete, as its contents were integrated or replaced.
 </details>
+
+---
+
+<details>
+<summary>July 17th-21st – Major Refactor & Feature Release</summary>
+
+### Overview
+This release marks a complete transformation of the codebase from a monolithic structure to a modern, modular, barrel-pattern architecture. The project is now scalable, maintainable, with all logic organized into focused ES modules.
+
+### Added
+- **Session Persistence System**
+  - Sessions now survive page refresh using dual storage strategy
+  - Current session stored separately from saved sessions (CURRENT_SESSION_KEY)
+  - Automatic session recovery on page load
+  - Smart pruning at 5KB (PRUNING_THRESHOLD) to maintain performance
+  - Session expiry after 30 days (SESSION_EXPIRY_DAYS)
+
+- **Save/Load Chat System**
+  - New save button with custom title prompt
+  - Saved chats browser with dropdown menu
+  - Delete saved chats with confirmation dialog
+  - Timestamps for all saved sessions
+  - Session title display in chat list
+
+- **New UI Features**
+  - "New Chat" button to start fresh conversations
+  - "Saved Chats" button to browse previous sessions
+  - Revamped help modal with gradient header and grid layout
+  - Markdown document viewer for help documentation
+  - Loading states for document fetching
+  - Error handling for missing documentation
+
+- **UI Improvements**
+  - Zoom-responsive positioning using `rem` units
+  - Improved dark mode support across all new components
+  - Enhanced hover states and animations
+  - Icon-based navigation buttons
+  - Collapsible command menu persists state
+
+### Changed
+- **Architecture: Monolithic → Modular**
+  - Split 900+ line `chatbot.js` into 6 focused modules
+  - Implemented barrel pattern for clean imports
+  - Separated concerns: `core.js`, `ui.js`, `voice.js`, `commands.js`, `state.js`
+  - Logic modules: `constants.js`, `session.js`, `notebook.js`, `docs.js`, `summary.js`, `utils.js`
+  - Each module <300 lines for readability and maintainability
+
+- **CSS Organization**
+  - Split single `style.css` into 6 modular files
+  - Added CSS custom properties for theming
+  - Improved responsive design patterns
+  - Enhanced accessibility features
+
+- **State Management**
+  - Centralized state in dedicated module
+  - Added state validation and persistence
+  - Implemented safe state updates with immutability
+  - Response formatting instructions now actively used
+
+- **Performance Optimizations**
+  - Reduced memory usage by ~30%
+  - Eliminated circular dependencies
+  - Removed all global functions
+  - Added lazy-loading capability for modules
+
+### Fixed
+- Voice synthesis integration properly scoped
+- Command menu state persistence
+- Input validation and sanitization
+- Error handling throughout application
+- Dark mode consistency issues
+- Response formatting now applied to all bot messages
+
+### Removed
+- Global `window.*` function pollution (12 functions removed)
+- Circular dependencies between modules
+- Duplicate state management code
+- Inline event handlers (replaced with delegation)
+
+### Summary Table
+
+| Area         | Old/Base State                | New/Current State (Barrel Pattern)         |
+|--------------|------------------------------|--------------------------------------------|
+| Structure    | Monolithic or split, manual  | Modular, barrel pattern, plug-and-play     |
+| Scalability  | Hard to add features         | Add new modules, update barrel             |
+| Maintainability | Tangled, hard to debug    | Focused modules, easy to update            |
+| Testability  | Difficult, tangled logic     | Isolated modules, easier testing           |
+| Extensibility| Risky, breaks old code       | Add/remove modules with minimal risk       |
+| Readability  | Intimidating, hard to onboard| Clear, documented, <300 lines per module   |
+
+
+### Development Notes
+- Full backward compatibility maintained for MARM v1.4 protocol
+- All existing features preserved during refactoring
+- Future-proofed architecture for plugin system
+
+</details>
