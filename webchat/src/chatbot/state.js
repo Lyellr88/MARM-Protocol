@@ -2,17 +2,13 @@
 
 const STATE_KEY = 'marm-current-state';
 
-/**
- * Application state with validation
- */
+// ===== APPLICATION STATE =====
 export const state = { 
   isMarmActive: false, 
   currentSessionId: null 
 };
 
-/**
- * Save current state to localStorage
- */
+// ===== STATE PERSISTENCE =====
 function persistState() {
   try {
     localStorage.setItem(STATE_KEY, JSON.stringify(state));
@@ -21,15 +17,12 @@ function persistState() {
   }
 }
 
-/**
- * Restore state from localStorage
- */
+// ===== STATE RESTORATION =====
 function restoreState() {
   try {
     const saved = localStorage.getItem(STATE_KEY);
     if (saved) {
       const parsedState = JSON.parse(saved);
-      // Validate before applying - if validation fails, catch and reset
       try {
         validateState(parsedState);
         Object.assign(state, parsedState);
@@ -45,21 +38,15 @@ function restoreState() {
   }
 }
 
-/**
- * Reset to default state without persisting (used during restore failures)
- */
+// ===== STATE RESET =====
 function resetToDefaults() {
   state.isMarmActive = false;
   state.currentSessionId = null;
-  // Don't call persistState() here to avoid infinite loops during restore
 }
 
-// Restore state when module loads
 restoreState();
 
-/**
- * State validation functions
- */
+// ===== STATE VALIDATION =====
 export function validateState(newState) {
   if (typeof newState.isMarmActive !== 'boolean') {
     throw new Error('isMarmActive must be boolean');
@@ -70,9 +57,7 @@ export function validateState(newState) {
   return true;
 }
 
-/**
- * Safe state update with validation
- */
+// ===== STATE MANAGEMENT FUNCTIONS =====
 export function updateState(updates) {
   const newState = { ...state, ...updates };
   validateState(newState);
@@ -81,18 +66,12 @@ export function updateState(updates) {
   return state;
 }
 
-/**
- * Get current state (read-only)
- */
 export function getState() {
   return { ...state };
 }
 
-/**
- * Reset state to initial values
- */
 export function resetState() {
   state.isMarmActive = false;
   state.currentSessionId = null;
-  persistState(); 
+  persistState();
 } 
