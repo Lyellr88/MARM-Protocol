@@ -42,7 +42,7 @@ const RESPONSE_FORMATTING_INSTRUCTIONS = `
 export async function handleUserInput(userInput) {
   if (typeof userInput !== 'string' || userInput.length === 0) return;
   if (userInput.length > 5000) {
-    appendMessage('bot', 'Input too long. Please limit to 1000 characters.');
+    appendMessage('bot', 'Input too long. Please limit to 5000 characters.');
     return;
   }
   
