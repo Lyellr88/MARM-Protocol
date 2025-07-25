@@ -37,7 +37,7 @@
 
 /* Base styles */
 body {
-  background: var(--background-light) url('./media/images-bg.PNG') no-repeat center center fixed;
+  background: var(--background-light) url('images-bg.png') no-repeat center center fixed;
   background-size: cover;
   color: var(--text-light);
   margin: 0;
@@ -101,6 +101,10 @@ main {
 
 #chat-log strong {
   color: #000000;
+}
+
+body.dark-mode #chat-log strong {
+  color: #f3f4f6 !important;
 }
 
 /* Form layout */
