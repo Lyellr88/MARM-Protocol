@@ -118,8 +118,23 @@ export async function generateContent(messages) {
         };
       }
       
-      const data = await res.json();
-      
+      // Defensive: Read as text first, then try to parse JSON
+      const text = await res.text();
+      if (!text) {
+        console.error('Empty response from /api/gemini');
+        return {
+          text: () => '❌ Empty response from Gemini API. Please try again later.'
+        };
+      }
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        console.error('Failed to parse JSON from /api/gemini:', text);
+        return {
+          text: () => '❌ Invalid response from Gemini API. Please try again later.'
+        };
+      }
       // ===== RESPONSE VALIDATION =====
       if (!data.candidates || data.candidates.length === 0) {
         return {
