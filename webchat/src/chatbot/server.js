@@ -1,4 +1,5 @@
 // server.js - Express backend to proxy Gemini API requests securely
+
 const express = require('express');
 const fetch = require('node-fetch');
 const path = require('path');
@@ -16,7 +17,8 @@ if (!GEMINI_API_KEY) {
 app.use(express.json());
 
 // Serve static files (your webchat frontend)
-app.use(express.static(path.join(__dirname)));
+// Serve static files (your webchat frontend)
+app.use(express.static(path.join(__dirname, '../../'))); // Serve from webchat root
 
 // Proxy endpoint for Gemini API
 app.post('/api/gemini', async (req, res) => {
@@ -39,15 +41,23 @@ app.post('/api/gemini', async (req, res) => {
     let data;
     try {
       data = JSON.parse(text);
+      // Always send a valid JSON response, even if Gemini returns an error
       res.status(response.status).json(data);
     } catch (e) {
+      // If Gemini returns non-JSON (e.g. HTML error), send a JSON error
       console.error('Failed to parse Gemini API response as JSON:', text);
-      res.status(500).json({ error: 'Invalid JSON from Gemini API', raw: text });
+      res.status(502).json({ error: 'Invalid JSON from Gemini API', raw: text });
     }
   } catch (error) {
     console.error('Gemini proxy error:', error);
     res.status(500).json({ error: 'Internal server error', details: error.message });
   }
+});
+
+// Global error handler to always return JSON
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ error: 'Unhandled server error', details: err.message });
 });
 
 app.listen(PORT, () => {
