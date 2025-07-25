@@ -1,5 +1,4 @@
 // server.js - Express backend to proxy Gemini API requests securely
-
 const express = require('express');
 const fetch = require('node-fetch');
 const path = require('path');
@@ -16,10 +15,11 @@ if (!GEMINI_API_KEY) {
 
 app.use(express.json());
 
+// Serve static files (your webchat frontend) BEFORE API routes
+app.use(express.static(path.join(__dirname, '../../'))); // Serve from webchat root
+
 // Proxy endpoint for Gemini API
 app.post('/api/gemini', async (req, res) => {
-// Serve static files (your webchat frontend) AFTER API routes
-app.use(express.static(path.join(__dirname, '../../'))); // Serve from webchat root
   try {
     const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=' + GEMINI_API_KEY;
     console.log('Proxying request to Gemini API:', url);
