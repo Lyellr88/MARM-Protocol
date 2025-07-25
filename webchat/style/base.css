@@ -37,8 +37,8 @@
 
 /* Base styles */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--background-light);
+  background: var(--background-light) url('images-bg.png') no-repeat center center fixed;
+  background-size: cover;
   color: var(--text-light);
   margin: 0;
   padding: 0;
@@ -68,7 +68,7 @@ main {
   max-width: 792px;
   margin: var(--spacing-xl) auto;
   margin-left: 300px; 
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-medium);
   padding: var(--spacing-lg) var(--spacing-lg) 1.2em var(--spacing-lg);
@@ -79,13 +79,19 @@ main {
   border: 2px solid #222e3a; 
   border-radius: var(--border-radius);
   padding: var(--spacing-sm);
-  background: #f4f7fb;
+  background: #e4e4e4b9;
   min-height: 320px;
   max-height: 380px;
   margin-bottom: var(--spacing-md);
   overflow-y: auto;
   box-shadow: 0 1px 4px rgba(40, 40, 60, 0.04); 
   margin-left: 0px;
+  scrollbar-width: none; 
+}
+
+#chat-log::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 #chat-log div {
@@ -94,7 +100,7 @@ main {
 }
 
 #chat-log strong {
-  color: var(--primary-color);
+  color: #000000;
 }
 
 /* Form layout */
