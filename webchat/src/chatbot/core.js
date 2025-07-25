@@ -1,4 +1,5 @@
 // core.js - Main orchestration and state management for MARM chatbot
+
 import {
   activateMarmSession,
   getSessionContext,
@@ -15,9 +16,7 @@ import { appendMessage, showLoadingIndicator, hideLoadingIndicator } from './ui.
 import { handleCommand } from './commands.js';
 import { state, updateState } from './state.js';
 
-/**
- * Response formatting instructions for consistent output
- */
+// ===== RESPONSE FORMATTING =====
 const RESPONSE_FORMATTING_INSTRUCTIONS = `
 ### Response Formatting Rules
 
@@ -39,10 +38,7 @@ const RESPONSE_FORMATTING_INSTRUCTIONS = `
 - Even in longer sessions, formatting standards remain active.
 `;
 
-/**
- * Main function to handle user input and generate responses
- * @param {string} userInput - The user's input text
- */
+// ===== MAIN INPUT HANDLER =====
 export async function handleUserInput(userInput) {
   if (typeof userInput !== 'string' || userInput.length === 0) return;
   if (userInput.length > 1000) {
@@ -66,10 +62,7 @@ export async function handleUserInput(userInput) {
   }
 }
 
-/**
- * Handle standard (non-command) user messages
- * @param {string} userInput - The user's input text
- */
+// ===== STANDARD MESSAGE HANDLER =====
 async function handleStandardMessage(userInput) {
   const messagesForLLM = [];
   
@@ -98,7 +91,6 @@ async function handleStandardMessage(userInput) {
 
   messagesForLLM.push({ role: 'user', content: userInput });
 
-  // Add response formatting instructions to ensure consistent output
   messagesForLLM.push({ 
     role: 'system', 
     content: RESPONSE_FORMATTING_INSTRUCTIONS 
