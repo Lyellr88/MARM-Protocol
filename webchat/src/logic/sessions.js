@@ -1,15 +1,16 @@
+// session.js - Session storage, persistence, and lifecycle management for MARM
+
 import { PROTOCOL_VERSION, MARM_PROTOCOL_TEXT, RESPONSE_FORMATTING_RULES } from './constants.js';
 import { validateLogEntry, estimateTokens } from './utils.js';
 import { loadDocs } from './docs.js';
 
 let sessions = {};
 const LS_KEY = 'marm-sessions-v1';
-const CURRENT_SESSION_KEY = 'marm-current-session'; // New key for current session only
+const CURRENT_SESSION_KEY = 'marm-current-session'; 
 const MAX_SESSIONS = 50;
 const SESSION_EXPIRY_DAYS = 30;
 const MAX_SESSION_SIZE = 35000;
-const PRUNING_THRESHOLD = 5000; // Start pruning old messages when session exceeds 5KB
-
+const PRUNING_THRESHOLD = 5000; 
 function ensureSession(id) {
   if (!sessions[id]) sessions[id] = {
     history: [],
@@ -39,12 +40,10 @@ function pruneOldSessions() {
 
 function trimSessionSize(s) {
   let total = (JSON.stringify(s.history).length + JSON.stringify(s.logs).length);
-  // Start pruning when session exceeds 5KB to keep it lean
   while (total > PRUNING_THRESHOLD && s.history.length > 0) {
     s.history.shift();
     total = (JSON.stringify(s.history).length + JSON.stringify(s.logs).length);
   }
-  // Hard limit at 35KB - remove logs if necessary
   while (total > MAX_SESSION_SIZE && s.logs.length > 0) {
     s.logs.shift();
     total = (JSON.stringify(s.history).length + JSON.stringify(s.logs).length);
@@ -53,7 +52,6 @@ function trimSessionSize(s) {
 
 function persistSessions() {
   pruneOldSessions();
-  // Only persist to long-term storage if user has enabled persistence
   const isPersistenceEnabled = localStorage.getItem('marm-persistence-enabled') === 'true';
   if (isPersistenceEnabled) {
     try { localStorage.setItem(LS_KEY, JSON.stringify(sessions)); } catch (_) {}
@@ -61,27 +59,23 @@ function persistSessions() {
 }
 
 function persistCurrentSession() {
-  // Always persist current session for refresh protection
   try { 
     localStorage.setItem(CURRENT_SESSION_KEY, JSON.stringify(sessions)); 
   } catch (_) {}
 }
 
 function restoreSessions() {
-  // Always restore current session first (for refresh protection)
   try {
     const currentRaw = localStorage.getItem(CURRENT_SESSION_KEY);
     if (currentRaw) sessions = JSON.parse(currentRaw);
   } catch (_) { sessions = {}; }
   
-  // Then merge in long-term saved sessions if user has persistence enabled
   const isPersistenceEnabled = localStorage.getItem('marm-persistence-enabled') === 'true';
   if (isPersistenceEnabled) {
     try {
       const savedRaw = localStorage.getItem(LS_KEY);
       if (savedRaw) {
         const savedSessions = JSON.parse(savedRaw);
-        // Merge saved sessions with current session (current takes priority)
         sessions = { ...savedSessions, ...sessions };
       }
     } catch (_) {}
@@ -105,7 +99,7 @@ export {
   PRUNING_THRESHOLD
 };
 
-// --- Core API functions ---
+// ===== CORE API FUNCTIONS =====
 
 export function getSessionContext(id) {
   const s = sessions[id];
@@ -140,8 +134,8 @@ export async function activateMarmSession(id = 'default_session') {
   pruneOldSessions();
   await loadDocs();
   ensureSession(id);
-  persistCurrentSession(); // Always persist current session
-  persistSessions(); // Persist to long-term storage if enabled
+  persistCurrentSession();
+  persistSessions(); 
   return `MARM session activated (v${PROTOCOL_VERSION}). Docs loaded.`;
 }
 
@@ -151,15 +145,15 @@ export function updateSessionHistory(id, userText, botText, reasoning = '') {
   s.history.push({ role: 'bot', content: botText, ts: Date.now() });
   if (reasoning) s.lastReasoning = reasoning;
   trimSessionSize(s);
-  persistCurrentSession(); // Always persist current session
-  persistSessions(); // Persist to long-term storage if enabled
+  persistCurrentSession(); 
+  persistSessions(); 
 }
 
 export function setSessionReasoning(id, reasoning) {
   const s = ensureSession(id);
   s.lastReasoning = reasoning;
-  persistCurrentSession(); // Always persist current session
-  persistSessions(); // Persist to long-term storage if enabled
+  persistCurrentSession(); 
+  persistSessions(); 
 }
 
 export function logSession(id, logLine) {
@@ -169,8 +163,8 @@ export function logSession(id, logLine) {
   const s = ensureSession(id);
   s.logs.push(logLine);
   trimSessionSize(s);
-  persistCurrentSession(); // Always persist current session
-  persistSessions(); // Persist to long-term storage if enabled
+  persistCurrentSession(); 
+  persistSessions(); 
   return `Logged: ${logLine}`;
 }
 
@@ -183,8 +177,8 @@ export function trimForContext(id, maxTokens = 8000) {
 
 export function resetSession(id) {
   delete sessions[id];
-  persistCurrentSession(); // Always persist current session
-  persistSessions(); // Persist to long-term storage if enabled
+  persistCurrentSession();
+  persistSessions();
   return 'Session reset. Starting fresh.';
 }
 
