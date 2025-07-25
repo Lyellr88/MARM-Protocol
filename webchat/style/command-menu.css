@@ -1,11 +1,11 @@
 /* command-menu.css - Command system and menu styling */
 
-/* Command menu container */
+/* Command menu container - Scrolls with content */
 .command-menu {
-  position: fixed;
+  position: absolute;
   left: 25px;
   bottom: 48px;  
-  background: #fff;
+  background: #e4e4e4b9;
   border: 2px solid #000000;
   border-radius: var(--border-radius);
   padding: 0;
@@ -61,10 +61,10 @@
   overflow-y: auto;
   transition: all var(--transition-medium) ease;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .command-menu-content::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none; 
 }
 
 .command-menu.collapsed .command-menu-content {
@@ -78,7 +78,7 @@
   position: relative;
   margin-bottom: 10px;
   padding: 8px 12px;
-  background: #f4f7fb;
+  background: #e4e4e4b9;
   border-radius: 6px;
   cursor: pointer;
   transition: background var(--transition-fast) ease, padding var(--transition-fast) ease;
