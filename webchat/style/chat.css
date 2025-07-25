@@ -1,4 +1,4 @@
-/* chat.css - Chat interface and message styles */
+/* chat.css - Chat interface and message styles - CACHE BUST v2.0 */
 
 /* Message containers */
 .message {
@@ -12,16 +12,28 @@
   top: 5px;
   left: 0;
   font-size: 12px;
-  font-weight: 600;
-  opacity: 0.7;
+  font-weight: 1000;
+  opacity: 1;
 }
 
 .user-message .message-name {
   color: #000000;
+  opacity: 1;
+  font-weight: 700;
 }
 
+.user-message .message-name::after {
+  content: ":";
+}
+
+/* Light mode - darker blue for MARM */
 .bot-message .message-name {
-  color: #07428f;
+  color: #171f5ffd;
+  font-weight: 600;
+}
+
+.bot-message .message-name::after {
+  content: ":";
 }
 
 .message-content {
@@ -39,7 +51,12 @@
   position: static;
   display: inline-block;
   margin-bottom: 5px;
-  color: var(--primary-color);
+  color: #171f5ffd;
+  font-weight: 600;
+}
+
+.loading-indicator .message-name::after {
+  content: ":";
 }
 
 .loading-dots {
