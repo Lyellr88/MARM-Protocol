@@ -1,5 +1,5 @@
 // geminiHelper.js - Google Gemini AI API integration and request handling
-const GEMINI_API_KEY = 'AIzaSyB3hjh8HiaJ0arkzcHVR_JPQibcvLYC9yc';
+const GEMINI_API_KEY = 'GEMINI_API_KEY';
 
 // ===== CONNECTION OPTIMIZATION =====
 let connectionWarmed = false;
