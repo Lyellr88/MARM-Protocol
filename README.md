@@ -1,4 +1,4 @@
-# Memory Accurate Response Mode v1.4 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
+# Memory Accurate Response Mode v1.5.0 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
 ![GitHub stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=for-the-badge&logo=github&logoColor=white&labelColor=black&color=white) ![GitHub forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=for-the-badge&logo=github&logoColor=white&labelColor=black&color=white)
 
 
@@ -18,7 +18,7 @@
   
 </div>
 
-**Experience MARM v1.4 in action!** My new interactive chatbot lets you test all MARM features directly in your browser:
+**Experience MARM v1.5.0 in action!** My new interactive chatbot lets you test all MARM features directly in your browser:
 
 - ✅ **Full MARM Protocol** - All commands work exactly as documented
 - 💾 **Session Persistence** - Your conversations survive page refreshes  
@@ -86,7 +86,7 @@ You only need this once per session. For full command references, see `HANDBOOK.
 
 ```
 
-MEMORY ACCURATE RESPONSE MODE v1.4 (MARM)
+MEMORY ACCURATE RESPONSE MODE v1.5.0 (MARM)
 
 Purpose -
 Ensure AI retains session context over time and delivers accurate, transparent outputs, addressing memory gaps and drift.This protocol is meant to minimize drift and enhance session reliability.
