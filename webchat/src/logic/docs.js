@@ -1,3 +1,5 @@
+// docs.js - Documentation loading and search functionality for MARM system
+
 import { MARM_KEYWORDS } from './constants.js';
 
 let docsCache = null;
