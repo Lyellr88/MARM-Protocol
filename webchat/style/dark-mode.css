@@ -2,7 +2,7 @@
 
 /* Dark mode base */
 body.dark-mode {
-  background: var(--background-dark) url('images-dark-bg.png') no-repeat center center fixed;
+  background: var(--background-dark) url('./media/images-dark-bg.png') no-repeat center center fixed;
   background-size: cover;
   color: var(--text-dark);
 }
