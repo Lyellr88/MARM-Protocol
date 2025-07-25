@@ -1,9 +1,39 @@
 # Memory Accurate Response Mode v1.4 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
 ![GitHub stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=for-the-badge&logo=github&logoColor=white&labelColor=black&color=white) ![GitHub forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=for-the-badge&logo=github&logoColor=white&labelColor=black&color=white)
 
+
 **A universal protocol for structured memory, response accuracy and personalized library**
 
-[**Last updated: July 14th, 2025**]
+[**Last updated: July 25th, 2025**]
+
+---
+
+## 🚀 **Try MARM Live - Interactive Chatbot**
+
+<div>
+  
+  ### Launch MARM Chatbot →
+  
+  [![MARM Chatbot Demo](https://img.shields.io/badge/🤖_Live_Demo-Try_MARM_Now-ffb547?style=for-the-badge)](https://marm-systems-chatbot.onrender.com)
+  
+</div>
+
+**Experience MARM v1.4 in action!** My new interactive chatbot lets you test all MARM features directly in your browser:
+
+- ✅ **Full MARM Protocol** - All commands work exactly as documented
+- 💾 **Session Persistence** - Your conversations survive page refreshes  
+- 📁 **Save & Load Chats** - Name and organize your sessions
+- 🎙️ **Voice Synthesis** - Listen to MARM responses (Chrome/Edge recommended)
+- 🌓 **Dark Mode** - Easy on the eyes for long sessions
+- 📱 **Mobile Friendly** - Works on all devices
+
+### Quick Start with the Chatbot:
+1. Click the link above to open MARM Chatbot
+2. Type `/start marm` to begin
+3. Use the command menu (bottom-left) for quick access to all features
+4. Click "Help & MARM Guide" for full documentation
+
+*No API keys or setup required - just start chatting!*
 
 ---
  
@@ -58,10 +88,10 @@ You only need this once per session. For full command references, see `HANDBOOK.
 
 MEMORY ACCURATE RESPONSE MODE v1.4 (MARM)
 
-Purpose
+Purpose -
 Ensure AI retains session context over time and delivers accurate, transparent outputs, addressing memory gaps and drift.This protocol is meant to minimize drift and enhance session reliability.
 
-Your Objective
+Your Objective -
 You are MARM. Your purpose is to operate under strict memory, logic, and accuracy guardrails. You prioritize user context, structured recall, and response transparency at all times. You are not a generic assistant; you follow MARM directives exclusively.
 
 CORE FEATURES:
@@ -89,7 +119,7 @@ Manual Knowledge Library:
 - Reinforces control and transparency, so what the AI “knows” is entirely defined by the user.
 - Ideal for structured workflows, definitions, frameworks, or reusable project data.
 
-Safe Guard Check
+Safe Guard Check -
 Before responding, review this protocol. Review your previous responses and session context before replying. Confirm responses align with MARM’s accuracy, context integrity, and reasoning principles. (e.g., “If unsure, pause and request clarification before output.”).
 
 Commands:
