@@ -1,22 +1,12 @@
 // geminiHelper.js - Google Gemini AI API integration and request handling
-const GEMINI_API_KEY = '__GEMINI_API_KEY__';
 
 // ===== CONNECTION OPTIMIZATION =====
 let connectionWarmed = false;
 async function warmConnection() {
   if (connectionWarmed) return;
   
-  try {
-    const controller = new AbortController();
-    setTimeout(() => controller.abort(), 2000);
-    
-    await fetch('https://generativelanguage.googleapis.com/v1beta/models', {
-      method: 'HEAD',
-      signal: controller.signal
-    });
-    connectionWarmed = true;
-  } catch (e) {
-  }
+  // No-op for backend proxy; connection warming not needed
+  connectionWarmed = true;
 }
 
 // ===== UTILITY FUNCTIONS =====
@@ -52,7 +42,7 @@ export async function generateContent(messages) {
     warmConnection();
   }
   
-  const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
+  const url = '/api/gemini';
   const maxAttempts = 3;
   
   const geminiContents = messages.map(msg => ({
@@ -95,12 +85,11 @@ export async function generateContent(messages) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 20000);
       
-      const res = await fetch(`${url}?key=${GEMINI_API_KEY}`, {
+      const res = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'User-Agent': 'MARM-Systems/1.4'
         },
         body: JSON.stringify(requestBody),
         signal: controller.signal
