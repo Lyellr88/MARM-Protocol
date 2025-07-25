@@ -116,7 +116,6 @@
     </div>
   </div>
 
-  <!-- Markdown Viewer Modal -->
   <div id="markdown-modal" class="modal hidden">
     <div class="modal-content markdown-modal-content">
       <div class="modal-header">
@@ -135,7 +134,6 @@
   <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
 
   <script type="module">
-    // Test if modules are loading
     console.log('Loading modules...');
     import('./src/chatbot/chatbot.js')
       .then(() => {
@@ -143,7 +141,6 @@
       })
       .catch(e => {
         console.error('Failed to load chatbot:', e);
-        // Check if the error is about the file path
         if (e.message.includes('Failed to fetch')) {
           console.error('Check that chatbot.js exists in the src/chatbot/ folder');
         }
