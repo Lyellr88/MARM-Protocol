@@ -12,11 +12,10 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      transition: background-image 0.3s;
     }
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-image: url('style/media/images-dark-bg.png') !important;
-      }
+    body.dark-mode {
+      background-image: url('style/media/images-dark-bg.png');
     }
   </style>
 </head>
@@ -144,9 +143,17 @@
   <button id="token-counter-btn" title="Token Counter">TC</button>
   <button id="newChatBtn" title="New Chat">+</button>
   <button id="chatsBtn" title="Browse Saved Chats">💬</button>
+
   <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
 
   <script type="module">
+    // Dark mode toggle logic
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Load chatbot module
     console.log('Loading modules...');
     import('./src/chatbot/chatbot.js')
       .then(() => {
