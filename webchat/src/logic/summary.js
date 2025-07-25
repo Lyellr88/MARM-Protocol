@@ -1,3 +1,5 @@
+// summary.js - Session data compilation and summarization functions
+
 import { ensureSession } from './session.js';
 import { generateContent } from '../geminiHelper.js';
 
