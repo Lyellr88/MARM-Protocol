@@ -1,0 +1,26 @@
+{
+  "name": "marm-webchat",
+  "version": "1.0.0",
+  "description": "MARM (Memory Accurate Response Mode) - Advanced AI Chatbot with Session Management and Gemini API Proxy Backend",
+  "main": "src/chatbot/server.js",
+  "scripts": {
+    "start": "node src/chatbot/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7"
+  },
+  "keywords": [
+    "ai",
+    "chatbot",
+    "gemini",
+    "marm",
+    "session-management"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lyellr88/MARM-Systems"
+  }
+}
