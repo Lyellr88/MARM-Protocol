@@ -1,12 +1,29 @@
-// Browser-compatible version - no dotenv needed
-const GEMINI_API_KEY = 'API_KEY'; 
+// geminiHelper.js - Google Gemini AI API integration and request handling
+const GEMINI_API_KEY = 'AIzaSyB3hjh8HiaJ0arkzcHVR_JPQibcvLYC9yc';
 
-// Helper function for delays between retries
+// ===== CONNECTION OPTIMIZATION =====
+let connectionWarmed = false;
+async function warmConnection() {
+  if (connectionWarmed) return;
+  
+  try {
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 2000);
+    
+    await fetch('https://generativelanguage.googleapis.com/v1beta/models', {
+      method: 'HEAD',
+      signal: controller.signal
+    });
+    connectionWarmed = true;
+  } catch (e) {
+  }
+}
+
+// ===== UTILITY FUNCTIONS =====
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Helper function to get user-friendly error messages
 function getErrorMessage(status, attempt, maxAttempts) {
   const isRetrying = attempt < maxAttempts;
   const retryText = isRetrying ? ` (Attempt ${attempt}/${maxAttempts}, retrying...)` : '';
@@ -29,30 +46,63 @@ function getErrorMessage(status, attempt, maxAttempts) {
   }
 }
 
+// ===== MAIN API FUNCTION =====
 export async function generateContent(messages) {
+  if (!connectionWarmed) {
+    warmConnection();
+  }
+  
   const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
   const maxAttempts = 3;
   
-  // Convert messages to Gemini format - system role becomes model
   const geminiContents = messages.map(msg => ({
     role: (msg.role === 'bot' || msg.role === 'assistant' || msg.role === 'system') ? 'model' : 'user',
     parts: [{ text: msg.content }]
   }));
 
+  const requestBody = {
+    contents: geminiContents,
+    generationConfig: {
+      temperature: 0.7,
+      topK: 40,
+      topP: 0.8,
+      maxOutputTokens: 8192,
+      candidateCount: 1
+    },
+    safetySettings: [
+      {
+        category: "HARM_CATEGORY_HARASSMENT", 
+        threshold: "BLOCK_MEDIUM_AND_ABOVE"
+      },
+      {
+        category: "HARM_CATEGORY_HATE_SPEECH",
+        threshold: "BLOCK_MEDIUM_AND_ABOVE"  
+      },
+      {
+        category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        threshold: "BLOCK_MEDIUM_AND_ABOVE"
+      },
+      {
+        category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+        threshold: "BLOCK_MEDIUM_AND_ABOVE"
+      }
+    ]
+  };
+
+  // ===== REQUEST RETRY LOOP =====
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
-      // Add timeout to fetch request
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+      const timeoutId = setTimeout(() => controller.abort(), 20000);
       
       const res = await fetch(`${url}?key=${GEMINI_API_KEY}`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'User-Agent': 'MARM-Systems/1.4'
         },
-        body: JSON.stringify({
-          contents: geminiContents
-        }),
+        body: JSON.stringify(requestBody),
         signal: controller.signal
       });
       
@@ -62,21 +112,18 @@ export async function generateContent(messages) {
         const errText = await res.text();
         console.error(`Gemini API Error (Attempt ${attempt}):`, res.status, errText);
         
-        // Don't retry on authentication or bad request errors
         if (res.status === 401 || res.status === 403 || res.status === 400) {
           return {
             text: () => getErrorMessage(res.status, attempt, maxAttempts)
           };
         }
         
-        // If this isn't the last attempt, wait and retry
         if (attempt < maxAttempts) {
-          const delayMs = Math.pow(2, attempt - 1) * 1000; // Exponential backoff: 1s, 2s, 4s
+          const delayMs = Math.min(Math.pow(2, attempt - 1) * 500, 2000);
           await delay(delayMs);
           continue;
         }
         
-        // Last attempt failed
         return {
           text: () => getErrorMessage(res.status, attempt, maxAttempts)
         };
@@ -84,7 +131,7 @@ export async function generateContent(messages) {
       
       const data = await res.json();
       
-      // Handle empty or blocked responses
+      // ===== RESPONSE VALIDATION =====
       if (!data.candidates || data.candidates.length === 0) {
         return {
           text: () => '🚫 Response was blocked or empty. Please try rephrasing your message.'
@@ -106,10 +153,9 @@ export async function generateContent(messages) {
     } catch (error) {
       console.error(`Request error (Attempt ${attempt}):`, error);
       
-      // Handle timeout errors
       if (error.name === 'AbortError') {
         if (attempt < maxAttempts) {
-          const delayMs = Math.pow(2, attempt - 1) * 1000;
+          const delayMs = Math.min(Math.pow(2, attempt - 1) * 500, 2000);
           await delay(delayMs);
           continue;
         }
@@ -118,9 +164,8 @@ export async function generateContent(messages) {
         };
       }
       
-      // Handle network errors
       if (attempt < maxAttempts) {
-        const delayMs = Math.pow(2, attempt - 1) * 1000;
+        const delayMs = Math.min(Math.pow(2, attempt - 1) * 500, 2000);
         await delay(delayMs);
         continue;
       }
