@@ -1,3 +1,5 @@
+// notebook.js - User knowledge library management and storage functions
+
 import { ensureSession, trimSessionSize, persistSessions } from './session.js';
 import { stripHTML, validateNotebookEntry } from './utils.js';
 
