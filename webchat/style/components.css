@@ -72,6 +72,16 @@
   border: 1.5px solid var(--primary-color);
 }
 
+#user-input {
+  overflow-y: auto !important; 
+  scrollbar-width: none;       
+}
+
+#user-input::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 #chat-form button {
   font-size: 1em;
   padding: 0.7em 1.5em;
@@ -89,7 +99,7 @@
   background: #27436b;
 }
 
-/* Modal */
+/* Modal - Keep fixed for overlays */
 .modal {
   display: none;
   position: fixed;
@@ -116,7 +126,7 @@
   overflow-y: auto;
 }
 
-/* Modern Help Modal Styles */
+/* Help Modal Styles */
 .help-modal-content {
   max-width:650px!important;
   padding: 0;
@@ -192,7 +202,7 @@
   align-items: flex-start;
   gap: 12px;
   padding: 12px 16px;
-  background: #f8fafc;
+  background: #e4e4e4b9;
   border-radius: 8px;
   border-left: 3px solid #667eea;
 }
@@ -372,27 +382,27 @@
   color: var(--accent-color);
 }
 
-/* Fixed position buttons - Zoom responsive */
+/* Action buttons - Scroll with content */
 #darkModeToggle {
-  position: fixed;
-  bottom: 3.3rem;  /* Use rem units for zoom scaling */
+  position: absolute;
+  bottom: 3.3rem;
   right: 2.7rem;
   background: var(--border-dark);
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 2.8rem;  /* Use rem instead of em for consistent scaling */
+  width: 2.8rem;  
   height: 2.8rem;
-  font-size: 1.3rem;  /* Use rem for zoom scaling */
+  font-size: 1.3rem;  
   cursor: pointer;
   z-index: 101;
   box-shadow: 0 2px 6px rgba(40,40,60,0.10);
-  transform-origin: center;  /* Ensure scaling from center */
+  transform-origin: center;  
 }
 
 #token-counter-btn {
-  position: fixed;
-  bottom: 3.3rem;  /* Use rem for zoom scaling */
+  position: absolute;
+  bottom: 3.3rem;
   right: 7.25rem;
   font-size: 1.3rem; 
   width: 2.8rem;
@@ -412,8 +422,8 @@
 }
 
 #newChatBtn {
-  position: fixed;
-  bottom: 7.2rem;  /* Use rem for zoom scaling */
+  position: absolute;
+  bottom: 7.2rem;
   right: 2.7rem;
   font-size: 1.3rem; 
   width: 2.8rem;
@@ -438,8 +448,8 @@
 }
 
 #chatsBtn {
-  position: fixed;
-  bottom: 7.2rem;  /* Use rem for zoom scaling */
+  position: absolute;
+  bottom: 7.2rem; 
   right: 7.2rem;
   font-size: 1.3rem; 
   width: 2.8rem;
@@ -462,21 +472,21 @@
   transform: scale(1.05);
 }
 
-/* Chats menu - Zoom responsive */
+/* Chats menu - Scrolls with content */
 .chats-menu {
-  position: fixed;
-  bottom: 12.5rem;  /* Use rem for zoom scaling */
+  position: absolute;
+  bottom: 12.5rem; 
   right: 2.7rem;
   background: #fff;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-heavy);
-  width: 18.75rem;  /* Convert 300px to rem (300/16) */
-  max-height: 25rem;  /* Convert 400px to rem */
+  width: 18.75rem;  
+  max-height: 25rem;  
   overflow-y: auto;
   z-index: 102;
   display: none;
   border: 1px solid var(--border-light);
-  transform-origin: bottom right;  /* Scale from bottom-right corner */
+  transform-origin: bottom right;  
 }
 
 .chats-menu.visible {
@@ -492,7 +502,7 @@
 }
 
 .chats-menu-content {
-  max-height: 21.875rem;  /* Convert 350px to rem for zoom scaling */
+  max-height: 21.875rem; 
   overflow-y: auto;
 }
 
