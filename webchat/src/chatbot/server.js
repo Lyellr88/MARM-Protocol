@@ -22,6 +22,8 @@ app.use(express.static(path.join(__dirname)));
 app.post('/api/gemini', async (req, res) => {
   try {
     const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=' + GEMINI_API_KEY;
+    console.log('Proxying request to Gemini API:', url);
+    console.log('Request body:', JSON.stringify(req.body));
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -31,11 +33,20 @@ app.post('/api/gemini', async (req, res) => {
       },
       body: JSON.stringify(req.body)
     });
-    const data = await response.json();
-    res.status(response.status).json(data);
+    const text = await response.text();
+    console.log('Gemini API response status:', response.status);
+    console.log('Gemini API response body:', text);
+    let data;
+    try {
+      data = JSON.parse(text);
+      res.status(response.status).json(data);
+    } catch (e) {
+      console.error('Failed to parse Gemini API response as JSON:', text);
+      res.status(500).json({ error: 'Invalid JSON from Gemini API', raw: text });
+    }
   } catch (error) {
     console.error('Gemini proxy error:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: 'Internal server error', details: error.message });
   }
 });
 
