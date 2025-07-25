@@ -1,12 +1,8 @@
 /* main.css - Main stylesheet that imports all modules */
 
-/* Import all CSS modules */
 @import url('./base.css');
 @import url('./components.css');
 @import url('./chat.css');
 @import url('./command-menu.css');
-@import url('./dark-mode.css');
 @import url('./animations.css');
-
-/* Critical CSS for faster loading */
-/* This ensures essential styles load first */ 
+@import url('./dark-mode.css');
