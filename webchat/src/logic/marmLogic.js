@@ -1,6 +1,4 @@
-// marmLogic2.js -- Refactored modular version (barrel pattern)
-// This file imports and re-exports logic from submodules for maintainability.
-// When ready, rename to marmLogic.js and update imports elsewhere.
+// marmLogic2.js -- This file imports and re-exports logic from submodules for maintainability.
 
 import * as constants from './constants.js';
 import * as session from './session.js';
