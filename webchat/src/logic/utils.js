@@ -28,6 +28,6 @@ export function checkProtocolCompliance(type, data) {
   return true;
 }
 
-export function estimateTokens(str) {t
+export function estimateTokens(str) {
   return Math.ceil((str || '').length / 3.5);
 } 
