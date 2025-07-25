@@ -1,4 +1,5 @@
 // server.js - Express backend to proxy Gemini API requests securely
+
 const express = require('express');
 const fetch = require('node-fetch');
 const path = require('path');
@@ -57,6 +58,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Unhandled server error', details: err.message });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`MARM Webchat server running on port ${PORT}`);
 });
