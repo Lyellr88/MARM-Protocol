@@ -1,4 +1,4 @@
-// commands.js - Command handling and specific command logic
+// commands.js - Command handling and specific command logic for MARM chatbot
 import {
   activateMarmSession,
   logSession,
@@ -15,10 +15,7 @@ import { generateContent } from '../geminiHelper.js';
 import { appendMessage, hideLoadingIndicator } from './ui.js';
 import { state, updateState } from './state.js';
 
-/**
- * Main command handler that processes all / commands
- * @param {string} userInput - The full user input starting with /
- */
+// ===== MAIN COMMAND HANDLER =====
 export async function handleCommand(userInput) {
   const [command, ...rest] = userInput.split(' ');
   const args = rest.join(' ').trim();
@@ -51,10 +48,7 @@ export async function handleCommand(userInput) {
   }
 }
 
-/**
- * Handle /start command
- * @param {string} args - Command arguments
- */
+// ===== START COMMAND =====
 async function handleStartCommand(args) {
   if (args === 'marm') {
     updateState({
@@ -82,10 +76,7 @@ async function handleStartCommand(args) {
   }
 }
 
-/**
- * Handle /refresh command
- * @param {string} args - Command arguments
- */
+// ===== REFRESH COMMAND =====
 async function handleRefreshCommand(args) {
   if (args === 'marm' && state.isMarmActive) {
     trimForContext(state.currentSessionId);
@@ -114,10 +105,7 @@ async function handleRefreshCommand(args) {
   }
 }
 
-/**
- * Handle /log command
- * @param {string} args - Command arguments
- */
+// ===== LOG COMMAND =====
 async function handleLogCommand(args) {
   if (!state.isMarmActive) {
     hideLoadingIndicator();
@@ -189,10 +177,7 @@ async function handleLogCommand(args) {
   }
 }
 
-/**
- * Handle /contextual command
- * @param {string} args - Command arguments
- */
+// ===== CONTEXTUAL COMMAND =====
 async function handleContextualCommand(args) {
   if (!state.isMarmActive) {
     hideLoadingIndicator();
@@ -232,10 +217,7 @@ async function handleContextualCommand(args) {
   appendMessage('bot', botResponse);
 }
 
-/**
- * Handle /show command
- * @param {string} args - Command arguments
- */
+// ===== SHOW COMMAND =====
 async function handleShowCommand(args) {
   const botResponse = args === 'reasoning' && state.isMarmActive
     ? getMostRecentBotResponseLogic(state.currentSessionId) || 'No reasoning trail available.'
@@ -244,10 +226,7 @@ async function handleShowCommand(args) {
   appendMessage('bot', botResponse);
 }
 
-/**
- * Handle /compile command
- * @param {string} args - Command arguments
- */
+// ===== COMPILE COMMAND =====
 async function handleCompileCommand(args) {
   if (!state.isMarmActive) {
     hideLoadingIndicator();
@@ -276,10 +255,7 @@ async function handleCompileCommand(args) {
   appendMessage('bot', botResponse);
 }
 
-/**
- * Handle /notebook command
- * @param {string} args - Command arguments
- */
+// ===== NOTEBOOK COMMAND =====
 async function handleNotebookCommand(args) {
   if (!state.isMarmActive) {
     hideLoadingIndicator();
