@@ -1,3 +1,5 @@
+// constants.js - Configuration constants and protocol definitions for MARM system
+
 export const PROTOCOL_VERSION = '1.4.1';
 
 export const MARM_KEYWORDS = [
