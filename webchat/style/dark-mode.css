@@ -2,7 +2,8 @@
 
 /* Dark mode base */
 body.dark-mode {
-  background: var(--background-dark);
+  background: var(--background-dark) url('images-dark-bg.png') no-repeat center center fixed;
+  background-size: cover;
   color: var(--text-dark);
 }
 
@@ -211,12 +212,12 @@ body.dark-mode .user-message .message-name {
 }
 
 body.dark-mode .bot-message .message-name {
-  color: #482bf1;
+  color: #667eea;
 }
 
 /* Dark mode loading indicator */
 body.dark-mode .loading-indicator .message-name {
-  color: #5c7aa8;
+  color: #667eea;
 }
 
 body.dark-mode .loading-dots span {
