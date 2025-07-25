@@ -272,22 +272,53 @@ This release marks a complete transformation of the codebase from a monolithic s
 - Circular dependencies between modules
 - Duplicate state management code
 - Inline event handlers (replaced with delegation)
+</details>
 
-### Summary Table
-
-| Area         | Old/Base State                | New/Current State (Barrel Pattern)         |
-|--------------|------------------------------|--------------------------------------------|
-| Structure    | Monolithic or split, manual  | Modular, barrel pattern, plug-and-play     |
-| Scalability  | Hard to add features         | Add new modules, update barrel             |
-| Maintainability | Tangled, hard to debug    | Focused modules, easy to update            |
-| Testability  | Difficult, tangled logic     | Isolated modules, easier testing           |
-| Extensibility| Risky, breaks old code       | Add/remove modules with minimal risk       |
-| Readability  | Intimidating, hard to onboard| Clear, documented, <300 lines per module   |
+---
 
 
-### Development Notes
-- Full backward compatibility maintained for MARM v1.4 protocol
-- All existing features preserved during refactoring
-- Future-proofed architecture for plugin system
+<details>
+<summary>July 22nd-24th – MARM Chatbot Live Launch & UI Enhancements</summary>   
+  
+### Overview
+Official launch of the MARM interactive chatbot on Render, featuring custom backgrounds, improved session management architecture, and enhanced error handling across the application.
 
+### Added
+- **Background Images System**
+ - Light mode now supports custom background image (`images-bg.png`)
+ - Dark mode uses separate background image (`images-dark-bg.png`)
+ - Dynamic background switching based on theme preference
+
+- **Live MARM Chatbot Deployment**
+ - Chatbot is now live and accessible via official Render deployment
+ - Full backend support with API proxying
+ - Source and updates managed through GitHub integration
+
+- **Improved Error Handling**
+ - Enhanced Gemini API proxy error messages
+ - Clearer frontend error handling for debugging
+ - User-friendly error feedback system
+
+### Changed
+- **Session Management Architecture**
+ - Moved all session-related UI logic to new `sessionUI.js` module
+ - Better separation of concerns and maintainability
+ - Improved code organization
+
+- **Codebase Cleanup**
+ - Removed excessive inline comments
+ - Replaced with clear section headers
+ - Reduced code bloat across multiple files
+ - Improved overall maintainability
+
+- **Deployment Configuration**
+ - Switched from static site to Node.js web service
+ - Full backend support enabled
+ - API proxying capabilities added
+
+### Ongoing
+- Actively developing markdown code block copy window
+- Dark mode toggle improvements in progress
+- Regular updates based on user feedback
+- Additional UX enhancements planned
 </details>
