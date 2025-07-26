@@ -26,7 +26,6 @@
 - 📁 **Save & Load Chats** - Name and organize your sessions
 - 🎙️ **Voice Synthesis** - Listen to MARM responses (Chrome/Edge recommended)
 - 🌓 **Dark Mode** - Easy on the eyes for long sessions
-- 📱 **Mobile Friendly** - Works on all devices
 
 ### Quick Start with the Chatbot:
 1. Click the link above to open MARM Chatbot
