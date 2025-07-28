@@ -20,12 +20,12 @@
 
 **Experience MARM v1.5.0 in action!** My new interactive chatbot lets you test all MARM features directly in your browser:
 
-- 🚨 **Browser-only functionality** - This chatbot is currently optimized for web browsers, with mobile compatibility under development.
-- ✅ **Full MARM Protocol** - All commands work exactly as documented
-- 💾 **Session Persistence** - Your conversations survive page refreshes  
-- 📁 **Save & Load Chats** - Name and organize your sessions
-- 🎙️ **Voice Synthesis** - Listen to MARM responses (Chrome/Edge recommended)
-- 🌓 **Dark Mode** - Easy on the eyes for long sessions
+- **Browser-only functionality** - This chatbot is currently optimized for web browsers, with mobile compatibility under development.
+- **Full MARM Protocol** - All commands work exactly as documented
+- **Session Persistence** - Your conversations survive page refreshes  
+- **Save & Load Chats** - Name and organize your sessions
+- **Voice Synthesis** - Listen to MARM responses (Chrome/Edge recommended)
+- **Dark Mode** - Easy on the eyes for long sessions
 
 ### Quick Start with the Chatbot:
 1. Click the link above to open MARM Chatbot
