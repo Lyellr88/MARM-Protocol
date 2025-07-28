@@ -1,6 +1,8 @@
-# Memory Accurate Response Mode v1.5.0 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=for-the-badge&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
-![GitHub stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=for-the-badge&logo=github&logoColor=white&labelColor=black&color=white) ![GitHub forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=for-the-badge&logo=github&logoColor=white&labelColor=black&color=white)
+# Memory Accurate Response Mode v1.5.0 (MARM) [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
 
+
+![GitHub Stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=flat-square&logo=github&logoColor=white&labelColor=303030&color=white)
+![GitHub Forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=flat-square&logo=github&logoColor=white&labelColor=303030&color=white)
 
 **A universal protocol for structured memory, response accuracy and personalized library**
 
