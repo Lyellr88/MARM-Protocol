@@ -44,11 +44,11 @@
 <details>
 
 **Major Enhancements:**
-- **🚀 Live Interactive Chatbot** - Experience MARM through a dedicated web interface with full protocol support
-- **💾 Session Persistence** - Conversations now survive page refreshes with automatic recovery
-- **📁 Save/Load System** - Name, save, and organize your chat sessions with custom titles
-- **🎙️ Voice Synthesis** - Listen to MARM responses with natural speech (Chrome/Edge recommended)
-- **🌓 Enhanced UI** - Beautiful light/dark themes with custom backgrounds and modern interface
+- **Live Interactive Chatbot** - Experience MARM through a dedicated web interface with full protocol support
+- **Session Persistence** - Conversations now survive page refreshes with automatic recovery
+- **Save/Load System** - Name, save, and organize your chat sessions with custom titles
+- **Voice Synthesis** - Listen to MARM responses with natural speech (Chrome/Edge recommended)
+- **Enhanced UI** - Beautiful light/dark themes with custom backgrounds and modern interface
 
 **Technical Improvements:**
 - Complete architectural refactor from monolithic to modular codebase
