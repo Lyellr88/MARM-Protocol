@@ -315,6 +315,108 @@
   border-radius: 8px;
   overflow-x: auto;
   border-left: 4px solid #667eea;
+  position: relative;
+}
+
+/* Code block copy button */
+.code-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+}
+
+.markdown-content pre:hover .code-copy-btn {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  background: #d0d0d0;
+}
+
+.code-copy-btn.copied {
+  background: #4ade80;
+  color: white;
+}
+
+/* Code Windows - Like ChatGPT style */
+.code-window {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin: 16px 0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.code-window-header {
+  background: #f1f5f9;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code-language {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.code-window-copy-btn {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.code-window-copy-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.code-window-copy-btn.copied {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.code-window-content {
+  padding: 16px;
+  background: #ffffff;
+}
+
+.code-window-content pre {
+  margin: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.code-window-content code {
+  background: transparent;
+  padding: 0;
+  color: #1f2937;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .markdown-content ul, .markdown-content ol {
@@ -580,5 +682,52 @@ input:focus {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile es for floating buttons and command menu */
+@media (max-width: 600px) {
+  #token-counter-btn,
+  #newChatBtn,
+  #chatsBtn,
+  #darkModeToggle {
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    z-index: 1000;
+  }
+  
+  #token-counter-btn {
+    bottom: 130px;
+  }
+  
+  #newChatBtn {
+    bottom: 180px;
+  }
+  
+  #chatsBtn {
+    bottom: 230px;
+  }
+  
+  #darkModeToggle {
+    bottom: 280px;
+  }
+  
+  .command-menu {
+    position: fixed;
+    left: 10px;
+    bottom: 80px;
+    width: calc(100vw - 20px);
+    max-width: 300px;
+    z-index: 999;
+  }
+  
+  .help-modal-content {
+    max-width: 95vw !important;
+    margin: 10px;
+    max-height: 80vh;
   }
 } 
