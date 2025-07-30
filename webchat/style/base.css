@@ -9,7 +9,7 @@
   --background-light: #e5e9ec;
   --background-dark: #181b24;
   --text-light: #23272f;
-  --text-dark: #ececec;
+  --text-dark: #23272f;
   --border-light: #c0c9d7;
   --border-dark: #44486e;
   
@@ -107,14 +107,12 @@ body.dark-mode #chat-log strong {
   color: #f3f4f6 !important;
 }
 
-/* Form layout */
 #chat-form {
   display: flex;
   gap: 0.5em;
   align-items: flex-end;
 }
 
-/* Responsive design */
 @media (max-width: 900px) {
   main {
     margin-left: auto;
@@ -129,9 +127,49 @@ body.dark-mode #chat-log strong {
     max-width: 98vw;
     padding: var(--spacing-sm) 0.2em var(--spacing-sm) 0.2em;
   }
+  
+  header {
+    padding: 0.8em 1em;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+  
+  header h1 {
+    font-size: 1.2em;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  header div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+  
+  .btn {
+    font-size: 0.8em;
+    padding: 0.4em 0.6em;
+    white-space: nowrap;
+  }
+  
+  #user-input {
+    width: calc(100% - 80px);
+    min-width: 0;
+    font-size: 14px;
+  }
+  
+  #chat-form {
+    gap: 0.3em;
+    align-items: center;
+  }
+  
+  #chat-form button {
+    padding: 0.5em 0.8em;
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
 }
 
-/* Sidebar (hidden) */
 #sidebar {
   display: none !important;
 } 
