@@ -1,6 +1,6 @@
 // constants.js - Configuration constants and protocol definitions for MARM system
 
-export const PROTOCOL_VERSION = '1.4.1';
+export const PROTOCOL_VERSION = '1.5.0';
 
 export const MARM_KEYWORDS = [
   'marm', 'memory accurate', 'response mode', 'protocol', 'notebook',
