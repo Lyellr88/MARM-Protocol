@@ -66,6 +66,7 @@
   max-height: 8em;
   line-height: 1.2;
   font-family: inherit;
+  max-width: calc(100% - 100px);
 }
 
 #user-input:focus {
@@ -97,6 +98,16 @@
 
 #chat-form button:hover {
   background: #27436b;
+}
+
+/* Form buttons container */
+.form-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  right: -120px;
+  top: 0;
 }
 
 /* Modal - Keep fixed for overlays */
@@ -484,101 +495,13 @@
   color: var(--accent-color);
 }
 
-/* Action buttons - Scroll with content */
-#darkModeToggle {
-  position: absolute;
-  bottom: 3.3rem;
-  right: 2.7rem;
-  background: var(--border-dark);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 2.8rem;  
-  height: 2.8rem;
-  font-size: 1.3rem;  
-  cursor: pointer;
-  z-index: 101;
-  box-shadow: 0 2px 6px rgba(40,40,60,0.10);
-  transform-origin: center;  
-}
+/* Action buttons - Now handled by FAB */
 
-#token-counter-btn {
-  position: absolute;
-  bottom: 3.3rem;
-  right: 7.25rem;
-  font-size: 1.3rem; 
-  width: 2.8rem;
-  height: 2.8rem;
-  line-height: 2.5rem;                 
-  text-align: center;                              
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  background: var(--secondary-color);             
-  color: #000;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 101;
-  box-shadow: 0 2px 6px rgba(40,40,60,0.10);
-  transform-origin: center;
-}
-
-#newChatBtn {
-  position: absolute;
-  bottom: 7.2rem;
-  right: 2.7rem;
-  font-size: 1.3rem; 
-  width: 2.8rem;
-  height: 2.8rem;
-  line-height: 2.8rem;                 
-  text-align: center;                              
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  background: var(--secondary-color);             
-  color: #000;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 101;
-  box-shadow: 0 2px 6px rgba(40,40,60,0.10);
-  transform-origin: center;
-}
-
-#newChatBtn:hover {
-  background: #e6a43d;
-  transform: scale(1.05);
-}
-
-#chatsBtn {
-  position: absolute;
-  bottom: 7.2rem; 
-  right: 7.2rem;
-  font-size: 1.3rem; 
-  width: 2.8rem;
-  height: 2.8rem;
-  line-height: 2.8rem;                 
-  text-align: center;                              
-  font-weight: 600;
-  background: var(--border-dark);             
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 101;
-  box-shadow: 0 2px 6px rgba(40,40,60,0.10);
-  transform-origin: center;
-}
-
-#chatsBtn:hover {
-  background: #3a3a4a;
-  transform: scale(1.05);
-}
-
-/* Chats menu - Scrolls with content */
+/* Chats menu - Positioned relative to FAB */
 .chats-menu {
-  position: absolute;
-  bottom: 12.5rem; 
-  right: 2.7rem;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
   background: #fff;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-heavy);
@@ -588,7 +511,7 @@
   z-index: 102;
   display: none;
   border: 1px solid var(--border-light);
-  transform-origin: bottom right;  
+  transform-origin: bottom right;
 }
 
 .chats-menu.visible {
@@ -686,37 +609,95 @@ input:focus {
 }
 
 /* Mobile fixes for floating buttons and command menu */
-/* Hide FAB on desktop - only show on mobile */
+/* FAB for both desktop and mobile */
 .fab-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Desktop FAB styling - circular like mobile */
+.fab-main {
+  width: 56px;
+  height: 56px;
+  border-radius: 50% !important;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab-main:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.fab-buttons {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
   display: none;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+  z-index: 1001;
+  min-width: 48px;
+}
+
+.fab-expanded .fab-buttons {
+  display: flex;
+}
+
+.fab-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50% !important;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.fab-expanded .fab-button {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fab-button:nth-child(1) { transition-delay: 0.1s; }
+.fab-button:nth-child(2) { transition-delay: 0.2s; }
+.fab-button:nth-child(3) { transition-delay: 0.3s; }
+
+.fab-button:hover {
+  transform: scale(1.1);
 }
 
 @media (max-width: 600px) {
-  /* Hide individual floating buttons on mobile */
-  #token-counter-btn,
-  #newChatBtn,
-  #chatsBtn,
-  #darkModeToggle {
-    display: none;
-  }
-  
-  /* Show FAB on mobile */
-  .fab-container {
-    display: block;
-  }
-  
-  /* Expandable FAB for mobile */
+
+  /* FAB positioning for mobile */
   .fab-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+    margin-left: 0;
   }
   
   .fab-main {
     width: 56px;
     height: 56px;
-    border-radius: 50%;
+    border-radius: 50% !important;
     background: var(--primary-color);
     color: white;
     border: none;
@@ -773,10 +754,25 @@ input:focus {
   .fab-button:nth-child(2) { transition-delay: 0.2s; }
   .fab-button:nth-child(3) { transition-delay: 0.3s; }
   
-  .fab-button:hover {
+    .fab-button:hover {
     transform: scale(1.1);
   }
-  
+
+  /* Mobile chats menu positioning */
+  .chats-menu {
+    bottom: 80px;
+    right: 15px;
+    width: 16rem;
+    max-height: 20rem;
+  }
+
+  /* Mobile form buttons - reset positioning */
+  .form-buttons {
+    position: relative;
+    right: auto;
+    top: auto;
+  }
+
   /* Command menu mobile optimizations */
   .command-menu {
     position: fixed;
