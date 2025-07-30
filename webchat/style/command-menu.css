@@ -3,13 +3,13 @@
 /* Command menu container - Scrolls with content */
 .command-menu {
   position: absolute;
-  left: 25px;
+  left: 35px;
   bottom: 48px;  
   background: #e4e4e4b9;
   border: 2px solid #000000;
   border-radius: var(--border-radius);
   padding: 0;
-  min-width: 240px;
+  min-width: 245px;
   max-width: 700px;
   z-index: 100;
   transition: all var(--transition-medium) ease;
