@@ -201,7 +201,7 @@
 }
 
 /* Medium phones */
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   .voice-btn {
     opacity: 1;
     right: 40px;
