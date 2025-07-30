@@ -56,9 +56,10 @@ header h1 {
 
 /* Main layout */
 main {
-  max-width: 792px;
+  max-width: 1200px;
   margin: var(--spacing-xl) auto;
   margin-left: 300px; 
+  margin-right: 80px;
   background: rgba(255, 255, 255, 0.5);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-medium);
@@ -77,6 +78,7 @@ main {
   overflow-y: auto;
   box-shadow: 0 1px 4px rgba(40, 40, 60, 0.04); 
   margin-left: 0px;
+  margin-right: -10px;
   scrollbar-width: none; 
 }
 
@@ -103,14 +105,31 @@ body.dark-mode #chat-log strong {
   display: flex;
   gap: 0.5em;
   align-items: flex-end;
+  position: relative;
+  margin-right: 20px;
 }
 
 /* Responsive design */
 @media (max-width: 900px) {
   main {
     margin-left: auto;
+    margin-right: auto;
     max-width: 96vw;
     padding: var(--spacing-sm) 0.5em var(--spacing-sm) 0.5em;
+  }
+  
+  #chat-log {
+    margin-right: 0;
+  }
+  
+  #chat-form {
+    margin-right: 0;
+  }
+  
+  .form-buttons {
+    position: relative;
+    right: auto;
+    top: auto;
   }
 }
 
@@ -119,6 +138,7 @@ body.dark-mode #chat-log strong {
     margin: 0.5em auto;
     max-width: 98vw;
     padding: var(--spacing-sm) 0.2em var(--spacing-sm) 0.2em;
+    margin-right: 0;
   }
   
   header {
