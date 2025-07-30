@@ -2,7 +2,6 @@
 
 /* CSS Custom Properties */
 :root {
-  /* Colors */
   --primary-color: #3d5a80;
   --secondary-color: #ffb547;
   --accent-color: #ee6c4d;
@@ -12,25 +11,17 @@
   --text-dark: #23272f;
   --border-light: #c0c9d7;
   --border-dark: #44486e;
-  
-  /* Spacing */
   --spacing-xs: 0.5em;
   --spacing-sm: 1em;
   --spacing-md: 1.5em;
   --spacing-lg: 2em;
   --spacing-xl: 2.5em;
-  
-  /* Border radius */
   --border-radius: 8px;
   --border-radius-sm: 5px;
   --border-radius-lg: 12px;
-  
-  /* Shadows */
   --shadow-light: 0 2px 8px rgba(40,40,60,0.08);
   --shadow-medium: 0 2px 16px rgba(30,30,50,0.10);
   --shadow-heavy: 0 4px 24px rgba(40,40,60,0.14);
-  
-  /* Transitions */
   --transition-fast: 0.2s;
   --transition-medium: 0.3s;
 }
@@ -107,12 +98,14 @@ body.dark-mode #chat-log strong {
   color: #f3f4f6 !important;
 }
 
+/* Form layout */
 #chat-form {
   display: flex;
   gap: 0.5em;
   align-items: flex-end;
 }
 
+/* Responsive design */
 @media (max-width: 900px) {
   main {
     margin-left: auto;
@@ -170,6 +163,7 @@ body.dark-mode #chat-log strong {
   }
 }
 
+/* Sidebar (hidden) */
 #sidebar {
   display: none !important;
 } 
