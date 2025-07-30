@@ -276,49 +276,130 @@ This release marks a complete transformation of the codebase from a monolithic s
 
 ---
 
-
 <details>
-<summary>July 22nd-24th – MARM Chatbot Live Launch & UI Enhancements</summary>   
-  
+<summary>July 22nd-24th – MARM Chatbot Live Launch & UI Enhancements</summary>
+
 ### Overview
 Official launch of the MARM interactive chatbot on Render, featuring custom backgrounds, improved session management architecture, and enhanced error handling across the application.
 
 ### Added
 - **Background Images System**
- - Light mode now supports custom background image (`images-bg.png`)
- - Dark mode uses separate background image (`images-dark-bg.png`)
- - Dynamic background switching based on theme preference
+  - Light mode now supports custom background image (`images-bg.png`)
+  - Dark mode uses separate background image (`images-dark-bg.png`)
+  - Dynamic background switching based on theme preference
 
 - **Live MARM Chatbot Deployment**
- - Chatbot is now live and accessible via official Render deployment
- - Full backend support with API proxying
- - Source and updates managed through GitHub integration
+  - Chatbot is now live and accessible via official Render deployment
+  - Full backend support with API proxying
+  - Source and updates managed through GitHub integration
 
 - **Improved Error Handling**
- - Enhanced Gemini API proxy error messages
- - Clearer frontend error handling for debugging
- - User-friendly error feedback system
+  - Enhanced Gemini API proxy error messages
+  - Clearer frontend error handling for debugging
+  - User-friendly error feedback system
 
 ### Changed
 - **Session Management Architecture**
- - Moved all session-related UI logic to new `sessionUI.js` module
- - Better separation of concerns and maintainability
- - Improved code organization
+  - Moved all session-related UI logic to new `sessionUI.js` module
+  - Better separation of concerns and maintainability
+  - Improved code organization
 
 - **Codebase Cleanup**
- - Removed excessive inline comments
- - Replaced with clear section headers
- - Reduced code bloat across multiple files
- - Improved overall maintainability
+  - Removed excessive inline comments
+  - Replaced with clear section headers
+  - Reduced code bloat across multiple files
+  - Improved overall maintainability
 
 - **Deployment Configuration**
- - Switched from static site to Node.js web service
- - Full backend support enabled
- - API proxying capabilities added
+  - Switched from static site to Node.js web service
+  - Full backend support enabled
+  - API proxying capabilities added
 
-### Ongoing
-- Actively developing markdown code block copy window
-- Dark mode toggle improvements in progress
-- Regular updates based on user feedback
-- Additional UX enhancements planned
+### Fixed
+- Session persistence issues across page refreshes
+- Error handling for missing documentation files
+- Dark mode toggle functionality
+- Mobile responsive design issues
+- Background image loading and switching
+
+### Removed
+- Excessive inline comments and code bloat
+- Global function pollution
+- Redundant session management code
+- Unused deployment configurations
+</details>
+
+---
+
+<details>
+<summary>July 28th-30th – FAB System Implementation & UI Modernization</summary>
+
+### Overview
+This release introduces a complete UI/UX transformation with the implementation of a modern Floating Action Button (FAB) system, replacing the traditional floating buttons with an expandable, mobile-first design. The update includes comprehensive responsive design improvements, enhanced code block functionality, and significant architectural refinements for better user experience.
+
+### Added
+- **Floating Action Button (FAB) System**
+  - Expandable circular FAB with smooth animations and staggered delays
+  - Four primary actions: Dark Mode, Saved Chats, New Chat, Token Counter
+  - Auto-close functionality when clicking outside FAB
+  - Perfect circular design with hover effects and visual feedback
+  - Mobile-first responsive design with desktop compatibility
+
+- **Enhanced Code Block System**
+  - ChatGPT-style code windows with custom headers
+  - Copy button functionality for all code blocks
+  - Dark mode support for code window components
+  - Improved code block styling and user experience
+  - Language detection and display improvements
+
+- **Improved Session Management**
+  - Dynamic chats menu creation and auto-closing behavior
+  - Menu close logic when all chats are deleted
+  - Better separation of concerns with dedicated sessionUI.js module
+  - Enhanced user feedback and interaction patterns
+
+- **Safety & Performance Features**
+  - 30 entry limit and 30KB storage limit for notebook system
+  - 300ms rate limiting to prevent spam saves
+  - Connection timeout reduction from 20s to 15s for faster failure detection
+  - ActiveControllers tracking to prevent orphaned requests
+  - Automatic cleanup on page unload
+
+### Changed
+- **Mobile-First Architecture**
+  - Replaced individual floating buttons with unified FAB system
+  - Removed deprecated mobile button hiding rules
+  - Improved spacing between Quick Commands ↔ Chat ↔ FAB
+  - Better visual hierarchy and responsive design
+
+- **Layout Optimization**
+  - Extended chat window width with reduced margins
+  - Adjusted input field width to prevent overlap
+  - Balanced left/right margins for better visual harmony
+  - Improved header crowding with smaller buttons and better spacing
+
+- **Dark Mode Enhancements**
+  - Enhanced dark mode support for all components
+  - Improved transparency and readability
+  - Better contrast for message content and code windows
+  - Consistent styling across light and dark themes
+
+- **GitHub Deployment Sync**
+  - Updated gh-index.html to match local development version
+  - Maintained GitHub-specific background styling
+  - Ensured consistent functionality across all deployment environments
+
+### Fixed
+- FAB button functionality on Render deployment
+- Circular button styling with proper border-radius
+- Menu auto-closing behavior for saved chats
+- Input field overlap with Send button
+- Visual balance between chat window and action buttons
+
+### Removed
+- Individual floating buttons (token-counter-btn, newChatBtn, chatsBtn, darkModeToggle)
+- Duplicate FAB structure outside form
+- Deprecated mobile button hiding CSS rules
+- Old button setup functions from ui.js and sessionUI.js
+- Unused mobile-specific button styles
 </details>
