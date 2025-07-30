@@ -2,11 +2,38 @@
 
 // ===== CONNECTION OPTIMIZATION =====
 let connectionWarmed = false;
+let activeControllers = new Set();
+
 async function warmConnection() {
   if (connectionWarmed) return;
   
-  // No-op for backend proxy; connection warming not needed
-  connectionWarmed = true;
+  try {
+    const controller = new AbortController();
+    activeControllers.add(controller);
+    
+    setTimeout(() => {
+      controller.abort();
+      activeControllers.delete(controller);
+    }, 2000);
+    
+    await fetch('https://generativelanguage.googleapis.com/v1beta/models', {
+      method: 'HEAD',
+      signal: controller.signal
+    });
+    connectionWarmed = true;
+    activeControllers.delete(controller);
+  } catch (e) {
+    activeControllers.delete(controller);
+  }
+}
+
+// Cleanup function for when user leaves page
+export function cleanupConnections() {
+  activeControllers.forEach(controller => {
+    controller.abort();
+  });
+  activeControllers.clear();
+  connectionWarmed = false;
 }
 
 // ===== UTILITY FUNCTIONS =====
@@ -42,7 +69,7 @@ export async function generateContent(messages) {
     warmConnection();
   }
   
-  const url = '/api/gemini';
+  const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
   const maxAttempts = 3;
   
   const geminiContents = messages.map(msg => ({
@@ -83,19 +110,26 @@ export async function generateContent(messages) {
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 20000);
+      activeControllers.add(controller);
       
-      const res = await fetch(url, {
+      const timeoutId = setTimeout(() => {
+        controller.abort();
+        activeControllers.delete(controller);
+      }, 15000); // Reduced timeout to 15 seconds
+      
+      const res = await fetch(`${url}?key=${GEMINI_API_KEY}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
+          'User-Agent': 'MARM-Systems/1.4'
         },
         body: JSON.stringify(requestBody),
         signal: controller.signal
       });
       
       clearTimeout(timeoutId);
+      activeControllers.delete(controller);
       
       if (!res.ok) {
         const errText = await res.text();
@@ -118,23 +152,8 @@ export async function generateContent(messages) {
         };
       }
       
-      // Defensive: Read as text first, then try to parse JSON
-      const text = await res.text();
-      if (!text) {
-        console.error('Empty response from /api/gemini');
-        return {
-          text: () => '❌ Empty response from Gemini API. Please try again later.'
-        };
-      }
-      let data;
-      try {
-        data = JSON.parse(text);
-      } catch (e) {
-        console.error('Failed to parse JSON from /api/gemini:', text);
-        return {
-          text: () => '❌ Invalid response from Gemini API. Please try again later.'
-        };
-      }
+      const data = await res.json();
+      
       // ===== RESPONSE VALIDATION =====
       if (!data.candidates || data.candidates.length === 0) {
         return {
@@ -156,6 +175,7 @@ export async function generateContent(messages) {
       
     } catch (error) {
       console.error(`Request error (Attempt ${attempt}):`, error);
+      activeControllers.delete(controller);
       
       if (error.name === 'AbortError') {
         if (attempt < maxAttempts) {
