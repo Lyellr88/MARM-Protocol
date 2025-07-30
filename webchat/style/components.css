@@ -686,6 +686,11 @@ input:focus {
 }
 
 /* Mobile fixes for floating buttons and command menu */
+/* Hide FAB on desktop - only show on mobile */
+.fab-container {
+  display: none;
+}
+
 @media (max-width: 600px) {
   /* Hide individual floating buttons on mobile */
   #token-counter-btn,
@@ -693,6 +698,11 @@ input:focus {
   #chatsBtn,
   #darkModeToggle {
     display: none;
+  }
+  
+  /* Show FAB on mobile */
+  .fab-container {
+    display: block;
   }
   
   /* Expandable FAB for mobile */
