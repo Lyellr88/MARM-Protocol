@@ -34,18 +34,14 @@ export function hideLoadingIndicator() {
 function processMarkdownWithCodeWindows(text) {
   if (!window.marked) return text;
   
-  // First, parse the markdown normally
   let html = marked.parse(text);
   
-  // Find all code blocks and replace them with custom windows
   const codeBlockRegex = /<pre><code[^>]*>([\s\S]*?)<\/code><\/pre>/g;
   
   html = html.replace(codeBlockRegex, (match, codeContent) => {
-    // Extract language from class if present
     const langMatch = match.match(/class="language-(\w+)"/);
     const language = langMatch ? langMatch[1] : 'markdown';
     
-    // Clean the code content (remove HTML entities)
     const cleanCode = codeContent
       .replace(/&lt;/g, '<')
       .replace(/&gt;/g, '>')
@@ -363,8 +359,6 @@ export function setupHelpModal() {
 
 // ===== UI SETUP FUNCTIONS =====
 export function setupDarkMode() {
-  const darkModeBtn = document.getElementById('darkModeToggle');
-  
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
   let userPreference = null;
@@ -394,18 +388,6 @@ export function setupDarkMode() {
       }
     }
   });
-
-  if (darkModeBtn) {
-    darkModeBtn.addEventListener('click', function () {
-      document.body.classList.toggle('dark-mode');
-      
-      if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', '1');
-      } else {
-        localStorage.setItem('darkMode', '0');
-      }
-    });
-  }
 }
 
 export function setupKeyboardShortcuts() {
@@ -435,7 +417,4 @@ export function setupAutoExpandingTextarea() {
 }
 
 export function setupTokenCounter() {
-  document.getElementById('token-counter-btn')?.addEventListener('click', () => {
-    window.open('https://quizgecko.com/tools/token-counter', '_blank');
-  });
 } 
