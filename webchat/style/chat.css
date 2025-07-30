@@ -184,7 +184,24 @@
 }
 
 /* Mobile adjustments */
-@media (max-width: 600px) {
+/* Small phones */
+@media (max-width: 400px) {
+  .voice-btn {
+    opacity: 1;
+    right: 35px;
+    font-size: 11px;
+    padding: 2px 5px;
+  }
+  
+  .copy-btn {
+    right: 6px;
+    font-size: 11px;
+    padding: 2px 5px;
+  }
+}
+
+/* Medium phones */
+@media (max-width: 480px) {
   .voice-btn {
     opacity: 1;
     right: 40px;
@@ -197,12 +214,14 @@
     font-size: 12px;
     padding: 3px 6px;
   }
-  
-  .bot-message.speaking .message-content {
-    padding-left: 20px;
+}
+
+/* Large phones/tablets */
+@media (max-width: 768px) {
+  .voice-btn {
+    opacity: 1;
+    right: 45px;
+    font-size: 13px;
+    padding: 4px 7px;
   }
-  
-  .bot-message.speaking .message-content::before {
-    font-size: 14px;
-  }
-} 
+}
