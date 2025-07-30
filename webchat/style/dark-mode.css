@@ -171,26 +171,7 @@ body.dark-mode #chat-form button {
   border: 2px solid var(--text-dark);
 }
 
-/* Dark mode buttons */
-body.dark-mode #darkModeToggle {
-  background: var(--border-dark);
-  color: #fff;
-}
-
-body.dark-mode #token-counter-btn {
-  background: var(--secondary-color);
-  color: #fff;
-}
-
-body.dark-mode #newChatBtn {
-  background: var(--secondary-color);
-  color: #fff;
-}
-
-body.dark-mode #chatsBtn {
-  background: var(--border-dark);
-  color: #fff;
-}
+/* Dark mode buttons - Now handled by FAB */
 
 /* Dark mode chats menu */
 body.dark-mode .chats-menu {
