@@ -69,7 +69,7 @@ export async function generateContent(messages) {
     warmConnection();
   }
   
-  const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
+  const url = '/api/gemini'; 
   const maxAttempts = 3;
   
   const geminiContents = messages.map(msg => ({
@@ -117,7 +117,7 @@ export async function generateContent(messages) {
         activeControllers.delete(controller);
       }, 15000); // Reduced timeout to 15 seconds
       
-      const res = await fetch(`${url}?key=${GEMINI_API_KEY}`, {
+      const res = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -152,7 +152,22 @@ export async function generateContent(messages) {
         };
       }
       
-      const data = await res.json();
+      const text = await res.text();
+      if (!text) {
+        console.error('Empty response from /api/gemini');
+        return {
+          text: () => '❌ Empty response from Gemini API. Please try again later.'
+        };
+      }
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        console.error('Failed to parse JSON from /api/gemini:', text);
+        return {
+          text: () => '❌ Invalid response from Gemini API. Please try again later.'
+        };
+      }
       
       // ===== RESPONSE VALIDATION =====
       if (!data.candidates || data.candidates.length === 0) {
