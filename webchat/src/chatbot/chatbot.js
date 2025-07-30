@@ -21,6 +21,7 @@ import {
   restoreChatHistory
 } from './sessionUI.js';
 import { initializeVoice } from './voice.js';
+import { cleanupConnections } from '../geminiHelper.js';
 
 function initializeChatbot() {
   createCommandMenu();
@@ -53,6 +54,9 @@ function initializeChatbot() {
   }
   
   console.log('MARM Chatbot initialized successfully');
+  
+  window.addEventListener('beforeunload', cleanup);
+  window.addEventListener('pagehide', cleanup);
 }
 
 if (document.readyState === 'loading') {
@@ -65,6 +69,8 @@ export function cleanup() {
   if (window.speechSynthesis) {
     window.speechSynthesis.cancel();
   }
+  
+  cleanupConnections();
   
   console.log('MARM Chatbot cleanup completed');
 } 
