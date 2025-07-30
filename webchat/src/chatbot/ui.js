@@ -112,7 +112,13 @@ export function appendMessage(sender, text) {
       contentDiv.textContent = text;
     }
   } else {
-    contentDiv.textContent = text;
+    try {
+      // Process markdown for user messages too
+      const processedContent = processMarkdownWithCodeWindows(text);
+      contentDiv.innerHTML = processedContent;
+    } catch (e) {
+      contentDiv.textContent = text;
+    }
   }
   messageDiv.appendChild(contentDiv);
 
