@@ -11,12 +11,9 @@ import {
   setupHelpModal, 
   setupDarkMode, 
   setupAutoExpandingTextarea,
-  setupTokenCounter,
   setupKeyboardShortcuts
 } from './ui.js';
 import { 
-  setupNewChat,
-  setupChatsButton,
   setupSaveSession,
   restoreChatHistory
 } from './sessionUI.js';
@@ -28,9 +25,6 @@ function initializeChatbot() {
   setupHelpModal();
   setupDarkMode();
   setupAutoExpandingTextarea();
-  setupTokenCounter();
-  setupNewChat();
-  setupChatsButton();
   setupKeyboardShortcuts();
   setupSaveSession();
   
@@ -69,6 +63,116 @@ if (document.readyState === 'loading') {
   initializeChatbot();
 }
 
+// FAB button action functions
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('darkMode', '1');
+  } else {
+    localStorage.setItem('darkMode', '0');
+  }
+}
+
+function toggleChatsMenu() {
+  let chatsMenu = document.getElementById('chats-menu');
+  
+  // Create chats menu if it doesn't exist
+  if (!chatsMenu) {
+    chatsMenu = document.createElement('div');
+    chatsMenu.className = 'chats-menu';
+    chatsMenu.id = 'chats-menu';
+    
+    chatsMenu.innerHTML = `
+      <div class="chats-menu-header">
+        Saved Chats
+      </div>
+      <div class="chats-menu-content" id="chats-menu-content">
+        <div class="no-chats">No saved chats yet</div>
+      </div>
+    `;
+    
+    document.body.appendChild(chatsMenu);
+  }
+  
+  const isVisible = chatsMenu.classList.contains('visible');
+  
+  if (isVisible) {
+    // Close menu
+    chatsMenu.classList.remove('visible');
+    // Remove click-outside listener
+    document.removeEventListener('click', handleClickOutside);
+  } else {
+    // Open menu
+    chatsMenu.classList.add('visible');
+    // Add click-outside listener
+    setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 0);
+    
+    // Load chats list if needed
+    const menuContent = document.getElementById('chats-menu-content');
+    if (menuContent && menuContent.innerHTML.includes('No saved chats yet')) {
+      // Trigger load function
+      import('./sessionUI.js').then(module => {
+        if (module.loadChatsList) {
+          module.loadChatsList();
+        }
+      });
+    }
+  }
+}
+
+// Handle clicking outside the chats menu to close it
+function handleClickOutside(event) {
+  const chatsMenu = document.getElementById('chats-menu');
+  const fabContainer = document.getElementById('fab-container');
+  
+  if (!chatsMenu || !chatsMenu.classList.contains('visible')) return;
+  
+  // Check if click is outside the menu and not on the FAB
+  const isClickOutsideMenu = !chatsMenu.contains(event.target);
+  const isClickOnFAB = fabContainer && fabContainer.contains(event.target);
+  
+  if (isClickOutsideMenu && !isClickOnFAB) {
+    chatsMenu.classList.remove('visible');
+    document.removeEventListener('click', handleClickOutside);
+  }
+}
+
+function startNewChat() {
+  const chatsMenu = document.getElementById('chats-menu');
+  if (chatsMenu) chatsMenu.classList.remove('visible');
+  
+  import('./state.js').then(stateModule => {
+    import('../logic/session.js').then(sessionModule => {
+      const { resetState } = stateModule;
+      const { CURRENT_SESSION_KEY } = sessionModule;
+      
+      try {
+        localStorage.removeItem(CURRENT_SESSION_KEY);
+      } catch (e) {
+        console.warn('Failed to clear current session:', e);
+      }
+      
+      resetState();
+      
+      const chatMessages = document.getElementById('chat-log');
+      if (chatMessages) {
+        chatMessages.innerHTML = '';
+      }
+      
+      import('./ui.js').then(uiModule => {
+        uiModule.appendMessage('bot', '🆕 **New chat started!** Ready for a fresh conversation. Use `/start marm` to activate MARM protocol.');
+      });
+    });
+  });
+}
+
+function toggleTokenCounter() {
+  window.open('https://quizgecko.com/tools/token-counter', '_blank');
+}
+
 // Mobile FAB functionality
 function initializeMobileFAB() {
   const fabContainer = document.getElementById('fab-container');
@@ -83,22 +187,22 @@ function initializeMobileFAB() {
   
   // Handle FAB button clicks
   document.getElementById('fab-dark-mode')?.addEventListener('click', () => {
-    document.getElementById('darkModeToggle')?.click();
+    toggleDarkMode();
     fabContainer.classList.remove('fab-expanded');
   });
   
   document.getElementById('fab-chats')?.addEventListener('click', () => {
-    document.getElementById('chatsBtn')?.click();
+    toggleChatsMenu();
     fabContainer.classList.remove('fab-expanded');
   });
   
   document.getElementById('fab-new-chat')?.addEventListener('click', () => {
-    document.getElementById('newChatBtn')?.click();
+    startNewChat();
     fabContainer.classList.remove('fab-expanded');
   });
   
   document.getElementById('fab-token-counter')?.addEventListener('click', () => {
-    document.getElementById('token-counter-btn')?.click();
+    toggleTokenCounter();
     fabContainer.classList.remove('fab-expanded');
   });
   
