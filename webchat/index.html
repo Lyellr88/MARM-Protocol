@@ -39,7 +39,18 @@
           autocomplete="off"
           rows="1"
         ></textarea>
-        <button type="submit">Send</button>
+        <div class="form-buttons">
+          <button type="submit">Send</button>
+          <div class="fab-container" id="fab-container">
+            <button class="fab-main" id="fab-main" title="Quick Actions">⚡</button>
+            <div class="fab-buttons" id="fab-buttons">
+              <button class="fab-button" id="fab-dark-mode" title="Toggle Dark Mode">🌙</button>
+              <button class="fab-button" id="fab-chats" title="Browse Saved Chats">💬</button>
+              <button class="fab-button" id="fab-new-chat" title="New Chat">+</button>
+              <button class="fab-button" id="fab-token-counter" title="Token Counter">TC</button>
+            </div>
+          </div>
+        </div>
       </form>
     </section>
   </main>
@@ -137,21 +148,6 @@
       <div id="markdown-content" class="markdown-content">
         <div class="loading-spinner">Loading...</div>
       </div>
-    </div>
-  </div>
-
-  <button id="token-counter-btn" title="Token Counter">TC</button>
-  <button id="newChatBtn" title="New Chat">+</button>
-  <button id="chatsBtn" title="Browse Saved Chats">💬</button>
-  <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
-  
-  <div class="fab-container" id="fab-container">
-    <button class="fab-main" id="fab-main" title="Quick Actions">⚡</button>
-    <div class="fab-buttons" id="fab-buttons">
-      <button class="fab-button" id="fab-dark-mode" title="Toggle Dark Mode">🌙</button>
-      <button class="fab-button" id="fab-chats" title="Browse Saved Chats">💬</button>
-      <button class="fab-button" id="fab-new-chat" title="New Chat">+</button>
-      <button class="fab-button" id="fab-token-counter" title="Token Counter">TC</button>
     </div>
   </div>
 
