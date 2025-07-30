@@ -184,8 +184,9 @@
 }
 
 /* Mobile adjustments */
-/* Small phones */
-@media (max-width: 400px) {
+@media (max-width: 600px) {
+
+  
   .voice-btn {
     opacity: 1;
     right: 35px;
@@ -198,30 +199,12 @@
     font-size: 11px;
     padding: 2px 5px;
   }
-}
-
-/* Medium phones */
-@media (max-width: 420px) {
-  .voice-btn {
-    opacity: 1;
-    right: 40px;
-    font-size: 12px;
-    padding: 3px 6px;
+  
+  .bot-message.speaking .message-content {
+    padding-left: 20px;
   }
   
-  .copy-btn {
-    right: 8px;
-    font-size: 12px;
-    padding: 3px 6px;
+  .bot-message.speaking .message-content::before {
+    font-size: 14px;
   }
-}
-
-/* Large phones/tablets */
-@media (max-width: 768px) {
-  .voice-btn {
-    opacity: 1;
-    right: 45px;
-    font-size: 13px;
-    padding: 4px 7px;
-  }
-}
+} 
