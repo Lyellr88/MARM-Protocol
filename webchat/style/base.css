@@ -95,7 +95,7 @@ main {
 }
 
 body.dark-mode #chat-log strong {
-  color: #f3f4f6 !important;
+  color: #000000 !important;
 }
 
 /* Form layout */
