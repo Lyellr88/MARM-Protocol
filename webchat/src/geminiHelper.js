@@ -23,6 +23,7 @@ async function warmConnection() {
     connectionWarmed = true;
     activeControllers.delete(controller);
   } catch (e) {
+    console.log('Connection warm-up failed (expected on frontend):', e.message);
     activeControllers.delete(controller);
   }
 }
