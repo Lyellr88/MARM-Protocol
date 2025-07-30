@@ -119,11 +119,11 @@
 .voice-btn {
   position: absolute;
   top: 8px;
-  right: 48px;
+  right: 75px;
   background: var(--primary-color);
   border: none;
   border-radius: var(--border-radius-sm);
-  padding: 4px 8px;
+  padding: 2px 8px;
   cursor: pointer;
   opacity: 0;
   transition: opacity var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
