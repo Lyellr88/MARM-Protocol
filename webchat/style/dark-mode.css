@@ -2,7 +2,7 @@
 
 /* Dark mode base */
 body.dark-mode {
-  background: var(--background-dark) url('./media/images-dark-bg.png') no-repeat center center fixed;
+  background: var(--background-dark) url('images-dark-bg.png') no-repeat center center fixed;
   background-size: cover;
   color: var(--text-dark);
 }
@@ -13,7 +13,7 @@ body.dark-mode header {
 }
 
 body.dark-mode main {
-  background: #23263a;
+  background: rgba(36, 39, 59, 0.5;
   color: var(--text-dark);
 }
 
@@ -36,7 +36,7 @@ body.dark-mode .modal-content {
 
 /* Modern Help Modal Dark Mode */
 body.dark-mode .help-modal-content {
-  background: #1f2937;
+  background: #000000;
 }
 
 body.dark-mode .modal-header {
@@ -81,6 +81,7 @@ body.dark-mode .doc-info p {
   color: #d1d5db;
 }
 
+/* ===== MARKDOWN CONTENT (DARK MODE) ===== */
 body.dark-mode .markdown-content h1,
 body.dark-mode .markdown-content h2,
 body.dark-mode .markdown-content h3 {
@@ -100,6 +101,62 @@ body.dark-mode .markdown-content code {
 body.dark-mode .markdown-content pre {
   background: #111827;
   border-left-color: #6366f1;
+}
+
+/* Dark mode code copy button */
+body.dark-mode .code-copy-btn {
+  background: #374151;
+  color: #d1d5db;
+}
+
+body.dark-mode .code-copy-btn:hover {
+  background: #4b5563;
+}
+
+body.dark-mode .code-copy-btn.copied {
+  background: #059669;
+  color: white;
+}
+
+/* Dark mode code windows */
+body.dark-mode .code-window {
+  background: #1f2937;
+  border-color: #374151;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .code-window-header {
+  background: #111827;
+  border-bottom-color: #374151;
+}
+
+body.dark-mode .code-language {
+  color: #9ca3af;
+}
+
+body.dark-mode .code-window-copy-btn {
+  background: #374151;
+  color: #d1d5db;
+  border-color: #4b5563;
+}
+
+body.dark-mode .code-window-copy-btn:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+body.dark-mode .code-window-copy-btn.copied {
+  background: #059669;
+  color: white;
+  border-color: #059669;
+}
+
+body.dark-mode .code-window-content {
+  background: #1f2937;
+}
+
+body.dark-mode .code-window-content code {
+  color: #f3f4f6;
 }
 
 body.dark-mode .error-message h3 {
@@ -208,7 +265,7 @@ body.dark-mode .submenu-item:hover {
 
 /* Dark mode message names */
 body.dark-mode .user-message .message-name {
-  color: #ffffff;
+  color: #000000;
 }
 
 body.dark-mode .bot-message .message-name {
