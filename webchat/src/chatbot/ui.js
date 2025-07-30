@@ -30,6 +30,66 @@ export function hideLoadingIndicator() {
   }
 }
 
+// ===== MARKDOWN PROCESSING =====
+function processMarkdownWithCodeWindows(text) {
+  if (!window.marked) return text;
+  
+  // First, parse the markdown normally
+  let html = marked.parse(text);
+  
+  // Find all code blocks and replace them with custom windows
+  const codeBlockRegex = /<pre><code[^>]*>([\s\S]*?)<\/code><\/pre>/g;
+  
+  html = html.replace(codeBlockRegex, (match, codeContent) => {
+    // Extract language from class if present
+    const langMatch = match.match(/class="language-(\w+)"/);
+    const language = langMatch ? langMatch[1] : 'markdown';
+    
+    // Clean the code content (remove HTML entities)
+    const cleanCode = codeContent
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'");
+    
+    return `
+      <div class="code-window">
+        <div class="code-window-header">
+          <span class="code-language">${language}</span>
+          <button class="code-window-copy-btn" onclick="copyCodeWindow(this)">
+            Copy
+          </button>
+        </div>
+        <div class="code-window-content">
+          <pre><code>${cleanCode}</code></pre>
+        </div>
+      </div>
+    `;
+  });
+  
+  return html;
+}
+
+// ===== CODE WINDOW COPY FUNCTION =====
+window.copyCodeWindow = function(button) {
+  const codeWindow = button.closest('.code-window');
+  const codeElement = codeWindow.querySelector('code');
+  const codeText = codeElement.textContent;
+  
+  navigator.clipboard.writeText(codeText).then(() => {
+    button.textContent = 'Copied!';
+    button.classList.add('copied');
+    
+    setTimeout(() => {
+      button.textContent = 'Copy';
+      button.classList.remove('copied');
+    }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy code: ', err);
+  });
+};
+
 // ===== MESSAGE DISPLAY =====
 export function appendMessage(sender, text) {
   const chatMessages = document.getElementById('chat-log');
@@ -49,7 +109,9 @@ export function appendMessage(sender, text) {
   
   if (sender === 'bot') {
     try {
-      contentDiv.innerHTML = window.marked ? marked.parse(text) : text;
+      // Process markdown and create proper code windows
+      const processedContent = processMarkdownWithCodeWindows(text);
+      contentDiv.innerHTML = processedContent;
     } catch (e) {
       contentDiv.textContent = text;
     }
@@ -215,6 +277,13 @@ export function insertCommand(command) {
     submenu.style.display = 'none';
   }
   
+  // Auto-close command menu on mobile after selection
+  const commandMenu = document.getElementById('command-menu');
+  if (commandMenu && window.innerWidth <= 600) {
+    commandMenu.classList.add('collapsed');
+    localStorage.setItem('commandMenuCollapsed', 'true');
+  }
+  
   if (command.endsWith(' ')) {
     input.setSelectionRange(input.value.length, input.value.length);
   }
@@ -296,23 +365,44 @@ export function setupHelpModal() {
 export function setupDarkMode() {
   const darkModeBtn = document.getElementById('darkModeToggle');
   
-  let darkMode = false;
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  let userPreference = null;
   try {
-    darkMode = localStorage.getItem('darkMode') === '1';
+    userPreference = localStorage.getItem('darkMode');
   } catch (e) {
-    darkMode = false;
+    userPreference = null;
   }
-  if (darkMode) {
+  
+  let shouldBeDark = false;
+  if (userPreference !== null) {
+    shouldBeDark = userPreference === '1';
+  } else {
+    shouldBeDark = prefersDark;
+  }
+  
+  if (shouldBeDark) {
     document.body.classList.add('dark-mode');
   }
+  
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (userPreference === null) {
+      if (e.matches) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+    }
+  });
 
   if (darkModeBtn) {
     darkModeBtn.addEventListener('click', function () {
       document.body.classList.toggle('dark-mode');
+      
       if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('darkMode', '1');
       } else {
-        localStorage.removeItem('darkMode');
+        localStorage.setItem('darkMode', '0');
       }
     });
   }
