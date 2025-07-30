@@ -55,6 +55,10 @@ function initializeChatbot() {
   
   console.log('MARM Chatbot initialized successfully');
   
+  // Initialize mobile FAB functionality
+  initializeMobileFAB();
+  
+  // Cleanup connections when user leaves page
   window.addEventListener('beforeunload', cleanup);
   window.addEventListener('pagehide', cleanup);
 }
@@ -63,6 +67,47 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializeChatbot);
 } else {
   initializeChatbot();
+}
+
+// Mobile FAB functionality
+function initializeMobileFAB() {
+  const fabContainer = document.getElementById('fab-container');
+  const fabMain = document.getElementById('fab-main');
+  
+  if (!fabContainer || !fabMain) return;
+  
+  // Toggle FAB expansion
+  fabMain.addEventListener('click', () => {
+    fabContainer.classList.toggle('fab-expanded');
+  });
+  
+  // Handle FAB button clicks
+  document.getElementById('fab-dark-mode')?.addEventListener('click', () => {
+    document.getElementById('darkModeToggle')?.click();
+    fabContainer.classList.remove('fab-expanded');
+  });
+  
+  document.getElementById('fab-chats')?.addEventListener('click', () => {
+    document.getElementById('chatsBtn')?.click();
+    fabContainer.classList.remove('fab-expanded');
+  });
+  
+  document.getElementById('fab-new-chat')?.addEventListener('click', () => {
+    document.getElementById('newChatBtn')?.click();
+    fabContainer.classList.remove('fab-expanded');
+  });
+  
+  document.getElementById('fab-token-counter')?.addEventListener('click', () => {
+    document.getElementById('token-counter-btn')?.click();
+    fabContainer.classList.remove('fab-expanded');
+  });
+  
+  // Close FAB when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!fabContainer.contains(e.target)) {
+      fabContainer.classList.remove('fab-expanded');
+    }
+  });
 }
 
 export function cleanup() {
