@@ -6,16 +6,14 @@ let activeControllers = new Set();
 
 async function warmConnection() {
   if (connectionWarmed) return;
-  
+  let controller;
   try {
-    const controller = new AbortController();
+    controller = new AbortController();
     activeControllers.add(controller);
-    
     setTimeout(() => {
       controller.abort();
       activeControllers.delete(controller);
     }, 2000);
-    
     await fetch('https://generativelanguage.googleapis.com/v1beta/models', {
       method: 'HEAD',
       signal: controller.signal
@@ -24,7 +22,7 @@ async function warmConnection() {
     activeControllers.delete(controller);
   } catch (e) {
     console.log('Connection warm-up failed (expected on frontend):', e.message);
-    activeControllers.delete(controller);
+    if (controller) activeControllers.delete(controller);
   }
 }
 
@@ -109,15 +107,16 @@ export async function generateContent(messages) {
 
   // ===== REQUEST RETRY LOOP =====
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    let controller;
     try {
-      const controller = new AbortController();
+      controller = new AbortController();
       activeControllers.add(controller);
-      
+
       const timeoutId = setTimeout(() => {
         controller.abort();
         activeControllers.delete(controller);
-      }, 15000); // Reduced timeout to 15 seconds
-      
+      }, 15000);
+
       const res = await fetch(url, {
         method: 'POST',
         headers: {
@@ -128,31 +127,31 @@ export async function generateContent(messages) {
         body: JSON.stringify(requestBody),
         signal: controller.signal
       });
-      
+
       clearTimeout(timeoutId);
       activeControllers.delete(controller);
-      
+
       if (!res.ok) {
         const errText = await res.text();
         console.error(`Gemini API Error (Attempt ${attempt}):`, res.status, errText);
-        
+
         if (res.status === 401 || res.status === 403 || res.status === 400) {
           return {
             text: () => getErrorMessage(res.status, attempt, maxAttempts)
           };
         }
-        
+
         if (attempt < maxAttempts) {
           const delayMs = Math.min(Math.pow(2, attempt - 1) * 500, 2000);
           await delay(delayMs);
           continue;
         }
-        
+
         return {
           text: () => getErrorMessage(res.status, attempt, maxAttempts)
         };
       }
-      
+
       const text = await res.text();
       if (!text) {
         console.error('Empty response from /api/gemini');
@@ -169,30 +168,30 @@ export async function generateContent(messages) {
           text: () => '❌ Invalid response from Gemini API. Please try again later.'
         };
       }
-      
+
       // ===== RESPONSE VALIDATION =====
       if (!data.candidates || data.candidates.length === 0) {
         return {
           text: () => '🚫 Response was blocked or empty. Please try rephrasing your message.'
         };
       }
-      
+
       const reply = data.candidates[0]?.content?.parts?.[0]?.text;
-      
+
       if (!reply || reply.trim() === '') {
         return {
           text: () => '🤔 Received an empty response. Please try asking your question differently.'
         };
       }
-      
+
       return {
         text: () => reply
       };
-      
+
     } catch (error) {
       console.error(`Request error (Attempt ${attempt}):`, error);
-      activeControllers.delete(controller);
-      
+      if (controller) activeControllers.delete(controller);
+
       if (error.name === 'AbortError') {
         if (attempt < maxAttempts) {
           const delayMs = Math.min(Math.pow(2, attempt - 1) * 500, 2000);
@@ -203,13 +202,13 @@ export async function generateContent(messages) {
           text: () => '⏱️ Request timed out. Please check your connection and try again.'
         };
       }
-      
+
       if (attempt < maxAttempts) {
         const delayMs = Math.min(Math.pow(2, attempt - 1) * 500, 2000);
         await delay(delayMs);
         continue;
       }
-      
+
       return {
         text: () => '🌐 Network error. Please check your internet connection and try again.'
       };
