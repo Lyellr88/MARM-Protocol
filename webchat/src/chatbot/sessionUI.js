@@ -3,69 +3,9 @@ import { appendMessage } from './ui.js';
 
 // ===== SESSION MANAGEMENT =====
 export function setupNewChat() {
-  const newChatBtn = document.getElementById('newChatBtn');
-  if (!newChatBtn) return;
-
-  newChatBtn.addEventListener('click', () => {
-    const chatsMenu = document.getElementById('chats-menu');
-    if (chatsMenu) chatsMenu.classList.remove('visible');
-    
-    import('./state.js').then(stateModule => {
-      import('../logic/session.js').then(sessionModule => {
-        const { resetState } = stateModule;
-        const { CURRENT_SESSION_KEY } = sessionModule;
-        
-        try {
-          localStorage.removeItem(CURRENT_SESSION_KEY);
-        } catch (e) {
-          console.warn('Failed to clear current session:', e);
-        }
-        
-        resetState();
-        
-        const chatMessages = document.getElementById('chat-log');
-        if (chatMessages) {
-          chatMessages.innerHTML = '';
-        }
-        
-        appendMessage('bot', '🆕 **New chat started!** Ready for a fresh conversation. Use `/start marm` to activate MARM protocol.');
-      });
-    });
-  });
 }
 
 export function setupChatsButton() {
-  const chatsBtn = document.getElementById('chatsBtn');
-  if (!chatsBtn) return;
-
-  const chatsMenu = document.createElement('div');
-  chatsMenu.className = 'chats-menu';
-  chatsMenu.id = 'chats-menu';
-  
-  chatsMenu.innerHTML = `
-    <div class="chats-menu-header">
-      Saved Chats
-    </div>
-    <div class="chats-menu-content" id="chats-menu-content">
-      <div class="no-chats">No saved chats yet</div>
-    </div>
-  `;
-  
-  document.body.appendChild(chatsMenu);
-
-  chatsBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    chatsMenu.classList.toggle('visible');
-    if (chatsMenu.classList.contains('visible')) {
-      loadChatsList();
-    }
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!chatsMenu.contains(e.target) && !chatsBtn.contains(e.target)) {
-      chatsMenu.classList.remove('visible');
-    }
-  });
 }
 
 function loadChatsList() {
@@ -101,7 +41,12 @@ function loadChatsList() {
         
         const sessionId = item.getAttribute('data-session-id');
         loadSavedChat(sessionId);
-        document.getElementById('chats-menu').classList.remove('visible');
+        
+        // Close menu
+        const chatsMenu = document.getElementById('chats-menu');
+        if (chatsMenu) {
+          chatsMenu.classList.remove('visible');
+        }
       });
     });
 
@@ -115,6 +60,13 @@ function loadChatsList() {
         if (confirm(`Are you sure you want to delete "${chatTitle}"?`)) {
           deleteSavedChat(sessionId);
           loadChatsList();
+          
+          // Close menu if no chats left
+          const chatsMenu = document.getElementById('chats-menu');
+          const menuContent = document.getElementById('chats-menu-content');
+          if (chatsMenu && menuContent && menuContent.innerHTML.includes('No saved chats yet')) {
+            chatsMenu.classList.remove('visible');
+          }
         }
       });
     });
