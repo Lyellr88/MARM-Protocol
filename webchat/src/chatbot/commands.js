@@ -219,11 +219,17 @@ async function handleContextualCommand(args) {
 
 // ===== SHOW COMMAND =====
 async function handleShowCommand(args) {
-  const botResponse = args === 'reasoning' && state.isMarmActive
-    ? getMostRecentBotResponseLogic(state.currentSessionId) || 'No reasoning trail available.'
-    : 'Use /show reasoning';
-  hideLoadingIndicator();
-  appendMessage('bot', botResponse);
+  if (args === 'reasoning' && state.isMarmActive) {
+    const reasoning = getMostRecentBotResponseLogic(state.currentSessionId);
+    const botResponse = reasoning 
+      ? reasoning 
+      : 'No reasoning trail available. Use **/contextual** reply first to generate a response with reasoning, then use **/show reasoning** to see the logic behind it.';
+    hideLoadingIndicator();
+    appendMessage('bot', botResponse);
+  } else {
+    hideLoadingIndicator();
+    appendMessage('bot', 'Use **/show reasoning** to see the logic behind the most recent response. Note: You must use **/contextual reply** first to generate reasoning.');
+  }
 }
 
 // ===== COMPILE COMMAND =====
