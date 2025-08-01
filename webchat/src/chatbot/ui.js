@@ -215,7 +215,7 @@ export function createCommandMenu() {
       <div class="command-item" data-command="/show reasoning" title="Display logic behind last response">
         <div class="command-name">/show reasoning</div>
       </div>
-      <div class="command-item" data-command="/compile " title="Compile session summary">
+      <div class="command-item" data-command="/compile " title="Compile session summary use --summary after session name">
         <div class="command-name">/compile</div>
       </div>
       <div class="command-item notebook-item" title="Manage your knowledge library">
