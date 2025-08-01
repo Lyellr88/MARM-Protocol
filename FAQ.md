@@ -192,7 +192,7 @@ MARM operates on core principles that guide the AI's behavior towards accuracy a
 - [LICENSE](LICENSE) – Terms of use for this project.
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
-
+- [SETUP.md](SETUP.md) - Local download setup guide.
 ---
 
 > Curious where MARM is heading?  
