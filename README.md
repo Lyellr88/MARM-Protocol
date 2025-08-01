@@ -1,4 +1,4 @@
-# MARM (Memory Accurate Response Mode) v1.5.0 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
+# MARM (Memory Accurate Response Mode) v1.5 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
 
 
 ![GitHub Stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=flat-square&logo=github&logoColor=white&labelColor=303030&color=white)
@@ -6,7 +6,7 @@
 
 **A universal protocol for structured memory, response accuracy and personalized library**
 
-[**Last updated: July 28th, 2025**]
+[**Last updated: July 31st, 2025**]
 
 ---
 
@@ -22,14 +22,23 @@
 
 **Experience MARM v1.5.0 in action!** My new interactive chatbot lets you test all MARM features directly in your browser:
 
-- **Browser-only functionality** - This chatbot is currently optimized for web browsers, with mobile compatibility under development.
-- **Full MARM Protocol** - All commands work exactly as documented
-- **Session Persistence** - Your conversations survive page refreshes  
-- **Save & Load Chats** - Name and organize your sessions
-- **Voice Synthesis** - Listen to MARM responses (Chrome/Edge recommended)
-- **Dark Mode** - Easy on the eyes for long sessions
+<details>
+<summary>Features & Quick Start</summary>
 
-### Quick Start with the Chatbot:
+#### Features
+- **Save and revisit chat sessions** - Name and organize your conversations  
+- **Start new chats instantly** - Fresh conversations with one click  
+- **Built-in token counter** - Track your LLM usage  
+- **Dark mode and custom backgrounds** - Easy on the eyes for long sessions  
+- **Command menu for advanced control** - Quick access to all MARM features  
+- **Notebook for persistent user knowledge** - Store your own notes and project data  
+- **Session persistence** - Your chat stays active even if you refresh or close the page  
+- **Voice synthesis** - Listen to MARM responses (Chrome/Edge recommended)  
+- **Real-time MARM protocol** - All commands work exactly as documented  
+- **No setup required** - Just open and start chatting  
+- **Professional error handling** - Clear feedback when things go wrong  
+
+#### Quick Start with the Chatbot:
 1. Click the link above to open MARM Chatbot
 2. Type `/start marm` to begin
 3. Use the command menu (bottom-left) for quick access to all features
@@ -37,40 +46,34 @@
 
 *No API keys or setup required - just start chatting!*
 
----
- 
-## 🛠️ What's New in v1.5.0 (Info for older version v1.4)
-
-<details>
-
-**Major Enhancements:**
-- **Live Interactive Chatbot** - Experience MARM through a dedicated web interface with full protocol support
-- **Session Persistence** - Conversations now survive page refreshes with automatic recovery
-- **Save/Load System** - Name, save, and organize your chat sessions with custom titles
-- **Voice Synthesis** - Listen to MARM responses with natural speech (Chrome/Edge recommended)
-- **Enhanced UI** - Beautiful light/dark themes with custom backgrounds and modern interface
-
-**Technical Improvements:**
-- Complete architectural refactor from monolithic to modular codebase
-- 30% performance improvement with optimized Gemini API integration
-- Professional error handling and user feedback
-- Mobile-responsive design with zoom support
-
-## 🛠️ What's New in v1.4 (Upgrading from v1.3)
-
-**Major Enhancements:**
-- **Your Objective & Safe Guard Check** - AI now operates with strict MARM identity and self-verification before responses
-- **Enhanced `/notebook` commands** - Now uses subcommands: `key:[name]`, `get:[name]`, `show:`
-- **Manual process clarifications** - Removed all automation ambiguity; every action is user-initiated
-- **New `/refresh marm` command** - Recenters AI mid-session to prevent drift (use every 8-10 turns)
-
-**Breaking Changes:**
-- Replace `/log [SessionName]` with `/log session:[name]` and `/log entry [Date | User | Intent | Outcome]`
-- Notebook syntax updated from `/notebook` to `/notebook key:[name] [data]`
-- All reseeding is now explicitly manual (no auto-prompts)
-
+⚠️ **Browser-only functionality** - Currently optimized for web browsers only, with mobile compatibility under development
 </details>
- 
+
+---
+
+## Local Download Setup
+
+### Run MARM on Your Own Machine
+
+Want to use MARM with your own AI provider or keep conversations private? Download and run MARM locally:
+
+**What you get:**
+- **Full control** - Use your own API keys (Gemini, OpenAI, Claude)
+- **Privacy** - All data stays on your machine
+- **Customization** - Modify features and add your own improvements
+- **Offline capability** - Works without internet after setup
+
+**Quick setup:**
+```bash
+git clone https://github.com/Lyellr88/MARM-Systems.git
+cd MARM-Systems/webchat
+npm install
+# Add your API key to .env file
+npm start
+```
+
+**See [SETUP.md](SETUP.md) for a complete installation guide with troubleshooting and advanced configuration.**
+
 ---
 
 ## What MARM Solves and Why It Exists
@@ -103,7 +106,7 @@ You only need this once per session. For full command references, see `HANDBOOK.
 
 ```
 
-MEMORY ACCURATE RESPONSE MODE v1.5.0 (MARM)
+MEMORY ACCURATE RESPONSE MODE v1.5 (MARM)
 
 Purpose -
 Ensure AI retains session context over time and delivers accurate, transparent outputs, addressing memory gaps and drift.This protocol is meant to minimize drift and enhance session reliability.
@@ -161,24 +164,24 @@ When activated, the AI should begin with:
 Do not include extended explanations. For full usage and examples, see `HANDBOOK.md`.
 
 ```
-
 </details>
 
 ---
-<details>
-<summary>🚨 Read This Before You Start: Key Info + Limitations 🚨</summary>
 
-New User Entry:
+<details>
+<summary>🚨 Read This Before You Start: Key Info + Limitations 🚨</summary>  
+
+#### New User Entry:
 - MARM is built for all users, from beginners to advanced. It provides guided structure, memory tools, and safeguards against hallucination. (See handguide)
 
-Session Continuity Caveat:
+#### Session Continuity Caveat:
 - MARM is bound to the current chat session. If the conversation thread changes, users may need to restate context.
 - Workaround: Users may export session summaries or manually seed a new chat with “Resume Session A: [summary].” Native cross-session support is pending platform.
 
-Proactive Context Prompt (Optional):
+#### Proactive Context Prompt (Optional):
 - Systems using MARM may optionally prompt users to log context after multi-turn exchanges: “Would you like to log this as Session B?”
 
-Limitations
+#### Limitations
 - MARM lacks automation and operates entirely on a manual basis.
 - MARM cannot execute code or access live external data.  
 - It performs best with consistent user input and engagement.  
@@ -191,12 +194,11 @@ Limitations
 
 </details>
 
-
 ---
 
 <details>
  
-## Feedback & Community Mentions
+### Feedback & Community Mentions
 
  <summary><strong>User Highlights & External Mentions (Click to expand)</strong></summary>
 
