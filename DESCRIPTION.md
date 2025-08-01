@@ -12,7 +12,7 @@ After reading hundreds of Reddit posts from people with the same frustrations, I
 - **Real user feedback** - Built from Reddit community input and testing
 - **Simple but powerful** - Just copy/paste the protocol and start using it
 
-## What MARM Actually Does
+### What MARM Actually Does
 
 MARM gives you control over AI conversations in a way that feels natural. Instead of hoping the AI remembers, you explicitly tell it what to remember. Instead of wondering if it's making things up, you can ask it to show its reasoning.
 
@@ -20,7 +20,7 @@ MARM gives you control over AI conversations in a way that feels natural. Instea
 
 **The result:** AI conversations that actually get better over time, not worse.
 
-## Community-Driven Development
+### Community-Driven Development
 
 MARM started as a Reddit post and grew into something bigger. The 90+ GitHub stars aren't just vanity metrics - they represent real people using MARM and finding value in it.
 
@@ -30,20 +30,20 @@ Every feature in MARM v1.5.0 came from user feedback:
 - **Save/load chats** - Because people wanted to organize their work
 - **Live chatbot** - Because people wanted to try it without setup
 
-## Try It Yourself
+### Try It Yourself
 
 The best way to understand MARM is to use it. The live chatbot at https://marm-systems-chatbot.onrender.com lets you experience all the features without any setup.
 
 Or copy the protocol from the README and paste it into any AI chat. It works with ChatGPT, Gemini, Claude, or any other LLM.
 
-## What's Next
+### What's Next
 
 MARM v1.5.0 is stable and production-ready, but I'm not done. I'm working on:
 - **API version** - For developers who want to integrate MARM into their apps
 - **Enhanced features** - Based on ongoing community feedback
 - **More integrations** - Making MARM work with more AI platforms
 
-## Get Involved
+### Get Involved
 
 Whether you're testing MARM, suggesting improvements, or just curious about AI conversation design. You're welcome here.
 
