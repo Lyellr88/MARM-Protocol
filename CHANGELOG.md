@@ -404,3 +404,29 @@ This release introduces a complete UI/UX transformation with the implementation 
 - Old button setup functions from ui.js and sessionUI.js
 - Unused mobile-specific button styles
 </details>
+
+---
+
+<details>
+<summary>July 31st, 2025 – Documentation Overhaul & Local Setup Improvements</summary>
+
+### Added
+- **SETUP.md** – New, in-depth local download and installation guide
+- **config.js** – AI provider configuration file for universal API support
+- **universalAIHelper.js** - Universal AI provider support
+- **New screenshots** – Visuals of the webchat interface added to README
+
+### Changed
+- **README.md** –
+  - Updated for v1.5
+  - Added screenshots and visuals
+  - Removed "What's New with MARM" section
+  - Added local download quick setup section
+- **DESCRIPTION.md** – Completely rewritten for clarity and authenticity
+- **FAQ.md** – Added chatbot-specific questions and usage tips
+
+### Improved
+- **Consistency** – All documentation now reflects v1.5 and matches the current feature set
+- **User onboarding** – Clearer quick start, setup, and troubleshooting for new users
+
+</details>
