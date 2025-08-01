@@ -1,4 +1,4 @@
-# MARM Handbook v1.4
+# MARM Handbook v1.5
 
 ## Project Files
 
@@ -29,6 +29,21 @@ MARM is a universal protocol designed to improve memory continuity and response 
 - Removed ambiguous automation.
 - Added "Your Objective" and "Safe Guard Check."
 - Expanded `/log` and `/notebook` commands for better control.
+
+## V1.5 
+## Features for chatbot release
+- **Save and revisit chat sessions** - Name and organize your conversations
+- **Start new chats instantly** - Fresh conversations with one click
+- **Built-in token counter** - Track your LLM usage
+- **Dark mode and custom backgrounds** - Easy on the eyes for long sessions
+- **Command menu for advanced control** - Quick access to all MARM features
+- **Notebook for persistent user knowledge** - Store your own notes and project data
+- **Session persistence** - Your chat stays active even if you refresh or close the page
+- **Voice synthesis** - Listen to MARM responses (Chrome/Edge recommended)
+- **Real-time MARM protocol** - All commands work exactly as documented
+- **No setup required** - Just open and start chatting
+- **Professional error handling** - Clear feedback when things go wrong
+
 
 </details>
 
