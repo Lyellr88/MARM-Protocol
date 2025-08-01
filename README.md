@@ -14,14 +14,16 @@
 
 <div>
   
-<img src="media/marm-chatbot1.png" width="300"/>
-<img src="media/marm-chatbot2.png" width="300"/>
-<img src="media/marm-chatbot3.png" width="300"/>
+<img src="media/marm-chatbot1.png" width="320"/>
+<img src="media/marm-chatbot2.png" width="320"/>
+<img src="media/marm-chatbot3.png" width="320"/>
 
-  ### Launch MARM Chatbot →
-  
-  [![MARM Chatbot Demo](https://img.shields.io/badge/🤖_Live_Demo-Try_MARM_Now-4285F4?style=for-the-badge)](https://marm-systems-chatbot.onrender.com)
-  
+  ### Launch MARM Chatbot →  
+
+<a href="https://marm-systems-chatbot.onrender.com">
+  <img src="https://img.shields.io/badge/🤖_Live_Demo-Try_MARM_Now_On_Render-4285F4?style=for-the-badge" width="220">
+</a>
+
 </div>
 
 **Experience MARM v1.5.0 in action!** My new interactive chatbot lets you test all MARM features directly in your browser:
