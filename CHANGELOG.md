@@ -13,7 +13,7 @@
 
 ---
 
-## MARM Protocol – v1.3 Change Log  
+## MARM Protocol – v1.5 Change Log  
 
 ---
 
@@ -277,7 +277,7 @@ This release marks a complete transformation of the codebase from a monolithic s
 ---
 
 <details>
-<summary>July 22nd-24th – MARM Chatbot Live Launch & UI Enhancements</summary>
+<summary>July 22nd-24th – MARM Chatbot Live Launch & UI Enhancements(v1.5 Launch)</summary>
 
 ### Overview
 Official launch of the MARM interactive chatbot on Render, featuring custom backgrounds, improved session management architecture, and enhanced error handling across the application.
