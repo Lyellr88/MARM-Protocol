@@ -30,8 +30,8 @@ MARM is a universal protocol designed to improve memory continuity and response 
 - Added "Your Objective" and "Safe Guard Check."
 - Expanded `/log` and `/notebook` commands for better control.
 
-## V1.5 
-## Features for chatbot release
+### V1.5 
+#### Features for chatbot release
 - **Save and revisit chat sessions** - Name and organize your conversations
 - **Start new chats instantly** - Fresh conversations with one click
 - **Built-in token counter** - Track your LLM usage
