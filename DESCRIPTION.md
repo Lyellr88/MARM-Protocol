@@ -1,6 +1,6 @@
 ## About the MARM Protocol
 
-## The Story Behind MARM
+### The Story Behind MARM
 
 I built MARM because I was frustrated with AI conversations that felt like talking to someone with severe memory loss. You'd have a great discussion, come back later, and the AI would act like you'd never met. Or worse, it would confidently make up facts and pretend it knew what it was talking about.
 
