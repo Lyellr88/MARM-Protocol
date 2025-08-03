@@ -33,7 +33,7 @@ Follow this guide to run MARM locally with your own AI provider.
 
 - **Node.js** (v16 or higher)
 - **Git** (for cloning)
-- **AI API Key** (Gemini, OpenAI, or Claude)
+- **Google Gemini API Key** (free tier available)
 
 ### Install Node.js
 ```bash
@@ -67,22 +67,18 @@ cd MARM-Systems/webchat
 npm install
 ```
 
-### 3. Get Your AI API Key
+### 3. Get Your Gemini API Key
 
-#### For Gemini (Default):
-1. Visit: https://makersuite.google.com/app/apikey
-2. Create a new API key
-3. Copy the key
+**MARM is built specifically for Google Gemini AI Pro 2.5 Free Tier**
 
-#### For OpenAI (GPT-4):
-1. Visit: https://platform.openai.com/api-keys
-2. Create a new API key
-3. Copy the key
+1. **Visit:** https://aistudio.google.com/apikey
+2. **Create a new API key**
+3. **Copy the key**
 
-#### For Claude (Anthropic):
-1. Visit: https://console.anthropic.com/
-2. Create a new API key
-3. Copy the key
+#### 💡 Billing Information
+- **Free tier is identical to paid:** - only difference is Google collects your data, good for testing or less sensitive data
+- **No billing setup required:** - unless you want to disable data usage for improving Google's products
+- **Paid plans available:** for higher usage if needed later
 
 ### 4. Configure Environment
 
@@ -92,15 +88,10 @@ Create a `.env` file in the `webchat` directory:
 touch .env
 ```
 
-Add your configuration to `.env`:
+Add your Gemini API key to `.env`:
 ```bash
-# Choose your AI provider (gemini, openai, claude)
-AI_PROVIDER=gemini
-
-# Add your API key
+# Add your Gemini API key
 GEMINI_API_KEY=your_gemini_api_key_here
-OPENAI_API_KEY=your_openai_api_key_here
-ANTHROPIC_API_KEY=your_claude_api_key_here
 ```
 
 ### 5. Start the Server
@@ -113,48 +104,16 @@ Visit: http://localhost:8080
 
 ---
 
-## Universal AI Provider Setup
+## About Gemini AI
 
-### Using Different AI Providers
+### Why Gemini?
 
-MARM supports multiple AI providers. To switch providers:
+MARM is optimized specifically for Google's Gemini AI because:
 
-1. **Update your `.env` file:**
-```bash
-# For OpenAI
-AI_PROVIDER=openai
-OPENAI_API_KEY=your_openai_key
-
-# For Claude
-AI_PROVIDER=claude
-ANTHROPIC_API_KEY=your_claude_key
-
-# For Gemini (default)
-AI_PROVIDER=gemini
-GEMINI_API_KEY=your_gemini_key
-```
-
-2. **Restart the server:**
-```bash
-npm start
-```
-
-### Provider-Specific Notes
-
-#### Gemini (Default)
-- **Model:** gemini-2.5-pro
-- **Cost:** Free tier available
-- **Best for:** General use, good performance
-
-#### OpenAI (GPT-4)
-- **Model:** gpt-4
-- **Cost:** Pay-per-use
-- **Best for:** Advanced reasoning, coding
-
-#### Claude (Anthropic)
-- **Model:** claude-3-sonnet-20240229
-- **Cost:** Pay-per-use
-- **Best for:** Writing, analysis
+- **🆓 Generous free tier:** 60 requests per minute
+- **🧠 Excellent reasoning:** Perfect for MARM's memory and analysis features
+- **⚡ Fast responses:** Quick processing for real-time conversations
+- **🔒 Reliable:** Google's enterprise-grade infrastructure
 
 ---
 
