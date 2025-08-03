@@ -96,11 +96,11 @@ MARM pushes the AI into a more structured, disciplined state. Without needing fi
 
 ---
 
-## Quick Start: Full Initiation Prompt
+## Quick Start: Full Initiation For Text Based
 
 To begin a session, follow these steps:
 
-1. Copy the full prompt shown below
+1. Copy the full protocol shown below
 2. Paste it as your **very first message** in a new AI chat
 3. Follow the AI’s confirmation to complete setup
 
@@ -108,7 +108,7 @@ You only need this once per session. For full command references, see `HANDBOOK.
 
 ---
 
-## MARM Protocol (Copy & Paste)
+## MARM-Protocol (Copy & Paste)
 
 ```
 
