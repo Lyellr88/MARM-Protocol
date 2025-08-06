@@ -1,4 +1,4 @@
-# MARM: Memory Accurate Response Mode v1.5.0 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
+9# MARM: Memory Accurate Response Mode v1.5.0 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
 
 **AI forgetting your project mid‑chat? MARM fixes that.** **Build smarter AI conversations with structured memory and transparent logic.**
 
@@ -230,8 +230,3 @@ MARM is actively being tested and adopted across platforms.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 - [SETUP.md](SETUP.md) - Local download setup guide.
 - [PROTOCOL.md](PROTOCOL.md) - Quick Start, Copy and Paste Protocol, and Limitations.
-
-<!-- GitAds-Verify: 6J1AQHUMLYXLDPV633HMF5XMS541K5WQ -->
-
-## GitAds Sponsored - Support this open-source project by allowing non-intrusive banner ads served via
-[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=lyellr88/marm-systems@github)](https://gitads.dev/v1/ad-track?source=lyellr88/marm-systems@github)
