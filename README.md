@@ -120,12 +120,10 @@ Need a walkthrough or troubleshooting help? The [`HANDBOOK.md`](./HANDBOOK.md) c
   <img src="https://img.shields.io/badge/🤖_Live_Demo-Try_MARM_Now_On_Render-4285F4?style=for-the-badge" width="280">
 </a>
 
-<div>
-   
+<div>  
 <img src="media/marm-chatbot1.png" width="320"/>   
 <img src="media/marm-chatbot2.png" width="320"/>   
 <img src="media/marm-chatbot3.png" width="320"/>   
-
 </div>
 
 ---
