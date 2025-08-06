@@ -62,30 +62,13 @@ It’s more than a chatbot wrapper. it’s a methodology for accountable AI.
 
 ---
 
-### Key Features
+### Key Features & Command Overview
 
 #### Core Protocol
 - **Session memory kernel** – Tracks user intent and prompts clarification  
 - **Structured logs** – Use `/log` and `/compile` to build summaries  
 - **Personal library** – Use `/notebook` to guide model outputs with your notes  
 - **Accuracy guardrails** – Optional logic checks to reduce false outputs  
-
-#### User Experience
-- **Save and revisit chat sessions** - Name and organize your conversations  
-- **Start new chats instantly** - Fresh conversations with one click  
-- **Built-in token counter** - Track your LLM usage  
-- **Dark mode and custom backgrounds** - Easy on the eyes for long sessions  
-- **Command menu for advanced control** - Quick access to all MARM features  
-- **Notebook for persistent user knowledge** - Store your own notes and project data  
-- **Session persistence** - Your chat stays active even if you refresh or close the page  
-- **Voice synthesis** - Listen to MARM responses (Chrome/Edge recommended)  
-- **Real-time MARM protocol** - All commands work exactly as documented  
-- **No setup required** - Just open and start chatting  
-- **Professional error handling** - Clear feedback when things go wrong  
-
----
-
-### Command Overview
 
 #### Session Commands
 - `/start marm` → Activate protocol  
@@ -125,6 +108,20 @@ Need a walkthrough or troubleshooting help? The [`HANDBOOK.md`](./HANDBOOK.md) c
 <img src="media/marm-chatbot2.png" width="320"/>   
 <img src="media/marm-chatbot3.png" width="320"/>   
 </div>
+
+
+#### User Experience (Chatbot)
+- **Save and revisit chat sessions** - Name and organize your conversations  
+- **Start new chats instantly** - Fresh conversations with one click  
+- **Built-in token counter** - Track your LLM usage  
+- **Dark mode and custom backgrounds** - Easy on the eyes for long sessions  
+- **Command menu for advanced control** - Quick access to all MARM features  
+- **Notebook for persistent user knowledge** - Store your own notes and project data  
+- **Session persistence** - Your chat stays active even if you refresh or close the page  
+- **Voice synthesis** - Listen to MARM responses (Chrome/Edge recommended)  
+- **Real-time MARM protocol** - All commands work exactly as documented  
+- **No setup required** - Just open and start chatting  
+- **Professional error handling** - Clear feedback when things go wrong  
 
 ---
 
