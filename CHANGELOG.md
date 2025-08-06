@@ -11,6 +11,7 @@
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 - [SETUP.md](SETUP.md) - Local download setup guide
+- [PROTOCOL.md](PROTOCOL.md) - Quick Start, Copy and Paste Protocol, and Limitations.
 
 ---
 
@@ -128,7 +129,7 @@
 ---
 
 <details>
-<summary>June 25th-July 10th – Chatbot Integration, Client Work, and Scheduled Pause</summary>
+<summary>June 25th-July 10th: Chatbot Integration, Client Work, and Scheduled Pause</summary>
 
 ### Context
 - Focus shifted to finalizing a public chatbot that runs MARM logic directly from the repo. This feature will allow users to interact with MARM in real time and explore its functionality hands-on.
@@ -199,7 +200,7 @@
 ---
 
 <details>
-<summary>July 17th-21st – Major Refactor & Feature Release</summary>
+<summary>July 17th-21st: Major Refactor & Feature Release</summary>
 
 ### Overview
 This release marks a complete transformation of the codebase from a monolithic structure to a modern, modular, barrel-pattern architecture. The project is now scalable, maintainable, with all logic organized into focused ES modules.
@@ -278,7 +279,7 @@ This release marks a complete transformation of the codebase from a monolithic s
 ---
 
 <details>
-<summary>July 22nd-24th – MARM Chatbot Live Launch & UI Enhancements (v1.5 Launch)</summary>
+<summary>July 22nd-24th: MARM Chatbot Live Launch & UI Enhancements (v1.5 Launch)</summary>
 
 ### Overview
 Official launch of the MARM interactive chatbot on Render, featuring custom backgrounds, improved session management architecture, and enhanced error handling across the application.
@@ -333,7 +334,7 @@ Official launch of the MARM interactive chatbot on Render, featuring custom back
 ---
 
 <details>
-<summary>July 28th-30th – FAB System Implementation & UI Modernization</summary>
+<summary>July 28th-30th: FAB System Implementation & UI Modernization</summary>
 
 ### Overview
 This release introduces a complete UI/UX transformation with the implementation of a modern Floating Action Button (FAB) system, replacing the traditional floating buttons with an expandable, mobile-first design. The update includes comprehensive responsive design improvements, enhanced code block functionality, and significant architectural refinements for better user experience.
@@ -408,7 +409,7 @@ This release introduces a complete UI/UX transformation with the implementation 
 ---
 
 <details>
-<summary>July 31st, 2025 – Documentation Overhaul & Local Setup Improvements</summary>
+<summary>July 31st, 2025: Documentation Overhaul & Local Setup Improvements</summary>
 
 ### Added
 - **SETUP.md** – New, in-depth local download and installation guide
@@ -428,5 +429,23 @@ This release introduces a complete UI/UX transformation with the implementation 
 ### Improved
 - **Consistency** – All documentation now reflects v1.5 and matches the current feature set
 - **User onboarding** – Clearer quick start, setup, and troubleshooting for new users
+</details>
 
+---
+
+<details>
+<summary>August 5th, 2025: Readme Restructure </summary>
+
+### Added
+- **README-2.md creation** - Complete restructure for professional presentation
+- **Enhanced PROTOCOL.md** - Complete copy-paste prompt with technical specs
+
+### Changed
+- **Documentation hierarchy** - Clear separation of concerns
+- **Professional positioning** - Research/enterprise focus vs chatbot focus
+
+### Removed
+- **Redundant content** - Eliminated duplication
+- **Overwhelming detail** - Moved to dedicated files
+- **Chatbot-focused language** - Replaced with framework positioning
 </details>
