@@ -233,5 +233,5 @@ MARM is actively being tested and adopted across platforms.
 
 <!-- GitAds-Verify: 6J1AQHUMLYXLDPV633HMF5XMS541K5WQ -->
 
-## GitAds Sponsored
+## GitAds Sponsored - Support this open-source project by allowing non-intrusive banner ads served via
 [![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=lyellr88/marm-systems@github)](https://gitads.dev/v1/ad-track?source=lyellr88/marm-systems@github)
