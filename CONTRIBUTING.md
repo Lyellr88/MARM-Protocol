@@ -1,20 +1,5 @@
 # Contributing to MARM
 
-## Project Files
-
-- [README.md](README.md) – Core introduction and quick start for using MARM.  
-- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
-- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
-- [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
-- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
-- [LICENSE](LICENSE) – Terms of use for this project.
-- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
-- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
-- [SETUP.md](SETUP.md) - Local download setup guide.
-- [PROTOCOL.md](PROTOCOL.md) - Quick Start, Copy and Paste Protocol, and Limitations.
-
----
-
 Thank you for your interest in contributing to the Memory Accurate Response Mode (MARM) Protocol. Whether you're here to test, give feedback, suggest improvements, or help evolve the framework, you're part of making something more stable and transparent in LLM interactions.
 
 ---
@@ -93,3 +78,18 @@ For feedback, support, or other inquiries, you can reach me here:
 ## Credits  
 
 MARM was independently built, but shaped by community input, especially feedback and shared frustrations from Reddit users exploring AI memory and context loss. Key features, including the v1.2 patch, were inspired by real user needs and suggestions. Special thanks to the Reddit prompt engineering community. Large Language Models (LLMs) were used throughout development for drafting, learning, and testing.
+
+---
+
+### Project Files
+
+- [README.md](README.md) – Core introduction and quick start for using MARM.  
+- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
+- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
+- [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
+- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
+- [LICENSE](LICENSE) – Terms of use for this project.
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
+- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
+- [SETUP.md](SETUP.md) - Local download setup guide.
+- [PROTOCOL.md](PROTOCOL.md) - Quick Start, Copy and Paste Protocol, and Limitations.
