@@ -230,3 +230,5 @@ MARM is actively being tested and adopted across platforms.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 - [SETUP.md](SETUP.md) - Local download setup guide.
 - [PROTOCOL.md](PROTOCOL.md) - Quick Start, Copy and Paste Protocol, and Limitations.
+
+<!-- GitAds-Verify: 6J1AQHUMLYXLDPV633HMF5XMS541K5WQ -->
