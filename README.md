@@ -1,23 +1,66 @@
-# MARM: Memory Accurate Response Mode [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
+# MARM: Memory Accurate Response Mode v1.5.0 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
 
-**AI forgetting your project mid‑chat? MARM fixes that.**
+**AI forgetting your project mid‑chat? MARM fixes that.** **Build smarter AI conversations with structured memory and transparent logic.**
 
-![Stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=flat-square) ![Forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=flat-square)
+![Stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=flat-square) ![Forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=flat-square) [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](https://github.com/Lyellr88/MARM-Systems/blob/MARM-main/LICENSE)
 
-[**Last updated: August 5th, 2025**]
+**Last updated: August 5th, 2025** (**Coming Soon: visual walkthroughs and logic flowcharts**)
 
 ---
 
-### Overview
+## 📌 Overview
 
 MARM is a protocol for AI reliability. It gives you control over memory and logic by letting you log sessions, store your own notes, and compile summaries. The result: fewer hallucinations, transparent reasoning, and conversations that stay on track.  
 **Steer the AI instead of chasing it.**
 
 > For copy-and-paste prompt users and full technical details, see [`PROTOCOL.md`](./PROTOCOL.md)
 
+[Try MARM Chatboy](https://marm-systems-chatbot.onrender.com) 
+
 ---
 
-### 🛑 Read Before You Start
+## 📄 Table of Contents  
+- [Overview](#-overview)  
+- [Who is Marm built For?](#-built-for-research--real-use)  
+- [Why MARM?](#-why-marm)  
+- [Commands & Features](#-key-features--command-overview)  
+- [Live Demo](#-try-marm-now---no-setup-required)  
+- [Install Locally](#%EF%B8%8F-install-locally)  
+- [Contributing](#-contributing--get-involved)  
+- [Feedback](#-feedback--community-mentions)  
+- [Project Files](#-project-files)
+
+---
+
+### 🧪 Built For Research + Real Use
+
+MARM is both a power-user tool and a research scaffold:
+
+**AI Safety & Reasoning Research**
+- Study systematic reasoning in language models  
+- Analyze memory persistence across sessions  
+- Measure hallucination reduction with structured prompts  
+
+**Business Intelligence**
+- Maintain context across long analytical threads  
+- Build organizational knowledge into sessions  
+- Reinforce consistent decision-making frameworks  
+
+**Educational & Training Use**
+- Teach critical thinking via structured interaction  
+- Build personalized learning repositories  
+- Guide model reasoning with user-curated facts  
+
+**Not built for:**  
+Small talk • Throwaway chats • Passive use  
+
+---
+
+## ❓ Why MARM?
+
+Modern LLMs often lose context or fabricate information. MARM introduces a session memory kernel, structured logs, and a user-controlled knowledge library. Anchoring the AI to *your* logic and data. It’s more than a chatbot wrapper. It’s a methodology for accountable AI.
+
+### Read Before You Start
 
 * Start MARM in a **new session** for best results  
 * MARM **does not persist** across threads  
@@ -26,91 +69,59 @@ MARM is a protocol for AI reliability. It gives you control over memory and logi
 
 ---
 
-### Built For Research + Real Use
+## 🔑 Key Features & Command Overview
 
-MARM is both a power-user tool and a research scaffold:
+### Key Features:
 
-#### AI Safety & Reasoning Research
-- Study systematic reasoning in language models  
-- Analyze memory persistence across sessions  
-- Measure hallucination reduction with structured prompts  
-
-#### Business Intelligence
-- Maintain context across long analytical threads  
-- Build organizational knowledge into sessions  
-- Reinforce consistent decision-making frameworks  
-
-#### Educational & Training Use
-- Teach critical thinking via structured interaction  
-- Build personalized learning repositories  
-- Guide model reasoning with user-curated facts  
-
-**Also built for:**
-- Prompt engineers stress-testing LLMs  
-- Multi-session AI power users  
-- Writers/system builders tired of re-explaining logic  
-
-**Not built for:**  
-Small talk • Throwaway chats • Passive use  
-
----
-
-### Why MARM?
-
-Modern LLMs often lose context or fabricate information. MARM introduces a session memory kernel, structured logs, and a user-controlled knowledge library. Anchoring the AI to *your* logic and data.  
-It’s more than a chatbot wrapper. it’s a methodology for accountable AI.
-
----
-
-### Key Features & Command Overview
-
-#### Core Protocol
 - **Session memory kernel** – Tracks user intent and prompts clarification  
 - **Structured logs** – Use `/log` and `/compile` to build summaries  
 - **Personal library** – Use `/notebook` to guide model outputs with your notes  
-- **Accuracy guardrails** – Optional logic checks to reduce false outputs  
+- **Accuracy guardrails** – Optional logic checks to reduce false outputs   
 
-#### Session Commands
+### Command Overview:
+
+Session Commands
 - `/start marm` → Activate protocol  
 - `/refresh marm` → Reaffirm/reset context  
 
-#### Core Commands
+Core Commands
 - `/log` → Start structured session logging  
 - `/notebook` → Store key data  
 - `/compile` → Summarize and reseed sessions  
 
-#### Advanced Tools
+Advanced Tools
 - `/contextual reply` → Request context-aware response  
 - `/show reasoning` → Reveal logic trail of last answer  
 
-#### Quick Start
+### Quick Start (for copy and paste protocol)
 
-```text
+```
 /start marm  
 /log entry [Date - Summary - Result]  
 /compile SessionName --summary
-```
+```   
 
 Need a walkthrough or troubleshooting help? The [`HANDBOOK.md`](./HANDBOOK.md) covers all aspects of using MARM.
 
 ---
 
-### 🚀 Try MARM Live
-
-**Experience MARM v1.5.0 in action!** Save sessions, change themes, hear responses.
-
-#### Launch MARM Chatbot → <a href="https://marm-systems-chatbot.onrender.com">
-  <img src="https://img.shields.io/badge/🤖_Live_Demo-Try_MARM_Now_On_Render-4285F4?style=for-the-badge" width="280">
-</a>
-
-<div>  
-<img src="media/marm-chatbot1.png" width="320"/>   
-<img src="media/marm-chatbot2.png" width="320"/>   
-<img src="media/marm-chatbot3.png" width="320"/>   
+<br><br>
+<div align="center">
+  <h3>🚀 Try MARM Now - No Setup Required</h3>
+  <a href="https://marm-systems-chatbot.onrender.com">
+    <img src="https://img.shields.io/badge/Launch_Live_Demo-MARM_Chatbot-FF6B6B?style=for-the-badge&logo=rocket&logoColor=white" width="300">
+  </a>
+  <p><i>Experience all features instantly in your browser</i></p>
 </div>
+<br><br>
+<div align="center">
+  <img src="media/marm-chatbot1.png" width="300" style="margin:10px"/>
+  <img src="media/marm-chatbot2.png" width="300" style="margin:10px"/>
+  <img src="media/marm-chatbot3.png" width="300" style="margin:10px"/>
+</div>  
 
+### User Experience (Chatbot)   
 
-#### User Experience (Chatbot)
 - **Save and revisit chat sessions** - Name and organize your conversations  
 - **Start new chats instantly** - Fresh conversations with one click  
 - **Built-in token counter** - Track your LLM usage  
@@ -121,42 +132,72 @@ Need a walkthrough or troubleshooting help? The [`HANDBOOK.md`](./HANDBOOK.md) c
 - **Voice synthesis** - Listen to MARM responses (Chrome/Edge recommended)  
 - **Real-time MARM protocol** - All commands work exactly as documented  
 - **No setup required** - Just open and start chatting  
-- **Professional error handling** - Clear feedback when things go wrong  
+- **Professional error handling** - Clear feedback when things go wrong
 
 ---
 
-### Install Locally
 
+### 🛠️ Install Locally
+
+Run MARM on your own machine using Google Gemini (Pro 2.5 Free Tier). Great for developers, power users, or those who want full control.
+
+#### Requirements
+- Node.js v16+
+- Git
+- Gemini API Key (free or paid)
+
+#### 1. Clone the Repository
 ```bash
 git clone https://github.com/Lyellr88/MARM-Systems.git
 cd MARM-Systems/webchat
+```
+
+#### 2. Install Dependencies
+
+```bash
 npm install
-# Add your API keys to .env
+```
+
+#### 3. Add API Key
+
+Create a `.env` file and add your Gemini key:
+
+```bash
+touch .env
+echo "GEMINI_API_KEY=your_key_here" >> .env
+```
+
+#### 4. Start the App
+
+```bash
 npm start
 ```
 
-Detailed setup: [`SETUP.md`](./SETUP.md)
+Then visit: [http://localhost:8080](http://localhost:8080)
 
 ---
 
-### Contributing
+**Need detailed steps, troubleshooting, or multi-provider setup?**
+See [`SETUP.md`](./SETUP.md)
 
-I'm looking for contributors interested in:
+---
 
+### 🤝 Contributing & Get Involved
+
+I'm looking for contributors interested in:   
 * **AI reasoning research** – Improve systematic thinking protocols
 * **Framework development** – Enhance memory/accuracy layers
 * **Evaluation metrics** – Score reasoning quality and reliability
-* **pplication research** – Explore new use cases and workflows
+* **Application research** – Explore new use cases and workflows
 
-#### Get Involved
-
+How to get involved:   
 1. Try the [demo](https://marm-systems-chatbot.onrender.com) and share feedback
 2. Open [issues](https://github.com/Lyellr88/MARM-Systems/issues) for bugs or features
 3. Join GitHub discussions about AI reliability
 
 ---
  
-### Feedback & Community Mentions
+### 📣 Feedback & Community Mentions
 
 MARM is actively being tested and adopted across platforms.
 
@@ -177,7 +218,7 @@ MARM is actively being tested and adopted across platforms.
 
 ---
 
-### Project Files
+### 📂 Project Files
 
 - [README.md](README.md) – Core introduction and quick start for using MARM.  
 - [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
