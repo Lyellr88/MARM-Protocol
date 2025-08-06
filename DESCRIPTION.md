@@ -55,7 +55,7 @@ Whether you're testing MARM, suggesting improvements, or just curious about AI c
 
 ---
 
-## Project Files
+### Project Files
 
 - [README.md](README.md) – Core introduction and quick start for using MARM.  
 - [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
@@ -66,3 +66,4 @@ Whether you're testing MARM, suggesting improvements, or just curious about AI c
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 - [SETUP.md](SETUP.md) - Local download setup guide.
+- [PROTOCOL.md](PROTOCOL.md) - Quick Start, Copy and Paste Protocol, and Limitations.
