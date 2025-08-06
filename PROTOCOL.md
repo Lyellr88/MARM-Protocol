@@ -1,19 +1,4 @@
-# Protocol Quick Start, Protocol & Key Info
-
-### Project Files
-
-- [README.md](README.md) – Core introduction and quick start for using MARM.  
-- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
-- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
-- [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
-- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
-- [LICENSE](LICENSE) – Terms of use for this project.
-- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
-- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
-- [SETUP.md](SETUP.md) - Local download setup guide.
-- [PROTOCOL.md](PROTOCOL.md) - Quick Start, Copy and Paste Protocol, and Limitations.
-
----
+# Protocol: Quick Start, C&P Protocol & Key Info
 
 ## Quick Start: Full Initiation Prompt
 
@@ -115,3 +100,18 @@ Do not include extended explanations. For full usage and examples, see `HANDBOOK
 - Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
 - Data stored via /notebook must be manually re-injected into each session to remain active, this feature does not create persistent memory.
 -/notebook is subject to standard token limits. Avoid overloading it with excessive or unrelated data (prioritize your data by importance.)
+
+---
+
+### Project Files
+
+- [README.md](README.md) – Core introduction and quick start for using MARM.  
+- [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
+- [CHANGELOG.md](CHANGELOG.md) – Tracks updates, edits, and refinements to the protocol.  
+- [CONTRIBUTING.md](CONTRIBUTING.md) – Contribution guidelines and collaborator credits.  
+- [DESCRIPTION.md](DESCRIPTION.md) – Protocol purpose and vision overview.  
+- [LICENSE](LICENSE) – Terms of use for this project.
+- [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
+- [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
+- [SETUP.md](SETUP.md) - Local download setup guide.
+- [PROTOCOL.md](PROTOCOL.md) - Quick Start, Copy and Paste Protocol, and Limitations.
