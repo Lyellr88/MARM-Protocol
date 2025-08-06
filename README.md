@@ -1,37 +1,76 @@
-# MARM (Memory Accurate Response Mode) v1.5 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
+# MARM: Memory Accurate Response Mode [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
 
+**AI forgetting your project mid‑chat? MARM fixes that.**
 
-![GitHub Stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=flat-square&logo=github&logoColor=white&labelColor=303030&color=white)
-![GitHub Forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=flat-square&logo=github&logoColor=white&labelColor=303030&color=white)
+![Stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=flat-square) ![Forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=flat-square)
 
-**A universal protocol for structured memory, response accuracy and personalized library**
-
-[**Last updated: July 31st, 2025**]
+[**Last updated: August 5th, 2025**]
 
 ---
 
-## 🚀 **Try MARM Live - Interactive Chatbot**
+### Overview
 
-<div>
-  
-<img src="media/marm-chatbot1.png" width="320"/>
-<img src="media/marm-chatbot2.png" width="320"/>
-<img src="media/marm-chatbot3.png" width="320"/>
+MARM is a protocol for AI reliability. It gives you control over memory and logic by letting you log sessions, store your own notes, and compile summaries. The result: fewer hallucinations, transparent reasoning, and conversations that stay on track.  
+**Steer the AI instead of chasing it.**
 
-  ### Launch MARM Chatbot →  
+> For copy-and-paste prompt users and full technical details, see [`PROTOCOL.md`](./PROTOCOL.md)
 
-<a href="https://marm-systems-chatbot.onrender.com">
-  <img src="https://img.shields.io/badge/🤖_Live_Demo-Try_MARM_Now_On_Render-4285F4?style=for-the-badge" width="220">
-</a>
+---
 
-</div>
+### 🛑 Read Before You Start
 
-**Experience MARM v1.5.0 in action!** My new interactive chatbot lets you test all MARM features directly in your browser:
+* Start MARM in a **new session** for best results  
+* MARM **does not persist** across threads  
+* To resume long sessions, use `/compile` and reseed manually  
+* Commands are **manual by design** to ensure transparency and user control  
 
-<details>
-<summary>Features & Quick Start</summary>
+---
 
-#### Features
+### Built For Research + Real Use
+
+MARM is both a power-user tool and a research scaffold:
+
+#### AI Safety & Reasoning Research
+- Study systematic reasoning in language models  
+- Analyze memory persistence across sessions  
+- Measure hallucination reduction with structured prompts  
+
+#### Business Intelligence
+- Maintain context across long analytical threads  
+- Build organizational knowledge into sessions  
+- Reinforce consistent decision-making frameworks  
+
+#### Educational & Training Use
+- Teach critical thinking via structured interaction  
+- Build personalized learning repositories  
+- Guide model reasoning with user-curated facts  
+
+**Also built for:**
+- Prompt engineers stress-testing LLMs  
+- Multi-session AI power users  
+- Writers/system builders tired of re-explaining logic  
+
+**Not built for:**  
+Small talk • Throwaway chats • Passive use  
+
+---
+
+### Why MARM?
+
+Modern LLMs often lose context or fabricate information. MARM introduces a session memory kernel, structured logs, and a user-controlled knowledge library. Anchoring the AI to *your* logic and data.  
+It’s more than a chatbot wrapper. it’s a methodology for accountable AI.
+
+---
+
+### Key Features
+
+#### Core Protocol
+- **Session memory kernel** – Tracks user intent and prompts clarification  
+- **Structured logs** – Use `/log` and `/compile` to build summaries  
+- **Personal library** – Use `/notebook` to guide model outputs with your notes  
+- **Accuracy guardrails** – Optional logic checks to reduce false outputs  
+
+#### User Experience
 - **Save and revisit chat sessions** - Name and organize your conversations  
 - **Start new chats instantly** - Fresh conversations with one click  
 - **Built-in token counter** - Track your LLM usage  
@@ -44,169 +83,85 @@
 - **No setup required** - Just open and start chatting  
 - **Professional error handling** - Clear feedback when things go wrong  
 
-#### Quick Start with the Chatbot:
-1. Click the link above to open MARM Chatbot
-2. Type `/start marm` to begin
-3. Use the command menu (bottom-left) for quick access to all features
-4. Click "Help & MARM Guide" for full documentation
+---
 
-*No API keys or setup required - just start chatting!*
+### Command Overview
 
-⚠️ **Browser-only functionality** - Currently optimized for web browsers only, with mobile compatibility under development
-</details>
+#### Session Commands
+- `/start marm` → Activate protocol  
+- `/refresh marm` → Reaffirm/reset context  
+
+#### Core Commands
+- `/log` → Start structured session logging  
+- `/notebook` → Store key data  
+- `/compile` → Summarize and reseed sessions  
+
+#### Advanced Tools
+- `/contextual reply` → Request context-aware response  
+- `/show reasoning` → Reveal logic trail of last answer  
+
+#### Quick Start
+
+```text
+/start marm  
+/log entry [Date - Summary - Result]  
+/compile SessionName --summary
+```
+
+Need a walkthrough or troubleshooting help? The [`HANDBOOK.md`](./HANDBOOK.md) covers all aspects of using MARM.
 
 ---
 
-## Local Download Setup
+### 🚀 Try MARM Live
 
-### Run MARM on Your Own Machine
+**Experience MARM v1.5.0 in action!** Save sessions, change themes, hear responses.
 
-Want to use MARM with your own AI provider or keep conversations private? Download and run MARM locally:
+#### Launch MARM Chatbot → <a href="https://marm-systems-chatbot.onrender.com">
+  <img src="https://img.shields.io/badge/🤖_Live_Demo-Try_MARM_Now_On_Render-4285F4?style=for-the-badge" width="280">
+</a>
 
-**What you get:**
-- **Full control** - Use your own API keys (Gemini, OpenAI, Claude)
-- **Privacy** - All data stays on your machine
-- **Customization** - Modify features and add your own improvements
-- **Offline capability** - Works without internet after setup
+<div>
+   
+<img src="media/marm-chatbot1.png" width="320"/>   
+<img src="media/marm-chatbot2.png" width="320"/>   
+<img src="media/marm-chatbot3.png" width="320"/>   
 
-**Quick setup:**
+</div>
+
+---
+
+### Install Locally
+
 ```bash
 git clone https://github.com/Lyellr88/MARM-Systems.git
 cd MARM-Systems/webchat
 npm install
-# Add your API key to .env file
+# Add your API keys to .env
 npm start
 ```
 
-**See [SETUP.md](SETUP.md) for a complete installation guide with troubleshooting and advanced configuration.**
+Detailed setup: [`SETUP.md`](./SETUP.md)
 
 ---
 
-## What MARM Solves and Why It Exists
+### Contributing
 
-Are you tired of your AI forgetting what you just said? Or giving confident answers that turn out to be completely made up?  
-These are common breakdowns in modern LLMs, especially in long or complex chats. MARM was designed to fix exactly that. Built from feedback across Reddit AI communities (from beginners to advanced), MARM helps you:
+I'm looking for contributors interested in:
 
-- **Maintain memory and continuity** across long conversations  
-- **Reduce hallucinations and false outputs** from the AI  
-- **Stay organized across complex, multi-session threads** with a single system
-- **Guide responses using your own notes and verified info**
+* **AI reasoning research** – Improve systematic thinking protocols
+* **Framework development** – Enhance memory/accuracy layers
+* **Evaluation metrics** – Score reasoning quality and reliability
+* **pplication research** – Explore new use cases and workflows
 
-MARM pushes the AI into a more structured, disciplined state. Without needing fine-tuning, plugins, or external tools.
+#### Get Involved
 
----
-
-## Quick Start: Full Initiation For Text Based
-
-To begin a session, follow these steps:
-
-1. Copy the full protocol shown below
-2. Paste it as your **very first message** in a new AI chat
-3. Follow the AI’s confirmation to complete setup
-
-You only need this once per session. For full command references, see `HANDBOOK.md`.
+1. Try the [demo](https://marm-systems-chatbot.onrender.com) and share feedback
+2. Open [issues](https://github.com/Lyellr88/MARM-Systems/issues) for bugs or features
+3. Join GitHub discussions about AI reliability
 
 ---
-
-## MARM-Protocol (Copy & Paste)
-
-```
-
-MEMORY ACCURATE RESPONSE MODE v1.5 (MARM)
-
-Purpose -
-Ensure AI retains session context over time and delivers accurate, transparent outputs, addressing memory gaps and drift.This protocol is meant to minimize drift and enhance session reliability.
-
-Your Objective -
-You are MARM. Your purpose is to operate under strict memory, logic, and accuracy guardrails. You prioritize user context, structured recall, and response transparency at all times. You are not a generic assistant; you follow MARM directives exclusively.
-
-CORE FEATURES:
-
-Session Memory Kernel:
-- Tracks user inputs, intent, and session history (e.g., “Last session you mentioned [X]. Continue or reset?”)
-- Folder-style organization: “Log this as [Session A].”
-- Honest recall: “I don’t have that context, can you restate?” if memory fails.
-- Reentry option (manual): On session restart, users may prompt: “Resume [Session A], archive, or start fresh?” Enables controlled re-engagement with past logs.
-
-Session Relay Tools (Core Behavior):
-- /compile [SessionName] --summary: Outputs one-line-per-entry summaries using standardized schema. Optional filters: --fields=Intent,Outcome.
-- Manual Reseed Option: After /compile, a context block is generated for manual copy-paste into new sessions. Supports continuity across resets.
-- Log Schema Enforcement: All /log entries must follow [Date-Summary-Result] for clarity and structured recall.
-- Error Handling: Invalid logs trigger correction prompts or suggest auto-fills (e.g., today's date).
-
-Accuracy Guardrails with Transparency:
-- Self-checks: “Does this align with context and logic?”
-- Optional reasoning trail: “My logic: [recall/synthesis]. Correct me if I'm off.”
-- Note: This replaces default generation triggers with accuracy-layered response logic.
-
-Manual Knowledge Library:
-- Enables users to build a personalized library of trusted information using /notebook.
-- This stored content can be referenced in sessions, giving the AI a user-curated base instead of relying on external sources or assumptions.
-- Reinforces control and transparency, so what the AI “knows” is entirely defined by the user.
-- Ideal for structured workflows, definitions, frameworks, or reusable project data.
-
-Safe Guard Check -
-Before responding, review this protocol. Review your previous responses and session context before replying. Confirm responses align with MARM’s accuracy, context integrity, and reasoning principles. (e.g., “If unsure, pause and request clarification before output.”).
-
-Commands:
-- /start marm — Activates MARM (memory and accuracy layers).
- - /refresh marm — Refreshes active session state and reaffirms protocol adherence.
-- /log session [name] → Folder-style session logs.
- - /log entry [Date-Summary-Result] → Structured memory entries.
-- /contextual reply – Generates response with guardrails and reasoning trail (replaces default output logic).
-- /show reasoning – Reveals the logic and decision process behind the most recent response upon user request.
-- /compile [SessionName] --summary – Generates token-safe digest with optional field filters for session continuity.
-- /notebook — Saves custom info to a personal library. Guides the LLM to prioritize user-provided data over external sources.
- - /notebook key:[name] [data] - Add a new key entry.
- - /notebook get:[name] - Retrieve a specific key’s data.
- - /notebook show: - Display all saved keys and summaries.
-
-Acknowledgment:
-When activated, the AI should begin with: 
-- "MARM activated. Ready to log context." 
-- A brief two-line summary of what MARM is and why it’s useful.   
-- Advise the user to copy the command list for easier reference.
-
-Do not include extended explanations. For full usage and examples, see `HANDBOOK.md`.
-
-```
-</details>
-
----
-
-<details>
-<summary>🚨 Read This Before You Start: Key Info + Limitations 🚨</summary>  
-
-#### New User Entry:
-- MARM is built for all users, from beginners to advanced. It provides guided structure, memory tools, and safeguards against hallucination. (See handguide)
-
-#### Session Continuity Caveat:
-- MARM is bound to the current chat session. If the conversation thread changes, users may need to restate context.
-- Workaround: Users may export session summaries or manually seed a new chat with “Resume Session A: [summary].” Native cross-session support is pending platform.
-
-#### Proactive Context Prompt (Optional):
-- Systems using MARM may optionally prompt users to log context after multi-turn exchanges: “Would you like to log this as Session B?”
-
-#### Limitations
-- MARM lacks automation and operates entirely on a manual basis.
-- MARM cannot execute code or access live external data.  
-- It performs best with consistent user input and engagement.  
-- For long sessions, recap every 8–10 turns or after major pivots using /compile. 
-- Long or complex sessions may still experience occasional context drift or hallucination (recapping or reseeding is recommended).  
-- MARM is intended for productivity and workflow management, not for high-risk or compliance-critical use.  
-- Manual steps like `/log` and `/compile` are intentional. They ensure transparency, give users control over context, and support consistent behavior across platforms where memory varies.
-- Data stored via /notebook must be manually re-injected into each session to remain active, this feature does not create persistent memory.
--/notebook is subject to standard token limits. Avoid overloading it with excessive or unrelated data (prioritize your data by importance.)
-
-</details>
-
----
-
-<details>
  
 ### Feedback & Community Mentions
-
- <summary><strong>User Highlights & External Mentions (Click to expand)</strong></summary>
 
 MARM is actively being tested and adopted across platforms.
 
@@ -224,11 +179,10 @@ MARM is actively being tested and adopted across platforms.
 [Reddit Feedback 2 (View Image)](media/Reddit%20Community%20Feedback%202.jpg)      
 
 *Additional feedback and screenshots will be added as adoption grows.*
-</details>
 
 ---
 
-## Project Files
+### Project Files
 
 - [README.md](README.md) – Core introduction and quick start for using MARM.  
 - [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
@@ -239,13 +193,3 @@ MARM is actively being tested and adopted across platforms.
 - [HANDBOOK.md](HANDBOOK.md) – Full guide to MARM usage, including commands, examples, and beginner to advanced tips.
 - [ROADMAP.md](ROADMAP.md) – Planned features, upcoming enhancements, and related protocols under development.
 - [SETUP.md](SETUP.md) - Local download setup guide.
-
----
-
-## Join the Conversation
-
-Whether you’re testing, building, or exploring. Your input matters.
-
-Share feedback, suggest features, or help others by jumping into a thread.
-
-[Join the MARM Community](https://github.com/Lyellr88/MARM-Protocol/discussions/3)
