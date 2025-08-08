@@ -1,4 +1,4 @@
-9# MARM: Memory Accurate Response Mode v1.5.0 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
+# MARM: Memory Accurate Response Mode v1.5.0 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
 
 **AI forgetting your project mid‑chat? MARM fixes that.** **Build smarter AI conversations with structured memory and transparent logic.**
 
@@ -8,7 +8,7 @@
 
 ---
 
-### 📌 Overview
+## 📌 Overview
 
 MARM is a protocol for AI reliability. It gives you control over memory and logic by letting you log sessions, store your own notes, and compile summaries. The result: fewer hallucinations, transparent reasoning, and conversations that stay on track.  
 **Steer the AI instead of chasing it.**
@@ -21,7 +21,7 @@ MARM is a protocol for AI reliability. It gives you control over memory and logi
 
 ## 📄 Table of Contents  
 - [Overview](#-overview)  
-- [Who is Marm built For?](#-built-for-research--real-use)  
+- [Who is Marm Built For?](#-built-for-research--real-use)  
 - [Why MARM?](#-why-marm)  
 - [Commands & Features](#-key-features--command-overview)  
 - [Live Demo](#-try-marm-now---no-setup-required)  
@@ -32,7 +32,7 @@ MARM is a protocol for AI reliability. It gives you control over memory and logi
 
 ---
 
-### 🧪 Built For Research + Real Use
+## 🧪 Built For Research + Real Use
 
 MARM is both a power-user tool and a research scaffold:
 
@@ -93,7 +93,7 @@ Advanced Tools
 - `/contextual reply` → Request context-aware response  
 - `/show reasoning` → Reveal logic trail of last answer  
 
-### Quick Start (for copy and paste protocol)
+#### Quick Start (for copy and paste protocol)
 
 ```
 /start marm  
@@ -137,28 +137,28 @@ Need a walkthrough or troubleshooting help? The [`HANDBOOK.md`](./HANDBOOK.md) c
 ---
 
 
-### 🛠️ Install Locally
+## 🛠️ Install Locally
 
 Run MARM on your own machine using Google Gemini (Pro 2.5 Free Tier). Great for developers, power users, or those who want full control.
 
-#### Requirements
+### Requirements
 - Node.js v16+
 - Git
 - Gemini API Key (free or paid)
 
-#### 1. Clone the Repository
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/Lyellr88/MARM-Systems.git
 cd MARM-Systems/webchat
 ```
 
-#### 2. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-#### 3. Add API Key
+### 3. Add API Key
 
 Create a `.env` file and add your Gemini key:
 
@@ -167,7 +167,7 @@ touch .env
 echo "GEMINI_API_KEY=your_key_here" >> .env
 ```
 
-#### 4. Start the App
+### 4. Start the App
 
 ```bash
 npm start
@@ -182,7 +182,7 @@ See [`SETUP.md`](./SETUP.md)
 
 ---
 
-### 🤝 Contributing & Get Involved
+## 🤝 Contributing & Get Involved
 
 I'm looking for contributors interested in:   
 * **AI reasoning research** – Improve systematic thinking protocols
@@ -197,7 +197,7 @@ How to get involved:
 
 ---
  
-### 📣 Feedback & Community Mentions
+## 📣 Feedback & Community Mentions
 
 MARM is actively being tested and adopted across platforms.
 
@@ -218,7 +218,7 @@ MARM is actively being tested and adopted across platforms.
 
 ---
 
-### 📂 Project Files
+## 📂 Project Files
 
 - [README.md](README.md) – Core introduction and quick start for using MARM.  
 - [FAQ.md](FAQ.md) – Answers to common questions about how and why to use MARM.  
