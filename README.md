@@ -131,6 +131,8 @@ Need a walkthrough or troubleshooting help? The [`HANDBOOK.md`](./HANDBOOK.md) c
 
 ### User Experience (Chatbot)   
 
+
+- **Built for browser** - I'm still working on mobile
 - **Save and revisit chat sessions** - Name and organize your conversations  
 - **Start new chats instantly** - Fresh conversations with one click  
 - **Built-in token counter** - Track your LLM usage  
