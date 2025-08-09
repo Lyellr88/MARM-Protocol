@@ -1,12 +1,14 @@
-# MARM: Memory Accurate Response Mode v1.5.0 [![Featured on Google](https://img.shields.io/badge/Featured%20on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode)   
+# MARM: Memory Accurate Response Mode v1.5.0 [![Featured on Google](https://img.shields.io/badge/Featured_on-Google-blue?style=flat-square&logo=google&logoColor=white)](https://www.google.com/search?q=what+is+marm+memory+accurate+response+mode) ![Development](https://img.shields.io/badge/Development-Ongoing-4CBB17?style=flat-square)
 
 **AI forgetting your project mid‑chat? MARM fixes that.** **Build smarter AI conversations with structured memory and transparent logic.**
 
-![Stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=flat-square) ![Forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=flat-square) [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](https://github.com/Lyellr88/MARM-Systems/blob/MARM-main/LICENSE)
+![Last Update](https://img.shields.io/badge/last_update-August_08_2025-blue?style=flat-square) ![Stars](https://img.shields.io/github/stars/Lyellr88/MARM-Protocol?style=flat-square) ![Forks](https://img.shields.io/github/forks/Lyellr88/MARM-Protocol?style=flat-square) ![Commit Activity](https://img.shields.io/github/commit-activity/m/Lyellr88/MARM-Systems?style=flat-square) [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/Lyellr88/MARM-Systems/blob/MARM-main/LICENSE) ![Code Size](https://img.shields.io/github/languages/code-size/Lyellr88/MARM-Systems?style=flat-square) ![Top Language](https://img.shields.io/github/languages/top/Lyellr88/MARM-Systems?style=flat-square) ![Version](https://img.shields.io/badge/version-1.5.0-blue?style=flat-square)
 
-**Last updated: August 8th, 2025** (**Coming Soon: visual walkthroughs and logic flowcharts**)
 
-💥**Coming Soon to MARM Systems**💥
+
+
+💥**Coming Soon to MARM Systems**💥   
+- visual walkthroughs and logic flowcharts
 - Modern UI: Card-style chat, new colors, and interactive buttons
 - Command Menu Overhaul: Redesigned commands and notebook menus
 - Session Fixes: Persistent sessions and improved stability
@@ -22,7 +24,7 @@ MARM is a protocol for AI reliability. It gives you control over memory and logi
 
 > For copy-and-paste prompt users and full technical details, see [`PROTOCOL.md`](./PROTOCOL.md)
 
-[Try MARM Chatboy](https://marm-systems-chatbot.onrender.com) 
+[Try MARM Chatbot](https://marm-systems-chatbot.onrender.com) 
 
 ---
 
